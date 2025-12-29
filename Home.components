@@ -10,10 +10,24 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2025-12-29T09:17:34.685Z",
+      "updateAt": "2025-12-29T09:22:55.461Z",
       "components": [
         {
-          "componentId": "5da36bd1-7a40-4044-9644-dfff2238a6cf"
+          "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 5
+            }
+          }
         }
       ],
       "layoutType": "grid",
@@ -21,17 +35,57 @@
       "layoutOptions": {}
     },
     {
-      "id": "5da36bd1-7a40-4044-9644-dfff2238a6cf",
-      "type": "reference",
+      "id": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
+      "type": "chart",
       "titleAlign": "center",
       "tabTitle": "",
       "maxWidthRatio": -1,
       "showBorder": false,
       "showTitle": true,
       "showShadow": false,
-      "createAt": "2025-12-29T09:20:45.464Z",
-      "updateAt": "2025-12-29T09:20:45.464Z",
-      "file": null
+      "createAt": "2025-12-29T09:21:50.954Z",
+      "updateAt": "2025-12-29T09:24:19.901Z",
+      "chartType": "heatmap",
+      "filter": {
+        "id": "da9ff79b-182a-432d-88e4-687e9b715cfc",
+        "type": "group",
+        "operator": "and",
+        "conditions": []
+      },
+      "labelFormat": "$none",
+      "series": [
+        {
+          "id": "c7c48a63-b2a0-49d0-99e1-ace2eff7d0ad",
+          "name": "$file_count",
+          "precision": 2
+        }
+      ],
+      "sortField": "xAxisValue",
+      "sortOrder": "asc",
+      "maxHeight": 300,
+      "chartColorSet": "default",
+      "chartLabelPosition": "top",
+      "enableMarkLine": false,
+      "markLineValue": 20,
+      "showDataValue": false,
+      "valueScaleStartFromZero": true,
+      "smoothLine": false,
+      "fillArea": false,
+      "options": {
+        "minValue": 1,
+        "maxValue": 10,
+        "cellSize": 12,
+        "numberOfSegments": 4,
+        "fullWidth": false,
+        "showSplitLine": false,
+        "hideChartLabel": true,
+        "firstDayOfWeek": 1,
+        "dateRange": {
+          "type": "latest",
+          "latestValue": "90",
+          "latestUnit": "day"
+        }
+      }
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
