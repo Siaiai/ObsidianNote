@@ -11,14 +11,12 @@
             "id": "2c911acbe3036c10",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "components-file-view",
               "state": {
-                "file": "首页.md",
-                "mode": "source",
-                "source": false
+                "file": "Home.components"
               },
-              "icon": "lucide-file",
-              "title": "首页"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
         ]
@@ -154,13 +152,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "首页.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "首页 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -188,7 +185,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 402.5
+    "width": 402.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,6 +202,7 @@
   },
   "active": "c3a2a549b64b6101",
   "lastOpenFiles": [
+    "Home.components",
     "首页.md",
     "个人项目",
     "学习",
