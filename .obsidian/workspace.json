@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6cd0e6b797b14fef",
+        "id": "ac59a045cb9350da",
         "type": "tabs",
         "children": [
           {
-            "id": "a31c03a273aeb9bf",
+            "id": "0d81e6317ab1eb4b",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -183,11 +179,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 387.5
+    "width": 402.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -201,6 +197,6 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "a31c03a273aeb9bf",
+  "active": "3d4d57ea5eb47b7b",
   "lastOpenFiles": []
 }
