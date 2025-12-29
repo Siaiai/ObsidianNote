@@ -1,3 +1,5 @@
 {
-  "format": "长治[]"
+  "format": "",
+  "folder": "日志",
+  "template": "资源/模板/日志模板"
 }

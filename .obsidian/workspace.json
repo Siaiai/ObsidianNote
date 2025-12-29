@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a3a85eea668addc0",
+        "id": "8f24f80138af039e",
         "type": "tabs",
         "children": [
           {
-            "id": "2c911acbe3036c10",
+            "id": "741c60d4a2837d8e",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -201,10 +201,14 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "c3a2a549b64b6101",
+  "active": "741c60d4a2837d8e",
   "lastOpenFiles": [
-    "日志",
+    "资源/模板/日志模板.md",
     "Home.components",
+    "资源/模板/journal-template.md",
+    "资源",
+    "资源/模板",
+    "日志",
     "首页.md",
     "个人项目",
     "学习",
