@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2025-12-29T11:54:22.718Z",
+      "updateAt": "2025-12-29T12:15:36.516Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -42,7 +42,7 @@
               "x": 2,
               "y": 0,
               "w": 10,
-              "h": 11
+              "h": 16
             }
           }
         }
@@ -115,7 +115,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T11:43:05.929Z",
-      "updateAt": "2025-12-29T11:49:29.417Z",
+      "updateAt": "2025-12-29T12:17:50.581Z",
       "viewType": "calendar",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -126,6 +126,22 @@
           "isShow": true,
           "wrap": false,
           "options": {}
+        },
+        {
+          "id": "c8681900-ec26-4c95-aafb-f2561c9196e1",
+          "name": "任务清单",
+          "isShow": true,
+          "type": "taskList",
+          "options": {
+            "showTaskList": true,
+            "showAllTasks": false,
+            "hideTaskFields": false,
+            "timeRecordStyle": "none",
+            "insertPosition": {
+              "position": "BottomOfNote",
+              "headingLine": ""
+            }
+          }
         }
       ],
       "templates": [],
@@ -134,14 +150,25 @@
       "viewOptions": {
         "openPageIn": "tab",
         "openPageAfterCreate": true,
+        "itemSize": "components--page-card-medium",
+        "showPropertyName": false,
+        "showAllProperties": false,
         "items": [],
+        "cover": {
+          "type": "none",
+          "source": "specifySectionContent",
+          "fit": "contains",
+          "layout": "components--page-card-cover-landscape",
+          "position": "top"
+        },
         "pinFiltersToMenuBar": false,
         "hideHeaderMenu": false,
         "showGrid": false,
         "heightType": "auto",
         "heightValue": 600,
         "calendarViewType": "week",
-        "dateProperty": "${file.basename}"
+        "dateProperty": "${file.basename}",
+        "cardColorFrom": "default"
       },
       "groupStates": {
         "sort": "nameAsc",
@@ -149,6 +176,21 @@
         "orders": [],
         "hiddens": [],
         "collapseds": []
+      },
+      "filter": {
+        "id": "8a379243-46f7-43fc-9625-4f40ed5c2acd",
+        "type": "group",
+        "operator": "and",
+        "conditions": [
+          {
+            "id": "2e667aa6-8adf-40f3-a148-7a29635147f7",
+            "type": "filter",
+            "operator": "contains",
+            "property": "${file.tags}",
+            "value": "#日志",
+            "conditions": []
+          }
+        ]
       }
     }
   ],
