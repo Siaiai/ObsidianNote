@@ -76,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 361.5
+    "width": 200
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -152,12 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Home 的大纲"
             }
           },
           {
