@@ -10,9 +10,9 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2025-12-29T08:53:31.929Z",
+      "updateAt": "2025-12-29T09:04:00.673Z",
       "components": [],
-      "layoutType": "tab",
+      "layoutType": "grid",
       "locked": false,
       "layoutOptions": {}
     }
