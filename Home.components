@@ -115,9 +115,9 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T11:43:05.929Z",
-      "updateAt": "2025-12-29T12:17:50.581Z",
+      "updateAt": "2025-12-29T12:19:41.206Z",
       "viewType": "calendar",
-      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
+      "newPageNameFormat": "{{date: YYYY-MM-DD}}",
       "properties": [
         {
           "id": "__componentsTitleProperty_0x7c00",
@@ -144,7 +144,14 @@
           }
         }
       ],
-      "templates": [],
+      "templates": [
+        {
+          "id": "388a286a-f0ee-4646-a086-16ff2dd1b541",
+          "path": "资源/模板/日志模板.md",
+          "name": "日志模板.md",
+          "type": "normal"
+        }
+      ],
       "groups": [],
       "colorfulGroups": false,
       "viewOptions": {
@@ -191,6 +198,9 @@
             "conditions": []
           }
         ]
+      },
+      "newPageLocation": {
+        "location": "日志"
       }
     }
   ],
