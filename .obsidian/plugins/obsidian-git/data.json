@@ -1,6 +1,6 @@
 {
-  "commitMessage": "[手动]\n笔记同步:{{date}}\n涉及文件个数:{{numFiles}}",
-  "autoCommitMessage": "[自动]\n笔记同步:{{date}}\n涉及文件个数:{{numFiles}}",
+  "commitMessage": "[手动]笔记同步:{{date}}\n涉及文件个数:{{numFiles}}",
+  "autoCommitMessage": "[自动]笔记同步:{{date}}\n涉及文件个数:{{numFiles}}",
   "commitMessageScript": "",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
   "autoSaveInterval": 5,

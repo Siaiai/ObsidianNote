@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3d1406ebaf20e432",
+        "id": "6cd0e6b797b14fef",
         "type": "tabs",
         "children": [
           {
-            "id": "8455509f8d18584e",
+            "id": "a31c03a273aeb9bf",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -157,13 +157,23 @@
               "icon": "lucide-list",
               "title": "大纲"
             }
+          },
+          {
+            "id": "9c859a434bbab1d8",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,6 +187,6 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "8455509f8d18584e",
+  "active": "9c859a434bbab1d8",
   "lastOpenFiles": []
 }
