@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2025-12-29T09:22:55.461Z",
+      "updateAt": "2025-12-29T10:01:05.728Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -22,10 +22,27 @@
               "h": 4
             },
             "laptop": {
+              "x": 1,
+              "y": 0,
+              "w": 4,
+              "h": 17
+            }
+          }
+        },
+        {
+          "componentId": "37cbde1f-662d-4bb8-b8c5-1593d2be9bc9",
+          "layout": {
+            "mobile": {
               "x": 0,
               "y": 0,
               "w": 4,
-              "h": 5
+              "h": 4
+            },
+            "laptop": {
+              "x": 1,
+              "y": 17,
+              "w": 4,
+              "h": 17
             }
           }
         }
@@ -44,7 +61,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T09:21:50.954Z",
-      "updateAt": "2025-12-29T09:24:19.901Z",
+      "updateAt": "2025-12-29T10:01:36.075Z",
       "chartType": "heatmap",
       "filter": {
         "id": "da9ff79b-182a-432d-88e4-687e9b715cfc",
@@ -62,7 +79,7 @@
       ],
       "sortField": "xAxisValue",
       "sortOrder": "asc",
-      "maxHeight": 300,
+      "maxHeight": 500,
       "chartColorSet": "default",
       "chartLabelPosition": "top",
       "enableMarkLine": false,
@@ -74,7 +91,7 @@
       "options": {
         "minValue": 1,
         "maxValue": 10,
-        "cellSize": 12,
+        "cellSize": 18,
         "numberOfSegments": 4,
         "fullWidth": false,
         "showSplitLine": false,
@@ -85,7 +102,62 @@
           "latestValue": "90",
           "latestUnit": "day"
         }
-      }
+      },
+      "title": "热力"
+    },
+    {
+      "id": "37cbde1f-662d-4bb8-b8c5-1593d2be9bc9",
+      "type": "chart",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2025-12-29T09:21:50.954Z",
+      "updateAt": "2025-12-29T10:00:59.165Z",
+      "chartType": "heatmap",
+      "filter": {
+        "id": "da9ff79b-182a-432d-88e4-687e9b715cfc",
+        "type": "group",
+        "operator": "and",
+        "conditions": []
+      },
+      "labelFormat": "$none",
+      "series": [
+        {
+          "id": "c7c48a63-b2a0-49d0-99e1-ace2eff7d0ad",
+          "name": "$file_count",
+          "precision": 2
+        }
+      ],
+      "sortField": "xAxisValue",
+      "sortOrder": "asc",
+      "maxHeight": 500,
+      "chartColorSet": "default",
+      "chartLabelPosition": "top",
+      "enableMarkLine": false,
+      "markLineValue": 20,
+      "showDataValue": false,
+      "valueScaleStartFromZero": true,
+      "smoothLine": false,
+      "fillArea": false,
+      "options": {
+        "minValue": 1,
+        "maxValue": 10,
+        "cellSize": 18,
+        "numberOfSegments": 4,
+        "fullWidth": false,
+        "showSplitLine": false,
+        "hideChartLabel": true,
+        "firstDayOfWeek": 1,
+        "dateRange": {
+          "type": "latest",
+          "latestValue": "90",
+          "latestUnit": "day"
+        }
+      },
+      "title": "热力"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
