@@ -11,7 +11,7 @@
   "disablePush": false,
   "pullBeforePush": true,
   "disablePopups": false,
-  "showErrorNotices": true,
+  "showErrorNotices": false,
   "disablePopupsForNoChanges": false,
   "listChangedFilesInMessageBody": true,
   "showStatusBar": true,
