@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 361.5
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -173,7 +173,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 387.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,6 +188,6 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "9c859a434bbab1d8",
+  "active": "a31c03a273aeb9bf",
   "lastOpenFiles": []
 }
