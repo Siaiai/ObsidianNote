@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "950ab95d5b03d31b",
+        "id": "348440a2ab1eb15d",
         "type": "tabs",
         "children": [
           {
-            "id": "7746ff310379b0ec",
+            "id": "adc0f495d853404d",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -215,7 +215,7 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "7746ff310379b0ec",
+  "active": "adc0f495d853404d",
   "lastOpenFiles": [
     "资源/模板/日志模板.md",
     "Home.components",
