@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2025-12-29T14:14:36.439Z",
+      "updateAt": "2025-12-29T14:25:09.985Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -39,10 +39,27 @@
               "h": 4
             },
             "laptop": {
+              "x": 0,
+              "y": 9,
+              "w": 12,
+              "h": 25
+            }
+          }
+        },
+        {
+          "componentId": "3db0400f-e7b5-4b71-a7d4-4ceed0ede21a",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
               "x": 3,
               "y": 0,
-              "w": 9,
-              "h": 19
+              "w": 1,
+              "h": 3
             }
           }
         }
@@ -62,7 +79,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T09:21:50.954Z",
-      "updateAt": "2025-12-29T14:14:13.714Z",
+      "updateAt": "2025-12-29T14:17:15.877Z",
       "chartType": "heatmap",
       "filter": {
         "id": "da9ff79b-182a-432d-88e4-687e9b715cfc",
@@ -104,7 +121,7 @@
           "latestUnit": "day"
         }
       },
-      "title": "一以恒为志，时光不负心。"
+      "title": "🔆一以恒为志，时光不负心。"
     },
     {
       "id": "841f49f6-997c-449c-965d-fc102a724fc6",
@@ -116,7 +133,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T11:43:05.929Z",
-      "updateAt": "2025-12-29T14:09:05.056Z",
+      "updateAt": "2025-12-29T14:18:19.510Z",
       "viewType": "calendar",
       "newPageNameFormat": "{{date: YYYY-MM-DD}}",
       "properties": [
@@ -176,7 +193,8 @@
         "heightValue": 600,
         "calendarViewType": "week",
         "dateProperty": "${file.basename}",
-        "cardColorFrom": "default"
+        "cardColorFrom": "default",
+        "cardColorProperty": "${file.basename}"
       },
       "groupStates": {
         "sort": "nameAsc",
@@ -202,7 +220,53 @@
       },
       "newPageLocation": {
         "location": "日志"
-      }
+      },
+      "title": ""
+    },
+    {
+      "id": "3db0400f-e7b5-4b71-a7d4-4ceed0ede21a",
+      "type": "count",
+      "titleAlign": "left",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": true,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2025-12-29T14:21:23.446Z",
+      "updateAt": "2025-12-29T14:25:17.723Z",
+      "countValueAlign": "left",
+      "contentPrefix": "",
+      "contentSuffix": "",
+      "countType": "number",
+      "precision": 0,
+      "uiType": "raw",
+      "query": {
+        "valueType": "totalRecords",
+        "value": 100,
+        "filter": {
+          "id": "2edd47db-9933-43da-983e-40a73c7b1564",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        }
+      },
+      "totalQuery": {
+        "valueType": "constant",
+        "value": 100,
+        "filter": {
+          "id": "574dd574-fffc-47b6-9663-2e280d447953",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        }
+      },
+      "title": "🎈今日笔记"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
