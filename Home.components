@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2025-12-29T12:15:36.516Z",
+      "updateAt": "2025-12-29T13:50:19.777Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -24,8 +24,8 @@
             "laptop": {
               "x": 0,
               "y": 0,
-              "w": 2,
-              "h": 8
+              "w": 3,
+              "h": 10
             }
           }
         },
@@ -40,7 +40,7 @@
             },
             "laptop": {
               "x": 2,
-              "y": 0,
+              "y": 10,
               "w": 10,
               "h": 16
             }
@@ -49,7 +49,8 @@
       ],
       "layoutType": "grid",
       "locked": false,
-      "layoutOptions": {}
+      "layoutOptions": {},
+      "darkBorderColor": "#5828c1"
     },
     {
       "id": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -61,7 +62,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T09:21:50.954Z",
-      "updateAt": "2025-12-29T11:42:29.719Z",
+      "updateAt": "2025-12-29T13:53:08.125Z",
       "chartType": "heatmap",
       "filter": {
         "id": "da9ff79b-182a-432d-88e4-687e9b715cfc",
