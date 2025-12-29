@@ -1,0 +1,15 @@
+{
+  "createComponentSilent": false,
+  "receiveBetaVersion": false,
+  "folder": "资源/components插件/组件文件",
+  "scriptFolder": "资源/components插件/script",
+  "enableDebug": false,
+  "debugLogOutputFolder": "components/logs",
+  "homepage": {
+    "path": null,
+    "mobilePath": null,
+    "showOnStartup": true,
+    "showOnEmpty": true,
+    "showOnNewEmptyTab": false
+  }
+}

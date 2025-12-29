@@ -179,7 +179,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -197,6 +197,10 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "9c859a434bbab1d8",
-  "lastOpenFiles": []
+  "active": "c3a2a549b64b6101",
+  "lastOpenFiles": [
+    "未命名",
+    "工作",
+    "看板"
+  ]
 }
