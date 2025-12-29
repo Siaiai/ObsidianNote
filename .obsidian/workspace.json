@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ac59a045cb9350da",
+        "id": "a3a85eea668addc0",
         "type": "tabs",
         "children": [
           {
-            "id": "0d81e6317ab1eb4b",
+            "id": "2c911acbe3036c10",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -179,7 +179,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -197,6 +197,6 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "3d4d57ea5eb47b7b",
+  "active": "9c859a434bbab1d8",
   "lastOpenFiles": []
 }
