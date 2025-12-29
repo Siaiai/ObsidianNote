@@ -10,11 +10,28 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2025-12-29T09:04:00.673Z",
-      "components": [],
+      "updateAt": "2025-12-29T09:17:34.685Z",
+      "components": [
+        {
+          "componentId": "5da36bd1-7a40-4044-9644-dfff2238a6cf"
+        }
+      ],
       "layoutType": "grid",
       "locked": false,
       "layoutOptions": {}
+    },
+    {
+      "id": "5da36bd1-7a40-4044-9644-dfff2238a6cf",
+      "type": "reference",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2025-12-29T09:20:45.464Z",
+      "updateAt": "2025-12-29T09:20:45.464Z",
+      "file": null
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
