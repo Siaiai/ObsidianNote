@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1dd2dde7e1992493",
+        "id": "950ab95d5b03d31b",
         "type": "tabs",
         "children": [
           {
-            "id": "ce2b43c659b1783e",
+            "id": "7746ff310379b0ec",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -60,6 +60,20 @@
               },
               "icon": "lucide-search",
               "title": "搜索"
+            }
+          },
+          {
+            "id": "ce2b43c659b1783e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "资源/模板/日志模板.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "日志模板"
             }
           },
           {
@@ -201,11 +215,11 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "ce2b43c659b1783e",
+  "active": "7746ff310379b0ec",
   "lastOpenFiles": [
     "资源/模板/日志模板.md",
-    "日志/2025-12-29.md",
     "Home.components",
+    "日志/2025-12-29.md",
     "资源/模板/journal-template.md",
     "资源",
     "资源/模板",
