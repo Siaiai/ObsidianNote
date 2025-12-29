@@ -233,7 +233,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2025-12-29T14:25:17.723Z",
+      "updateAt": "2025-12-29T14:54:42.693Z",
       "countValueAlign": "left",
       "contentPrefix": "",
       "contentSuffix": "",
@@ -241,7 +241,7 @@
       "precision": 0,
       "uiType": "raw",
       "query": {
-        "valueType": "totalRecords",
+        "valueType": "propertyValue",
         "value": 100,
         "filter": {
           "id": "2edd47db-9933-43da-983e-40a73c7b1564",
@@ -251,7 +251,9 @@
         },
         "sort": {
           "orders": []
-        }
+        },
+        "property": "tags",
+        "aggregationType": "uniqueCount"
       },
       "totalQuery": {
         "valueType": "constant",
@@ -266,7 +268,7 @@
           "orders": []
         }
       },
-      "title": "🎈今日笔记"
+      "title": "📚领域"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
