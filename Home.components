@@ -476,7 +476,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-03T21:08:32.207Z",
+      "updateAt": "2026-01-03T21:14:27.567Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -487,6 +487,14 @@
           "isShow": true,
           "wrap": false,
           "options": {}
+        },
+        {
+          "id": "cffd5d6b-da90-4b7c-8d9b-438090efd04f",
+          "name": "type",
+          "isShow": true,
+          "type": "text",
+          "options": {},
+          "alias": "编码类型"
         },
         {
           "id": "326df963-eba3-4842-88be-8a068ecb1eb5",
