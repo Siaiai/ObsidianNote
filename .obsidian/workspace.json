@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7f1aa8621be03091",
+        "id": "1777b757ac0e0859",
         "type": "tabs",
         "children": [
           {
-            "id": "f64dc9342cf437b0",
+            "id": "d4b8d2e884561a73",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -160,11 +160,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f64dc9342cf437b0",
+  "active": "d4b8d2e884561a73",
   "lastOpenFiles": [
     "资源/form-flow插件/form/🚀 Project.cform",
-    "工作/项目/260104w.md",
     "Home.components",
+    "工作/项目/260104w.md",
     "工作/项目/260104nihao.md",
     "工作/项目",
     "领域/工作.md",

@@ -476,7 +476,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-03T20:48:37.690Z",
+      "updateAt": "2026-01-03T20:59:19.647Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -491,10 +491,29 @@
         {
           "id": "326df963-eba3-4842-88be-8a068ecb1eb5",
           "name": "status",
-          "type": "text",
+          "type": "select",
           "isShow": true,
           "wrap": false,
-          "options": {}
+          "options": {
+            "items": [
+              {
+                "id": "009a2c3d-8da6-47bd-9fc9-f995d5344c00",
+                "value": "TODO",
+                "color": "components--color-red"
+              },
+              {
+                "id": "c5fe4b38-8965-46f4-8f88-76d4b26e8d0c",
+                "value": "DOING",
+                "color": "components--color-green"
+              },
+              {
+                "id": "475d7780-0624-4edf-b4aa-be66d80761e2",
+                "value": "Done",
+                "color": "components--color-yellow"
+              }
+            ]
+          },
+          "alias": "状态"
         },
         {
           "id": "bfabd792-204e-44fd-b10d-cfdb0ee7c1e2",
@@ -502,7 +521,8 @@
           "type": "datetime",
           "isShow": true,
           "wrap": false,
-          "options": {}
+          "options": {},
+          "alias": "创建时间"
         },
         {
           "id": "9a653a35-c4f3-4475-b23f-16a0a51d3095",
@@ -510,7 +530,8 @@
           "type": "datetime",
           "isShow": true,
           "wrap": false,
-          "options": {}
+          "options": {},
+          "alias": "截止时间"
         },
         {
           "id": "1b4886d1-9fe7-4df5-8064-7c23ec18d8d1",
@@ -518,7 +539,37 @@
           "type": "text",
           "isShow": true,
           "wrap": false,
-          "options": {}
+          "options": {},
+          "alias": "完成时间"
+        },
+        {
+          "id": "7c43d9f6-ebd4-45ed-8a0d-172ce4f7098e",
+          "name": "完成",
+          "isShow": true,
+          "type": "button",
+          "options": {
+            "action": {
+              "type": "updateProperty",
+              "properties": [
+                {
+                  "id": "1d7596e0-ce6c-4fd5-9517-b1fdaa442e9c",
+                  "name": "doneTime",
+                  "type": "datetime",
+                  "value": "$now",
+                  "valueSource": "constant",
+                  "modifier": "replaceValue"
+                },
+                {
+                  "id": "78f1612a-b042-4c7d-a247-37be484b0844",
+                  "name": "status",
+                  "type": "string",
+                  "value": "Done",
+                  "valueSource": "constant",
+                  "modifier": "replaceValue"
+                }
+              ]
+            }
+          }
         }
       ],
       "templates": [
@@ -529,13 +580,35 @@
           "type": "normal"
         }
       ],
-      "groups": [],
+      "groups": [
+        {
+          "id": "DONE",
+          "name": "DONE",
+          "items": [
+            "工作/项目/260104w.md"
+          ]
+        },
+        {
+          "id": "DOING",
+          "name": "DOING",
+          "items": [
+            "工作/项目/260104w.md"
+          ]
+        },
+        {
+          "id": "TODO",
+          "name": "TODO",
+          "items": [
+            "工作/项目/260104w.md"
+          ]
+        }
+      ],
       "colorfulGroups": false,
       "viewOptions": {
         "openPageIn": "modal",
         "openPageAfterCreate": true,
-        "itemSize": "components--page-card-medium",
-        "showPropertyName": true,
+        "itemSize": "components--page-card-small",
+        "showPropertyName": false,
         "showAllProperties": false,
         "items": [],
         "cover": {
@@ -552,11 +625,21 @@
         "heightValue": 600
       },
       "groupStates": {
-        "sort": "nameAsc",
+        "sort": "manual",
         "format": "none",
-        "statics": [],
-        "orders": [],
-        "hiddens": [],
+        "statics": [
+          "TODO",
+          "DONE",
+          "DOING"
+        ],
+        "orders": [
+          "TODO",
+          "DOING",
+          "__$uncategorizedGroup"
+        ],
+        "hiddens": [
+          "__$uncategorizedGroup"
+        ],
         "collapseds": []
       },
       "title": "工作项目看板",
@@ -592,7 +675,11 @@
         ]
       },
       "groupBy": "status",
-      "defaultTemplate": "05221eb6-9dd6-4a78-8a03-1355946cff23"
+      "defaultTemplate": "05221eb6-9dd6-4a78-8a03-1355946cff23",
+      "loadLimitPerPage": "10",
+      "sort": {
+        "orders": []
+      }
     },
     {
       "id": "9fb96fad-d2ef-483a-a3b9-836839d6ae9b",
