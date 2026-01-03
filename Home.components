@@ -354,7 +354,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2025-12-29T14:54:42.693Z",
+      "updateAt": "2026-01-03T19:56:43.706Z",
       "countValueAlign": "left",
       "contentPrefix": "",
       "contentSuffix": "",
@@ -368,13 +368,22 @@
           "id": "2edd47db-9933-43da-983e-40a73c7b1564",
           "type": "group",
           "operator": "and",
-          "conditions": []
+          "conditions": [
+            {
+              "id": "267070af-001d-4f93-9183-45f1c7b9a65d",
+              "type": "filter",
+              "operator": "contains",
+              "property": "tags",
+              "value": "area",
+              "conditions": []
+            }
+          ]
         },
         "sort": {
           "orders": []
         },
         "property": "tags",
-        "aggregationType": "uniqueCount"
+        "aggregationType": "count"
       },
       "totalQuery": {
         "valueType": "constant",

@@ -162,7 +162,13 @@
   },
   "active": "b8384871b2d9f450",
   "lastOpenFiles": [
+    "领域/学习.md",
+    "领域/生活.md",
+    "领域/日志.md",
+    "领域/工作.md",
+    "领域/个人项目.md",
     "资源/模板/工作模板.md",
+    "领域",
     "资源/模板/日志模板.md",
     "Home.components",
     "Home - 副本.components",
@@ -175,14 +181,8 @@
     "资源/components插件/组件文件",
     "资源/components插件/新建文件夹",
     "资源/components插件/timer.components",
-    "资源/components插件/mini-calendar.components",
     "日志/2025-12-29.md",
-    "领域/未命名 2.md",
-    "领域/日志.md",
-    "领域/工作.md",
-    "领域/个人项目.md",
     "领域/未命名 4.md",
-    "领域/未命名 3.md",
     "资源/模板/journal-template.md",
     "首页.md"
   ]
