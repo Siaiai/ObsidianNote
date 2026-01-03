@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-03T19:35:34.939Z",
+      "updateAt": "2026-01-03T19:45:52.601Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -22,10 +22,10 @@
               "h": 4
             },
             "laptop": {
-              "x": 0,
+              "x": 2,
               "y": 9,
               "w": 2,
-              "h": 10
+              "h": 9
             }
           }
         },
@@ -56,10 +56,61 @@
               "h": 4
             },
             "laptop": {
-              "x": 2,
+              "x": 4,
               "y": 9,
               "w": 1,
               "h": 3
+            }
+          }
+        },
+        {
+          "componentId": "b232c077-4831-4355-a33c-11c5a5f43362",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 8,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 4,
+              "y": 12,
+              "w": 1,
+              "h": 6
+            }
+          }
+        },
+        {
+          "componentId": "b4bf0452-7a50-4599-8ba1-c3bb8c9753c6",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 8,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 5,
+              "y": 14,
+              "w": 1,
+              "h": 4
+            }
+          }
+        },
+        {
+          "componentId": "9fb96fad-d2ef-483a-a3b9-836839d6ae9b",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 8,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 5,
+              "y": 9,
+              "w": 1,
+              "h": 5
             }
           }
         },
@@ -98,6 +149,23 @@
           }
         },
         {
+          "componentId": "17532a4a-de29-4fe6-8e0e-58c0827cb529",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 16,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 0,
+              "y": 9,
+              "w": 2,
+              "h": 2
+            }
+          }
+        },
+        {
           "componentId": "fe79e9b3-6b6f-474b-9231-2990e2752e1f",
           "layout": {
             "mobile": {
@@ -108,7 +176,7 @@
             },
             "laptop": {
               "x": 0,
-              "y": 19,
+              "y": 18,
               "w": 6,
               "h": 33
             }
@@ -184,7 +252,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T11:43:05.929Z",
-      "updateAt": "2026-01-03T15:34:44.267Z",
+      "updateAt": "2026-01-03T19:46:02.615Z",
       "viewType": "calendar",
       "newPageNameFormat": "{{date: YYYY-MM-DD}}",
       "properties": [
@@ -377,15 +445,12 @@
       "maxWidthRatio": -1,
       "showBorder": false,
       "showTitle": true,
-      "showShadow": false,
+      "showShadow": true,
       "createAt": "2026-01-03T19:35:17.901Z",
-      "updateAt": "2026-01-03T19:35:17.901Z",
+      "updateAt": "2026-01-03T19:43:42.563Z",
       "components": [
         {
           "componentId": "7b4fa2d2-1ffb-4d4d-8652-ee12279b5428"
-        },
-        {
-          "componentId": "f21d88cf-ed8c-413c-baa5-bceb3e0936b6"
         }
       ],
       "layoutType": "tab",
@@ -402,7 +467,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-03T19:37:40.911Z",
+      "updateAt": "2026-01-03T19:44:16.397Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -453,48 +518,171 @@
       }
     },
     {
-      "id": "f21d88cf-ed8c-413c-baa5-bceb3e0936b6",
-      "type": "dynamicDataView",
+      "id": "9fb96fad-d2ef-483a-a3b9-836839d6ae9b",
+      "type": "count",
+      "titleAlign": "left",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2025-12-29T14:21:23.446Z",
+      "updateAt": "2025-12-29T14:54:42.693Z",
+      "countValueAlign": "left",
+      "contentPrefix": "",
+      "contentSuffix": "",
+      "countType": "number",
+      "precision": 0,
+      "uiType": "raw",
+      "query": {
+        "valueType": "propertyValue",
+        "value": 100,
+        "filter": {
+          "id": "2edd47db-9933-43da-983e-40a73c7b1564",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        },
+        "property": "tags",
+        "aggregationType": "uniqueCount"
+      },
+      "totalQuery": {
+        "valueType": "constant",
+        "value": 100,
+        "filter": {
+          "id": "574dd574-fffc-47b6-9663-2e280d447953",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        }
+      },
+      "title": "📚领域"
+    },
+    {
+      "id": "b232c077-4831-4355-a33c-11c5a5f43362",
+      "type": "count",
+      "titleAlign": "left",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2025-12-29T14:21:23.446Z",
+      "updateAt": "2025-12-29T14:54:42.693Z",
+      "countValueAlign": "left",
+      "contentPrefix": "",
+      "contentSuffix": "",
+      "countType": "number",
+      "precision": 0,
+      "uiType": "raw",
+      "query": {
+        "valueType": "propertyValue",
+        "value": 100,
+        "filter": {
+          "id": "2edd47db-9933-43da-983e-40a73c7b1564",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        },
+        "property": "tags",
+        "aggregationType": "uniqueCount"
+      },
+      "totalQuery": {
+        "valueType": "constant",
+        "value": 100,
+        "filter": {
+          "id": "574dd574-fffc-47b6-9663-2e280d447953",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        }
+      },
+      "title": "📚领域"
+    },
+    {
+      "id": "b4bf0452-7a50-4599-8ba1-c3bb8c9753c6",
+      "type": "count",
+      "titleAlign": "left",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2025-12-29T14:21:23.446Z",
+      "updateAt": "2025-12-29T14:54:42.693Z",
+      "countValueAlign": "left",
+      "contentPrefix": "",
+      "contentSuffix": "",
+      "countType": "number",
+      "precision": 0,
+      "uiType": "raw",
+      "query": {
+        "valueType": "propertyValue",
+        "value": 100,
+        "filter": {
+          "id": "2edd47db-9933-43da-983e-40a73c7b1564",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        },
+        "property": "tags",
+        "aggregationType": "uniqueCount"
+      },
+      "totalQuery": {
+        "valueType": "constant",
+        "value": 100,
+        "filter": {
+          "id": "574dd574-fffc-47b6-9663-2e280d447953",
+          "type": "group",
+          "operator": "and",
+          "conditions": []
+        },
+        "sort": {
+          "orders": []
+        }
+      },
+      "title": "📚领域"
+    },
+    {
+      "id": "17532a4a-de29-4fe6-8e0e-58c0827cb529",
+      "type": "card",
       "titleAlign": "center",
       "tabTitle": "",
       "maxWidthRatio": -1,
       "showBorder": false,
       "showTitle": true,
-      "showShadow": false,
-      "createAt": "2026-01-03T19:35:51.756Z",
-      "updateAt": "2026-01-03T19:35:51.756Z",
-      "viewType": "table",
-      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
-      "properties": [
-        {
-          "id": "__componentsTitleProperty_0x7c00",
-          "name": "文件名",
-          "type": "text",
-          "isShow": true,
-          "wrap": false,
-          "options": {}
-        }
-      ],
-      "templates": [],
-      "groups": [],
-      "colorfulGroups": false,
-      "viewOptions": {
-        "openPageIn": "tab",
-        "openPageAfterCreate": true,
-        "items": [],
-        "pinFiltersToMenuBar": false,
-        "hideHeaderMenu": false,
-        "showGrid": false,
-        "heightType": "auto",
-        "heightValue": 600
+      "showShadow": true,
+      "createAt": "2026-01-03T15:53:09.351Z",
+      "updateAt": "2026-01-03T19:42:03.897Z",
+      "title": "快捷栏",
+      "description": "",
+      "coverFit": "cover",
+      "coverPosition": "left",
+      "clickAction": {
+        "type": "CallCommand",
+        "id": "c3a82676-de95-43d8-8e63-e3095010b5bd",
+        "options": {}
       },
-      "groupStates": {
-        "sort": "nameAsc",
-        "statics": [],
-        "orders": [],
-        "hiddens": [],
-        "collapseds": []
-      }
+      "coverCoordinate": {
+        "x": "50%",
+        "y": "50%"
+      },
+      "icon": "BatteryFull"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "abe20045f06fbe35",
+        "id": "f252500890e33fbd",
         "type": "tabs",
         "children": [
           {
-            "id": "c876ab7bcd28dc4e",
+            "id": "b8384871b2d9f450",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -160,12 +160,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c876ab7bcd28dc4e",
+  "active": "b8384871b2d9f450",
   "lastOpenFiles": [
-    "Home - 副本.components",
-    "Home.components",
-    "资源/components插件/组件文件/timer.components",
+    "资源/模板/工作模板.md",
     "资源/模板/日志模板.md",
+    "Home.components",
+    "Home - 副本.components",
+    "资源/components插件/组件文件/timer.components",
     "日志/2026-01-03.md",
     "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "资源/插图",
@@ -175,7 +176,6 @@
     "资源/components插件/新建文件夹",
     "资源/components插件/timer.components",
     "资源/components插件/mini-calendar.components",
-    "资源/components插件",
     "日志/2025-12-29.md",
     "领域/未命名 2.md",
     "领域/日志.md",
