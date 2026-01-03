@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-03T15:08:52.708Z",
+      "updateAt": "2026-01-03T15:35:01.930Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -22,8 +22,8 @@
               "h": 4
             },
             "laptop": {
-              "x": 0,
-              "y": 0,
+              "x": 2,
+              "y": 29,
               "w": 3,
               "h": 9
             }
@@ -39,10 +39,10 @@
               "h": 4
             },
             "laptop": {
-              "x": 3,
+              "x": 0,
               "y": 0,
-              "w": 9,
-              "h": 20
+              "w": 6,
+              "h": 29
             }
           }
         },
@@ -56,8 +56,8 @@
               "h": 4
             },
             "laptop": {
-              "x": 0,
-              "y": 9,
+              "x": 5,
+              "y": 29,
               "w": 1,
               "h": 3
             }
@@ -133,7 +133,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T11:43:05.929Z",
-      "updateAt": "2026-01-03T15:07:29.066Z",
+      "updateAt": "2026-01-03T15:34:44.267Z",
       "viewType": "calendar",
       "newPageNameFormat": "{{date: YYYY-MM-DD}}",
       "properties": [
@@ -221,7 +221,9 @@
       "newPageLocation": {
         "location": "日志"
       },
-      "title": ""
+      "title": "",
+      "defaultTemplate": "388a286a-f0ee-4646-a086-16ff2dd1b541",
+      "loadLimitPerPage": "10"
     },
     {
       "id": "3db0400f-e7b5-4b71-a7d4-4ceed0ede21a",

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "30ccfea9d371f619",
+        "id": "bb0a909f15d257de",
         "type": "tabs",
         "children": [
           {
-            "id": "01fe94d79e685600",
+            "id": "4a2a1e0e6fc3f0f9",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -76,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -201,10 +202,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "01fe94d79e685600",
+  "active": "4a2a1e0e6fc3f0f9",
   "lastOpenFiles": [
-    "日志/2025-12-29.md",
+    "日志/2026-01-03.md",
     "Home.components",
+    "日志/2025-12-29.md",
     "资源/模板/日志模板.md",
     "领域/未命名 2.md",
     "领域/日志.md",
