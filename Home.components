@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-03T15:43:58.069Z",
+      "updateAt": "2026-01-03T15:55:25.834Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -22,8 +22,8 @@
               "h": 4
             },
             "laptop": {
-              "x": 4,
-              "y": 0,
+              "x": 0,
+              "y": 9,
               "w": 2,
               "h": 10
             }
@@ -40,9 +40,9 @@
             },
             "laptop": {
               "x": 6,
-              "y": 0,
+              "y": 11,
               "w": 6,
-              "h": 29
+              "h": 17
             }
           }
         },
@@ -56,8 +56,8 @@
               "h": 4
             },
             "laptop": {
-              "x": 3,
-              "y": 0,
+              "x": 2,
+              "y": 9,
               "w": 1,
               "h": 3
             }
@@ -75,8 +75,25 @@
             "laptop": {
               "x": 0,
               "y": 0,
-              "w": 2,
+              "w": 12,
               "h": 9
+            }
+          }
+        },
+        {
+          "componentId": "f1ee0bdb-da35-4bcd-8ffc-c5efab8a21f1",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 6,
+              "y": 9,
+              "w": 6,
+              "h": 2
             }
           }
         }
@@ -299,12 +316,41 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2026-01-03T15:36:44.702Z",
-      "updateAt": "2026-01-03T15:37:36.236Z",
+      "updateAt": "2026-01-03T15:51:39.883Z",
       "showLunar": false,
       "hideDateInfo": false,
       "hideSeconds": false,
       "hideProgress": false,
-      "semanticTime": false
+      "semanticTime": false,
+      "backgroundImage": {
+        "url": "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg"
+      }
+    },
+    {
+      "id": "f1ee0bdb-da35-4bcd-8ffc-c5efab8a21f1",
+      "type": "card",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-01-03T15:53:09.351Z",
+      "updateAt": "2026-01-03T15:55:04.993Z",
+      "title": "我的一周",
+      "description": "",
+      "coverFit": "cover",
+      "coverPosition": "left",
+      "clickAction": {
+        "type": "CallCommand",
+        "id": "c3a82676-de95-43d8-8e63-e3095010b5bd",
+        "options": {}
+      },
+      "coverCoordinate": {
+        "x": "50%",
+        "y": "50%"
+      },
+      "icon": "AppWindow"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",

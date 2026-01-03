@@ -4,17 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "de3aa0bf8b7e4aa1",
+        "id": "abe20045f06fbe35",
         "type": "tabs",
         "children": [
           {
-            "id": "7419b96847f071f0",
+            "id": "c876ab7bcd28dc4e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
         ]
@@ -74,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 263.5
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -85,77 +87,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e3710b8d5f0272d1",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "反向链接"
-            }
-          },
-          {
-            "id": "05bd23e737c4f387",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "出链"
-            }
-          },
-          {
-            "id": "40a76a11d46b6f41",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "标签"
-            }
-          },
-          {
-            "id": "020d1ea6001cd5ea",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
-            }
-          },
-          {
             "id": "1e293b5dddef94d4",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Home 的大纲"
             }
           },
           {
@@ -169,21 +112,41 @@
             }
           },
           {
-            "id": "3d4d57ea5eb47b7b",
+            "id": "91472d4662430d5d",
             "type": "leaf",
             "state": {
-              "type": "git-history-view",
-              "state": {},
-              "icon": "history",
-              "title": "History"
+              "type": "components-file-view",
+              "state": {
+                "file": "资源/components插件/组件文件/timer.components"
+              },
+              "icon": "clock",
+              "title": "timer"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
+      },
+      {
+        "id": "e6794c363cdb0f03",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7419b96847f071f0",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
+              "state": {
+                "file": "资源/components插件/组件文件/mini-calendar.components"
+              },
+              "icon": "calendar",
+              "title": "mini-calendar"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 223.5
+    "width": 341.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -197,28 +160,28 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1e293b5dddef94d4",
+  "active": "c876ab7bcd28dc4e",
   "lastOpenFiles": [
+    "资源/模板/日志模板.md",
+    "日志/2026-01-03.md",
+    "Home.components",
+    "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
+    "资源/插图",
+    "资源/新建文件夹",
+    "资源/components插件/组件文件/timer.components",
+    "资源/components插件/组件文件/mini-calendar.components",
     "资源/components插件/组件文件",
     "资源/components插件/新建文件夹",
     "资源/components插件/timer.components",
     "资源/components插件/mini-calendar.components",
     "资源/components插件",
-    "资源/组件/timer.components",
-    "资源/组件/mini-calendar.components",
-    "资源/组件",
-    "资源/新建文件夹",
-    "Home.components",
-    "日志/2026-01-03.md",
     "日志/2025-12-29.md",
-    "资源/模板/日志模板.md",
     "领域/未命名 2.md",
     "领域/日志.md",
     "领域/工作.md",
     "领域/个人项目.md",
     "领域/未命名 4.md",
     "领域/未命名 3.md",
-    "领域",
     "资源/模板/journal-template.md",
     "首页.md"
   ]
