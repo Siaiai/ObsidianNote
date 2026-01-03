@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "bb0a909f15d257de",
+        "id": "de3aa0bf8b7e4aa1",
         "type": "tabs",
         "children": [
           {
-            "id": "4a2a1e0e6fc3f0f9",
+            "id": "7419b96847f071f0",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
-              "state": {
-                "file": "Home.components"
-              },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -76,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -153,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -168,8 +164,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -178,17 +174,16 @@
             "state": {
               "type": "git-history-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-history-view"
+              "icon": "history",
+              "title": "History"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 402.5,
-    "collapsed": true
+    "width": 223.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,10 +197,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4a2a1e0e6fc3f0f9",
+  "active": "1e293b5dddef94d4",
   "lastOpenFiles": [
-    "日志/2026-01-03.md",
+    "资源/components插件/组件文件",
+    "资源/components插件/新建文件夹",
+    "资源/components插件/timer.components",
+    "资源/components插件/mini-calendar.components",
+    "资源/components插件",
+    "资源/组件/timer.components",
+    "资源/组件/mini-calendar.components",
+    "资源/组件",
+    "资源/新建文件夹",
     "Home.components",
+    "日志/2026-01-03.md",
     "日志/2025-12-29.md",
     "资源/模板/日志模板.md",
     "领域/未命名 2.md",
@@ -216,14 +220,6 @@
     "领域/未命名 3.md",
     "领域",
     "资源/模板/journal-template.md",
-    "资源",
-    "资源/模板",
-    "日志",
-    "首页.md",
-    "个人项目",
-    "学习",
-    "生活",
-    "工作",
-    "看板"
+    "首页.md"
   ]
 }

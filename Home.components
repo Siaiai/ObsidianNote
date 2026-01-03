@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-03T15:35:01.930Z",
+      "updateAt": "2026-01-03T15:43:58.069Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -22,10 +22,10 @@
               "h": 4
             },
             "laptop": {
-              "x": 2,
-              "y": 29,
-              "w": 3,
-              "h": 9
+              "x": 4,
+              "y": 0,
+              "w": 2,
+              "h": 10
             }
           }
         },
@@ -39,7 +39,7 @@
               "h": 4
             },
             "laptop": {
-              "x": 0,
+              "x": 6,
               "y": 0,
               "w": 6,
               "h": 29
@@ -51,15 +51,32 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 0,
+              "y": 8,
               "w": 4,
               "h": 4
             },
             "laptop": {
-              "x": 5,
-              "y": 29,
+              "x": 3,
+              "y": 0,
               "w": 1,
               "h": 3
+            }
+          }
+        },
+        {
+          "componentId": "d1d1a0d9-720f-40ca-9350-9416364f7e6b",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 12,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 0,
+              "y": 0,
+              "w": 2,
+              "h": 9
             }
           }
         }
@@ -271,6 +288,23 @@
         }
       },
       "title": "📚领域"
+    },
+    {
+      "id": "d1d1a0d9-720f-40ca-9350-9416364f7e6b",
+      "type": "time",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-01-03T15:36:44.702Z",
+      "updateAt": "2026-01-03T15:37:36.236Z",
+      "showLunar": false,
+      "hideDateInfo": false,
+      "hideSeconds": false,
+      "hideProgress": false,
+      "semanticTime": false
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
