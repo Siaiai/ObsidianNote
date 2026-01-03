@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1777b757ac0e0859",
+        "id": "cc8e0b94e3dac055",
         "type": "tabs",
         "children": [
           {
-            "id": "d4b8d2e884561a73",
+            "id": "96e31308a5dc87e2",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -160,21 +160,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d4b8d2e884561a73",
+  "active": "96e31308a5dc87e2",
   "lastOpenFiles": [
-    "资源/form-flow插件/form/🚀 Project.cform",
+    "资源/form-flow插件/form/工作项目-代码.cform",
     "Home.components",
     "工作/项目/260104w.md",
+    "资源/模板/日志模板-day.md",
+    "工作/项目/260104m.md",
     "工作/项目/260104nihao.md",
     "工作/项目",
     "领域/工作.md",
     "领域/日志.md",
     "领域/学习.md",
     "领域/个人项目.md",
-    "资源/form-flow插件/form/工作项目.cform",
     "资源/form-flow插件/form",
     "资源/form-flow插件",
-    "资源/模板/日志模板-day.md",
     "资源/模板/工作模板-Project.md",
     "领域/生活.md",
     "领域",

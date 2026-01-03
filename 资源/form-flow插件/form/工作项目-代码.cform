@@ -25,6 +25,11 @@
       "enableDescription": false,
       "defaultValue": "",
       "required": true
+    },
+    {
+      "id": "17236835-4ad1-4f20-931d-dd1c090f8d16",
+      "label": "type",
+      "type": "text"
     }
   ],
   "actions": [
@@ -34,7 +39,7 @@
       "fileName": "",
       "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
       "filePath": "工作/项目/{{date:YYMMDD}}{{@项目名称}}.md",
-      "content": "---\narea: \"[[工作]]\"\nstatus: {{@status}}\ncreateTime: {{date:YYYY-MM-DDTHH:mm:ss}}\ndeadline: {{@deadline}}\ndoneTime:\ntags:\n  - project\n---\n",
+      "content": "---\narea: \"[[工作]]\"\nstatus: {{@status}}\ncreateTime: {{date:YYYY-MM-DDTHH:mm:ss}}\ndeadline: {{@deadline}}\ndoneTime:\ntags:\n  - project\n  - code\ntype:\n - {{@type}}\n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
       "contentTemplateSource": "text"
     }
   ],
