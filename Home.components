@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-03T15:55:25.834Z",
+      "updateAt": "2026-01-03T16:01:01.508Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -85,7 +85,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 0,
+              "y": 16,
               "w": 4,
               "h": 4
             },
@@ -314,14 +314,14 @@
       "maxWidthRatio": -1,
       "showBorder": false,
       "showTitle": true,
-      "showShadow": true,
+      "showShadow": false,
       "createAt": "2026-01-03T15:36:44.702Z",
-      "updateAt": "2026-01-03T15:51:39.883Z",
-      "showLunar": false,
-      "hideDateInfo": false,
+      "updateAt": "2026-01-03T15:57:28.493Z",
+      "showLunar": true,
+      "hideDateInfo": true,
       "hideSeconds": false,
       "hideProgress": false,
-      "semanticTime": false,
+      "semanticTime": true,
       "backgroundImage": {
         "url": "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg"
       }
