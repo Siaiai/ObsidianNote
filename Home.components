@@ -476,13 +476,45 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-03T20:23:35.327Z",
+      "updateAt": "2026-01-03T20:48:37.690Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
         {
           "id": "__componentsTitleProperty_0x7c00",
           "name": "文件名",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        },
+        {
+          "id": "326df963-eba3-4842-88be-8a068ecb1eb5",
+          "name": "status",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        },
+        {
+          "id": "bfabd792-204e-44fd-b10d-cfdb0ee7c1e2",
+          "name": "createTime",
+          "type": "datetime",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        },
+        {
+          "id": "9a653a35-c4f3-4475-b23f-16a0a51d3095",
+          "name": "deadline",
+          "type": "datetime",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        },
+        {
+          "id": "1b4886d1-9fe7-4df5-8064-7c23ec18d8d1",
+          "name": "doneTime",
           "type": "text",
           "isShow": true,
           "wrap": false,
@@ -503,11 +535,11 @@
         "openPageIn": "modal",
         "openPageAfterCreate": true,
         "itemSize": "components--page-card-medium",
-        "showPropertyName": false,
+        "showPropertyName": true,
         "showAllProperties": false,
         "items": [],
         "cover": {
-          "type": "textContent",
+          "type": "none",
           "source": "default",
           "fit": "contains",
           "layout": "components--page-card-cover-landscape",
