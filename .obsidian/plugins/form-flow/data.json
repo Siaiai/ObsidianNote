@@ -1,5 +1,5 @@
 {
-  "formFolder": "assets/form-flow/form",
-  "scriptFolder": "assets/form-flow/script",
+  "formFolder": "资源/form-flow插件/form",
+  "scriptFolder": "资源/form-flow插件script",
   "formIntegrations": {}
 }
