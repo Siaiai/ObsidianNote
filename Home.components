@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-03T17:01:22.908Z",
+      "updateAt": "2026-01-03T19:35:34.939Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -94,6 +94,23 @@
               "y": 9,
               "w": 6,
               "h": 2
+            }
+          }
+        },
+        {
+          "componentId": "fe79e9b3-6b6f-474b-9231-2990e2752e1f",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 0,
+              "y": 19,
+              "w": 6,
+              "h": 33
             }
           }
         }
@@ -351,6 +368,133 @@
         "y": "50%"
       },
       "icon": "AppWindow"
+    },
+    {
+      "id": "fe79e9b3-6b6f-474b-9231-2990e2752e1f",
+      "type": "multi",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-01-03T19:35:17.901Z",
+      "updateAt": "2026-01-03T19:35:17.901Z",
+      "components": [
+        {
+          "componentId": "7b4fa2d2-1ffb-4d4d-8652-ee12279b5428"
+        },
+        {
+          "componentId": "f21d88cf-ed8c-413c-baa5-bceb3e0936b6"
+        }
+      ],
+      "layoutType": "tab",
+      "locked": false,
+      "layoutOptions": {}
+    },
+    {
+      "id": "7b4fa2d2-1ffb-4d4d-8652-ee12279b5428",
+      "type": "dynamicDataView",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-01-03T19:35:48.904Z",
+      "updateAt": "2026-01-03T19:37:40.911Z",
+      "viewType": "kanban",
+      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
+      "properties": [
+        {
+          "id": "__componentsTitleProperty_0x7c00",
+          "name": "文件名",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        }
+      ],
+      "templates": [],
+      "groups": [],
+      "colorfulGroups": false,
+      "viewOptions": {
+        "openPageIn": "tab",
+        "openPageAfterCreate": true,
+        "items": [],
+        "pinFiltersToMenuBar": false,
+        "hideHeaderMenu": false,
+        "showGrid": false,
+        "heightType": "auto",
+        "heightValue": 600
+      },
+      "groupStates": {
+        "sort": "nameAsc",
+        "statics": [],
+        "orders": [],
+        "hiddens": [],
+        "collapseds": []
+      },
+      "title": "工作看板",
+      "filter": {
+        "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
+        "type": "group",
+        "operator": "and",
+        "conditions": [
+          {
+            "id": "9e8490d4-131e-40b6-b212-3d0318fbcf48",
+            "type": "filter",
+            "operator": "contains",
+            "property": "tags",
+            "value": "工作",
+            "conditions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "f21d88cf-ed8c-413c-baa5-bceb3e0936b6",
+      "type": "dynamicDataView",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-01-03T19:35:51.756Z",
+      "updateAt": "2026-01-03T19:35:51.756Z",
+      "viewType": "table",
+      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
+      "properties": [
+        {
+          "id": "__componentsTitleProperty_0x7c00",
+          "name": "文件名",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        }
+      ],
+      "templates": [],
+      "groups": [],
+      "colorfulGroups": false,
+      "viewOptions": {
+        "openPageIn": "tab",
+        "openPageAfterCreate": true,
+        "items": [],
+        "pinFiltersToMenuBar": false,
+        "hideHeaderMenu": false,
+        "showGrid": false,
+        "heightType": "auto",
+        "heightValue": 600
+      },
+      "groupStates": {
+        "sort": "nameAsc",
+        "statics": [],
+        "orders": [],
+        "hiddens": [],
+        "collapseds": []
+      }
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
