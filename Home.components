@@ -476,7 +476,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-03T19:44:16.397Z",
+      "updateAt": "2026-01-03T20:16:03.492Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -493,9 +493,19 @@
       "groups": [],
       "colorfulGroups": false,
       "viewOptions": {
-        "openPageIn": "tab",
+        "openPageIn": "modal",
         "openPageAfterCreate": true,
+        "itemSize": "components--page-card-medium",
+        "showPropertyName": false,
+        "showAllProperties": false,
         "items": [],
+        "cover": {
+          "type": "textContent",
+          "source": "default",
+          "fit": "contains",
+          "layout": "components--page-card-cover-landscape",
+          "position": "top"
+        },
         "pinFiltersToMenuBar": false,
         "hideHeaderMenu": false,
         "showGrid": false,
@@ -520,7 +530,15 @@
             "type": "filter",
             "operator": "contains",
             "property": "tags",
-            "value": "工作",
+            "value": "project",
+            "conditions": []
+          },
+          {
+            "id": "a0ef27ea-8832-4534-8580-9434a4de7468",
+            "type": "filter",
+            "operator": "contains",
+            "property": "area",
+            "value": "[[工作]]",
             "conditions": []
           }
         ]

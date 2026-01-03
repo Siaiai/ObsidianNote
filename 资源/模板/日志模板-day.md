@@ -1,7 +1,7 @@
 ---
 area: "[[日志]]"
 tags:
-  - 日志
+  - day
 createTime: "{{date:YYYY-MM-DD HH:mm:ss}}"
 ---
 ## 执行清单

@@ -11,12 +11,14 @@
             "id": "b8384871b2d9f450",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "markdown",
               "state": {
-                "file": "Home.components"
+                "file": "资源/模板/工作模板-Project.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "工作模板-Project"
             }
           }
         ]
@@ -92,13 +94,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "资源/模板/工作模板-Project.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "工作模板-Project 的大纲"
             }
           },
           {
@@ -162,9 +164,9 @@
   },
   "active": "b8384871b2d9f450",
   "lastOpenFiles": [
-    "资源/模板/工作模板.md",
-    "资源/模板/日志模板.md",
+    "资源/模板/日志模板-day.md",
     "Home.components",
+    "资源/模板/工作模板-Project.md",
     "领域/工作.md",
     "领域/学习.md",
     "领域/生活.md",
