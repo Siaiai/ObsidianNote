@@ -269,7 +269,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T11:43:05.929Z",
-      "updateAt": "2026-01-03T19:46:02.615Z",
+      "updateAt": "2026-01-04T07:34:24.316Z",
       "viewType": "calendar",
       "newPageNameFormat": "{{date: YYYY-MM-DD}}",
       "properties": [
@@ -300,17 +300,17 @@
       ],
       "templates": [
         {
-          "id": "388a286a-f0ee-4646-a086-16ff2dd1b541",
-          "path": "资源/模板/日志模板.md",
-          "name": "日志模板.md",
+          "id": "c008e728-8213-487c-954d-1219677cd694",
+          "path": "资源/模板/日志模板-day.md",
+          "name": "日志模板-day.md",
           "type": "normal"
         }
       ],
       "groups": [],
       "colorfulGroups": false,
       "viewOptions": {
-        "openPageIn": "tab",
-        "openPageAfterCreate": true,
+        "openPageIn": "modal",
+        "openPageAfterCreate": false,
         "itemSize": "components--page-card-medium",
         "showPropertyName": false,
         "showAllProperties": false,
@@ -323,7 +323,7 @@
           "position": "top"
         },
         "pinFiltersToMenuBar": false,
-        "hideHeaderMenu": true,
+        "hideHeaderMenu": false,
         "showGrid": false,
         "heightType": "auto",
         "heightValue": 600,
@@ -348,8 +348,8 @@
             "id": "2e667aa6-8adf-40f3-a148-7a29635147f7",
             "type": "filter",
             "operator": "contains",
-            "property": "${file.tags}",
-            "value": "#日志",
+            "property": "area",
+            "value": "[[日志]]",
             "conditions": []
           }
         ]
@@ -358,7 +358,7 @@
         "location": "日志"
       },
       "title": "",
-      "defaultTemplate": "388a286a-f0ee-4646-a086-16ff2dd1b541",
+      "defaultTemplate": "c008e728-8213-487c-954d-1219677cd694",
       "loadLimitPerPage": "10"
     },
     {
