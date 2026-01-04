@@ -1,0 +1,33 @@
+{
+  "id": "b0120671-ce2e-4b46-bffc-ee3b2abf50d4",
+  "fields": [
+    {
+      "id": "a5b0bbb0-e26e-4b9c-81fb-7be3ce182dfd",
+      "label": "项目名称",
+      "type": "text",
+      "required": true,
+      "defaultValue": [],
+      "enableDescription": true,
+      "description": "要做什么？一句话说清楚"
+    },
+    {
+      "id": "4493a638-d8c4-489d-ba98-750879b4a3d5",
+      "label": "status",
+      "type": "property_value_suggestion",
+      "propertyName": "status",
+      "defaultValue": "DOING"
+    }
+  ],
+  "actions": [
+    {
+      "type": "createFile",
+      "targetFolder": "",
+      "fileName": "",
+      "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
+      "filePath": "个人/生活/{{date:YYMMDD}}{{@项目名称}}.md",
+      "content": "---\narea: \"[[生活]]\"\nstatus: {{@status}}\ncreateTime: {{date:YYYY-MM-DD HH:mm:ss}}\ndoneTime:\ntags:\n  - project\ntype: project\n---\n\n## 待办列表",
+      "contentTemplateSource": "text"
+    }
+  ],
+  "autoSubmit": false
+}

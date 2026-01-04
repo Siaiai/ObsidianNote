@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6d0be4b7a33827e1",
+        "id": "5e6749715f21e7b3",
         "type": "tabs",
         "children": [
           {
-            "id": "685719fafc5a4a3e",
+            "id": "ca7318bb9cfad3b0",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -160,19 +160,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "685719fafc5a4a3e",
+  "active": "ca7318bb9cfad3b0",
   "lastOpenFiles": [
-    "个人/项目/260104Obsidian优化.md",
-    "Home.components",
+    "资源/form-flow插件/form/生活.cform",
+    "资源/form-flow插件/form/输出.cform",
+    "资源/form-flow插件/form/兴趣探索.cform",
+    "资源/form-flow插件/form/学习.cform",
     "资源/form-flow插件/form/个人项目-代码.cform",
+    "资源/form-flow插件/form/工作项目-代码.cform",
     "资源/form-flow插件/form/个人项目.cform",
+    "领域/输出.md",
+    "领域/个人.md",
+    "领域/工作.md",
+    "领域/兴趣探索.md",
+    "领域/未命名.md",
+    "Home.components",
+    "个人/项目/260104Obsidian优化.md",
     "资源/模板/日志模板-day.md",
     "日志/2026-01-04.md",
     "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
-    "领域/个人.md",
     "领域/日志.md",
     "().md",
-    "资源/form-flow插件/form/工作项目-代码.cform",
     "个人/项目/代码/260104www.md",
     "个人/项目/代码/260104WWWWWW.md",
     "个人/项目/260104w.md",
@@ -181,22 +189,15 @@
     "个人/项目",
     "工作/项目/代码/260104WWWWWWWWWWWWWWWWWWWWWWWWWWWWW.md",
     "工作/项目/代码",
-    "领域/工作.md",
     "领域/个人项目.md",
     "工作/项目/260104w.md",
     "工作/项目/2601042.md",
     "工作/项目/260104m.md",
     "工作/项目/260104nihao.md",
-    "工作/项目",
     "领域/学习.md",
-    "资源/form-flow插件/form",
-    "资源/form-flow插件",
     "资源/模板/工作模板-Project.md",
     "领域/生活.md",
     "日志/2026-01-03.md",
-    "日志/2025-12-29.md",
-    "领域/未命名 4.md",
-    "资源/模板/journal-template.md",
-    "首页.md"
+    "日志/2025-12-29.md"
   ]
 }
