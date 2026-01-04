@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-04T07:23:54.199Z",
+      "updateAt": "2026-01-04T07:47:07.766Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -91,7 +91,7 @@
             },
             "laptop": {
               "x": 5,
-              "y": 14,
+              "y": 12,
               "w": 1,
               "h": 4
             }
@@ -110,7 +110,7 @@
               "x": 5,
               "y": 9,
               "w": 1,
-              "h": 5
+              "h": 3
             }
           }
         },
@@ -371,8 +371,8 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2026-01-03T19:56:43.706Z",
-      "countValueAlign": "left",
+      "updateAt": "2026-01-04T07:47:01.275Z",
+      "countValueAlign": "center",
       "contentPrefix": "",
       "contentSuffix": "",
       "countType": "number",
@@ -496,7 +496,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-03T21:14:27.567Z",
+      "updateAt": "2026-01-04T07:42:07.630Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -618,9 +618,9 @@
       ],
       "templates": [
         {
-          "id": "05221eb6-9dd6-4a78-8a03-1355946cff23",
-          "path": "资源/模板/工作模板-Project.md",
-          "name": "工作模板-Project.md",
+          "id": "9f1fe148-1cb8-467f-9cff-0876900fdfb6",
+          "path": "资源/form-flow插件/form/工作项目-代码.cform",
+          "name": "工作项目-代码.cform",
           "type": "normal"
         }
       ],
@@ -650,7 +650,7 @@
       "colorfulGroups": false,
       "viewOptions": {
         "openPageIn": "modal",
-        "openPageAfterCreate": true,
+        "openPageAfterCreate": false,
         "itemSize": "components--page-card-small",
         "showPropertyName": false,
         "showAllProperties": false,
@@ -719,10 +719,13 @@
         ]
       },
       "groupBy": "status",
-      "defaultTemplate": "05221eb6-9dd6-4a78-8a03-1355946cff23",
+      "defaultTemplate": "9f1fe148-1cb8-467f-9cff-0876900fdfb6",
       "loadLimitPerPage": "10",
       "sort": {
         "orders": []
+      },
+      "newPageLocation": {
+        "location": "工作"
       }
     },
     {
@@ -735,8 +738,8 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2025-12-29T14:54:42.693Z",
-      "countValueAlign": "left",
+      "updateAt": "2026-01-04T07:46:56.857Z",
+      "countValueAlign": "center",
       "contentPrefix": "",
       "contentSuffix": "",
       "countType": "number",
@@ -749,12 +752,21 @@
           "id": "2edd47db-9933-43da-983e-40a73c7b1564",
           "type": "group",
           "operator": "and",
-          "conditions": []
+          "conditions": [
+            {
+              "id": "d305b7c4-a766-474c-b4e6-286e146ac3d5",
+              "type": "filter",
+              "operator": "contains",
+              "property": "area",
+              "value": "[[日志]]",
+              "conditions": []
+            }
+          ]
         },
         "sort": {
           "orders": []
         },
-        "property": "tags",
+        "property": "area",
         "aggregationType": "uniqueCount"
       },
       "totalQuery": {
@@ -770,7 +782,7 @@
           "orders": []
         }
       },
-      "title": "📚领域"
+      "title": "🌟我的日志"
     },
     {
       "id": "b232c077-4831-4355-a33c-11c5a5f43362",
@@ -902,7 +914,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-04T07:22:26.267Z",
+      "updateAt": "2026-01-04T07:42:22.824Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -1024,9 +1036,15 @@
       ],
       "templates": [
         {
-          "id": "05221eb6-9dd6-4a78-8a03-1355946cff23",
-          "path": "资源/模板/工作模板-Project.md",
-          "name": "工作模板-Project.md",
+          "id": "604ea4da-41ff-4369-bd68-4e67fa4a1837",
+          "path": "资源/form-flow插件/form/个人项目.cform",
+          "name": "个人项目.cform",
+          "type": "normal"
+        },
+        {
+          "id": "e23f9d7f-3572-492f-9b26-498c96363983",
+          "path": "资源/form-flow插件/form/工作项目-代码.cform",
+          "name": "工作项目-代码.cform",
           "type": "normal"
         }
       ],
@@ -1056,7 +1074,7 @@
       "colorfulGroups": false,
       "viewOptions": {
         "openPageIn": "modal",
-        "openPageAfterCreate": true,
+        "openPageAfterCreate": false,
         "itemSize": "components--page-card-small",
         "showPropertyName": false,
         "showAllProperties": false,
@@ -1125,10 +1143,13 @@
         ]
       },
       "groupBy": "status",
-      "defaultTemplate": "05221eb6-9dd6-4a78-8a03-1355946cff23",
+      "defaultTemplate": "e23f9d7f-3572-492f-9b26-498c96363983",
       "loadLimitPerPage": "10",
       "sort": {
         "orders": []
+      },
+      "newPageLocation": {
+        "location": "个人"
       }
     },
     {
@@ -1139,9 +1160,9 @@
       "maxWidthRatio": -1,
       "showBorder": false,
       "showTitle": true,
-      "showShadow": false,
+      "showShadow": true,
       "createAt": "2026-01-04T07:23:05.252Z",
-      "updateAt": "2026-01-04T07:23:05.252Z",
+      "updateAt": "2026-01-04T07:43:48.236Z",
       "components": [
         {
           "componentId": "df05800c-9df1-427e-95d8-a3393ef5ce90"
@@ -1161,7 +1182,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-01-04T07:26:12.700Z",
+      "updateAt": "2026-01-04T07:44:57.529Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1180,14 +1201,14 @@
       "viewOptions": {
         "openPageIn": "tab",
         "openPageAfterCreate": true,
-        "itemSize": "components--page-card-small",
+        "itemSize": "components--page-card-tiny",
         "showPropertyName": false,
         "showAllProperties": false,
         "items": [],
         "cover": {
           "type": "image",
           "source": "firstImageInNote",
-          "fit": "contains",
+          "fit": "cover",
           "layout": "components--page-card-cover-landscape",
           "position": "top"
         },
