@@ -8,3 +8,7 @@ tags:
   - project
 type: project
 ---
+
+## 待办列表
+- [x] 实现基础功能
+- [ ] 购买插件

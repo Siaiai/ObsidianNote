@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f2a411fa8ebeacb4",
+        "id": "6d0be4b7a33827e1",
         "type": "tabs",
         "children": [
           {
-            "id": "bc02855a5d965f4d",
+            "id": "685719fafc5a4a3e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "components-file-view",
               "state": {
-                "file": "个人/项目/260104Obsidian优化.md",
-                "mode": "source",
-                "source": false
+                "file": "Home.components"
               },
-              "icon": "lucide-file",
-              "title": "260104Obsidian优化"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
         ]
@@ -94,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "个人/项目/260104Obsidian优化.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "260104Obsidian优化 的大纲"
+              "title": "Home 的大纲"
             }
           },
           {
@@ -162,9 +160,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bc02855a5d965f4d",
+  "active": "685719fafc5a4a3e",
   "lastOpenFiles": [
+    "个人/项目/260104Obsidian优化.md",
     "Home.components",
+    "资源/form-flow插件/form/个人项目-代码.cform",
     "资源/form-flow插件/form/个人项目.cform",
     "资源/模板/日志模板-day.md",
     "日志/2026-01-04.md",
@@ -172,8 +172,6 @@
     "领域/个人.md",
     "领域/日志.md",
     "().md",
-    "个人/项目/260104Obsidian优化.md",
-    "资源/form-flow插件/form/个人项目-代码.cform",
     "资源/form-flow插件/form/工作项目-代码.cform",
     "个人/项目/代码/260104www.md",
     "个人/项目/代码/260104WWWWWW.md",
