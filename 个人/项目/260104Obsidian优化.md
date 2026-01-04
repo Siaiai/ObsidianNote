@@ -5,7 +5,7 @@ createTime: 2026-01-04 19:40:31
 deadline: 2026-12-31
 doneTime:
 tags:
-  - project
+  - mainproject
 type: project
 ---
 
@@ -17,3 +17,4 @@ type: project
 - [ ] 项目与子项关联
 - [ ] 增加大看板实现首页简略和具体详细
 - [ ] 完善甘特图
+- [ ] 大项目看板
