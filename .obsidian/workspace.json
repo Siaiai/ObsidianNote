@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "20bbf8edf1c6bdb2",
+        "id": "f2a411fa8ebeacb4",
         "type": "tabs",
         "children": [
           {
-            "id": "3b765a42fc4c2824",
+            "id": "bc02855a5d965f4d",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "markdown",
               "state": {
-                "file": "Home.components"
+                "file": "个人/项目/260104Obsidian优化.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "260104Obsidian优化"
             }
           }
         ]
@@ -92,13 +94,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "个人/项目/260104Obsidian优化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "260104Obsidian优化 的大纲"
             }
           },
           {
@@ -160,13 +162,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3b765a42fc4c2824",
+  "active": "bc02855a5d965f4d",
   "lastOpenFiles": [
-    "日志/2026-01-04.md",
     "Home.components",
-    "资源/模板/日志模板-day.md",
-    "个人/项目/260104Obsidian优化.md",
     "资源/form-flow插件/form/个人项目.cform",
+    "资源/模板/日志模板-day.md",
+    "日志/2026-01-04.md",
+    "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
+    "领域/个人.md",
+    "领域/日志.md",
+    "().md",
+    "个人/项目/260104Obsidian优化.md",
     "资源/form-flow插件/form/个人项目-代码.cform",
     "资源/form-flow插件/form/工作项目-代码.cform",
     "个人/项目/代码/260104www.md",
@@ -177,7 +183,6 @@
     "个人/项目",
     "工作/项目/代码/260104WWWWWWWWWWWWWWWWWWWWWWWWWWWWW.md",
     "工作/项目/代码",
-    "领域/个人.md",
     "领域/工作.md",
     "领域/个人项目.md",
     "工作/项目/260104w.md",
@@ -185,14 +190,12 @@
     "工作/项目/260104m.md",
     "工作/项目/260104nihao.md",
     "工作/项目",
-    "领域/日志.md",
     "领域/学习.md",
     "资源/form-flow插件/form",
     "资源/form-flow插件",
     "资源/模板/工作模板-Project.md",
     "领域/生活.md",
     "日志/2026-01-03.md",
-    "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "日志/2025-12-29.md",
     "领域/未命名 4.md",
     "资源/模板/journal-template.md",

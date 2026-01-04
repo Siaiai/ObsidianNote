@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-04T11:43:12.895Z",
+      "updateAt": "2026-01-04T11:57:39.306Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -170,7 +170,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 36,
+              "y": 40,
               "w": 4,
               "h": 4
             },
@@ -187,7 +187,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 36,
+              "y": 44,
               "w": 4,
               "h": 4
             },
@@ -204,7 +204,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 36,
+              "y": 48,
               "w": 4,
               "h": 4
             },
@@ -221,7 +221,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 40,
+              "y": 52,
               "w": 4,
               "h": 4
             },
@@ -1283,7 +1283,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-01-04T11:50:46.229Z",
+      "updateAt": "2026-01-04T12:00:04.303Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1311,7 +1311,8 @@
           "source": "firstImageInNote",
           "fit": "cover",
           "layout": "components--page-card-cover-landscape",
-          "position": "top"
+          "position": "top",
+          "sourceValue": "https://t.alcy.cc/"
         },
         "pinFiltersToMenuBar": false,
         "hideHeaderMenu": true,
@@ -1322,7 +1323,9 @@
       "groupStates": {
         "sort": "nameAsc",
         "format": "none",
-        "statics": [],
+        "statics": [
+          "__$uncategorizedGroup"
+        ],
         "orders": [],
         "hiddens": [
           "__$uncategorizedGroup"
