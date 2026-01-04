@@ -24,7 +24,7 @@
       "targetFolder": "",
       "fileName": "",
       "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
-      "filePath": "个人/学习/{{date:YYMMDD}}{{@项目名称}}.md",
+      "filePath": "学习/{{date:YYMMDD}}{{@项目名称}}.md",
       "content": "---\narea: \"[[学习]]\"\nstatus: {{@status}}\ncreateTime: {{date:YYYY-MM-DD HH:mm:ss}}\ndoneTime:\ntags:\n  - study\ntype: project\n---\n\n## 待办列表",
       "contentTemplateSource": "text"
     }

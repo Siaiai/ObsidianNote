@@ -1067,10 +1067,10 @@
       "tabTitle": "",
       "maxWidthRatio": -1,
       "showBorder": false,
-      "showTitle": true,
+      "showTitle": false,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-04T12:23:35.954Z",
+      "updateAt": "2026-01-04T12:40:43.983Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -1079,7 +1079,7 @@
           "name": "文件名",
           "type": "text",
           "isShow": true,
-          "wrap": false,
+          "wrap": true,
           "options": {}
         },
         {
@@ -1231,16 +1231,17 @@
       "viewOptions": {
         "openPageIn": "modal",
         "openPageAfterCreate": false,
-        "itemSize": "components--page-card-small",
+        "itemSize": "components--page-card-tiny",
         "showPropertyName": false,
         "showAllProperties": false,
         "items": [],
         "cover": {
           "type": "none",
-          "source": "default",
+          "source": "property",
           "fit": "contains",
           "layout": "components--page-card-cover-landscape",
-          "position": "top"
+          "position": "top",
+          "sourceValue": "${file.basename}"
         },
         "pinFiltersToMenuBar": false,
         "hideHeaderMenu": false,
@@ -1275,9 +1276,12 @@
           {
             "id": "a0ef27ea-8832-4534-8580-9434a4de7468",
             "type": "filter",
-            "operator": "contains",
+            "operator": "contains_any",
             "property": "area",
-            "value": "[[个人]]",
+            "value": [
+              "[[个人]]",
+              "[[兴趣探索]]"
+            ],
             "conditions": []
           },
           {
