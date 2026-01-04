@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-04T07:47:07.766Z",
+      "updateAt": "2026-01-04T08:04:04.071Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -76,7 +76,7 @@
               "x": 4,
               "y": 12,
               "w": 1,
-              "h": 6
+              "h": 3
             }
           }
         },
@@ -93,7 +93,7 @@
               "x": 5,
               "y": 12,
               "w": 1,
-              "h": 4
+              "h": 3
             }
           }
         },
@@ -371,7 +371,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2026-01-04T07:47:01.275Z",
+      "updateAt": "2026-01-04T08:01:01.843Z",
       "countValueAlign": "center",
       "contentPrefix": "",
       "contentSuffix": "",
@@ -379,7 +379,7 @@
       "precision": 0,
       "uiType": "raw",
       "query": {
-        "valueType": "propertyValue",
+        "valueType": "totalRecords",
         "value": 100,
         "filter": {
           "id": "2edd47db-9933-43da-983e-40a73c7b1564",
@@ -496,7 +496,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-04T07:42:07.630Z",
+      "updateAt": "2026-01-04T07:59:42.903Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -643,7 +643,7 @@
           "id": "TODO",
           "name": "TODO",
           "items": [
-            "工作/项目/260104w.md"
+            "工作/项目/代码/260104W.md"
           ]
         }
       ],
@@ -738,7 +738,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2026-01-04T07:46:56.857Z",
+      "updateAt": "2026-01-04T08:01:05.196Z",
       "countValueAlign": "center",
       "contentPrefix": "",
       "contentSuffix": "",
@@ -746,7 +746,7 @@
       "precision": 0,
       "uiType": "raw",
       "query": {
-        "valueType": "propertyValue",
+        "valueType": "totalRecords",
         "value": 100,
         "filter": {
           "id": "2edd47db-9933-43da-983e-40a73c7b1564",
@@ -794,21 +794,38 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2026-01-04T07:57:58.775Z",
-      "countValueAlign": "left",
+      "updateAt": "2026-01-04T08:01:08.206Z",
+      "countValueAlign": "center",
       "contentPrefix": "",
       "contentSuffix": "",
       "countType": "number",
       "precision": 0,
       "uiType": "raw",
       "query": {
-        "valueType": "propertyValue",
+        "valueType": "totalRecords",
         "value": 100,
         "filter": {
           "id": "2edd47db-9933-43da-983e-40a73c7b1564",
           "type": "group",
           "operator": "and",
-          "conditions": []
+          "conditions": [
+            {
+              "id": "ac8fce61-ae2a-4fc3-9c8e-233c0d78e7f9",
+              "type": "filter",
+              "operator": "contains",
+              "property": "tags",
+              "value": "code",
+              "conditions": []
+            },
+            {
+              "id": "bb4d2a3b-a078-48d0-89fe-351a27db6946",
+              "type": "filter",
+              "operator": "not_equals",
+              "property": "status",
+              "value": "DONE",
+              "conditions": []
+            }
+          ]
         },
         "sort": {
           "orders": []
@@ -841,26 +858,35 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2025-12-29T14:54:42.693Z",
-      "countValueAlign": "left",
+      "updateAt": "2026-01-04T08:04:45.683Z",
+      "countValueAlign": "center",
       "contentPrefix": "",
       "contentSuffix": "",
       "countType": "number",
       "precision": 0,
       "uiType": "raw",
       "query": {
-        "valueType": "propertyValue",
+        "valueType": "totalRecords",
         "value": 100,
         "filter": {
           "id": "2edd47db-9933-43da-983e-40a73c7b1564",
           "type": "group",
           "operator": "and",
-          "conditions": []
+          "conditions": [
+            {
+              "id": "d05580ce-7c6d-4759-b915-9c50c36d0559",
+              "type": "filter",
+              "operator": "equals",
+              "property": "tags",
+              "value": "project",
+              "conditions": []
+            }
+          ]
         },
         "sort": {
           "orders": []
         },
-        "property": "tags",
+        "property": "",
         "aggregationType": "uniqueCount"
       },
       "totalQuery": {
@@ -876,7 +902,7 @@
           "orders": []
         }
       },
-      "title": "📚领域"
+      "title": "📑在做项目"
     },
     {
       "id": "17532a4a-de29-4fe6-8e0e-58c0827cb529",
