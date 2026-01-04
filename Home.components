@@ -738,7 +738,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2026-01-04T08:01:05.196Z",
+      "updateAt": "2026-01-04T11:39:29.113Z",
       "countValueAlign": "center",
       "contentPrefix": "",
       "contentSuffix": "",
@@ -759,6 +759,14 @@
               "operator": "contains",
               "property": "area",
               "value": "[[日志]]",
+              "conditions": []
+            },
+            {
+              "id": "8808e97b-9072-47e5-8037-b747cc3e5055",
+              "type": "filter",
+              "operator": "not_equals",
+              "property": "${file.parent}",
+              "value": "资源/模板",
               "conditions": []
             }
           ]
@@ -1290,7 +1298,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T11:22:16.268Z",
-      "updateAt": "2026-01-04T11:28:01.874Z",
+      "updateAt": "2026-01-04T11:37:51.848Z",
       "viewType": "timeline",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1300,6 +1308,38 @@
           "type": "text",
           "isShow": true,
           "wrap": false,
+          "options": {}
+        },
+        {
+          "id": "cb294c13-5145-4030-a21e-9d237da8babd",
+          "name": "status",
+          "isShow": true,
+          "type": "select",
+          "options": {
+            "items": [
+              {
+                "id": "40931d49-0b7f-440e-9df7-18d744c57898",
+                "value": "TODO",
+                "color": "components--color-red"
+              },
+              {
+                "id": "2de40724-e8a7-4950-b776-cd925fcd1382",
+                "value": "DOING",
+                "color": "components--color-green"
+              },
+              {
+                "id": "cfc86f61-0f07-40cc-9f7e-3a8fe31d0e99",
+                "value": "DONE",
+                "color": "components--color-yellow"
+              }
+            ]
+          }
+        },
+        {
+          "id": "fc55e19d-2518-490e-8e93-0fa3bb281a17",
+          "name": "deadline",
+          "isShow": true,
+          "type": "datetime",
           "options": {}
         }
       ],
@@ -1338,7 +1378,7 @@
             "type": "filter",
             "operator": "contains",
             "property": "tags",
-            "value": "project",
+            "value": "code",
             "conditions": []
           },
           {
@@ -1363,6 +1403,22 @@
                 "conditions": []
               }
             ]
+          }
+        ]
+      },
+      "sort": {
+        "orders": [
+          {
+            "id": "1541407d-2790-4143-98ef-31ea119a9d67",
+            "property": "deadline",
+            "direction": "asc",
+            "disabled": false
+          },
+          {
+            "id": "fbcc2bd7-6e0c-419a-99cf-de9b58aad28e",
+            "property": "status",
+            "direction": "asc",
+            "disabled": false
           }
         ]
       }

@@ -16,6 +16,13 @@
       "type": "property_value_suggestion",
       "propertyName": "status",
       "defaultValue": "DOING"
+    },
+    {
+      "id": "2469eb55-e37d-4307-aeb0-cf23ed971595",
+      "label": "deadline",
+      "type": "date",
+      "defaultValueType": "custom",
+      "defaultValue": "2026-12-31"
     }
   ],
   "actions": [
