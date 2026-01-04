@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-04T08:04:04.071Z",
+      "updateAt": "2026-01-04T11:29:45.462Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -34,7 +34,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 4,
+              "y": 8,
               "w": 4,
               "h": 4
             },
@@ -51,7 +51,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 8,
+              "y": 12,
               "w": 4,
               "h": 4
             },
@@ -68,7 +68,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 12,
+              "y": 16,
               "w": 4,
               "h": 4
             },
@@ -85,7 +85,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 16,
+              "y": 20,
               "w": 4,
               "h": 4
             },
@@ -102,7 +102,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 20,
+              "y": 24,
               "w": 4,
               "h": 4
             },
@@ -119,7 +119,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 24,
+              "y": 28,
               "w": 4,
               "h": 4
             },
@@ -136,7 +136,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 28,
+              "y": 32,
               "w": 4,
               "h": 4
             },
@@ -153,7 +153,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 32,
+              "y": 36,
               "w": 4,
               "h": 4
             },
@@ -170,7 +170,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 36,
+              "y": 40,
               "w": 4,
               "h": 4
             },
@@ -187,7 +187,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 0,
+              "y": 4,
               "w": 4,
               "h": 4
             },
@@ -1192,6 +1192,9 @@
       "components": [
         {
           "componentId": "df05800c-9df1-427e-95d8-a3393ef5ce90"
+        },
+        {
+          "componentId": "09e30e96-9ff4-4ef4-9160-16d5acac4a84"
         }
       ],
       "layoutType": "tab",
@@ -1273,6 +1276,93 @@
             "property": "${file.parent}",
             "value": "资源/模板",
             "conditions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "09e30e96-9ff4-4ef4-9160-16d5acac4a84",
+      "type": "dynamicDataView",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-01-04T11:22:16.268Z",
+      "updateAt": "2026-01-04T11:28:01.874Z",
+      "viewType": "timeline",
+      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
+      "properties": [
+        {
+          "id": "__componentsTitleProperty_0x7c00",
+          "name": "文件名",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        }
+      ],
+      "templates": [],
+      "groups": [],
+      "colorfulGroups": false,
+      "viewOptions": {
+        "openPageIn": "tab",
+        "openPageAfterCreate": true,
+        "items": [],
+        "pinFiltersToMenuBar": false,
+        "hideHeaderMenu": false,
+        "showGrid": false,
+        "heightType": "auto",
+        "heightValue": 600,
+        "dateProperty": "createTime",
+        "endDateProperty": "deadline",
+        "colorProperty": "type"
+      },
+      "groupStates": {
+        "sort": "nameAsc",
+        "statics": [],
+        "orders": [],
+        "hiddens": [],
+        "collapseds": []
+      },
+      "title": "进行中",
+      "icon": "Biohazard",
+      "filter": {
+        "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
+        "type": "group",
+        "operator": "and",
+        "conditions": [
+          {
+            "id": "f7ee9647-a885-45ee-9224-861611087b33",
+            "type": "filter",
+            "operator": "contains",
+            "property": "tags",
+            "value": "project",
+            "conditions": []
+          },
+          {
+            "id": "d4e497e4-e706-4f23-b623-0ee3219c3022",
+            "type": "group",
+            "operator": "or",
+            "conditions": [
+              {
+                "id": "4edf65ff-1dcd-4a2d-a2a4-9bee6713579a",
+                "type": "filter",
+                "operator": "contains",
+                "property": "status",
+                "value": "DOING",
+                "conditions": []
+              },
+              {
+                "id": "7091128b-0b70-494d-b8d8-c9c244f93d7f",
+                "type": "filter",
+                "operator": "contains",
+                "property": "status",
+                "value": "TODO",
+                "conditions": []
+              }
+            ]
           }
         ]
       }
