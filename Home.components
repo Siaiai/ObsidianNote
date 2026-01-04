@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-04T11:29:45.462Z",
+      "updateAt": "2026-01-04T11:43:12.895Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -166,6 +166,57 @@
           }
         },
         {
+          "componentId": "4c2bb17a-f31c-4281-b05e-8fb0a14594cd",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 36,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 0,
+              "y": 11,
+              "w": 1,
+              "h": 2
+            }
+          }
+        },
+        {
+          "componentId": "ba4e4518-ddde-4e62-84ec-28ff56bab11c",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 36,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 1,
+              "y": 11,
+              "w": 1,
+              "h": 2
+            }
+          }
+        },
+        {
+          "componentId": "4ab6122b-514a-4bef-a75d-558ce2cb8f5f",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 36,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 1,
+              "y": 13,
+              "w": 1,
+              "h": 2
+            }
+          }
+        },
+        {
           "componentId": "fe79e9b3-6b6f-474b-9231-2990e2752e1f",
           "layout": {
             "mobile": {
@@ -215,13 +266,25 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T09:21:50.954Z",
-      "updateAt": "2025-12-29T14:17:15.877Z",
+      "updateAt": "2026-01-04T11:49:22.495Z",
       "chartType": "heatmap",
       "filter": {
         "id": "da9ff79b-182a-432d-88e4-687e9b715cfc",
         "type": "group",
         "operator": "and",
-        "conditions": []
+        "conditions": [
+          {
+            "id": "ecbe6085-03a6-4ac2-be53-57f057f7c06b",
+            "type": "filter",
+            "operator": "contains_any",
+            "property": "tags",
+            "value": [
+              "project",
+              "day"
+            ],
+            "conditions": []
+          }
+        ]
       },
       "labelFormat": "$none",
       "series": [
@@ -257,7 +320,8 @@
           "latestUnit": "day"
         }
       },
-      "title": "🔆一以恒为志，时光不负心。"
+      "title": "🔆一以恒为志，时光不负心。",
+      "categoryProperty": "doneTime"
     },
     {
       "id": "841f49f6-997c-449c-965d-fc102a724fc6",
@@ -1219,7 +1283,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-01-04T07:44:57.529Z",
+      "updateAt": "2026-01-04T11:50:46.229Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1250,20 +1314,25 @@
           "position": "top"
         },
         "pinFiltersToMenuBar": false,
-        "hideHeaderMenu": false,
+        "hideHeaderMenu": true,
         "showGrid": false,
         "heightType": "auto",
         "heightValue": 600
       },
       "groupStates": {
         "sort": "nameAsc",
+        "format": "none",
         "statics": [],
         "orders": [],
-        "hiddens": [],
-        "collapseds": []
+        "hiddens": [
+          "__$uncategorizedGroup"
+        ],
+        "collapseds": [
+          "__$uncategorizedGroup"
+        ]
       },
       "loadLimitPerPage": "6",
-      "title": "日志",
+      "title": "产出",
       "filter": {
         "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
         "type": "group",
@@ -1286,7 +1355,9 @@
             "conditions": []
           }
         ]
-      }
+      },
+      "icon": "AppWindowMac",
+      "groupBy": "area"
     },
     {
       "id": "09e30e96-9ff4-4ef4-9160-16d5acac4a84",
@@ -1422,6 +1493,93 @@
           }
         ]
       }
+    },
+    {
+      "id": "4c2bb17a-f31c-4281-b05e-8fb0a14594cd",
+      "type": "card",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-01-03T15:53:09.351Z",
+      "updateAt": "2026-01-04T11:42:20.365Z",
+      "title": "写代码(工作)",
+      "description": "",
+      "coverFit": "cover",
+      "coverPosition": "left",
+      "clickAction": {
+        "type": "OpenForm",
+        "id": "c3a82676-de95-43d8-8e63-e3095010b5bd",
+        "options": {
+          "filePath": "资源/form-flow插件/form/工作项目-代码.cform",
+          "fileName": "工作项目-代码.cform"
+        }
+      },
+      "coverCoordinate": {
+        "x": "50%",
+        "y": "50%"
+      },
+      "icon": "CodeXml"
+    },
+    {
+      "id": "ba4e4518-ddde-4e62-84ec-28ff56bab11c",
+      "type": "card",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-01-03T15:53:09.351Z",
+      "updateAt": "2026-01-04T11:42:52.357Z",
+      "title": "写代码(个人)",
+      "description": "",
+      "coverFit": "cover",
+      "coverPosition": "left",
+      "clickAction": {
+        "type": "OpenForm",
+        "id": "c3a82676-de95-43d8-8e63-e3095010b5bd",
+        "options": {
+          "filePath": "资源/form-flow插件/form/工作项目-代码.cform",
+          "fileName": "工作项目-代码.cform"
+        }
+      },
+      "coverCoordinate": {
+        "x": "50%",
+        "y": "50%"
+      },
+      "icon": "FileCode"
+    },
+    {
+      "id": "4ab6122b-514a-4bef-a75d-558ce2cb8f5f",
+      "type": "card",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-01-03T15:53:09.351Z",
+      "updateAt": "2026-01-04T11:43:26.002Z",
+      "title": "新建个人项目",
+      "description": "",
+      "coverFit": "cover",
+      "coverPosition": "left",
+      "clickAction": {
+        "type": "OpenForm",
+        "id": "c3a82676-de95-43d8-8e63-e3095010b5bd",
+        "options": {
+          "filePath": "资源/form-flow插件/form/工作项目-代码.cform",
+          "fileName": "工作项目-代码.cform"
+        }
+      },
+      "coverCoordinate": {
+        "x": "50%",
+        "y": "50%"
+      },
+      "icon": "Album"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",

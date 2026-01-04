@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "84baa552740a2c08",
+        "id": "20bbf8edf1c6bdb2",
         "type": "tabs",
         "children": [
           {
-            "id": "b4573176eb108a2d",
+            "id": "3b765a42fc4c2824",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -160,19 +160,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b4573176eb108a2d",
+  "active": "3b765a42fc4c2824",
   "lastOpenFiles": [
-    "资源/form-flow插件/form/个人项目.cform",
-    "个人/项目/260104Obsidian优化.md",
+    "日志/2026-01-04.md",
     "Home.components",
-    "个人/项目/代码/260104www.md",
-    "个人/项目/代码/260104WWWWWW.md",
+    "资源/模板/日志模板-day.md",
+    "个人/项目/260104Obsidian优化.md",
+    "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/个人项目-代码.cform",
     "资源/form-flow插件/form/工作项目-代码.cform",
+    "个人/项目/代码/260104www.md",
+    "个人/项目/代码/260104WWWWWW.md",
     "个人/项目/260104w.md",
     "个人/项目/代码/260104w.md",
-    "资源/模板/日志模板-day.md",
-    "日志/2026-01-04.md",
     "个人/项目/代码",
     "个人/项目",
     "工作/项目/代码/260104WWWWWWWWWWWWWWWWWWWWWWWWWWWWW.md",
