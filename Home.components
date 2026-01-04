@@ -1070,7 +1070,7 @@
       "showTitle": false,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-04T12:40:43.983Z",
+      "updateAt": "2026-01-04T12:43:39.489Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -1179,7 +1179,7 @@
           "isShow": true,
           "type": "taskList",
           "options": {
-            "showTaskList": true,
+            "showTaskList": false,
             "showAllTasks": false,
             "hideTaskFields": false,
             "timeRecordStyle": "none",
@@ -1344,7 +1344,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-01-04T12:00:04.303Z",
+      "updateAt": "2026-01-04T12:52:16.701Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1400,7 +1400,7 @@
       "filter": {
         "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
         "type": "group",
-        "operator": "and",
+        "operator": "or",
         "conditions": [
           {
             "id": "a989fcc6-1b7d-4aa3-baa0-6ceecbb2be82",
@@ -1417,6 +1417,21 @@
             "property": "${file.parent}",
             "value": "资源/模板",
             "conditions": []
+          },
+          {
+            "id": "1e7938e1-4aa0-4d5e-b458-3ea492039978",
+            "type": "group",
+            "operator": "and",
+            "conditions": [
+              {
+                "id": "290207a5-6eaa-4c66-90b4-2d249ab8ec74",
+                "type": "filter",
+                "operator": "contains",
+                "property": "area",
+                "value": "[[日志]]",
+                "conditions": []
+              }
+            ]
           }
         ]
       },
