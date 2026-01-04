@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-01-03T20:34:28.695Z",
+      "updateAt": "2026-01-04T07:23:54.199Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -42,7 +42,7 @@
               "x": 6,
               "y": 11,
               "w": 6,
-              "h": 17
+              "h": 15
             }
           }
         },
@@ -179,6 +179,23 @@
               "y": 18,
               "w": 6,
               "h": 33
+            }
+          }
+        },
+        {
+          "componentId": "6ec935e0-3753-4d73-a7a3-4d111423972a",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 6,
+              "y": 26,
+              "w": 6,
+              "h": 25
             }
           }
         }
@@ -456,10 +473,13 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2026-01-03T19:35:17.901Z",
-      "updateAt": "2026-01-03T19:43:42.563Z",
+      "updateAt": "2026-01-04T07:21:33.546Z",
       "components": [
         {
           "componentId": "7b4fa2d2-1ffb-4d4d-8652-ee12279b5428"
+        },
+        {
+          "componentId": "32ca2cc2-474e-4b5a-a470-37212a6372b0"
         }
       ],
       "layoutType": "tab",
@@ -871,6 +891,344 @@
         "y": "50%"
       },
       "icon": "BatteryFull"
+    },
+    {
+      "id": "32ca2cc2-474e-4b5a-a470-37212a6372b0",
+      "type": "dynamicDataView",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-01-03T19:35:48.904Z",
+      "updateAt": "2026-01-04T07:22:26.267Z",
+      "viewType": "kanban",
+      "newPageNameFormat": "{{date:YYMMDD}}:",
+      "properties": [
+        {
+          "id": "__componentsTitleProperty_0x7c00",
+          "name": "文件名",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        },
+        {
+          "id": "cffd5d6b-da90-4b7c-8d9b-438090efd04f",
+          "name": "type",
+          "isShow": true,
+          "type": "text",
+          "options": {},
+          "alias": "编码类型"
+        },
+        {
+          "id": "326df963-eba3-4842-88be-8a068ecb1eb5",
+          "name": "status",
+          "type": "select",
+          "isShow": true,
+          "wrap": false,
+          "options": {
+            "items": [
+              {
+                "id": "009a2c3d-8da6-47bd-9fc9-f995d5344c00",
+                "value": "TODO",
+                "color": "components--color-red"
+              },
+              {
+                "id": "c5fe4b38-8965-46f4-8f88-76d4b26e8d0c",
+                "value": "DOING",
+                "color": "components--color-green"
+              },
+              {
+                "id": "475d7780-0624-4edf-b4aa-be66d80761e2",
+                "value": "Done",
+                "color": "components--color-yellow"
+              }
+            ]
+          },
+          "alias": "状态"
+        },
+        {
+          "id": "bfabd792-204e-44fd-b10d-cfdb0ee7c1e2",
+          "name": "createTime",
+          "type": "datetime",
+          "isShow": false,
+          "wrap": false,
+          "options": {},
+          "alias": "创建时间"
+        },
+        {
+          "id": "9a653a35-c4f3-4475-b23f-16a0a51d3095",
+          "name": "deadline",
+          "type": "datetime",
+          "isShow": true,
+          "wrap": false,
+          "options": {},
+          "alias": "截止时间"
+        },
+        {
+          "id": "1b4886d1-9fe7-4df5-8064-7c23ec18d8d1",
+          "name": "doneTime",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {},
+          "alias": "完成时间"
+        },
+        {
+          "id": "7c43d9f6-ebd4-45ed-8a0d-172ce4f7098e",
+          "name": "完成",
+          "isShow": true,
+          "type": "button",
+          "options": {
+            "action": {
+              "type": "updateProperty",
+              "properties": [
+                {
+                  "id": "1d7596e0-ce6c-4fd5-9517-b1fdaa442e9c",
+                  "name": "doneTime",
+                  "type": "datetime",
+                  "value": "$now",
+                  "valueSource": "constant",
+                  "modifier": "replaceValue"
+                },
+                {
+                  "id": "78f1612a-b042-4c7d-a247-37be484b0844",
+                  "name": "status",
+                  "type": "string",
+                  "value": "Done",
+                  "valueSource": "constant",
+                  "modifier": "replaceValue"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "91d3aba2-9b81-4d21-ac12-db582caa3c06",
+          "name": "待办列表",
+          "isShow": true,
+          "type": "taskList",
+          "options": {
+            "showTaskList": true,
+            "showAllTasks": false,
+            "hideTaskFields": false,
+            "timeRecordStyle": "none",
+            "insertPosition": {
+              "position": "BottomUnderHeading",
+              "headingLine": "## 待办列表"
+            }
+          }
+        }
+      ],
+      "templates": [
+        {
+          "id": "05221eb6-9dd6-4a78-8a03-1355946cff23",
+          "path": "资源/模板/工作模板-Project.md",
+          "name": "工作模板-Project.md",
+          "type": "normal"
+        }
+      ],
+      "groups": [
+        {
+          "id": "DONE",
+          "name": "DONE",
+          "items": [
+            "工作/项目/260104w.md"
+          ]
+        },
+        {
+          "id": "DOING",
+          "name": "DOING",
+          "items": [
+            "工作/项目/260104w.md"
+          ]
+        },
+        {
+          "id": "TODO",
+          "name": "TODO",
+          "items": [
+            "工作/项目/260104w.md"
+          ]
+        }
+      ],
+      "colorfulGroups": false,
+      "viewOptions": {
+        "openPageIn": "modal",
+        "openPageAfterCreate": true,
+        "itemSize": "components--page-card-small",
+        "showPropertyName": false,
+        "showAllProperties": false,
+        "items": [],
+        "cover": {
+          "type": "none",
+          "source": "default",
+          "fit": "contains",
+          "layout": "components--page-card-cover-landscape",
+          "position": "top"
+        },
+        "pinFiltersToMenuBar": false,
+        "hideHeaderMenu": false,
+        "showGrid": false,
+        "heightType": "auto",
+        "heightValue": 600
+      },
+      "groupStates": {
+        "sort": "manual",
+        "format": "none",
+        "statics": [
+          "TODO",
+          "DONE",
+          "DOING"
+        ],
+        "orders": [
+          "TODO",
+          "DOING",
+          "__$uncategorizedGroup"
+        ],
+        "hiddens": [
+          "__$uncategorizedGroup"
+        ],
+        "collapseds": []
+      },
+      "title": "个人项目看板",
+      "filter": {
+        "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
+        "type": "group",
+        "operator": "and",
+        "conditions": [
+          {
+            "id": "9e8490d4-131e-40b6-b212-3d0318fbcf48",
+            "type": "filter",
+            "operator": "contains",
+            "property": "tags",
+            "value": "project",
+            "conditions": []
+          },
+          {
+            "id": "a0ef27ea-8832-4534-8580-9434a4de7468",
+            "type": "filter",
+            "operator": "contains",
+            "property": "area",
+            "value": "[[个人]]",
+            "conditions": []
+          },
+          {
+            "id": "8dec95b2-8c69-4772-b80f-76095ccb005e",
+            "type": "filter",
+            "operator": "not_equals",
+            "property": "${file.parent}",
+            "value": "资源/模板",
+            "conditions": []
+          }
+        ]
+      },
+      "groupBy": "status",
+      "defaultTemplate": "05221eb6-9dd6-4a78-8a03-1355946cff23",
+      "loadLimitPerPage": "10",
+      "sort": {
+        "orders": []
+      }
+    },
+    {
+      "id": "6ec935e0-3753-4d73-a7a3-4d111423972a",
+      "type": "multi",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-01-04T07:23:05.252Z",
+      "updateAt": "2026-01-04T07:23:05.252Z",
+      "components": [
+        {
+          "componentId": "df05800c-9df1-427e-95d8-a3393ef5ce90"
+        }
+      ],
+      "layoutType": "tab",
+      "locked": false,
+      "layoutOptions": {}
+    },
+    {
+      "id": "df05800c-9df1-427e-95d8-a3393ef5ce90",
+      "type": "dynamicDataView",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-01-04T07:23:16.787Z",
+      "updateAt": "2026-01-04T07:26:12.700Z",
+      "viewType": "gallary",
+      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
+      "properties": [
+        {
+          "id": "__componentsTitleProperty_0x7c00",
+          "name": "文件名",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        }
+      ],
+      "templates": [],
+      "groups": [],
+      "colorfulGroups": false,
+      "viewOptions": {
+        "openPageIn": "tab",
+        "openPageAfterCreate": true,
+        "itemSize": "components--page-card-small",
+        "showPropertyName": false,
+        "showAllProperties": false,
+        "items": [],
+        "cover": {
+          "type": "image",
+          "source": "firstImageInNote",
+          "fit": "contains",
+          "layout": "components--page-card-cover-landscape",
+          "position": "top"
+        },
+        "pinFiltersToMenuBar": false,
+        "hideHeaderMenu": false,
+        "showGrid": false,
+        "heightType": "auto",
+        "heightValue": 600
+      },
+      "groupStates": {
+        "sort": "nameAsc",
+        "statics": [],
+        "orders": [],
+        "hiddens": [],
+        "collapseds": []
+      },
+      "loadLimitPerPage": "6",
+      "title": "日志",
+      "filter": {
+        "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
+        "type": "group",
+        "operator": "and",
+        "conditions": [
+          {
+            "id": "a989fcc6-1b7d-4aa3-baa0-6ceecbb2be82",
+            "type": "filter",
+            "operator": "contains",
+            "property": "area",
+            "value": "[[日志]]",
+            "conditions": []
+          },
+          {
+            "id": "2857d684-6548-4266-9d7e-461dd0ceb9c2",
+            "type": "filter",
+            "operator": "not_equals",
+            "property": "${file.parent}",
+            "value": "资源/模板",
+            "conditions": []
+          }
+        ]
+      }
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
