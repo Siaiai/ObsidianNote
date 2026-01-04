@@ -794,7 +794,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T14:21:23.446Z",
-      "updateAt": "2025-12-29T14:54:42.693Z",
+      "updateAt": "2026-01-04T07:57:58.775Z",
       "countValueAlign": "left",
       "contentPrefix": "",
       "contentSuffix": "",
@@ -813,7 +813,7 @@
         "sort": {
           "orders": []
         },
-        "property": "tags",
+        "property": "",
         "aggregationType": "uniqueCount"
       },
       "totalQuery": {
@@ -829,7 +829,7 @@
           "orders": []
         }
       },
-      "title": "📚领域"
+      "title": "⌨️待写代码"
     },
     {
       "id": "b4bf0452-7a50-4599-8ba1-c3bb8c9753c6",
