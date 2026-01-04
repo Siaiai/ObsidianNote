@@ -11,12 +11,12 @@
             "id": "ca7318bb9cfad3b0",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "form-view",
               "state": {
-                "file": "Home.components"
+                "file": "资源/form-flow插件/form/工作项目.cform"
               },
               "icon": "gantt-chart",
-              "title": "Home"
+              "title": "工作项目"
             }
           }
         ]
@@ -92,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "资源/form-flow插件/form/工作项目.cform",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "工作项目 的大纲"
             }
           },
           {
@@ -162,22 +162,23 @@
   },
   "active": "ca7318bb9cfad3b0",
   "lastOpenFiles": [
+    "资源/form-flow插件/form/个人项目.cform",
+    "Home.components",
+    "日志/2026-01-04.md",
+    "资源/form-flow插件/form/工作项目.cform",
+    "资源/form-flow插件/form/工作项目-子项.cform",
+    "资源/form-flow插件/form/个人项目-子项.cform",
+    "资源/模板/日志模板-day.md",
     "资源/form-flow插件/form/生活.cform",
     "资源/form-flow插件/form/输出.cform",
     "资源/form-flow插件/form/兴趣探索.cform",
     "资源/form-flow插件/form/学习.cform",
-    "资源/form-flow插件/form/个人项目-代码.cform",
-    "资源/form-flow插件/form/工作项目-代码.cform",
-    "资源/form-flow插件/form/个人项目.cform",
     "领域/输出.md",
     "领域/个人.md",
     "领域/工作.md",
     "领域/兴趣探索.md",
     "领域/未命名.md",
-    "Home.components",
     "个人/项目/260104Obsidian优化.md",
-    "资源/模板/日志模板-day.md",
-    "日志/2026-01-04.md",
     "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "领域/日志.md",
     "().md",
@@ -186,9 +187,7 @@
     "个人/项目/260104w.md",
     "个人/项目/代码/260104w.md",
     "个人/项目/代码",
-    "个人/项目",
     "工作/项目/代码/260104WWWWWWWWWWWWWWWWWWWWWWWWWWWWW.md",
-    "工作/项目/代码",
     "领域/个人项目.md",
     "工作/项目/260104w.md",
     "工作/项目/2601042.md",
