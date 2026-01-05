@@ -1365,7 +1365,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-01-04T12:53:09.315Z",
+      "updateAt": "2026-01-05T01:57:42.336Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1416,8 +1416,7 @@
           "__$uncategorizedGroup"
         ],
         "collapseds": [
-          "__$uncategorizedGroup",
-          "[[日志]]"
+          "__$uncategorizedGroup"
         ]
       },
       "loadLimitPerPage": "6",

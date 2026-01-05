@@ -4,6 +4,7 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "deadline": "datetime",
-    "createTime": "text"
+    "createTime": "text",
+    "doneTime": "text"
   }
 }
