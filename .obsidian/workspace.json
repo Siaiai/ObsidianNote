@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "cf8ea4bd0813d127",
+        "id": "e44844da0b99aee0",
         "type": "tabs",
         "children": [
           {
-            "id": "e7593ba7225cde74",
+            "id": "9b500065b8a266e3",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -122,6 +122,68 @@
               "icon": "clock",
               "title": "timer"
             }
+          },
+          {
+            "id": "c4193892cd4956fa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Home.components",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Home 的反向链接列表"
+            }
+          },
+          {
+            "id": "93e290c12d28565d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Home.components",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Home 的出链列表"
+            }
+          },
+          {
+            "id": "43bfb411e56c3084",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "ca8fc17ad59128bd",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
           }
         ],
         "currentTab": 2
@@ -160,17 +222,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e7593ba7225cde74",
+  "active": "9b500065b8a266e3",
   "lastOpenFiles": [
+    "资源/form-flow插件/form/兴趣探索.cform",
+    "资源/form-flow插件/form/生活.cform",
+    "Home.components",
+    "资源/form-flow插件/form/工作项目-子项.cform",
+    "兴趣探索/260104STM32H7工程建立.md",
     "资源/form-flow插件/form/工作项目.cform",
     "工作/项目/杰克科技股份有限公司.md",
-    "Home.components",
     "资源/form-flow插件/form/学习.cform",
-    "资源/form-flow插件/form/生活.cform",
-    "资源/form-flow插件/form/兴趣探索.cform",
-    "资源/form-flow插件/form/工作项目-子项.cform",
     "资源/form-flow插件/form/个人项目.cform",
-    "兴趣探索/260104STM32H7工程建立.md",
     "个人/项目/260104Obsidian优化.md",
     "个人/项目/QT工具箱.md",
     "资源/form-flow插件/form/个人项目-子项.cform",
