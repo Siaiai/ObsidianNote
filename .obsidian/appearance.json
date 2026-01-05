@@ -1,5 +1,6 @@
 {
   "cssTheme": "Composer",
   "accentColor": "#8b81c1",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "baseFontSize": 16
 }
