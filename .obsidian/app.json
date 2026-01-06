@@ -8,5 +8,6 @@
   },
   "useMarkdownLinks": true,
   "readableLineLength": true,
-  "strictLineBreaks": true
+  "strictLineBreaks": true,
+  "attachmentFolderPath": "资源"
 }
