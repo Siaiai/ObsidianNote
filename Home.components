@@ -617,7 +617,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-06T04:01:18.123Z",
+      "updateAt": "2026-01-06T07:03:48.181Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -712,7 +712,7 @@
                   "id": "78f1612a-b042-4c7d-a247-37be484b0844",
                   "name": "status",
                   "type": "string",
-                  "value": "Done",
+                  "value": "DONE",
                   "valueSource": "constant",
                   "modifier": "replaceValue"
                 }
@@ -757,7 +757,8 @@
           "id": "DOING",
           "name": "DOING",
           "items": [
-            "工作/项目/260104w.md"
+            "工作/项目/代码/260105工序号识别2代.md",
+            "工作/项目/代码/260105整合参数含义到终端用户指南.md"
           ]
         },
         {
