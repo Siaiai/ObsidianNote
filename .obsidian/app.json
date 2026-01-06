@@ -9,5 +9,5 @@
   "useMarkdownLinks": true,
   "readableLineLength": true,
   "strictLineBreaks": true,
-  "attachmentFolderPath": "资源"
+  "attachmentFolderPath": "资源/附件"
 }

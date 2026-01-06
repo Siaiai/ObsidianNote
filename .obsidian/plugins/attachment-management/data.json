@@ -1,0 +1,19 @@
+{
+  "language": "en",
+  "attachPath": {
+    "attachmentRoot": "资源/附件",
+    "saveAttE": "obsFolder",
+    "attachmentPath": "${notename}",
+    "attachFormat": "IMG-{{md5}}",
+    "type": "GLOBAL"
+  },
+  "dateFormat": "YYYYMMDDHHmmssSSS",
+  "excludeExtensionPattern": "",
+  "autoRenameAttachment": true,
+  "excludedPaths": "",
+  "excludePathsArray": [],
+  "excludeSubpaths": false,
+  "originalNameStorage": [],
+  "overridePath": {},
+  "disableNotification": false
+}
