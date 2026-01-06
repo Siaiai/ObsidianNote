@@ -4,7 +4,7 @@
     "attachmentRoot": "资源/附件",
     "saveAttE": "obsFolder",
     "attachmentPath": "${notename}",
-    "attachFormat": "IMG-{{md5}}",
+    "attachFormat": "IMG-${md5}",
     "type": "GLOBAL"
   },
   "dateFormat": "YYYYMMDDHHmmssSSS",
