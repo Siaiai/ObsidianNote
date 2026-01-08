@@ -617,7 +617,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-08T01:46:59.786Z",
+      "updateAt": "2026-01-08T07:38:49.635Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -750,7 +750,8 @@
           "id": "DONE",
           "name": "DONE",
           "items": [
-            "工作/项目/260104w.md"
+            "工作/项目/代码/260105工序号识别2代.md",
+            "工作/项目/代码/260105整合参数含义到终端用户指南.md"
           ]
         },
         {
