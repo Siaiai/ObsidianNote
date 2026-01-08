@@ -594,13 +594,13 @@
           "componentId": "7b4fa2d2-1ffb-4d4d-8652-ee12279b5428"
         },
         {
+          "componentId": "d1f22879-5bfe-42c4-89dd-0ee23ae64e47"
+        },
+        {
           "componentId": "32ca2cc2-474e-4b5a-a470-37212a6372b0"
         },
         {
           "componentId": "c7140951-de79-469f-b409-00b01ee48a32"
-        },
-        {
-          "componentId": "d1f22879-5bfe-42c4-89dd-0ee23ae64e47"
         }
       ],
       "layoutType": "tab",
