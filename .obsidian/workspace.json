@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "0b6d6c1cdc07ab37",
+        "id": "bf9f3fd299374906",
         "type": "tabs",
         "children": [
           {
-            "id": "5a2b1249d58f4dc0",
+            "id": "532cb2302fceae07",
             "type": "leaf",
             "state": {
-              "type": "form-view",
+              "type": "components-file-view",
               "state": {
-                "file": "资源/form-flow插件/form/个人项目.cform"
+                "file": "Home.components"
               },
               "icon": "gantt-chart",
-              "title": "个人项目"
+              "title": "Home"
             }
           }
         ]
@@ -223,12 +223,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5a2b1249d58f4dc0",
+  "active": "532cb2302fceae07",
   "lastOpenFiles": [
-    "资源/form-flow插件/form/个人项目-子项.cform",
-    "资源/form-flow插件/form/工作项目.cform",
-    "资源/form-flow插件/form/个人项目.cform",
+    "工作/DEBUG问题指南.md",
     "Home.components",
+    "兴趣探索/260104STM32H7工程建立.md",
+    "资源/form-flow插件/form/工作项目.cform",
+    "资源/form-flow插件/form/工作项目-子项.cform",
+    "资源/form-flow插件/form/生活.cform",
+    "工作/项目/杰克科技股份有限公司.md",
+    "资源/form-flow插件/form/个人项目.cform",
+    "资源/form-flow插件/form/个人项目-子项.cform",
     "日志/2026-01-08.md",
     "资源/附件/260107切换上吊挂产品问题/IMG-010542A44371F5E769C424F089CA6F44.png",
     "工作/项目/代码/260107切换上吊挂产品问题.md",
@@ -243,7 +248,6 @@
     "日志/2026-01-05.md",
     "工作/项目/代码/260105工序号识别2代.md",
     "工作/项目/代码/260107二代工序查询BUG追踪.md",
-    "工作/项目/杰克科技股份有限公司.md",
     "工作/项目/代码/260106布鲁斯面板.md",
     "资源/附件/260105工序号识别2代",
     "资源/附件/260105工序号识别2代/IMG-4ACF601F775FB2192BB09F421629DF31.jpg",
@@ -257,18 +261,14 @@
     "资源/附件/IMG20260106131231.jpg",
     "资源/附件/IMG20260106131119.jpg",
     "资源/附件/IMG20260106131045.jpg",
-    "兴趣探索/260104STM32H7工程建立.md",
     "学习/260105关于协议的一些教训.md",
-    "资源/form-flow插件/form/学习.cform",
     "资源/模板/工作子项目.md",
-    "资源/form-flow插件/form/工作项目-子项.cform",
     "个人/项目/QT工具箱.md",
     "个人/兴趣探索/260104STM32H7工程建立.md",
     "领域/输出.md",
     "领域/个人.md",
     "领域/工作.md",
     "领域/兴趣探索.md",
-    "领域/未命名.md",
-    "领域/日志.md"
+    "领域/未命名.md"
   ]
 }
