@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bf9f3fd299374906",
+        "id": "3680a6fb924dffbe",
         "type": "tabs",
         "children": [
           {
-            "id": "532cb2302fceae07",
+            "id": "9e196a2d5e23fda0",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -223,11 +223,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "532cb2302fceae07",
+  "active": "9e196a2d5e23fda0",
   "lastOpenFiles": [
-    "工作/DEBUG问题指南.md",
+    "日志/2026-01-07.md",
     "Home.components",
+    "个人/项目/260104Obsidian优化.md",
+    "资源/form-flow插件/form/兴趣探索.cform",
+    "个人/项目/Obsidian优化.md",
     "兴趣探索/260104STM32H7工程建立.md",
+    "工作/DEBUG问题指南.md",
     "资源/form-flow插件/form/工作项目.cform",
     "资源/form-flow插件/form/工作项目-子项.cform",
     "资源/form-flow插件/form/生活.cform",
@@ -243,7 +247,6 @@
     "工作/项目/代码/260106超范围字符显示.md",
     "工作/项目/代码/260105整合参数含义到终端用户指南.md",
     "资源/模板/日志模板-day.md",
-    "日志/2026-01-07.md",
     "日志/2026-01-04.md",
     "日志/2026-01-05.md",
     "工作/项目/代码/260105工序号识别2代.md",
@@ -251,11 +254,9 @@
     "工作/项目/代码/260106布鲁斯面板.md",
     "资源/附件/260105工序号识别2代",
     "资源/附件/260105工序号识别2代/IMG-4ACF601F775FB2192BB09F421629DF31.jpg",
-    "资源/附件/{{notename}}",
     "资源/附件/{{notename}}/IMG-{{md5}}.jpg",
     "资源/附件/IMG20260106131026 2.jpg",
     "资源/附件/IMG20260106131026 1.jpg",
-    "个人/项目/260104Obsidian优化.md",
     "资源/附件/260105工序号识别2代/IMG-{{md5}}.jpg",
     "资源/附件/IMG20260106131232.jpg",
     "资源/附件/IMG20260106131231.jpg",
@@ -268,7 +269,6 @@
     "领域/输出.md",
     "领域/个人.md",
     "领域/工作.md",
-    "领域/兴趣探索.md",
-    "领域/未命名.md"
+    "领域/兴趣探索.md"
   ]
 }
