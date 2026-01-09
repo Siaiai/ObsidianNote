@@ -1370,7 +1370,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-01-06T03:59:59.526Z",
+      "updateAt": "2026-01-09T05:46:07.761Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1421,7 +1421,10 @@
           "__$uncategorizedGroup"
         ],
         "collapseds": [
-          "__$uncategorizedGroup"
+          "__$uncategorizedGroup",
+          "[[兴趣探索]]",
+          "[[日志]]",
+          "[[工作]]"
         ]
       },
       "loadLimitPerPage": "6",

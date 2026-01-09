@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3680a6fb924dffbe",
+        "id": "c9dc35817df2e15e",
         "type": "tabs",
         "children": [
           {
-            "id": "9e196a2d5e23fda0",
+            "id": "ab51be6b7be1e0b0",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -223,10 +223,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9e196a2d5e23fda0",
+  "active": "ab51be6b7be1e0b0",
   "lastOpenFiles": [
-    "日志/2026-01-07.md",
+    "领域/日志.md",
     "Home.components",
+    "日志/2026-01-07.md",
     "个人/项目/260104Obsidian优化.md",
     "资源/form-flow插件/form/兴趣探索.cform",
     "个人/项目/Obsidian优化.md",
