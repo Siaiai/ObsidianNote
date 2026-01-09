@@ -11,12 +11,12 @@
             "id": "5a2b1249d58f4dc0",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "form-view",
               "state": {
-                "file": "Home.components"
+                "file": "资源/form-flow插件/form/个人项目.cform"
               },
               "icon": "gantt-chart",
-              "title": "Home"
+              "title": "个人项目"
             }
           }
         ]
@@ -225,9 +225,11 @@
   },
   "active": "5a2b1249d58f4dc0",
   "lastOpenFiles": [
-    "日志/2026-01-08.md",
-    "Home.components",
+    "资源/form-flow插件/form/个人项目-子项.cform",
+    "资源/form-flow插件/form/工作项目.cform",
     "资源/form-flow插件/form/个人项目.cform",
+    "Home.components",
+    "日志/2026-01-08.md",
     "资源/附件/260107切换上吊挂产品问题/IMG-010542A44371F5E769C424F089CA6F44.png",
     "工作/项目/代码/260107切换上吊挂产品问题.md",
     "资源/附件/260107切换上吊挂产品问题",
@@ -259,9 +261,7 @@
     "学习/260105关于协议的一些教训.md",
     "资源/form-flow插件/form/学习.cform",
     "资源/模板/工作子项目.md",
-    "资源/form-flow插件/form/个人项目-子项.cform",
     "资源/form-flow插件/form/工作项目-子项.cform",
-    "资源/form-flow插件/form/工作项目.cform",
     "个人/项目/QT工具箱.md",
     "个人/兴趣探索/260104STM32H7工程建立.md",
     "领域/输出.md",
