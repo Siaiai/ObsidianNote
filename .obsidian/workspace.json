@@ -11,12 +11,12 @@
             "id": "ab51be6b7be1e0b0",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "form-view",
               "state": {
-                "file": "Home.components"
+                "file": "资源/form-flow插件/form/工作项目.cform"
               },
               "icon": "gantt-chart",
-              "title": "Home"
+              "title": "工作项目"
             }
           }
         ]
@@ -223,10 +223,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ab51be6b7be1e0b0",
+  "active": "c3a2a549b64b6101",
   "lastOpenFiles": [
-    "领域/日志.md",
     "Home.components",
+    "工作/项目/代码/260109衣架吊篮模式设置修改为176.md",
+    "领域/日志.md",
     "日志/2026-01-07.md",
     "个人/项目/260104Obsidian优化.md",
     "资源/form-flow插件/form/兴趣探索.cform",
@@ -268,8 +269,6 @@
     "个人/项目/QT工具箱.md",
     "个人/兴趣探索/260104STM32H7工程建立.md",
     "领域/输出.md",
-    "领域/个人.md",
-    "领域/工作.md",
-    "领域/兴趣探索.md"
+    "领域/个人.md"
   ]
 }
