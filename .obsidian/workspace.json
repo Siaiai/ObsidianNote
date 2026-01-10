@@ -8,15 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ab51be6b7be1e0b0",
+            "id": "80c24c749e0a211a",
             "type": "leaf",
             "state": {
-              "type": "form-view",
+              "type": "components-file-view",
               "state": {
-                "file": "资源/form-flow插件/form/工作项目.cform"
+                "file": "Home.components"
               },
               "icon": "gantt-chart",
-              "title": "工作项目"
+              "title": "Home"
             }
           }
         ]
@@ -223,28 +223,33 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c3a2a549b64b6101",
+  "active": "80c24c749e0a211a",
   "lastOpenFiles": [
+    "资源/components插件/组件文件/timer.components",
+    "资源/components插件/组件文件/mini-calendar.components",
     "Home.components",
+    "260109_SiaZhang2003@hotmail.com_components_license.md",
+    "日志/2026-01-09.md",
+    "日志/2026-01-10.md",
+    "资源/form-flow插件/form/个人项目.cform",
+    "资源/form-flow插件/form/个人项目-子项.cform",
+    "资源/form-flow插件/form/工作项目.cform",
+    "资源/form-flow插件/form/生活.cform",
+    "资源/form-flow插件/form/兴趣探索.cform",
+    "资源/form-flow插件/form/工作项目-子项.cform",
+    "资源/form-flow插件/form/学习.cform",
     "工作/项目/代码/260109衣架吊篮模式设置修改为176.md",
     "领域/日志.md",
     "日志/2026-01-07.md",
     "个人/项目/260104Obsidian优化.md",
-    "资源/form-flow插件/form/兴趣探索.cform",
     "个人/项目/Obsidian优化.md",
     "兴趣探索/260104STM32H7工程建立.md",
     "工作/DEBUG问题指南.md",
-    "资源/form-flow插件/form/工作项目.cform",
-    "资源/form-flow插件/form/工作项目-子项.cform",
-    "资源/form-flow插件/form/生活.cform",
     "工作/项目/杰克科技股份有限公司.md",
-    "资源/form-flow插件/form/个人项目.cform",
-    "资源/form-flow插件/form/个人项目-子项.cform",
     "日志/2026-01-08.md",
     "资源/附件/260107切换上吊挂产品问题/IMG-010542A44371F5E769C424F089CA6F44.png",
     "工作/项目/代码/260107切换上吊挂产品问题.md",
     "资源/附件/260107切换上吊挂产品问题",
-    "资源/附件",
     "工作/项目/代码/260105全封闭参数更新.md",
     "工作/项目/代码/260106超范围字符显示.md",
     "工作/项目/代码/260105整合参数含义到终端用户指南.md",
@@ -254,7 +259,6 @@
     "工作/项目/代码/260105工序号识别2代.md",
     "工作/项目/代码/260107二代工序查询BUG追踪.md",
     "工作/项目/代码/260106布鲁斯面板.md",
-    "资源/附件/260105工序号识别2代",
     "资源/附件/260105工序号识别2代/IMG-4ACF601F775FB2192BB09F421629DF31.jpg",
     "资源/附件/{{notename}}/IMG-{{md5}}.jpg",
     "资源/附件/IMG20260106131026 2.jpg",
@@ -266,9 +270,6 @@
     "资源/附件/IMG20260106131045.jpg",
     "学习/260105关于协议的一些教训.md",
     "资源/模板/工作子项目.md",
-    "个人/项目/QT工具箱.md",
-    "个人/兴趣探索/260104STM32H7工程建立.md",
-    "领域/输出.md",
-    "领域/个人.md"
+    "个人/项目/QT工具箱.md"
   ]
 }

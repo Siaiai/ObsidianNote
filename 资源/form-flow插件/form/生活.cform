@@ -15,7 +15,7 @@
       "label": "status",
       "type": "property_value_suggestion",
       "propertyName": "status",
-      "defaultValue": "DOING"
+      "defaultValue": "TODO"
     }
   ],
   "actions": [

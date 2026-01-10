@@ -1,6 +1,6 @@
 ---
 area: "[[工作]]"
-status: DOING
+status: TODO
 createTime: 2026-01-09 11:14:44
 deadline:
 doneTime:

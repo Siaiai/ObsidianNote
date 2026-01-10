@@ -15,7 +15,7 @@
       "label": "status",
       "type": "property_value_suggestion",
       "propertyName": "status",
-      "defaultValue": "DOING"
+      "defaultValue": "TODO"
     },
     {
       "id": "c43c978e-8966-43b4-93ac-8623ce1b7818",
