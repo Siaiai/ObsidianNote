@@ -617,7 +617,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-13T00:25:35.356Z",
+      "updateAt": "2026-01-13T00:56:52.995Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -758,6 +758,8 @@
           "id": "DOING",
           "name": "DOING",
           "items": [
+            "工作/项目/代码/260106布鲁斯面板.md",
+            "工作/项目/代码/260105整合参数含义到终端用户指南.md",
             "工作/项目/代码/260105全封闭参数更新.md",
             "工作/项目/代码/260107二代工序查询BUG追踪.md"
           ]
@@ -1372,7 +1374,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-01-12T00:34:19.346Z",
+      "updateAt": "2026-01-13T00:56:16.089Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1425,8 +1427,8 @@
         "collapseds": [
           "__$uncategorizedGroup",
           "[[工作]]",
-          "[[兴趣探索]]",
-          "[[日志]]"
+          "[[日志]]",
+          "[[兴趣探索]]"
         ]
       },
       "loadLimitPerPage": "6",
