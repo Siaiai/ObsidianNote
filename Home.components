@@ -617,7 +617,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-09T09:41:51.975Z",
+      "updateAt": "2026-01-13T00:25:35.356Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -758,8 +758,8 @@
           "id": "DOING",
           "name": "DOING",
           "items": [
-            "工作/项目/代码/260105工序号识别2代.md",
-            "工作/项目/代码/260105整合参数含义到终端用户指南.md"
+            "工作/项目/代码/260105全封闭参数更新.md",
+            "工作/项目/代码/260107二代工序查询BUG追踪.md"
           ]
         },
         {
