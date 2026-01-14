@@ -76,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -214,7 +213,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:新建数据库": false,
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
