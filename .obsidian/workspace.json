@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "34eb2d73a921c248",
+        "id": "0a70aa3e15c631bd",
         "type": "tabs",
         "children": [
           {
-            "id": "3bb2d50486c50631",
+            "id": "2abb2ea68c2aaf8a",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -223,11 +223,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3bb2d50486c50631",
+  "active": "2abb2ea68c2aaf8a",
   "lastOpenFiles": [
+    "日志/2026-01-17.md",
+    "未命名.canvas",
+    "Home.components",
     "日志/2026-01-14.md",
     "领域/个人.md",
-    "Home.components",
     "日志/2026-01-13.md",
     "资源/form-flow插件/form/学习.cform",
     "日志/2026-01-12.md",
@@ -260,8 +262,6 @@
     "工作/项目/代码/260106超范围字符显示.md",
     "工作/项目/代码/260105整合参数含义到终端用户指南.md",
     "日志/2026-01-05.md",
-    "工作/项目/代码/260105工序号识别2代.md",
-    "工作/项目/代码/260107二代工序查询BUG追踪.md",
     "资源/附件/260105工序号识别2代/IMG-4ACF601F775FB2192BB09F421629DF31.jpg",
     "资源/附件/{{notename}}/IMG-{{md5}}.jpg",
     "资源/附件/IMG20260106131026 2.jpg",
