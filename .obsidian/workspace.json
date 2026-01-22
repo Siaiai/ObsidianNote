@@ -4,20 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "bc47abad38655aba",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "日志/2026-01-22.md",
-            "mode": "source",
-            "source": true
-          },
-          "icon": "lucide-file",
-          "title": "2026-01-22"
-        }
-      },
-      {
         "id": "4389e57def2989e2",
         "type": "tabs",
         "children": [
@@ -237,10 +223,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bc47abad38655aba",
+  "active": "cc6543370feaa451",
   "lastOpenFiles": [
-    "Home.components",
     "日志/2026-01-22.md",
+    "Home.components",
     "工作/项目/代码/260119全封闭轨道参数.md",
     "日志/2026-01-20.md",
     "个人/项目/面板新工程.md",
