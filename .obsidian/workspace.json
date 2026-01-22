@@ -4,11 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "d239755c28b5f7d9",
+        "id": "bc47abad38655aba",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "日志/2026-01-22.md",
+            "mode": "source",
+            "source": true
+          },
+          "icon": "lucide-file",
+          "title": "2026-01-22"
+        }
+      },
+      {
+        "id": "4389e57def2989e2",
         "type": "tabs",
         "children": [
           {
-            "id": "5afcd91cbabdab11",
+            "id": "cc6543370feaa451",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -223,10 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5afcd91cbabdab11",
+  "active": "bc47abad38655aba",
   "lastOpenFiles": [
-    "工作/项目/代码/260119全封闭轨道参数.md",
     "Home.components",
+    "日志/2026-01-22.md",
+    "工作/项目/代码/260119全封闭轨道参数.md",
     "日志/2026-01-20.md",
     "个人/项目/面板新工程.md",
     "工作/项目/代码/260117面板按键消抖优化.md",
@@ -260,7 +275,6 @@
     "资源/form-flow插件/form/兴趣探索.cform",
     "工作/项目/代码/260109衣架吊篮模式设置修改为176.md",
     "领域/日志.md",
-    "个人/项目/260104Obsidian优化.md",
     "资源/附件/260107切换上吊挂产品问题/IMG-010542A44371F5E769C424F089CA6F44.png",
     "资源/附件/260105工序号识别2代/IMG-4ACF601F775FB2192BB09F421629DF31.jpg",
     "资源/附件/{{notename}}/IMG-{{md5}}.jpg",
