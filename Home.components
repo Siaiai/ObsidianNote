@@ -634,7 +634,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-01-13T00:56:52.995Z",
+      "updateAt": "2026-01-23T00:12:37.972Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -775,10 +775,9 @@
           "id": "DOING",
           "name": "DOING",
           "items": [
-            "工作/项目/代码/260106布鲁斯面板.md",
-            "工作/项目/代码/260105整合参数含义到终端用户指南.md",
             "工作/项目/代码/260105全封闭参数更新.md",
-            "工作/项目/代码/260107二代工序查询BUG追踪.md"
+            "工作/项目/代码/260107二代工序查询BUG追踪.md",
+            "工作/项目/代码/260117面板按键消抖优化.md"
           ]
         },
         {

@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "c81660a16b1f3979",
+        "id": "72e8a118cabc7c6f",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -237,16 +237,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c81660a16b1f3979",
+  "active": "72e8a118cabc7c6f",
   "lastOpenFiles": [
     "Home.components",
+    "工作/项目/代码/260123面板控制三色灯.md",
+    "工作/项目/代码/260117面板按键消抖优化.md",
+    "工作/项目/代码/260105全封闭参数更新.md",
     "工作/项目/代码/260123全封闭轨道测试.md",
     "资源/components插件/组件文件/timer.components",
     "日志/2026-01-22.md",
     "工作/项目/代码/260119全封闭轨道参数.md",
     "日志/2026-01-20.md",
     "个人/项目/面板新工程.md",
-    "工作/项目/代码/260117面板按键消抖优化.md",
     "工作/DEBUG问题指南.md",
     "未命名.base",
     "日志/2026-01-19.md",
@@ -268,13 +270,11 @@
     "日志/2026-01-07.md",
     "日志/2026-01-04.md",
     "资源/components插件/组件文件/mini-calendar.components",
-    "260109_SiaZhang2003@hotmail.com_components_license.md",
     "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/个人项目-子项.cform",
     "资源/form-flow插件/form/工作项目.cform",
     "资源/form-flow插件/form/生活.cform",
     "资源/form-flow插件/form/兴趣探索.cform",
-    "工作/项目/代码/260109衣架吊篮模式设置修改为176.md",
     "资源/附件/260107切换上吊挂产品问题/IMG-010542A44371F5E769C424F089CA6F44.png",
     "资源/附件/260105工序号识别2代/IMG-4ACF601F775FB2192BB09F421629DF31.jpg",
     "资源/附件/{{notename}}/IMG-{{md5}}.jpg",
