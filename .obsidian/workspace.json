@@ -33,8 +33,7 @@
               "title": "260105全封闭参数更新"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -238,10 +237,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "88fc4e4ed6fe2106",
+  "active": "cc6543370feaa451",
   "lastOpenFiles": [
-    "Home.components",
     "工作/项目/代码/260105全封闭参数更新.md",
+    "Home.components",
     "工作/项目/代码/260123面板控制三色灯.md",
     "工作/项目/代码/260117面板按键消抖优化.md",
     "工作/项目/代码/260123全封闭轨道测试.md",
