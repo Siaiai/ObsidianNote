@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "9347928d16d39247",
+        "id": "a998e0303252c00d",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -237,10 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9347928d16d39247",
+  "active": "a998e0303252c00d",
   "lastOpenFiles": [
     "Home.components",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+    "日志/2026-01-29.md",
     "工作/项目/代码/260105全封闭参数更新.md",
     "工作/项目/代码/260119出站缓存阀和出站阀联动.md",
     "工作/项目/代码/260119全封闭轨道参数.md",
@@ -270,7 +271,6 @@
     "日志/2026-01-11.md",
     "兴趣探索/260104STM32H7工程建立.md",
     "日志/2026-01-10.md",
-    "日志/2026-01-09.md",
     "资源/components插件/组件文件/mini-calendar.components",
     "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/个人项目-子项.cform",
