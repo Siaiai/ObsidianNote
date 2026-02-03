@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4389e57def2989e2",
+        "id": "790aded64796f3f3",
         "type": "tabs",
         "children": [
           {
-            "id": "cc6543370feaa451",
+            "id": "7fee7c58b51c2c83",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -223,11 +223,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "cc6543370feaa451",
+  "active": "7fee7c58b51c2c83",
   "lastOpenFiles": [
     "工作/项目/代码/260203整理调试界面需要显示内容.md",
-    "日志/2026-02-03.md",
     "Home.components",
+    "工作/项目/杰克科技股份有限公司.md",
+    "日志/2026-02-03.md",
     "工作/项目/代码/260105整合参数含义到终端用户指南.md",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "工作/项目/代码/260117面板按键消抖优化.md",
@@ -255,8 +256,6 @@
     "日志/2026-01-17.md",
     "未命名.canvas",
     "日志/2026-01-14.md",
-    "领域/个人.md",
-    "日志/2026-01-13.md",
     "资源/form-flow插件/form/学习.cform",
     "资源/components插件/组件文件/mini-calendar.components",
     "资源/form-flow插件/form/个人项目.cform",
