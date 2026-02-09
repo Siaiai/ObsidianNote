@@ -634,7 +634,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-02-04T03:20:18.834Z",
+      "updateAt": "2026-02-09T02:50:09.074Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -775,9 +775,10 @@
           "id": "DOING",
           "name": "DOING",
           "items": [
-            "工作/项目/代码/260123面板控制三色灯.md",
             "工作/项目/代码/260117面板按键消抖优化.md",
-            "工作/项目/代码/260107二代工序查询BUG追踪.md"
+            "工作/项目/代码/260123面板控制三色灯.md",
+            "工作/项目/代码/260107二代工序查询BUG追踪.md",
+            "工作/项目/代码/260203整理调试界面需要显示内容.md"
           ]
         },
         {
