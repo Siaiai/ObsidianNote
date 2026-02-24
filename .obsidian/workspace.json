@@ -33,8 +33,7 @@
               "title": "260117面板按键消抖优化"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -238,10 +237,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b2d5022fbbd6916e",
+  "active": "7fee7c58b51c2c83",
   "lastOpenFiles": [
-    "Home.components",
     "工作/项目/代码/260117面板按键消抖优化.md",
+    "Home.components",
     "日志/2026-02-10.md",
     "日志/2026-02-09.md",
     "日志/2026-02-08.md",
