@@ -33,7 +33,8 @@
               "title": "260117面板按键消抖优化"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -106,13 +107,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "工作/项目/代码/260117面板按键消抖优化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "260117面板按键消抖优化 的大纲"
             }
           },
           {
@@ -236,11 +237,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7fee7c58b51c2c83",
+  "active": "b2d5022fbbd6916e",
   "lastOpenFiles": [
+    "Home.components",
+    "工作/项目/代码/260224广播功能测试.md",
     "工作/项目/代码/260224缓存仓配置说明图形结合.md",
     "工作/项目/代码/260203整理调试界面需要显示内容.md",
-    "Home.components",
     "资源/components插件/组件文件/timer.components",
     "工作/项目/代码/260117面板按键消抖优化.md",
     "日志/2026-02-10.md",
@@ -273,8 +275,6 @@
     "日志/2026-01-28.md",
     "工作/项目/代码/260126读卡器升级工具.md",
     "工作/项目/代码/260123全封闭轨道测试.md",
-    "日志/2026-01-22.md",
-    "日志/2026-01-20.md",
     "未命名.base",
     "未命名.canvas",
     "资源/form-flow插件/form/学习.cform",
