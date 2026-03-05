@@ -32,21 +32,9 @@
               "icon": "lucide-file",
               "title": "260128全封闭轨道新加机制与待测试项"
             }
-          },
-          {
-            "id": "4c2f7272f780a863",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.12.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.12.4"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -250,7 +238,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4c2f7272f780a863",
+  "active": "348a4d97de835d87",
   "lastOpenFiles": [
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-E8278B7FC26ADFD67EE51D7EA4C0E00B.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-D01A7AAAFC934D6E75A22053B02AAB90.jpg",
