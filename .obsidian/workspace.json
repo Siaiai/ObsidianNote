@@ -18,8 +18,23 @@
               "icon": "gantt-chart",
               "title": "Home"
             }
+          },
+          {
+            "id": "4af96a862f6dc7fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260128全封闭轨道新加机制与待测试项"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -223,12 +238,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7fee7c58b51c2c83",
+  "active": "4af96a862f6dc7fe",
   "lastOpenFiles": [
+    "Home.components",
+    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "工作/项目/代码/260319全封闭读卡出站.md",
     "工作/项目/代码/260319复位方案风险.md",
     "工作/项目/代码/260319面板增加时钟.md",
-    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-C9A2B00BBC320D99881F924D67CD2191.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-B6BE49E9ACC1BC07671DD04F4E32832D.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-7570C162B03A0F052D0005914AD08A0F.jpg",
@@ -238,7 +254,6 @@
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-69E0A1B73BDFADACC27E951A438991C1.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-AEDF6597C49C601A2E5A7CA941D67622.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-E8278B7FC26ADFD67EE51D7EA4C0E00B-1.png",
-    "Home.components",
     "工作/项目/代码/260305面板广播.md",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-E8278B7FC26ADFD67EE51D7EA4C0E00B.png",
     "工作/DEBUG问题指南.md",
@@ -263,7 +278,6 @@
     "日志/2026-02-03.md",
     "工作/项目/代码/260105整合参数含义到终端用户指南.md",
     "日志/2026-01-30.md",
-    "日志/2026-01-29.md",
     "资源/components插件/组件文件/timer.components",
     "未命名.base",
     "未命名.canvas",
