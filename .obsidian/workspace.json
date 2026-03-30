@@ -20,15 +20,17 @@
             }
           },
           {
-            "id": "f6a9dc0a632b0215",
+            "id": "a9ac9c0ff36d37ca",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.12.7"
+                "file": "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.12.7"
+              "icon": "lucide-file",
+              "title": "260128全封闭轨道新加机制与待测试项"
             }
           }
         ],
@@ -236,10 +238,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f6a9dc0a632b0215",
+  "active": "a9ac9c0ff36d37ca",
   "lastOpenFiles": [
-    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "Home.components",
+    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "工作/项目/代码/260203整理调试界面需要显示内容.md",
     "工作/项目/代码/260324面板广播让测试部测试.md",
     "工作/项目/代码/260206测试程序增加读卡器版本号.md",
