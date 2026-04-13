@@ -34,6 +34,18 @@
             }
           },
           {
+            "id": "d492b705804767fc",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.7"
+            }
+          },
+          {
             "id": "0e86e623a28a4f7e",
             "type": "leaf",
             "state": {
