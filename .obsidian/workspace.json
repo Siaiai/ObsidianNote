@@ -20,17 +20,31 @@
             }
           },
           {
-            "id": "1ec52d1b60c3bb5a",
+            "id": "0e86e623a28a4f7e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+                "file": "工作/项目/代码/260413返工确认.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "260128全封闭轨道新加机制与待测试项"
+              "title": "260413返工确认"
+            }
+          },
+          {
+            "id": "149199b858098c82",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/项目/代码/260401S3分拣面板.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "260401S3分拣面板"
             }
           }
         ],
@@ -238,12 +252,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1ec52d1b60c3bb5a",
+  "active": "0e86e623a28a4f7e",
   "lastOpenFiles": [
     "Home.components",
+    "工作/项目/代码/260413返工确认.md",
+    "工作/项目/代码/260401S3分拣面板.md",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "工作/项目/代码/260331增加手拍接口.md",
-    "工作/项目/代码/260401S3分拣面板.md",
     "工作/项目/代码/260331全封闭广播.md",
     "工作/项目/代码/260401全封闭动力出站电机报错.md",
     "工作/项目/代码/260319复位方案风险.md",
@@ -276,7 +291,6 @@
     "资源/附件/260128全封闭轨道新加机制与待测试项",
     "日志/2026-02-05.md",
     "日志/2026-02-04.md",
-    "工作/项目/代码/260106布鲁斯面板.md",
     "资源/附件/260123面板控制三色灯",
     "资源/components插件/组件文件/timer.components",
     "未命名.base",
