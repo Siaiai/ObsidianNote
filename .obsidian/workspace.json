@@ -41,7 +41,7 @@
               "state": {
                 "file": "工作/项目/代码/260413返工确认.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "260413返工确认"
@@ -62,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -266,14 +266,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "149199b858098c82",
+  "active": "0e86e623a28a4f7e",
   "lastOpenFiles": [
+    "工作/项目/代码/260401S3分拣面板.md",
     "工作/项目/代码/260413返工确认.md",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "Home.components",
     "工作/项目/代码/260319全封闭读卡出站.md",
     "工作/项目/代码/260401全封闭动力出站电机报错.md",
-    "工作/项目/代码/260401S3分拣面板.md",
     "工作/项目/代码/260331增加手拍接口.md",
     "工作/项目/代码/260331全封闭广播.md",
     "工作/项目/代码/260319复位方案风险.md",
