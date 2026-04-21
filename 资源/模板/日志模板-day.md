@@ -6,9 +6,6 @@ createTime: "{{date:YYYY-MM-DD HH:mm:ss}}"
 doneTime: "{{date:YYYY-MM-DD HH:mm:ss}}"
 ---
 ## 执行清单
-- [ ] 复盘总结
-- [ ] 练琴
-- [ ] 100俯卧撑 
 
 ## 日志
 
