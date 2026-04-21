@@ -48,7 +48,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -121,13 +121,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "日志/2026-04-21.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "2026-04-21 的大纲"
             }
           },
           {
@@ -214,8 +214,7 @@
               "title": "添加笔记属性"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "e6794c363cdb0f03",
@@ -237,8 +236,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -253,10 +251,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fb1f79e0653bae08",
+  "active": "76bb1d1f6807f37e",
   "lastOpenFiles": [
-    "日志/2026-04-21.md",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+    "日志/2026-04-21.md",
     "Home.components",
     "资源/模板/日志模板-day.md",
     "资源/form-flow插件/form/学习.cform",
