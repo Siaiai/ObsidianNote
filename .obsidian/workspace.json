@@ -61,8 +61,7 @@
               "title": "260401S3分拣面板"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -135,13 +134,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "260128全封闭轨道新加机制与待测试项 的大纲"
+              "title": "Home 的大纲"
             }
           },
           {
@@ -265,10 +264,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f1bd3fc49d02d533",
+  "active": "5cffc8c6fc6f01ea",
   "lastOpenFiles": [
-    "Home.components",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+    "Home.components",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-45B392A4B250C0177F2299BA4A254B09.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-AA155A644A0C6CFDAE248952FC4B8CBD.png",
     "工作/项目/代码/260401S3分拣面板.md",
