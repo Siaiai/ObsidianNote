@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "14cc430ffa8eff8c",
+        "id": "59e7c9898a7bdc7f",
         "type": "tabs",
         "children": [
           {
-            "id": "90f90a49f48828f3",
+            "id": "d20592917f777ec9",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -76,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 422.51240158081055
+    "width": 422.51240158081055,
+    "collapsed": true
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -223,19 +224,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "90f90a49f48828f3",
+  "active": "d20592917f777ec9",
   "lastOpenFiles": [
+    "工作/项目/代码/260203整理调试界面需要显示内容.md",
+    "Home.components",
+    "日志/2026-01-04.md",
+    "日志/2026-01-08.md",
+    "工作/项目/面板维护.md",
+    "工作/项目/代码/260707面板呼叫选项增加.md",
     "工作/项目/GUI.md",
     "工作/项目/代码/260707GUI增加参数组件.md",
-    "Home.components",
     "工作/项目/代码/260206本地记录语言.md",
     "个人/项目/260104Obsidian优化.md",
     "工作/项目/全封闭轨道.md",
-    "工作/项目/面板维护.md",
     "资源/form-flow插件/form/工作项目.cform",
     "工作/项目/代码/260707-弹窗样式体系统一重构.md",
-    "日志/2026-01-04.md",
-    "工作/项目/代码/260203整理调试界面需要显示内容.md",
     "个人/项目/面板新工程.md",
     "领域/输出.md",
     "领域/生活.md",
@@ -251,10 +254,8 @@
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260107切换上吊挂产品问题.md",
     "工作/项目/代码/260117面板按键消抖优化.md",
-    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-45B392A4B250C0177F2299BA4A254B09.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-AA155A644A0C6CFDAE248952FC4B8CBD.png",
-    "工作/项目/代码/260401S3分拣面板.md",
     "资源/form-flow插件/form/学习.cform",
     "资源/form-flow插件/form/兴趣探索.cform",
     "资源/form-flow插件/form/生活.cform",

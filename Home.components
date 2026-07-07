@@ -1430,7 +1430,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-02-03T01:36:33.439Z",
+      "updateAt": "2026-07-07T05:35:13.756Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1454,7 +1454,7 @@
         "showAllProperties": false,
         "items": [],
         "cover": {
-          "type": "image",
+          "type": "textContent",
           "source": "firstImageInNote",
           "fit": "cover",
           "layout": "components--page-card-cover-landscape",
