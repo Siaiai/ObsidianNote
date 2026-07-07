@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "59e7c9898a7bdc7f",
+        "id": "dce14076ae6f45df",
         "type": "tabs",
         "children": [
           {
-            "id": "d20592917f777ec9",
+            "id": "c8c893893636908f",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -224,10 +224,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d20592917f777ec9",
+  "active": "c8c893893636908f",
   "lastOpenFiles": [
-    "工作/项目/代码/260203整理调试界面需要显示内容.md",
+    "领域/日志.md",
     "Home.components",
+    "工作/项目/代码/260203整理调试界面需要显示内容.md",
     "日志/2026-01-04.md",
     "日志/2026-01-08.md",
     "工作/项目/面板维护.md",
@@ -242,7 +243,6 @@
     "个人/项目/面板新工程.md",
     "领域/输出.md",
     "领域/生活.md",
-    "领域/日志.md",
     "领域/个人.md",
     "领域/工作.md",
     "260707_SiaZhang2003@hotmail.com_components_license.md",
