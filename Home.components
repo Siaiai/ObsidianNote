@@ -1430,7 +1430,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-07-07T05:45:56.849Z",
+      "updateAt": "2026-07-07T05:55:11.585Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -1455,11 +1455,11 @@
         "items": [],
         "cover": {
           "type": "image",
-          "source": "url",
+          "source": "firstImageInNote",
           "fit": "cover",
           "layout": "components--page-card-cover-landscape",
           "position": "top",
-          "sourceValue": "https://www.dmoe.cc/random.php"
+          "sourceValue": ""
         },
         "pinFiltersToMenuBar": false,
         "hideHeaderMenu": true,
@@ -1526,7 +1526,17 @@
         ]
       },
       "icon": "AppWindowMac",
-      "groupBy": "area"
+      "groupBy": "area",
+      "sort": {
+        "orders": [
+          {
+            "id": "15b10706-d0c4-4a67-975a-925ef1c4797b",
+            "property": "${file.basename}",
+            "direction": "desc",
+            "disabled": false
+          }
+        ]
+      }
     },
     {
       "id": "09e30e96-9ff4-4ef4-9160-16d5acac4a84",

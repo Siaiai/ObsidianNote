@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "dce14076ae6f45df",
+        "id": "b7f2a65326a6b71e",
         "type": "tabs",
         "children": [
           {
-            "id": "c8c893893636908f",
+            "id": "ab21bbf2592fb037",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -224,10 +224,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c8c893893636908f",
+  "active": "ab21bbf2592fb037",
   "lastOpenFiles": [
-    "领域/日志.md",
+    "日志/2026-02-24.md",
     "Home.components",
+    "领域/日志.md",
     "工作/项目/代码/260203整理调试界面需要显示内容.md",
     "日志/2026-01-04.md",
     "日志/2026-01-08.md",
