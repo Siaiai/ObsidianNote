@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a1dadffcefec3d2a",
+        "id": "76a67ece1c305ffb",
         "type": "tabs",
         "children": [
           {
-            "id": "5cffc8c6fc6f01ea",
+            "id": "4f616879481bd456",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -207,7 +207,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 299.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,11 +223,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5cffc8c6fc6f01ea",
+  "active": "4f616879481bd456",
   "lastOpenFiles": [
-    "工作/项目/代码/260107切换上吊挂产品问题.md",
+    "260707_SiaZhang2003@hotmail.com_components_license.md",
     "Home.components",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
+    "个人/项目/面板新工程.md",
+    "个人/项目/260104Obsidian优化.md",
+    "工作/项目/代码/260107切换上吊挂产品问题.md",
     "工作/项目/代码/260117面板按键消抖优化.md",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-45B392A4B250C0177F2299BA4A254B09.png",
@@ -266,10 +270,6 @@
     "工作/DEBUG问题指南.md",
     "工作/项目/代码/260224广播功能测试.md",
     "日志/2026-02-24.md",
-    "日志/2026-02-25.md",
-    "日志/2026-02-26.md",
-    "工作/项目/代码/260224缓存仓配置说明图形结合.md",
-    "日志/2026-02-10.md",
     "未命名.canvas"
   ]
 }
