@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-05-19T09:35:20.725Z",
+      "updateAt": "2026-07-07T04:35:56.917Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -217,6 +217,23 @@
           }
         },
         {
+          "componentId": "c39bbadb-c020-4a39-bffe-832fa0d168a8",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 48,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 1,
+              "y": 13,
+              "w": 1,
+              "h": 2
+            }
+          }
+        },
+        {
           "componentId": "226050b3-5894-4a9b-a29e-a88bb2bccd38",
           "layout": {
             "mobile": {
@@ -227,7 +244,7 @@
             },
             "laptop": {
               "x": 1,
-              "y": 13,
+              "y": 15,
               "w": 1,
               "h": 2
             }
@@ -1801,8 +1818,8 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2026-01-03T15:53:09.351Z",
-      "updateAt": "2026-01-04T12:23:00.206Z",
-      "title": "新建兴趣探索",
+      "updateAt": "2026-07-07T04:37:41.621Z",
+      "title": "新建工作项目",
       "description": "",
       "coverFit": "cover",
       "coverPosition": "left",
@@ -1810,15 +1827,15 @@
         "type": "OpenForm",
         "id": "c3a82676-de95-43d8-8e63-e3095010b5bd",
         "options": {
-          "filePath": "资源/form-flow插件/form/兴趣探索.cform",
-          "fileName": "兴趣探索.cform"
+          "filePath": "资源/form-flow插件/form/工作项目.cform",
+          "fileName": "工作项目.cform"
         }
       },
       "coverCoordinate": {
         "x": "50%",
         "y": "50%"
       },
-      "icon": "Atom"
+      "icon": "Airplay"
     },
     {
       "id": "c7140951-de79-469f-b409-00b01ee48a32",
@@ -2379,6 +2396,35 @@
         "y": "50%"
       },
       "icon": "CalendarDays"
+    },
+    {
+      "id": "c39bbadb-c020-4a39-bffe-832fa0d168a8",
+      "type": "card",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": true,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-01-03T15:53:09.351Z",
+      "updateAt": "2026-01-04T12:22:51.175Z",
+      "title": "新建个人项目",
+      "description": "",
+      "coverFit": "cover",
+      "coverPosition": "left",
+      "clickAction": {
+        "type": "OpenForm",
+        "id": "c3a82676-de95-43d8-8e63-e3095010b5bd",
+        "options": {
+          "filePath": "资源/form-flow插件/form/个人项目.cform",
+          "fileName": "个人项目.cform"
+        }
+      },
+      "coverCoordinate": {
+        "x": "50%",
+        "y": "50%"
+      },
+      "icon": "Album"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
