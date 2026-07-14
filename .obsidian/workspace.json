@@ -33,8 +33,7 @@
               "title": "260401S3分拣面板-SIA-R9000P"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -239,10 +238,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2867e405454c1566",
+  "active": "ab21bbf2592fb037",
   "lastOpenFiles": [
-    "Home.components",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
+    "Home.components",
     "日志/2026-07-14.md",
     "工作/项目/代码/260707面板呼叫选项增加.md",
     "日志/2026-02-24.md",
