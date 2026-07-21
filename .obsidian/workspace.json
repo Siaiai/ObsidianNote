@@ -61,8 +61,7 @@
               "title": "260401S3分拣面板-SIA-R9000P"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -267,10 +266,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e914ba279c7336ca",
+  "active": "ab21bbf2592fb037",
   "lastOpenFiles": [
-    "Home.components",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
+    "Home.components",
     "工作/项目/代码/260715面板柬埔寨进达需求.md",
     "日志/2026-07-14.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.2196.88378defd3b5",
