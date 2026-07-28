@@ -28,8 +28,6 @@ flowchart TD
         Atlas --> Pkg
     end
 
-    Pkg ===>|"gid桥·同源分叉对齐"| dev
-
     subgraph dev["块2·下位机(运行时消费)"]
         Pkg -.->|"shape字体"| Font[hb_face·hb_font]
         In["UTF-8文本"] --> BiDi["BiDi分段<br/>(仅RTL触发)"]
@@ -37,10 +35,11 @@ flowchart TD
         Font --> Shape
         Shape --> Out["HarfBuzz输出<br/>gid·cluster·advance·offset"]
         Out -->|"advance·cluster"| Layout["行排版<br/>断行·对齐·基线"]
-        Pkg -.->|"图集"| AL["图集<br/>w·h·bx·by·bitmap]
+        Pkg -.->|"图集"| AL["图集<br/>w·h·bx·by·bitmap"]
+        Layout -->|"gid"| AL
         Layout -->|"pen·Shift"| Merge["合成坐标<br/>pen+Shift+Bearing"]
         AL -->|"bearing·bitmap"| Merge
-        Merge --> Blit["blit→shadow buffer"]
+        Merge --> Blit["blit->shadow buffer"]
         Blit --> Screen[刷屏]
     end
 
