@@ -20,6 +20,20 @@
             }
           },
           {
+            "id": "99c0cb9a4e533f2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/项目/代码/260728harfbuzz移植.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260728harfbuzz移植"
+            }
+          },
+          {
             "id": "1c66f416333d4187",
             "type": "leaf",
             "state": {
@@ -75,7 +89,8 @@
               "title": "260401S3分拣面板-SIA-R9000P"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -280,10 +295,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ab21bbf2592fb037",
+  "active": "99c0cb9a4e533f2a",
   "lastOpenFiles": [
-    "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "Home.components",
+    "工作/项目/代码/260728harfbuzz移植.md",
+    "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260715面板柬埔寨进达需求.md",
     "日志/2026-07-14.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.2196.88378defd3b5",
@@ -312,7 +328,6 @@
     "领域/工作.md",
     "260707_SiaZhang2003@hotmail.com_components_license.md",
     "工作/项目/杰克科技股份有限公司.md",
-    "工作/项目/GUI框架/架构总览.md",
     "工作/项目/GUI框架",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-45B392A4B250C0177F2299BA4A254B09.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-AA155A644A0C6CFDAE248952FC4B8CBD.png",
