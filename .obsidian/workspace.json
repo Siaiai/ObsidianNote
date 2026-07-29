@@ -33,8 +33,7 @@
               "title": "260728harfbuzz移植"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -239,11 +238,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9aa0386aff1d5619",
+  "active": "5f5e9aa1e053c168",
   "lastOpenFiles": [
+    "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "Home.components",
-    "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260715面板柬埔寨进达需求.md",
     "日志/2026-07-14.md",
