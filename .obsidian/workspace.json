@@ -20,20 +20,6 @@
             }
           },
           {
-            "id": "336b5d89f222e2ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260128全封闭轨道新加机制与待测试项"
-            }
-          },
-          {
             "id": "9aa0386aff1d5619",
             "type": "leaf",
             "state": {
@@ -253,10 +239,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "336b5d89f222e2ba",
+  "active": "9aa0386aff1d5619",
   "lastOpenFiles": [
-    "Home.components",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+    "Home.components",
     "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260715面板柬埔寨进达需求.md",
