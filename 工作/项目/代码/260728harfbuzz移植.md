@@ -56,10 +56,14 @@ flowchart TD
 ## 项目结构
 
 harfbuzz-lite
+├── docs/
+├── res/
+│    ├── fonts/ ##转换时需要用到的字体
+│    └── 
 ├── src/
-│   ├── third_party/ ##第三方库
-│   ├── font_generator_cli/ ##转换字体的CLI工具，生成子集和栅格化字体
-│   └── hb_lite/ ##给mcu用的库
+│    ├── third_party/ ##第三方库
+│    ├── font_generator_cli/ ##转换字体的CLI工具，生成子集和栅格化字体
+│    └── hb_lite/ ##给mcu用的库
 ├── examples/
 ├── tests/
 ├── CMakeLists.txt
