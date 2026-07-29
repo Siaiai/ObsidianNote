@@ -55,28 +55,31 @@ flowchart TD
 
 ## 项目结构
 
-harfembed
-├── docs/
+harfembed/
+├── docs/                               # 文档
 ├── res/
-│    ├── fonts/ ##转换时需要用到的字体 CLI的输入
-│    │    ├── xxx.ttf
-│    │    └── xxx.otf
-│    └── fontlets/ ##生成后的字体文件
-│          ├── fontlets_registry.h
-│          ├── common.fontlet
-│          ├── latin.fontlet
-│          ├── hani.fontlet
-│          └── xxx_write_script.fontlet
+│   ├── fonts/                          # 源字体，CLI 输入
+│   │   ├── xxx.ttf
+│   │   └── xxx.otf
+│   └── fontlets/                          # 生成产物
+│       ├── fontlets_registry.h        # 生成的 fontlet 索引
+│       ├── common.fontlet
+│       ├── latn.fontlet
+│       ├── hani.fontlet
+│       └── hans.fontlet
 ├── src/
-│    ├── third_party/ ##第三方库
-│    ├── font_generator_cli/ ##转换字体的CLI工具，生成子集和栅格化字体
-│    └── harfembed/ ##给mcu用的库
-│          ├── inc/
-│                ├── fontlet_format.h
-│ 
+│   ├── third_party/                   # harfbuzz / freetype
+│   ├── fonlet_generator_cli/       # 生成fontlet
+│   │   └── CMakeLists.txt
+│   └── harfembed/                   # MCU 库
+│       ├── CMakeLists.txt
+│       └── inc/                          # 公共 API 头（含 fontlet_format.h）
 ├── examples/
+│   └── CMakeLists.txt
 ├── tests/
+│   └── CMakeLists.txt
+├── .gitignore
 ├── CMakeLists.txt
+├── LICENSE
 └── README.md
-
 
