@@ -58,11 +58,11 @@ flowchart TD
 harfembed
 ├── docs/
 ├── res/
-│    ├── fonts/ ##转换时需要用到的字体
+│    ├── fonts/ ##转换时需要用到的字体 CLI的输入
 │    │    ├── xxx.ttf
 │    │    └── xxx.otf
 │    └── fontlets/ ##生成后的字体文件
-│          ├── fontlet_format.h
+│          ├── fontlets_registry.h
 │          ├── common.fontlet
 │          ├── latin.fontlet
 │          ├── hani.fontlet
@@ -72,6 +72,7 @@ harfembed
 │    ├── font_generator_cli/ ##转换字体的CLI工具，生成子集和栅格化字体
 │    └── harfembed/ ##给mcu用的库
 │          ├── inc/
+│                ├── fontlet_format.h
 │ 
 ├── examples/
 ├── tests/
