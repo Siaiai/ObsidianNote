@@ -17,7 +17,6 @@ type: none
 
 ## 方案
 
-
 ```mermaid
 flowchart TD
     subgraph host["块1·上位机(离线产资源)"]
@@ -53,5 +52,14 @@ flowchart TD
     class Src,Sub,SF,Atlas,Pkg res
     class Merge,Blit,Screen rnd
 ```
+
+## 项目结构
+
+harfbuzz-lite
+├── src/
+│   ├── ThirdParty
+│   └── utils.ts
+├── CMakeLists.txt
+└── README.md
 
 
