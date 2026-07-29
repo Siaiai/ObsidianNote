@@ -55,19 +55,24 @@ flowchart TD
 
 ## 项目结构
 
-harfbuzz-lite
+harfembed
 ├── docs/
 ├── res/
 │    ├── fonts/ ##转换时需要用到的字体
+│    │    ├── xxx.ttf
+│    │    └── xxx.otf
 │    └── fontlets/ ##生成后的字体文件
 │          ├── fontlet_format.h
-│          ├── .fontlet
-│          ├── fontlet_format.fontlet
-│          └── XXX.fontlet
+│          ├── common.fontlet
+│          ├── latin.fontlet
+│          ├── hani.fontlet
+│          └── xxx_write_script.fontlet
 ├── src/
 │    ├── third_party/ ##第三方库
 │    ├── font_generator_cli/ ##转换字体的CLI工具，生成子集和栅格化字体
-│    └── hb_lite/ ##给mcu用的库
+│    └── harfembed/ ##给mcu用的库
+│          ├── inc/
+│ 
 ├── examples/
 ├── tests/
 ├── CMakeLists.txt
