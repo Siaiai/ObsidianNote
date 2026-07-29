@@ -59,7 +59,11 @@ harfbuzz-lite
 ├── docs/
 ├── res/
 │    ├── fonts/ ##转换时需要用到的字体
-│    └── 
+│    └── fontlets/ ##生成后的字体文件
+│          ├── fontlet_format.h
+│          ├── .fontlet
+│          ├── fontlet_format.fontlet
+│          └── XXX.fontlet
 ├── src/
 │    ├── third_party/ ##第三方库
 │    ├── font_generator_cli/ ##转换字体的CLI工具，生成子集和栅格化字体
