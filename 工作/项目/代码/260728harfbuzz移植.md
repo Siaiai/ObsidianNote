@@ -57,8 +57,9 @@ flowchart TD
 
 harfbuzz-lite
 ├── src/
-│   ├── ThirdParty
-│   └── utils.ts
+│   ├── third_party/
+│   └── 
+├──examples/
 ├── CMakeLists.txt
 └── README.md
 
