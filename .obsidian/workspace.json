@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6780ca40bcb8cfcc",
+        "id": "5acd6e6ad0d1382c",
         "type": "tabs",
         "children": [
           {
-            "id": "b6fe83c4f039008c",
+            "id": "3981e280c132d178",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
-              "state": {
-                "file": "Home.components"
-              },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
         ]
@@ -92,13 +90,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -117,7 +114,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.components",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +123,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Home 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -136,12 +132,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Home 的出链列表"
+              "title": "出链"
             }
           }
         ],
@@ -164,18 +159,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b6fe83c4f039008c",
+  "active": "3981e280c132d178",
   "lastOpenFiles": [
     "工作/操作面板/260731实例.md",
+    "工作/项目/GUI.md",
     "工作/项目/分拣操作面板.md",
-    "工作/操作面板/260731实例2.md",
+    "工作/项目/吊挂操作面板.md",
+    "工作/项目/S3吊挂控制器.md",
+    "工作/项目/S3全封闭轨道.md",
+    "领域/工作.md",
+    "领域/未命名.md",
+    "领域/日志.md",
     "资源/form-flow插件/form/工作任务.cform",
     "资源/form-flow插件/form/工作项目.cform",
-    "工作/项目/吊挂操作面板.md",
+    "工作/操作面板/260731实例2.md",
     "Home.components",
-    "工作/项目/GUI.md",
-    "工作/项目/S3全封闭轨道.md",
-    "工作/项目/S3吊挂控制器.md",
     "工作/项目/代码/260105工序号识别2代.md",
     "资源/模板/日志模板-day.md",
     "日志/2026-01-04.md",
@@ -196,14 +194,12 @@
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-E8278B7FC26ADFD67EE51D7EA4C0E00B-1.png",
     "工作/项目/代码/260305面板广播.md",
     "工作/项目/代码/260319面板增加时钟.md",
-    "工作/项目/代码/260319全封闭读卡出站.md",
     "工作/项目/代码/附件/53FFC243CB4C0DC8A97404CC84DF7A22.jpg",
     "工作/项目/代码/附件/67D4CF222B965F78496CE03C0C558973.jpg",
     "工作/项目/代码/附件/69E0A1B73BDFADACC27E951A438991C1.png",
     "工作/项目/代码/附件/45B392A4B250C0177F2299BA4A254B09.png",
     "工作/项目/代码/附件/5BEB33D92847AF8D0503DEE4958F0B85.png",
     "工作/项目/代码/附件/3D6806671DC750410D89582CF265A094.jpg",
-    "工作/项目/代码/260203整理调试界面需要显示内容.md",
     "工作/项目/代码/附件",
     "未命名.base",
     "工作/操作面板",
