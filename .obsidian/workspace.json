@@ -31,8 +31,7 @@
               "title": "mini-calendar"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,12 +160,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "资源/components插件/组件文件/mini-calendar.components",
+                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "mini-calendar 的出链列表"
+              "title": "Home 的出链列表"
             }
           },
           {
@@ -236,10 +235,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "93e290c12d28565d",
+  "active": "4e90a7d8553ab0d2",
   "lastOpenFiles": [
-    "资源/components插件/组件文件/timer.components",
     "资源/components插件/组件文件/mini-calendar.components",
+    "资源/components插件/组件文件/timer.components",
     "工作/项目/代码/260105工序号识别2代.md",
     "Home.components",
     "未命名.base",
