@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "acc260e82d7c4e31",
+        "id": "5cbc4d1ffacd3900",
         "type": "tabs",
         "children": [
           {
-            "id": "aaeb26d1595cbe11",
+            "id": "1ee2082c614b2445",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -92,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "资源/components插件/组件文件/mini-calendar.components",
-                "followCursor": false,
+                "file": "Home.components",
+                "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "mini-calendar 的大纲"
+              "title": "Home 的大纲"
             }
           },
           {
@@ -112,24 +112,12 @@
             }
           },
           {
-            "id": "91472d4662430d5d",
-            "type": "leaf",
-            "state": {
-              "type": "components-file-view",
-              "state": {
-                "file": "资源/components插件/组件文件/timer.components"
-              },
-              "icon": "clock",
-              "title": "timer"
-            }
-          },
-          {
             "id": "c4193892cd4956fa",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "资源/components插件/组件文件/mini-calendar.components",
+                "file": "Home.components",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +127,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "mini-calendar 的反向链接列表"
+              "title": "Home 的反向链接列表"
             }
           },
           {
@@ -154,54 +142,6 @@
               },
               "icon": "links-going-out",
               "title": "Home 的出链列表"
-            }
-          },
-          {
-            "id": "43bfb411e56c3084",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "标签"
-            }
-          },
-          {
-            "id": "ca8fc17ad59128bd",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
-            }
-          }
-        ],
-        "currentTab": 4
-      },
-      {
-        "id": "e6794c363cdb0f03",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "7419b96847f071f0",
-            "type": "leaf",
-            "state": {
-              "type": "components-file-view",
-              "state": {
-                "file": "资源/components插件/组件文件/mini-calendar.components"
-              },
-              "icon": "calendar",
-              "title": "mini-calendar"
             }
           }
         ]
@@ -223,36 +163,37 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "aaeb26d1595cbe11",
+  "active": "1ee2082c614b2445",
   "lastOpenFiles": [
+    "资源/form-flow插件/form/个人项目-子项.cform",
+    "工作/项目/吊挂面板.md",
+    "Home.components",
+    "工作/项目/全封闭轨道.md",
+    "工作/项目/代码/260106布鲁斯面板.md",
+    "工作/项目/代码/260707面板呼叫选项增加.md",
+    "领域/日志.md",
+    "资源/模板/日志模板-day.md",
+    "资源/components插件/组件文件/timer.components",
     "资源/components插件/组件文件/mini-calendar.components",
+    "领域/工作.md",
+    "260707_SiaZhang2003@hotmail.com_components_license.md",
+    "领域/个人.md",
+    "领域/生活.md",
     "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260123面板控制三色灯.md",
     "资源/附件/260123面板控制三色灯/IMG-67D4CF222B965F78496CE03C0C558973.jpg",
-    "Home.components",
-    "资源/components插件/组件文件/timer.components",
     "工作/项目/代码/260105工序号识别2代.md",
     "未命名.base",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
-    "260707_SiaZhang2003@hotmail.com_components_license.md",
-    "领域/日志.md",
     "领域/学习.md",
     "领域/兴趣探索.md",
     "领域/输出.md",
-    "领域/生活.md",
-    "领域/工作.md",
-    "领域/个人.md",
-    "工作/项目/代码/260106布鲁斯面板.md",
-    "工作/项目/吊挂面板.md",
-    "资源/form-flow插件/form/个人项目-子项.cform",
     "资源/form-flow插件/form/工作项目-子项.cform",
     "吊挂面板.md",
     "工作/项目/代码/260206本地记录语言.md",
     "工作/项目/代码/260109衣架吊篮模式设置修改为176.md",
-    "工作/项目/全封闭轨道.md",
     "资源/form-flow插件/form/工作项目.cform",
     "资源/form-flow插件/form/个人项目.cform",
-    "资源/模板/日志模板-day.md",
     "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "资源/form-flow插件/form/学习.cform",
     "资源/form-flow插件/form/兴趣探索.cform",
@@ -269,7 +210,6 @@
     "日志/2026-01-04.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260707GUI增加参数组件.md",
-    "工作/项目/代码/260715面板柬埔寨进达需求.md",
-    "日志/2026-07-14.md"
+    "工作/项目/代码/260715面板柬埔寨进达需求.md"
   ]
 }
