@@ -1,14 +1,24 @@
 {
 	"nodes":[
-		{"id":"4b977b290ff8b145","x":-520,"y":-420,"width":250,"height":60,"type":"text","text":"领域"},
-		{"id":"a47921289a6cfb4b","x":-520,"y":-220,"width":250,"height":60,"type":"text","text":"生活"},
-		{"id":"3f7b42010a786e99","x":-120,"y":-220,"width":250,"height":60,"type":"text","text":"学习"},
-		{"id":"3ab45e571657b16e","x":-940,"y":-220,"width":250,"height":60,"type":"text","text":"工作"},
-		{"id":"2e4f7917d389048b","type":"text","text":"工作","x":-940,"y":-220,"width":250,"height":60}
+		{"id":"a47921289a6cfb4b","type":"text","text":"生活","x":-520,"y":-80,"width":250,"height":60},
+		{"id":"3f7b42010a786e99","type":"text","text":"学习","x":-120,"y":-80,"width":250,"height":60},
+		{"id":"3ab45e571657b16e","type":"text","text":"工作","x":-940,"y":-80,"width":250,"height":60},
+		{"id":"2e4f7917d389048b","type":"text","text":"工作","x":-940,"y":-80,"width":250,"height":60},
+		{"id":"1e023791a5ce49de","type":"text","text":"日志","x":260,"y":-80,"width":250,"height":60},
+		{"id":"8fe5b491784d5cbf","type":"text","text":"输出","x":640,"y":-80,"width":250,"height":60},
+		{"id":"4b977b290ff8b145","type":"text","text":"领域","x":-120,"y":-360,"width":250,"height":60},
+		{"id":"60cb1dd8fe45d453","type":"text","text":"项目","x":-1140,"y":160,"width":250,"height":60},
+		{"id":"1370248441a08a50","type":"text","text":"开发","x":-1460,"y":320,"width":250,"height":60},
+		{"id":"e5eed70bd76aaae3","type":"text","text":"会议","x":-1140,"y":320,"width":250,"height":60}
 	],
 	"edges":[
 		{"id":"f4ee5e1cbc35f9b3","fromNode":"4b977b290ff8b145","fromSide":"bottom","toNode":"3ab45e571657b16e","toSide":"top"},
 		{"id":"4854f81ceee0b606","fromNode":"4b977b290ff8b145","fromSide":"bottom","toNode":"a47921289a6cfb4b","toSide":"top"},
-		{"id":"5a2a8c4f367c7b7a","fromNode":"4b977b290ff8b145","fromSide":"bottom","toNode":"3f7b42010a786e99","toSide":"top"}
+		{"id":"5a2a8c4f367c7b7a","fromNode":"4b977b290ff8b145","fromSide":"bottom","toNode":"3f7b42010a786e99","toSide":"top"},
+		{"id":"892b14a67a6b5b90","fromNode":"4b977b290ff8b145","fromSide":"bottom","toNode":"1e023791a5ce49de","toSide":"top"},
+		{"id":"138ff9ac68a34c9b","fromNode":"4b977b290ff8b145","fromSide":"bottom","toNode":"8fe5b491784d5cbf","toSide":"top"},
+		{"id":"e3d27b384562cee3","fromNode":"2e4f7917d389048b","fromSide":"bottom","toNode":"60cb1dd8fe45d453","toSide":"top"},
+		{"id":"deef85b740055869","fromNode":"1370248441a08a50","fromSide":"top","toNode":"60cb1dd8fe45d453","toSide":"bottom"},
+		{"id":"ebf7e693989ad1a4","fromNode":"e5eed70bd76aaae3","fromSide":"top","toNode":"60cb1dd8fe45d453","toSide":"bottom"}
 	]
 }
