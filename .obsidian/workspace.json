@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "c9c6406c0d985afd",
+        "id": "461f99ee53b9ba9b",
         "type": "tabs",
         "children": [
           {
-            "id": "a1292a4f045d8429",
+            "id": "e47e22ed69785671",
             "type": "leaf",
             "state": {
               "type": "form-view",
               "state": {
-                "file": "资源/form-flow插件/form/工作任务.cform"
+                "file": "资源/form-flow插件/form/工作项目.cform"
               },
               "icon": "gantt-chart",
-              "title": "工作任务"
+              "title": "工作项目"
             }
           }
         ]
@@ -92,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "资源/form-flow插件/form/工作任务.cform",
+                "file": "资源/form-flow插件/form/工作项目.cform",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "工作任务 的大纲"
+              "title": "工作项目 的大纲"
             }
           },
           {
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "资源/form-flow插件/form/工作任务.cform",
+                "file": "资源/form-flow插件/form/工作项目.cform",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "工作任务 的反向链接列表"
+              "title": "工作项目 的反向链接列表"
             }
           },
           {
@@ -136,12 +136,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "资源/form-flow插件/form/工作任务.cform",
+                "file": "资源/form-flow插件/form/工作项目.cform",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "工作任务 的出链列表"
+              "title": "工作项目 的出链列表"
             }
           }
         ]
@@ -163,14 +163,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a1292a4f045d8429",
+  "active": "e47e22ed69785671",
   "lastOpenFiles": [
-    "资源/form-flow插件/form/工作项目.cform",
     "资源/form-flow插件/form/工作任务.cform",
+    "资源/form-flow插件/form/工作项目.cform",
+    "工作/项目/操作面板.md",
+    "未命名.md",
+    "未命名.base",
+    "工作/操作面板/260731实例2.md",
+    "Home.components",
+    "工作/操作面板/260731实例.md",
+    "工作/操作面板",
     "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260105工序号识别2代.md",
     "工作/项目/代码/260105整合参数含义到终端用户指南.md",
-    "Home.components",
     "工作/吊挂操作面板/吊挂操作面板.md",
     "工作/吊挂操作面板/260731123.md",
     "工作/260731写代码示例.md",
@@ -184,8 +190,6 @@
     "工作/项目/1",
     "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/个人项目-子项.cform",
-    "资源/form-flow插件/form/学习.cform",
-    "资源/form-flow插件/form/兴趣探索.cform",
     "未命名.canvas",
     "工作/项目/代码/260413返工确认.md",
     "日志/2026-01-07.md",
@@ -197,11 +201,7 @@
     "工作/项目/代码/260106布鲁斯面板.md",
     "工作/项目/代码/260707面板呼叫选项增加.md",
     "260707_SiaZhang2003@hotmail.com_components_license.md",
-    "领域/个人.md",
-    "领域/生活.md",
-    "工作/项目/代码/260123面板控制三色灯.md",
     "资源/附件/260123面板控制三色灯/IMG-67D4CF222B965F78496CE03C0C558973.jpg",
-    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59 1.png",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59.png",

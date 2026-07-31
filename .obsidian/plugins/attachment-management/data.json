@@ -2,9 +2,9 @@
   "language": "en",
   "attachPath": {
     "attachmentRoot": "资源/附件",
-    "saveAttE": "obsFolder",
+    "saveAttE": "nextToNote",
     "attachmentPath": "${notename}",
-    "attachFormat": "IMG-${md5}",
+    "attachFormat": "${md5}",
     "type": "GLOBAL"
   },
   "dateFormat": "YYYYMMDDHHmmssSSS",
