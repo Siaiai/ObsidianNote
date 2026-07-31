@@ -1,9 +1,9 @@
 {
   "language": "en",
   "attachPath": {
-    "attachmentRoot": "资源/附件",
+    "attachmentRoot": "附件",
     "saveAttE": "nextToNote",
-    "attachmentPath": "${notename}",
+    "attachmentPath": "",
     "attachFormat": "${md5}",
     "type": "GLOBAL"
   },
