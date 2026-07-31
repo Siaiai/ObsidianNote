@@ -32,7 +32,8 @@
           "label": "完成",
           "value": ""
         }
-      ]
+      ],
+      "required": true
     },
     {
       "id": "c43c978e-8966-43b4-93ac-8623ce1b7818",
@@ -51,7 +52,8 @@
           "label": "会议",
           "value": ""
         }
-      ]
+      ],
+      "required": true
     },
     {
       "id": "64d3a9dc-3c8e-41df-9ab7-1fd9d58241c9",
@@ -66,7 +68,8 @@
       "id": "e5b68d75-4758-41b2-9621-b3a8bc002c1f",
       "label": "项目",
       "type": "property_value_suggestion",
-      "propertyName": "项目"
+      "propertyName": "项目",
+      "required": true
     }
   ],
   "actions": [
@@ -75,8 +78,8 @@
       "targetFolder": "",
       "fileName": "",
       "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
-      "filePath": "工作/项目/代码/{{date:YYMMDD}}{{@简述}}.md",
-      "content": "---\n领域: \"[[工作]]\"\n项目: {{@状态}}\n创建时间: {{date:YYYY-MM-DD HH:mm:ss}}\n截止时间: {{@截止时间}}\n完成时间:\n类型:\n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
+      "filePath": "工作/{{@项目}}/{{date:YYMMDD}}{{@简述}}.md",
+      "content": "---\n领域: \"[[工作]]\"\n项目: {{@项目}}\n创建时间: {{date:YYYY-MM-DD HH:mm:ss}}\n截止时间: {{@截止时间}}\n完成时间: \n类型: {{@类型}}\n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
       "contentTemplateSource": "text"
     }
   ],
