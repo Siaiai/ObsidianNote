@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-07-07T04:35:56.917Z",
+      "updateAt": "2026-07-31T02:20:44.070Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -39,10 +39,10 @@
               "h": 4
             },
             "laptop": {
-              "x": 6,
+              "x": 7,
               "y": 11,
-              "w": 6,
-              "h": 15
+              "w": 5,
+              "h": 7
             }
           }
         },
@@ -314,24 +314,7 @@
               "x": 0,
               "y": 18,
               "w": 6,
-              "h": 33
-            }
-          }
-        },
-        {
-          "componentId": "6ec935e0-3753-4d73-a7a3-4d111423972a",
-          "layout": {
-            "mobile": {
-              "x": 0,
-              "y": 4,
-              "w": 4,
-              "h": 4
-            },
-            "laptop": {
-              "x": 6,
-              "y": 26,
-              "w": 6,
-              "h": 25
+              "h": 27
             }
           }
         }
@@ -651,7 +634,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-07-28T15:41:42.539Z",
+      "updateAt": "2026-07-31T02:20:25.811Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -1391,283 +1374,6 @@
       },
       "newPageLocation": {
         "location": "个人"
-      }
-    },
-    {
-      "id": "6ec935e0-3753-4d73-a7a3-4d111423972a",
-      "type": "multi",
-      "titleAlign": "center",
-      "tabTitle": "",
-      "maxWidthRatio": -1,
-      "showBorder": false,
-      "showTitle": true,
-      "showShadow": true,
-      "createAt": "2026-01-04T07:23:05.252Z",
-      "updateAt": "2026-01-04T07:43:48.236Z",
-      "components": [
-        {
-          "componentId": "df05800c-9df1-427e-95d8-a3393ef5ce90"
-        },
-        {
-          "componentId": "09e30e96-9ff4-4ef4-9160-16d5acac4a84"
-        }
-      ],
-      "layoutType": "tab",
-      "locked": false,
-      "layoutOptions": {}
-    },
-    {
-      "id": "df05800c-9df1-427e-95d8-a3393ef5ce90",
-      "type": "dynamicDataView",
-      "titleAlign": "center",
-      "tabTitle": "",
-      "maxWidthRatio": -1,
-      "showBorder": false,
-      "showTitle": true,
-      "showShadow": false,
-      "createAt": "2026-01-04T07:23:16.787Z",
-      "updateAt": "2026-07-07T05:58:23.896Z",
-      "viewType": "gallary",
-      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
-      "properties": [
-        {
-          "id": "__componentsTitleProperty_0x7c00",
-          "name": "文件名",
-          "type": "text",
-          "isShow": true,
-          "wrap": true,
-          "options": {}
-        }
-      ],
-      "templates": [],
-      "groups": [],
-      "colorfulGroups": false,
-      "viewOptions": {
-        "openPageIn": "current",
-        "openPageAfterCreate": true,
-        "itemSize": "components--page-card-tiny",
-        "showPropertyName": false,
-        "showAllProperties": false,
-        "items": [],
-        "cover": {
-          "type": "image",
-          "source": "firstImageInNote",
-          "fit": "cover",
-          "layout": "components--page-card-cover-landscape",
-          "position": "top",
-          "sourceValue": ""
-        },
-        "pinFiltersToMenuBar": false,
-        "hideHeaderMenu": true,
-        "showGrid": false,
-        "heightType": "auto",
-        "heightValue": 600
-      },
-      "groupStates": {
-        "sort": "manual",
-        "format": "none",
-        "statics": [
-          "__$uncategorizedGroup"
-        ],
-        "orders": [
-          "[[兴趣探索]]",
-          "[[日志]]"
-        ],
-        "hiddens": [
-          "__$uncategorizedGroup"
-        ],
-        "collapseds": [
-          "__$uncategorizedGroup",
-          "[[兴趣探索]]",
-          "[[日志]]"
-        ]
-      },
-      "loadLimitPerPage": "6",
-      "title": "产出",
-      "filter": {
-        "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
-        "type": "group",
-        "operator": "or",
-        "conditions": [
-          {
-            "id": "1e7938e1-4aa0-4d5e-b458-3ea492039978",
-            "type": "group",
-            "operator": "and",
-            "conditions": [
-              {
-                "id": "290207a5-6eaa-4c66-90b4-2d249ab8ec74",
-                "type": "filter",
-                "operator": "contains",
-                "property": "area",
-                "value": "[[日志]]",
-                "conditions": []
-              },
-              {
-                "id": "4eafdbf9-9ccf-4f36-aceb-a3ff09b0bddb",
-                "type": "filter",
-                "operator": "not_equals",
-                "property": "${file.parent}",
-                "value": "资源/模板",
-                "conditions": []
-              }
-            ]
-          },
-          {
-            "id": "e7424221-8d62-43db-ba24-b04e733ceedb",
-            "type": "filter",
-            "operator": "contains",
-            "property": "tags",
-            "value": "output",
-            "conditions": []
-          }
-        ]
-      },
-      "icon": "AppWindowMac",
-      "groupBy": "area",
-      "sort": {
-        "orders": [
-          {
-            "id": "15b10706-d0c4-4a67-975a-925ef1c4797b",
-            "property": "${file.basename}",
-            "direction": "desc",
-            "disabled": false
-          }
-        ]
-      }
-    },
-    {
-      "id": "09e30e96-9ff4-4ef4-9160-16d5acac4a84",
-      "type": "dynamicDataView",
-      "titleAlign": "center",
-      "tabTitle": "",
-      "maxWidthRatio": -1,
-      "showBorder": false,
-      "showTitle": true,
-      "showShadow": false,
-      "createAt": "2026-01-04T11:22:16.268Z",
-      "updateAt": "2026-01-05T01:20:59.045Z",
-      "viewType": "timeline",
-      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
-      "properties": [
-        {
-          "id": "__componentsTitleProperty_0x7c00",
-          "name": "文件名",
-          "type": "text",
-          "isShow": true,
-          "wrap": false,
-          "options": {}
-        },
-        {
-          "id": "cb294c13-5145-4030-a21e-9d237da8babd",
-          "name": "status",
-          "isShow": true,
-          "type": "select",
-          "options": {
-            "items": [
-              {
-                "id": "40931d49-0b7f-440e-9df7-18d744c57898",
-                "value": "TODO",
-                "color": "components--color-red"
-              },
-              {
-                "id": "2de40724-e8a7-4950-b776-cd925fcd1382",
-                "value": "DOING",
-                "color": "components--color-green"
-              },
-              {
-                "id": "cfc86f61-0f07-40cc-9f7e-3a8fe31d0e99",
-                "value": "DONE",
-                "color": "components--color-yellow"
-              }
-            ]
-          }
-        },
-        {
-          "id": "fc55e19d-2518-490e-8e93-0fa3bb281a17",
-          "name": "deadline",
-          "isShow": true,
-          "type": "datetime",
-          "options": {}
-        }
-      ],
-      "templates": [],
-      "groups": [],
-      "colorfulGroups": false,
-      "viewOptions": {
-        "openPageIn": "tab",
-        "openPageAfterCreate": true,
-        "items": [],
-        "pinFiltersToMenuBar": false,
-        "hideHeaderMenu": false,
-        "showGrid": false,
-        "heightType": "auto",
-        "heightValue": 600,
-        "dateProperty": "createTime",
-        "endDateProperty": "deadline",
-        "colorProperty": "type"
-      },
-      "groupStates": {
-        "sort": "nameAsc",
-        "statics": [],
-        "orders": [],
-        "hiddens": [],
-        "collapseds": []
-      },
-      "title": "进行中的编码",
-      "icon": "Biohazard",
-      "filter": {
-        "id": "4ae5ad30-65b1-4ab5-a9be-51ac4e2117e2",
-        "type": "group",
-        "operator": "and",
-        "conditions": [
-          {
-            "id": "f7ee9647-a885-45ee-9224-861611087b33",
-            "type": "filter",
-            "operator": "contains",
-            "property": "tags",
-            "value": "code",
-            "conditions": []
-          },
-          {
-            "id": "d4e497e4-e706-4f23-b623-0ee3219c3022",
-            "type": "group",
-            "operator": "or",
-            "conditions": [
-              {
-                "id": "4edf65ff-1dcd-4a2d-a2a4-9bee6713579a",
-                "type": "filter",
-                "operator": "contains",
-                "property": "status",
-                "value": "DOING",
-                "conditions": []
-              },
-              {
-                "id": "7091128b-0b70-494d-b8d8-c9c244f93d7f",
-                "type": "filter",
-                "operator": "contains",
-                "property": "status",
-                "value": "TODO",
-                "conditions": []
-              }
-            ]
-          }
-        ]
-      },
-      "sort": {
-        "orders": [
-          {
-            "id": "1541407d-2790-4143-98ef-31ea119a9d67",
-            "property": "deadline",
-            "direction": "asc",
-            "disabled": false
-          },
-          {
-            "id": "fbcc2bd7-6e0c-419a-99cf-de9b58aad28e",
-            "property": "status",
-            "direction": "asc",
-            "disabled": false
-          }
-        ]
       }
     },
     {
