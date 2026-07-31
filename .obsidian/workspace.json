@@ -11,10 +11,12 @@
             "id": "74f3f2523bc09463",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "form-view",
+              "state": {
+                "file": "资源/form-flow插件/form/工作项目.cform"
+              },
+              "icon": "gantt-chart",
+              "title": "工作项目"
             }
           },
           {
@@ -146,6 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "资源/form-flow插件/form/工作项目.cform",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
