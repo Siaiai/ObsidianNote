@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b26d28e71604fbc4",
+        "id": "43fe937596d42001",
         "type": "tabs",
         "children": [
           {
-            "id": "41c2b67439a9a1a0",
+            "id": "c635d939175355f3",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -76,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 422.51240158081055
+    "width": 395.51240158081055
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -185,8 +185,7 @@
               "title": "添加笔记属性"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       },
       {
         "id": "e6794c363cdb0f03",
@@ -208,7 +207,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 299.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -223,21 +223,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "41c2b67439a9a1a0",
+  "active": "c635d939175355f3",
   "lastOpenFiles": [
-    "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
+    "资源/form-flow插件/form/工作项目-子项.cform",
     "Home.components",
+    "工作/项目/吊挂面板.md",
+    "工作/项目/代码/260106布鲁斯面板.md",
+    "吊挂面板.md",
+    "工作/项目/代码/260206本地记录语言.md",
+    "工作/项目/代码/260109衣架吊篮模式设置修改为176.md",
+    "工作/项目/全封闭轨道.md",
+    "领域/工作.md",
+    "资源/form-flow插件/form/工作项目.cform",
+    "领域/学习.md",
+    "资源/form-flow插件/form/个人项目.cform",
+    "资源/模板/日志模板-day.md",
+    "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "资源/components插件/组件文件/timer.components",
     "资源/form-flow插件/form/学习.cform",
     "资源/form-flow插件/form/兴趣探索.cform",
     "资源/form-flow插件/form/生活.cform",
-    "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/个人项目-子项.cform",
     "工作/项目/GUI.md",
-    "工作/项目/面板.md",
     "工作/项目/代码/260105工序号识别2代.md",
-    "工作/项目/全封闭轨道.md",
-    "领域/工作.md",
     "领域/个人.md",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59 1.png",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59.png",
@@ -248,7 +256,6 @@
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-B3083294AC515FD8FC356C16B7C5F71D.jpg",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-B6BE49E9ACC1BC07671DD04F4E32832D.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-AEDF6597C49C601A2E5A7CA941D67622.png",
-    "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-7570C162B03A0F052D0005914AD08A0F.jpg",
     "工作/读卡器架构设计.canvas",
     "领域/日志.md",
     "日志/2026-01-04.md",
@@ -261,16 +268,9 @@
     "日志/2026-07-14.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.2196.88378defd3b5",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.2196.f09ad27a698a",
-    "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.30880.a8545ffa0b83",
     "工作/项目/代码/260714自动出衣增加时长-定制.md",
     "工作/项目/代码/260707面板呼叫选项增加.md",
     "日志/2026-02-24.md",
-    "工作/项目/代码/260203整理调试界面需要显示内容.md",
-    "日志/2026-01-08.md",
-    "工作/项目/代码/260206本地记录语言.md",
-    "个人/项目/260104Obsidian优化.md",
-    "工作/项目/代码/260707-弹窗样式体系统一重构.md",
-    "个人/项目/面板新工程.md",
-    "领域/输出.md"
+    "工作/项目/代码/260203整理调试界面需要显示内容.md"
   ]
 }
