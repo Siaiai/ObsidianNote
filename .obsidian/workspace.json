@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "48699be09cd61896",
+        "id": "b26d28e71604fbc4",
         "type": "tabs",
         "children": [
           {
-            "id": "b7f1b87c92f0dc24",
+            "id": "41c2b67439a9a1a0",
             "type": "leaf",
             "state": {
-              "type": "form-view",
+              "type": "components-file-view",
               "state": {
-                "file": "资源/form-flow插件/form/个人项目-子项.cform"
+                "file": "Home.components"
               },
               "icon": "gantt-chart",
-              "title": "个人项目-子项"
+              "title": "Home"
             }
           }
         ]
@@ -92,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "资源/form-flow插件/form/个人项目-子项.cform",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "个人项目-子项 的大纲"
+              "title": "Home 的大纲"
             }
           },
           {
@@ -129,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "资源/form-flow插件/form/个人项目-子项.cform",
+                "file": "Home.components",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "个人项目-子项 的反向链接列表"
+              "title": "Home 的反向链接列表"
             }
           },
           {
@@ -148,12 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "资源/form-flow插件/form/个人项目-子项.cform",
+                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "个人项目-子项 的出链列表"
+              "title": "Home 的出链列表"
             }
           },
           {
@@ -223,14 +223,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b7f1b87c92f0dc24",
+  "active": "41c2b67439a9a1a0",
   "lastOpenFiles": [
+    "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "Home.components",
-    "工作/项目/代码/260105工序号识别2代.md",
+    "资源/components插件/组件文件/timer.components",
+    "资源/form-flow插件/form/学习.cform",
+    "资源/form-flow插件/form/兴趣探索.cform",
+    "资源/form-flow插件/form/生活.cform",
+    "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/个人项目-子项.cform",
+    "工作/项目/GUI.md",
+    "工作/项目/面板.md",
+    "工作/项目/代码/260105工序号识别2代.md",
     "工作/项目/全封闭轨道.md",
     "领域/工作.md",
-    "工作/项目/面板维护.md",
     "领域/个人.md",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59 1.png",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59.png",
@@ -247,7 +254,6 @@
     "日志/2026-01-04.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260707GUI增加参数组件.md",
-    "工作/项目/GUI.md",
     "260707_SiaZhang2003@hotmail.com_components_license.md",
     "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
@@ -256,7 +262,6 @@
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.2196.88378defd3b5",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.2196.f09ad27a698a",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.30880.a8545ffa0b83",
-    "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.30880.6a88760f8b34",
     "工作/项目/代码/260714自动出衣增加时长-定制.md",
     "工作/项目/代码/260707面板呼叫选项增加.md",
     "日志/2026-02-24.md",
@@ -264,12 +269,8 @@
     "日志/2026-01-08.md",
     "工作/项目/代码/260206本地记录语言.md",
     "个人/项目/260104Obsidian优化.md",
-    "资源/form-flow插件/form/工作项目.cform",
     "工作/项目/代码/260707-弹窗样式体系统一重构.md",
     "个人/项目/面板新工程.md",
-    "领域/输出.md",
-    "工作/项目/GUI框架",
-    "资源/form-flow插件/form/学习.cform",
-    "资源/form-flow插件/form/兴趣探索.cform"
+    "领域/输出.md"
   ]
 }
