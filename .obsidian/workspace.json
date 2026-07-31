@@ -161,12 +161,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "领域/个人.md",
+                "file": "资源/components插件/组件文件/mini-calendar.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "个人 的出链列表"
+              "title": "mini-calendar 的出链列表"
             }
           },
           {
@@ -198,7 +198,8 @@
               "title": "添加笔记属性"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       },
       {
         "id": "e6794c363cdb0f03",
@@ -235,7 +236,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dcf6717c3b03b6f5",
+  "active": "93e290c12d28565d",
   "lastOpenFiles": [
     "资源/components插件/组件文件/timer.components",
     "资源/components插件/组件文件/mini-calendar.components",
