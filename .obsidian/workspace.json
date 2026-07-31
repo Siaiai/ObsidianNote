@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "7013683ef4dc5654",
+        "id": "48699be09cd61896",
         "type": "tabs",
         "children": [
           {
-            "id": "6970b64e9c0aa2ea",
+            "id": "b7f1b87c92f0dc24",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "form-view",
               "state": {
-                "file": "Home.components"
+                "file": "资源/form-flow插件/form/个人项目-子项.cform"
               },
               "icon": "gantt-chart",
-              "title": "Home"
+              "title": "个人项目-子项"
             }
           }
         ]
@@ -76,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 422.51240158081055,
-    "collapsed": true
+    "width": 422.51240158081055
   },
   "right": {
     "id": "bfc8c75b70b4025d",
@@ -93,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "资源/form-flow插件/form/个人项目-子项.cform",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "个人项目-子项 的大纲"
             }
           },
           {
@@ -130,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.components",
+                "file": "资源/form-flow插件/form/个人项目-子项.cform",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Home 的反向链接列表"
+              "title": "个人项目-子项 的反向链接列表"
             }
           },
           {
@@ -149,12 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.components",
+                "file": "资源/form-flow插件/form/个人项目-子项.cform",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Home 的出链列表"
+              "title": "个人项目-子项 的出链列表"
             }
           },
           {
@@ -224,10 +223,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6970b64e9c0aa2ea",
+  "active": "b7f1b87c92f0dc24",
   "lastOpenFiles": [
     "Home.components",
     "工作/项目/代码/260105工序号识别2代.md",
+    "资源/form-flow插件/form/个人项目-子项.cform",
+    "工作/项目/全封闭轨道.md",
     "领域/工作.md",
     "工作/项目/面板维护.md",
     "领域/个人.md",
@@ -245,7 +246,6 @@
     "领域/日志.md",
     "日志/2026-01-04.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
-    "工作/项目/全封闭轨道.md",
     "工作/项目/代码/260707GUI增加参数组件.md",
     "工作/项目/GUI.md",
     "260707_SiaZhang2003@hotmail.com_components_license.md",
@@ -270,7 +270,6 @@
     "领域/输出.md",
     "工作/项目/GUI框架",
     "资源/form-flow插件/form/学习.cform",
-    "资源/form-flow插件/form/兴趣探索.cform",
-    "资源/form-flow插件/form/生活.cform"
+    "资源/form-flow插件/form/兴趣探索.cform"
   ]
 }

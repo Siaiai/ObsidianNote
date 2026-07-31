@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-07-31T02:20:44.070Z",
+      "updateAt": "2026-07-31T02:20:47.685Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -39,9 +39,9 @@
               "h": 4
             },
             "laptop": {
-              "x": 7,
+              "x": 6,
               "y": 11,
-              "w": 5,
+              "w": 6,
               "h": 7
             }
           }
