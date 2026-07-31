@@ -1,0 +1,47 @@
+{
+  "id": "a0000003-0000-0000-0000-000000000001",
+  "fields": [
+    {
+      "id": "a0000003-0001-0000-0000-000000000001",
+      "label": "文章名称",
+      "type": "text",
+      "required": true,
+      "defaultValue": [],
+      "enableDescription": true,
+      "description": "文章标题"
+    },
+    {
+      "id": "a0000003-0002-0000-0000-000000000001",
+      "label": "状态",
+      "type": "select",
+      "propertyName": "status",
+      "defaultValue": "TODO",
+      "options": [
+        { "id": "a0000003-0002-0001-000000000001", "label": "草稿", "value": "" },
+        { "id": "a0000003-0002-0002-000000000001", "label": "已发布", "value": "" }
+      ],
+      "required": true
+    },
+    {
+      "id": "a0000003-0003-0000-0000-000000000001",
+      "label": "项目",
+      "type": "property_value_suggestion",
+      "propertyName": "项目",
+      "required": true,
+      "internalLink": true,
+      "enableCustomValue": false
+    }
+  ],
+  "actions": [
+    {
+      "type": "createFile",
+      "targetFolder": "",
+      "fileName": "",
+      "id": "a0000003-0004-0000-0000-000000000001",
+      "filePath": "输出/{{@项目}}/{{@文章名称}}.md",
+      "content": "---\n领域: 输出\n类型: 文章\n项目: \"{{@项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DD HH:mm:ss}}\n完成时间: \n---\n\n",
+      "contentTemplateSource": "text"
+    }
+  ],
+  "autoSubmit": false
+}

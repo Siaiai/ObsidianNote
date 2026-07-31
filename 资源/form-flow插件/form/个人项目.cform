@@ -1,0 +1,49 @@
+{
+  "id": "a0000002-0000-0000-0000-000000000001",
+  "fields": [
+    {
+      "id": "a0000002-0001-0000-0000-000000000001",
+      "label": "项目名称",
+      "type": "text",
+      "required": true,
+      "defaultValue": [],
+      "enableDescription": true,
+      "description": "要做什么？一句话说清楚"
+    },
+    {
+      "id": "a0000002-0002-0000-0000-000000000001",
+      "label": "状态",
+      "type": "select",
+      "propertyName": "status",
+      "defaultValue": "TODO",
+      "options": [
+        { "id": "a0000002-0002-0001-000000000001", "label": "规划中", "value": "" },
+        { "id": "a0000002-0002-0002-000000000001", "label": "进行中", "value": "" },
+        { "id": "a0000002-0002-0003-000000000001", "label": "已归档", "value": "" }
+      ],
+      "required": true
+    },
+    {
+      "id": "a0000002-0003-0000-0000-000000000001",
+      "label": "相关项目",
+      "type": "property_value_suggestion",
+      "propertyName": "项目",
+      "multiple": true,
+      "defaultValue": [],
+      "internalLink": true,
+      "enableCustomValue": false
+    }
+  ],
+  "actions": [
+    {
+      "type": "createFile",
+      "targetFolder": "",
+      "fileName": "",
+      "id": "a0000002-0004-0000-0000-000000000001",
+      "filePath": "个人/项目/{{@项目名称}}.md",
+      "content": "---\n领域: \"[[个人]]\"\n类型: 项目\n项目: \"{{@项目名称}}\"\n相关项目: \"{{@相关项目}}\"\n状态: {{@状态}}\n创建时间: {{date}}\n---\n\n## 相关笔记",
+      "contentTemplateSource": "text"
+    }
+  ],
+  "autoSubmit": false
+}
