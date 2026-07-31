@@ -4,47 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "0cd781cdd4c99428",
+        "id": "acc260e82d7c4e31",
         "type": "tabs",
         "children": [
           {
-            "id": "4e90a7d8553ab0d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/项目/代码/260123面板控制三色灯.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260123面板控制三色灯"
-            }
-          },
-          {
-            "id": "a9da32782e48caef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/项目/代码/260728harfbuzz移植.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260728harfbuzz移植"
-            }
-          },
-          {
-            "id": "dcf6717c3b03b6f5",
+            "id": "aaeb26d1595cbe11",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
               "state": {
-                "file": "资源/components插件/组件文件/mini-calendar.components"
+                "file": "Home.components"
               },
-              "icon": "calendar",
-              "title": "mini-calendar"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
         ]
@@ -176,12 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/项目/代码/260123面板控制三色灯.md",
+                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "260123面板控制三色灯 的出链列表"
+              "title": "Home 的出链列表"
             }
           },
           {
@@ -251,12 +223,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4e90a7d8553ab0d2",
+  "active": "aaeb26d1595cbe11",
   "lastOpenFiles": [
+    "资源/components插件/组件文件/mini-calendar.components",
+    "工作/项目/代码/260728harfbuzz移植.md",
+    "工作/项目/代码/260123面板控制三色灯.md",
     "资源/附件/260123面板控制三色灯/IMG-67D4CF222B965F78496CE03C0C558973.jpg",
     "Home.components",
-    "工作/项目/代码/260728harfbuzz移植.md",
-    "资源/components插件/组件文件/mini-calendar.components",
     "资源/components插件/组件文件/timer.components",
     "工作/项目/代码/260105工序号识别2代.md",
     "未命名.base",
@@ -292,13 +265,11 @@
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-C9A2B00BBC320D99881F924D67CD2191.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-B3083294AC515FD8FC356C16B7C5F71D.jpg",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-B6BE49E9ACC1BC07671DD04F4E32832D.png",
-    "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-AEDF6597C49C601A2E5A7CA941D67622.png",
     "工作/读卡器架构设计.canvas",
     "日志/2026-01-04.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260707GUI增加参数组件.md",
     "工作/项目/代码/260715面板柬埔寨进达需求.md",
-    "日志/2026-07-14.md",
-    "工作/项目/代码/260714自动出衣增加时长-定制.md"
+    "日志/2026-07-14.md"
   ]
 }
