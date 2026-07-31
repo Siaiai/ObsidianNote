@@ -7,9 +7,9 @@
 		{"id":"1e023791a5ce49de","type":"text","text":"日志","x":260,"y":-80,"width":250,"height":60},
 		{"id":"8fe5b491784d5cbf","type":"text","text":"输出","x":640,"y":-80,"width":250,"height":60},
 		{"id":"4b977b290ff8b145","type":"text","text":"领域","x":-120,"y":-360,"width":250,"height":60},
-		{"id":"60cb1dd8fe45d453","type":"text","text":"项目","x":-1140,"y":160,"width":250,"height":60},
-		{"id":"1370248441a08a50","type":"text","text":"开发","x":-1460,"y":320,"width":250,"height":60},
-		{"id":"e5eed70bd76aaae3","type":"text","text":"会议","x":-1140,"y":320,"width":250,"height":60}
+		{"id":"60cb1dd8fe45d453","type":"text","text":"项目","x":-1140,"y":140,"width":250,"height":60},
+		{"id":"1370248441a08a50","type":"text","text":"开发","x":-1300,"y":380,"width":250,"height":60},
+		{"id":"e5eed70bd76aaae3","type":"text","text":"会议","x":-980,"y":380,"width":250,"height":60}
 	],
 	"edges":[
 		{"id":"f4ee5e1cbc35f9b3","fromNode":"4b977b290ff8b145","fromSide":"bottom","toNode":"3ab45e571657b16e","toSide":"top"},

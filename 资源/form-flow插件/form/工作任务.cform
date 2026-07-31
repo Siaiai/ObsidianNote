@@ -24,31 +24,49 @@
         },
         {
           "id": "d3bbca3b-fe57-4238-a009-2168f907d23c",
-          "label": "进行中",
+          "label": "进行",
           "value": ""
         },
         {
           "id": "caafea04-5ce7-4d19-932f-77963a4eb2a7",
-          "label": "已完成",
+          "label": "完成",
           "value": ""
         }
       ]
     },
     {
       "id": "c43c978e-8966-43b4-93ac-8623ce1b7818",
-      "label": "type",
-      "type": "property_value_suggestion",
+      "label": "类型",
+      "type": "select",
       "propertyName": "type",
-      "defaultValue": "none"
+      "defaultValue": "none",
+      "options": [
+        {
+          "id": "12861dd7-6399-4fcb-87d7-251971865381",
+          "label": "开发",
+          "value": ""
+        },
+        {
+          "id": "fd82a8e7-38e5-4d37-810a-ae01f211b1c9",
+          "label": "会议",
+          "value": ""
+        }
+      ]
     },
     {
       "id": "64d3a9dc-3c8e-41df-9ab7-1fd9d58241c9",
-      "label": "deadline",
+      "label": "截止时间",
       "type": "datetime",
       "defaultValueType": "custom",
       "enableDescription": false,
       "defaultValue": "",
       "required": true
+    },
+    {
+      "id": "e5b68d75-4758-41b2-9621-b3a8bc002c1f",
+      "label": "项目",
+      "type": "property_value_suggestion",
+      "propertyName": "项目"
     }
   ],
   "actions": [
@@ -58,7 +76,7 @@
       "fileName": "",
       "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
       "filePath": "工作/项目/代码/{{date:YYMMDD}}{{@简述}}.md",
-      "content": "---\narea: \"[[工作]]\"\nstatus: {{@状态}}\ncreateTime: {{date:YYYY-MM-DD HH:mm:ss}}\ndeadline: {{@deadline}}\ndoneTime:\ntags:\n  - project\n  - code\ntype: {{@type}}\n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
+      "content": "---\n领域: \"[[工作]]\"\n项目: {{@状态}}\n创建时间: {{date:YYYY-MM-DD HH:mm:ss}}\n截止时间: {{@截止时间}}\n完成时间:\n类型:\n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
       "contentTemplateSource": "text"
     }
   ],
