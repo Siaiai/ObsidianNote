@@ -13,10 +13,10 @@
             "state": {
               "type": "form-view",
               "state": {
-                "file": "资源/form-flow插件/form/工作项目.cform"
+                "file": "资源/form-flow插件/form/工作任务.cform"
               },
               "icon": "gantt-chart",
-              "title": "工作项目"
+              "title": "工作任务"
             }
           }
         ]
@@ -92,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "资源/form-flow插件/form/工作项目.cform",
+                "file": "资源/form-flow插件/form/工作任务.cform",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "工作项目 的大纲"
+              "title": "工作任务 的大纲"
             }
           },
           {
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "资源/form-flow插件/form/工作项目.cform",
+                "file": "资源/form-flow插件/form/工作任务.cform",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "工作项目 的反向链接列表"
+              "title": "工作任务 的反向链接列表"
             }
           },
           {
@@ -136,12 +136,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "资源/form-flow插件/form/工作项目.cform",
+                "file": "资源/form-flow插件/form/工作任务.cform",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "工作项目 的出链列表"
+              "title": "工作任务 的出链列表"
             }
           }
         ]
@@ -165,8 +165,8 @@
   },
   "active": "a1292a4f045d8429",
   "lastOpenFiles": [
-    "资源/form-flow插件/form/工作任务.cform",
     "资源/form-flow插件/form/工作项目.cform",
+    "资源/form-flow插件/form/工作任务.cform",
     "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260105工序号识别2代.md",
     "工作/项目/代码/260105整合参数含义到终端用户指南.md",
