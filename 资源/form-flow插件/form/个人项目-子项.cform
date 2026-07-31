@@ -36,36 +36,17 @@
     {
       "id": "4af5394d-27b5-4da0-93dc-feb5f4afc266",
       "label": "项目",
-      "type": "select",
-      "options": [
-        {
-          "id": "214af36d-a85d-43ac-a955-da833a3782ed",
-          "label": "吊挂面板",
-          "value": ""
-        },
-        {
-          "id": "ee7fcd30-f6b2-43dc-b9d1-001adcda6fe0",
-          "label": "全封闭轨道",
-          "value": ""
-        },
-        {
-          "id": "8a180a09-4550-4bd3-accd-05429b613caa",
-          "label": "SR3",
-          "value": ""
-        },
-        {
-          "id": "0a9390ba-4a50-4d8b-ba32-ea1fb91dad3d",
-          "label": "分拣面板",
-          "value": ""
-        }
-      ],
+      "type": "property_value_suggestion",
+      "options": [],
       "condition": {
         "id": "e2bb33a0-fba0-4d4b-8342-85df7105c449",
         "type": "group",
         "operator": "and",
         "conditions": []
       },
-      "enableCustomValue": false
+      "enableCustomValue": false,
+      "defaultValue": null,
+      "propertyName": "mainproject"
     }
   ],
   "actions": [
