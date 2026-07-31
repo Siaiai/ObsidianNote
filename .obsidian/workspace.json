@@ -11,12 +11,14 @@
             "id": "1ee2082c614b2445",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "markdown",
               "state": {
-                "file": "Home.components"
+                "file": "日志/2026-01-07.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "2026-01-07"
             }
           }
         ]
@@ -92,13 +94,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "日志/2026-01-07.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Home 的大纲"
+              "title": "2026-01-07 的大纲"
             }
           },
           {
@@ -117,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.components",
+                "file": "日志/2026-01-07.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Home 的反向链接列表"
+              "title": "2026-01-07 的反向链接列表"
             }
           },
           {
@@ -136,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.components",
+                "file": "日志/2026-01-07.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Home 的出链列表"
+              "title": "2026-01-07 的出链列表"
             }
           }
         ]
@@ -165,9 +167,12 @@
   },
   "active": "1ee2082c614b2445",
   "lastOpenFiles": [
+    "工作/项目/代码/260331全封闭广播.md",
+    "工作/项目/代码/260319全封闭读卡出站.md",
+    "日志/2026-01-04.md",
+    "Home.components",
     "资源/form-flow插件/form/个人项目-子项.cform",
     "工作/项目/吊挂面板.md",
-    "Home.components",
     "工作/项目/全封闭轨道.md",
     "工作/项目/代码/260106布鲁斯面板.md",
     "工作/项目/代码/260707面板呼叫选项增加.md",
@@ -207,9 +212,7 @@
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-B3083294AC515FD8FC356C16B7C5F71D.jpg",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-B6BE49E9ACC1BC07671DD04F4E32832D.png",
     "工作/读卡器架构设计.canvas",
-    "日志/2026-01-04.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
-    "工作/项目/代码/260707GUI增加参数组件.md",
-    "工作/项目/代码/260715面板柬埔寨进达需求.md"
+    "工作/项目/代码/260707GUI增加参数组件.md"
   ]
 }
