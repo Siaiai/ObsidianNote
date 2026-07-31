@@ -4,20 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "df0975e32236db42",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "工作/项目/代码/260728harfbuzz移植.md",
-            "mode": "source",
-            "source": true
-          },
-          "icon": "lucide-file",
-          "title": "260728harfbuzz移植"
-        }
-      },
-      {
         "id": "0cd781cdd4c99428",
         "type": "tabs",
         "children": [
@@ -174,12 +160,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/项目/代码/260728harfbuzz移植.md",
+                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "260728harfbuzz移植 的出链列表"
+              "title": "Home 的出链列表"
             }
           },
           {
@@ -249,10 +235,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "df0975e32236db42",
+  "active": "4e90a7d8553ab0d2",
   "lastOpenFiles": [
-    "Home.components",
     "资源/components插件/组件文件/mini-calendar.components",
+    "工作/项目/代码/260728harfbuzz移植.md",
+    "Home.components",
     "资源/components插件/组件文件/timer.components",
     "工作/项目/代码/260105工序号识别2代.md",
     "未命名.base",
@@ -279,7 +266,6 @@
     "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "资源/form-flow插件/form/学习.cform",
     "资源/form-flow插件/form/兴趣探索.cform",
-    "资源/form-flow插件/form/生活.cform",
     "工作/项目/GUI.md",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59 1.png",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59.png",
@@ -294,7 +280,6 @@
     "日志/2026-01-04.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260707GUI增加参数组件.md",
-    "工作/项目/代码/260728harfbuzz移植.md",
     "工作/项目/代码/260715面板柬埔寨进达需求.md",
     "日志/2026-07-14.md",
     "工作/项目/代码/260714自动出衣增加时长-定制.md"
