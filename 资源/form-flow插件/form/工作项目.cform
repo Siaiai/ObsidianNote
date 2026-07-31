@@ -12,10 +12,27 @@
     },
     {
       "id": "4493a638-d8c4-489d-ba98-750879b4a3d5",
-      "label": "status",
-      "type": "property_value_suggestion",
+      "label": "状态",
+      "type": "select",
       "propertyName": "status",
-      "defaultValue": "TODO"
+      "defaultValue": "TODO",
+      "options": [
+        {
+          "id": "aed4029f-63bd-4249-92bf-296b456f29d4",
+          "label": "规划中",
+          "value": ""
+        },
+        {
+          "id": "404c270c-6d9b-41dd-86e7-d5ad274171b9",
+          "label": "进行中",
+          "value": ""
+        },
+        {
+          "id": "a12464bc-8bae-4d6b-ac87-149ce8040d20",
+          "label": "已归档",
+          "value": ""
+        }
+      ]
     }
   ],
   "actions": [
@@ -24,8 +41,8 @@
       "targetFolder": "",
       "fileName": "",
       "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
-      "filePath": "工作/项目/{{@项目名称}}.md",
-      "content": "---\narea: \"[[工作]]\"\nstatus: {{@status}}\ncreateTime: {{date:YYYY-MM-DD HH:mm:ss}}\ndeadline: {{@deadline}}\ndoneTime:\ntags:\n  - mainproject\n---\n\n## 待办列表",
+      "filePath": "工作/项目/{{@项目名称}}/{{@项目名称}}.md",
+      "content": "---\n领域: \"[[工作]]\"\n状态: {{@状态}}\n创建事件: {{date}}\n---\n\n## 待办列表",
       "contentTemplateSource": "text"
     }
   ],

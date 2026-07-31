@@ -3,7 +3,7 @@
   "fields": [
     {
       "id": "a5b0bbb0-e26e-4b9c-81fb-7be3ce182dfd",
-      "label": "项目名称",
+      "label": "简述",
       "type": "text",
       "required": true,
       "defaultValue": [],
@@ -12,10 +12,27 @@
     },
     {
       "id": "4493a638-d8c4-489d-ba98-750879b4a3d5",
-      "label": "status",
-      "type": "property_value_suggestion",
+      "label": "状态",
+      "type": "select",
       "propertyName": "status",
-      "defaultValue": "TODO"
+      "defaultValue": "TODO",
+      "options": [
+        {
+          "id": "653c581d-de5e-48e4-b65c-cfd040d4ff78",
+          "label": "待办",
+          "value": ""
+        },
+        {
+          "id": "d3bbca3b-fe57-4238-a009-2168f907d23c",
+          "label": "进行中",
+          "value": ""
+        },
+        {
+          "id": "caafea04-5ce7-4d19-932f-77963a4eb2a7",
+          "label": "已完成",
+          "value": ""
+        }
+      ]
     },
     {
       "id": "c43c978e-8966-43b4-93ac-8623ce1b7818",
@@ -40,8 +57,8 @@
       "targetFolder": "",
       "fileName": "",
       "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
-      "filePath": "工作/项目/代码/{{date:YYMMDD}}{{@项目名称}}.md",
-      "content": "---\narea: \"[[工作]]\"\nstatus: {{@status}}\ncreateTime: {{date:YYYY-MM-DD HH:mm:ss}}\ndeadline: {{@deadline}}\ndoneTime:\ntags:\n  - project\n  - code\ntype: {{@type}}\n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
+      "filePath": "工作/项目/代码/{{date:YYMMDD}}{{@简述}}.md",
+      "content": "---\narea: \"[[工作]]\"\nstatus: {{@状态}}\ncreateTime: {{date:YYYY-MM-DD HH:mm:ss}}\ndeadline: {{@deadline}}\ndoneTime:\ntags:\n  - project\n  - code\ntype: {{@type}}\n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
       "contentTemplateSource": "text"
     }
   ],

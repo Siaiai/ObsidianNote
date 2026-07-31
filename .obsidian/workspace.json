@@ -4,24 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "5cbc4d1ffacd3900",
+        "id": "00d8752868ce19a8",
         "type": "tabs",
         "children": [
           {
-            "id": "1ee2082c614b2445",
+            "id": "973284c276185578",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "form-view",
               "state": {
-                "file": "未命名.canvas",
-                "viewState": {
-                  "x": -118.57777153710512,
-                  "y": 3.0023387257082987,
-                  "zoom": -0.5547963083367305
-                }
+                "file": "资源/form-flow插件/form/工作项目-子项.cform"
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "未命名"
+              "icon": "gantt-chart",
+              "title": "工作项目-子项"
             }
           }
         ]
@@ -97,13 +92,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.canvas",
+                "file": "资源/form-flow插件/form/工作项目-子项.cform",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "工作项目-子项 的大纲"
             }
           },
           {
@@ -122,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名.canvas",
+                "file": "资源/form-flow插件/form/工作项目-子项.cform",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +127,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "未命名 的反向链接列表"
+              "title": "工作项目-子项 的反向链接列表"
             }
           },
           {
@@ -141,12 +136,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "未命名.canvas",
+                "file": "资源/form-flow插件/form/工作项目-子项.cform",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "未命名 的出链列表"
+              "title": "工作项目-子项 的出链列表"
             }
           }
         ]
@@ -168,15 +163,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1ee2082c614b2445",
+  "active": "973284c276185578",
   "lastOpenFiles": [
-    "工作/项目/代码/260413返工确认.md",
+    "资源/form-flow插件/form/工作项目.cform",
+    "Home.components",
+    "工作/项目/吊挂操作面板/吊挂操作面板.md",
+    "工作/项目/吊挂操作面板",
+    "资源/form-flow插件/form/个人项目.cform",
     "未命名.canvas",
+    "工作/项目/代码/260413返工确认.md",
     "日志/2026-01-07.md",
     "工作/项目/代码/260331全封闭广播.md",
     "工作/项目/代码/260319全封闭读卡出站.md",
     "日志/2026-01-04.md",
-    "Home.components",
     "资源/form-flow插件/form/个人项目-子项.cform",
     "工作/项目/吊挂面板.md",
     "工作/项目/全封闭轨道.md",
@@ -202,13 +201,8 @@
     "资源/form-flow插件/form/工作项目-子项.cform",
     "吊挂面板.md",
     "工作/项目/代码/260206本地记录语言.md",
-    "工作/项目/代码/260109衣架吊篮模式设置修改为176.md",
-    "资源/form-flow插件/form/工作项目.cform",
-    "资源/form-flow插件/form/个人项目.cform",
     "资源/插图/you-zi-ran-yuan-su-de-piao-liang-fang-zi.jpg",
     "资源/form-flow插件/form/学习.cform",
-    "资源/form-flow插件/form/兴趣探索.cform",
-    "工作/项目/GUI.md",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59 1.png",
     "资源/附件/ccc92038f68899aa5bcc6b225729bf59.png",
     "资源/附件/260128全封闭轨道新加机制与待测试项/IMG-D01A7AAAFC934D6E75A22053B02AAB90.jpg",
