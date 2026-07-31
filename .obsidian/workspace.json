@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6a69e97ba92679cb",
+        "id": "0cd781cdd4c99428",
         "type": "tabs",
         "children": [
           {
-            "id": "d4e69c9670c8c70d",
+            "id": "4e90a7d8553ab0d2",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -223,8 +223,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d4e69c9670c8c70d",
+  "active": "4e90a7d8553ab0d2",
   "lastOpenFiles": [
+    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
+    "Home.components",
+    "260707_SiaZhang2003@hotmail.com_components_license.md",
     "领域/日志.md",
     "领域/学习.md",
     "领域/兴趣探索.md",
@@ -232,7 +235,6 @@
     "领域/生活.md",
     "领域/工作.md",
     "领域/个人.md",
-    "Home.components",
     "工作/项目/代码/260106布鲁斯面板.md",
     "工作/项目/吊挂面板.md",
     "资源/form-flow插件/form/个人项目-子项.cform",
@@ -264,13 +266,10 @@
     "日志/2026-01-04.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md",
     "工作/项目/代码/260707GUI增加参数组件.md",
-    "260707_SiaZhang2003@hotmail.com_components_license.md",
     "工作/项目/代码/260728harfbuzz移植.md",
-    "工作/项目/代码/260128全封闭轨道新加机制与待测试项.md",
     "工作/项目/代码/260715面板柬埔寨进达需求.md",
     "日志/2026-07-14.md",
     "工作/项目/代码/260401S3分拣面板-SIA-R9000P.md.tmp.2196.88378defd3b5",
-    "工作/项目/代码/260714自动出衣增加时长-定制.md",
-    "工作/项目/代码/260707面板呼叫选项增加.md"
+    "工作/项目/代码/260714自动出衣增加时长-定制.md"
   ]
 }
