@@ -1,9 +1,8 @@
 ---
-area: "[[日志]]"
-tags:
-  - day
-createTime: "{{date:YYYY-MM-DD HH:mm:ss}}"
-doneTime: "{{date:YYYY-MM-DD HH:mm:ss}}"
+领域: "[[日志]]"
+类型: 日记
+创建时间: {{date:YYYY-MM-DD HH:mm:ss}}
+完成时间:
 ---
 ## 执行清单
 

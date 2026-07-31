@@ -16,6 +16,18 @@
               "icon": "lucide-git-fork",
               "title": "关系图谱"
             }
+          },
+          {
+            "id": "01906766e410e70c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.13.4"
+            }
           }
         ]
       }
@@ -37,7 +49,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -190,9 +204,14 @@
   },
   "active": "74f3f2523bc09463",
   "lastOpenFiles": [
+    "日志/2026-01-04.md",
     "Home.components",
-    "领域/工作.md",
     "工作/操作面板/260731实例2.md",
+    "工作/吊挂操作面板/260105整合参数含义到终端用户指南.md",
+    "工作/操作面板/260731实例.md",
+    "工作/项目/S3吊挂控制器.md",
+    "领域/日志.md",
+    "领域/工作.md",
     "工作/吊挂操作面板/260731实例.md",
     "工作/项目/代码/260123面板控制三色灯.md",
     "工作/吊挂操作面板/附件/67D4CF222B965F78496CE03C0C558973.jpg",
@@ -227,10 +246,6 @@
     "工作/吊挂操作面板/260324面板广播让测试部测试.md",
     "工作/吊挂操作面板/260319面板增加时钟.md",
     "工作/吊挂操作面板/260305面板广播.md",
-    "工作/吊挂操作面板/260224广播功能测试.md",
-    "工作/吊挂操作面板/260206测试程序增加读卡器版本号.md",
-    "工作/吊挂操作面板/260206本地记录语言.md",
-    "工作/吊挂操作面板/260203整理调试界面需要显示内容.md",
     "工作/吊挂操作面板",
     "工作/S3吊挂控制器",
     "_migrate_tasks.py",
