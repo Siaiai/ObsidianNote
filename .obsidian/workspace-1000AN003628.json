@@ -4,24 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "b486a152eceafe73",
+        "id": "6780ca40bcb8cfcc",
         "type": "tabs",
         "children": [
           {
-            "id": "7bcd800a2c0f6ed6",
+            "id": "b6fe83c4f039008c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          },
+          {
+            "id": "ba5dcebe01203030",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
               "state": {
-                "file": "工作/项目/代码/260106超范围字符显示.md",
-                "mode": "source",
-                "source": false
+                "file": "Home.components"
               },
-              "icon": "lucide-file",
-              "title": "260106超范围字符显示"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -136,12 +145,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/项目/代码/260106超范围字符显示.md",
+                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "260106超范围字符显示 的出链列表"
+              "title": "Home 的出链列表"
             }
           },
           {
@@ -193,13 +202,8 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7bcd800a2c0f6ed6",
+  "active": "ba5dcebe01203030",
   "lastOpenFiles": [
-    "资源/form-flow插件/form/工作任务.cform",
-    "资源/form-flow插件/form/工作项目.cform",
-    "Home.components",
-    "领域/日志.md",
-    "领域/工作.md",
     "工作/操作面板/260731实例2.md",
     "工作/操作面板/260731实例.md",
     "工作/项目/S3全封闭轨道.md",
@@ -207,6 +211,11 @@
     "工作/项目/GUI.md",
     "工作/项目/分拣操作面板.md",
     "工作/项目/吊挂操作面板.md",
+    "资源/form-flow插件/form/工作任务.cform",
+    "资源/form-flow插件/form/工作项目.cform",
+    "领域/日志.md",
+    "领域/工作.md",
+    "Home.components",
     "工作/项目/代码/260105工序号识别2代.md",
     "资源/模板/日志模板-day.md",
     "日志/2026-01-04.md",
