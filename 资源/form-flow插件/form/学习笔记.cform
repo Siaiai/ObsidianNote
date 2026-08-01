@@ -53,7 +53,7 @@
       "fileName": "",
       "id": "a0000004-0005-0000-0000-000000000001",
       "filePath": "学习/{{@项目}}/{{@笔记名称}}.md",
-      "content": "---\n领域: 学习\n类型: {{@类型}}\n项目: \"{{@项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm}}\n完成时间: \n---\n\n",
+      "content": "---\n领域: 学习\n类型: {{@类型}}\n项目: \"{{@项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n完成时间: \n---\n\n",
       "contentTemplateSource": "text"
     }
   ],

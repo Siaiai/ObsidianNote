@@ -4,5 +4,6 @@
   "editing-toolbar",
   "components",
   "form-flow",
-  "attachment-management"
+  "attachment-management",
+  "datepicker"
 ]
