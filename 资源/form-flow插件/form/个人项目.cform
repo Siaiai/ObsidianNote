@@ -17,9 +17,21 @@
       "propertyName": "status",
       "defaultValue": "TODO",
       "options": [
-        { "id": "a0000002-0002-0001-000000000001", "label": "规划中", "value": "" },
-        { "id": "a0000002-0002-0002-000000000001", "label": "进行中", "value": "" },
-        { "id": "a0000002-0002-0003-000000000001", "label": "已归档", "value": "" }
+        {
+          "id": "a0000002-0002-0001-000000000001",
+          "label": "规划中",
+          "value": ""
+        },
+        {
+          "id": "a0000002-0002-0002-000000000001",
+          "label": "进行中",
+          "value": ""
+        },
+        {
+          "id": "a0000002-0002-0003-000000000001",
+          "label": "已归档",
+          "value": ""
+        }
       ],
       "required": true
     },
@@ -41,7 +53,8 @@
       "fileName": "",
       "id": "a0000002-0004-0000-0000-000000000001",
       "filePath": "个人/项目/{{@项目名称}}.md",
-      "content": "---\n领域: \"[[个人]]\"\n类型: 项目\n项目: \"{{@项目名称}}\"\n相关项目: \"{{@相关项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n---\n\n## 相关笔记",
+      "content": "---\n领域: \"[[个人]]\"\n类型:
+  - 项目\n项目: \"{{@项目名称}}\"\n相关项目: \"{{@相关项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n---\n\n## 相关\n\n```dataview\nTABLE 类型, 状态, 创建时间\nFROM \"\"\nWHERE contains(项目, this.file.link)\nSORT 创建时间 DESC\n\n```",
       "contentTemplateSource": "text"
     }
   ],

@@ -13,11 +13,11 @@
     {
       "id": "a0000005-0002-0000-0000-000000000001",
       "label": "项目",
-      "type": "property_value_suggestion",
-      "propertyName": "项目",
+      "type": "text",
       "required": true,
-      "internalLink": true,
-      "enableCustomValue": false
+      "defaultValue": [],
+      "enableDescription": true,
+      "description": "所属项目名称"
     },
     {
       "id": "a0000005-0003-0000-0000-000000000001",
@@ -41,6 +41,7 @@
           "value": ""
         }
       ],
+      "multiple": true,
       "required": true
     },
     {
@@ -76,7 +77,8 @@
       "fileName": "",
       "id": "a0000005-0005-0000-0000-000000000001",
       "filePath": "个人/{{@项目}}/{{@笔记名称}}.md",
-      "content": "---\n领域: 个人\n类型: {{@类型}}\n项目: \"{{@项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n完成时间: \n---\n\n",
+      "content": "---\n领域: 个人\n类型:
+  - {{@类型}}\n项目: \"{{@项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n完成时间: \n---\n\n",
       "contentTemplateSource": "text"
     }
   ],

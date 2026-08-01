@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3e7cb2b8cd14cf48",
+        "id": "f815528f2fd97d5d",
         "type": "tabs",
         "children": [
           {
-            "id": "fb25e15ef1edb1cd",
+            "id": "33cfd98c2ad6eb65",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "规范.md",
+                "file": "工作/项目/SR3读卡器.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "规范"
+              "title": "SR3读卡器"
             }
           }
         ]
@@ -180,8 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,45 +195,45 @@
       "components:AI 对话（新标签页）": false
     }
   },
-  "active": "fb25e15ef1edb1cd",
+  "active": "33cfd98c2ad6eb65",
   "lastOpenFiles": [
-    "工作/S3全封闭轨道/260119出站缓存阀和出站阀联动.md.tmp.7056.bdce86063f7c",
-    "工作/S3吊挂控制器/260109衣架吊篮模式设置修改为176.md",
-    "工作/S3吊挂控制器/260107二代工序查询BUG追踪.md",
-    "工作/GUI/260728harfbuzz移植.md",
-    "资源/form-flow插件/form/输出文章.cform",
-    "资源/form-flow插件/form/工作项目.cform",
-    "工作/项目/SR3读卡器.md",
+    "输出/EM4095详解.md",
     "输出/SR3读卡器/EM4095详解.md",
     "输出/SR3读卡器",
-    "输出/EM4095详解.md",
-    "输出/[[SR3读卡器]]/EM4095详解.md",
-    "工作/项目/吊挂操作面板.md",
-    "工作/项目/分拣操作面板.md",
-    "工作/项目/GUI.md",
-    "工作/项目/S3吊挂控制器.md",
-    "工作/项目/S3全封闭轨道.md",
-    "资源/form-flow插件/form/学习项目.cform",
-    "资源/form-flow插件/form/个人项目.cform",
     "Home.components",
-    "当前文件名.md",
+    "输出/[[SR3读卡器]]/EM4095详解.md",
     "输出/[[SR3读卡器]]",
+    "工作/项目/SR3读卡器.md",
     "工作/分拣操作面板/260401S3串口协议.md",
+    "工作/GUI/260728harfbuzz移植.md",
     "工作/S3吊挂控制器/260105工序号识别2代.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "规范.md",
     "工作/S3吊挂控制器/260331增加手拍接口-SIA-R9000P.md",
+    "资源/form-flow插件/form/输出文章.cform",
     "工作/吊挂操作面板/260715面板柬埔寨进达需求.md",
     "未命名.canvas",
     "工作/GUI/260707GUI增加参数组件.md",
     "资源/form-flow插件/form/工作任务.cform",
     "工作/S3全封闭轨道/260714自动出衣增加时长-定制.md",
+    "工作/项目/GUI.md",
     "资源/form-flow插件/form/学习笔记.cform",
     "领域/学习.md",
     "日志/2026-01-08.md",
+    "资源/form-flow插件/form/学习项目.cform",
     "资源/form-flow插件/form/个人笔记.cform",
+    "资源/form-flow插件/form/个人项目.cform",
     "资源/模板/日志模板-day.md",
+    "资源/form-flow插件/form/工作项目.cform",
     "领域/个人.md",
+    "领域/输出.md",
+    "日志/2026-01-04.md",
+    "工作/操作面板/260731实例2.md",
+    "工作/吊挂操作面板/260105整合参数含义到终端用户指南.md",
+    "工作/操作面板/260731实例.md",
+    "工作/项目/S3吊挂控制器.md",
+    "领域/日志.md",
+    "领域/工作.md",
     "工作/吊挂操作面板/附件/67D4CF222B965F78496CE03C0C558973.jpg",
     "工作/S3全封闭轨道/附件/E8278B7FC26ADFD67EE51D7EA4C0E00B.png",
     "工作/S3全封闭轨道/附件/D01A7AAAFC934D6E75A22053B02AAB90.jpg",

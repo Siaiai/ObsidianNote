@@ -53,6 +53,7 @@
           "value": ""
         }
       ],
+      "multiple": true,
       "required": true
     },
     {
@@ -75,7 +76,11 @@
       "id": "1360b351-64e9-424a-89d2-536e7f005826",
       "label": "相关任务",
       "type": "property_value_suggestion",
-      "propertyName": "任务"
+      "propertyName": "任务",
+      "multiple": true,
+      "defaultValue": [],
+      "internalLink": true,
+      "enableCustomValue": false
     }
   ],
   "actions": [
@@ -85,7 +90,7 @@
       "fileName": "",
       "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
       "filePath": "工作/{{@项目}}/{{date:YYMMDD}}{{@任务}}.md",
-      "content": "---\n领域: 工作\n类型: {{@类型}}\n项目: \"{{@项目}}\"\n任务: \"[[{{date:YYMMDD}}{{@任务}}]]\"\n相关任务: \"{{@相关任务}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n截止时间: {{@截止时间}}\n完成时间: \n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
+      "content": "---\n领域: 工作\n类型:\n  - {{@类型}}\n项目:\n  - \"[[{{@项目}}]]\"\n任务:\n  - \"[[{{date:YYMMDD}}{{@任务}}]]\"\n相关任务:\n  - \"{{@相关任务}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n截止时间: {{@截止时间}}\n完成时间: \n---\n\n## 待办列表\n- [ ] 编码\n- [ ] 测试\n- [ ] 合并",
       "contentTemplateSource": "text"
     }
   ],
