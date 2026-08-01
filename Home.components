@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-08-01T11:09:19.342Z",
+      "updateAt": "2026-08-01T12:50:42.430Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -93,7 +93,7 @@
               "x": 6,
               "y": 19,
               "w": 6,
-              "h": 41
+              "h": 17
             }
           }
         }
