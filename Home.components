@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-08-01T10:14:47.059Z",
+      "updateAt": "2026-08-01T10:52:16.102Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -60,6 +60,40 @@
               "y": 10,
               "w": 5,
               "h": 50
+            }
+          }
+        },
+        {
+          "componentId": "e45702c0-07c2-4be4-9a84-de837c7abb69",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 5,
+              "y": 10,
+              "w": 1,
+              "h": 2
+            }
+          }
+        },
+        {
+          "componentId": "4b19234d-8a80-4956-850e-ea9ea5713b61",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 5,
+              "y": 12,
+              "w": 4,
+              "h": 27
             }
           }
         }
@@ -374,6 +408,114 @@
       "newPageLocation": {
         "location": ""
       }
+    },
+    {
+      "id": "e45702c0-07c2-4be4-9a84-de837c7abb69",
+      "type": "button",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": true,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-08-01T10:49:56.172Z",
+      "updateAt": "2026-08-01T10:51:07.035Z",
+      "text": "工作来啦~",
+      "buttonType": "common",
+      "clickActions": [
+        {
+          "type": "OpenForm",
+          "id": "c474eb21-3fe3-498f-8d13-7d4dbed361d1",
+          "options": {
+            "filePath": "资源/form-flow插件/form/工作任务.cform",
+            "fileName": "工作任务.cform"
+          }
+        }
+      ],
+      "checkActions": [],
+      "uncheckActions": [],
+      "isChecked": false,
+      "fullWidth": true,
+      "icon": "Accessibility"
+    },
+    {
+      "id": "4b19234d-8a80-4956-850e-ea9ea5713b61",
+      "type": "multi",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-08-01T10:51:59.459Z",
+      "updateAt": "2026-08-01T10:51:59.459Z",
+      "components": [
+        {
+          "componentId": "81783fd5-5ead-4f2e-8be0-2ef24c36deff"
+        },
+        {
+          "componentId": "35cbe8aa-0a2f-4b46-a147-5ee4c80e79c9"
+        }
+      ],
+      "layoutType": "tab",
+      "locked": false,
+      "layoutOptions": {}
+    },
+    {
+      "id": "81783fd5-5ead-4f2e-8be0-2ef24c36deff",
+      "type": "custom",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-08-01T10:53:41.649Z",
+      "updateAt": "2026-08-01T10:53:41.649Z",
+      "viewCode": "function App() {\n  const { getData, saveData } = useDataStorage();\n  const app = useObsidianApp();\n  const data = getData() || {};\n  const settings = data.settings || {};\n  const title = settings.title || \"Custom Component Sample\";\n  const count = data.count ?? 0;\n  \n  return (\n    <div className=\"sample--RootContainer\">\n      <h1>{title}</h1>\n      <p>{count}</p>\n      <div className=\"sample--ButtonContainer\">\n      <button onClick={() => saveData({ ...data, count: count + 1 })}>\n        +1\n      </button>\n      <button onClick={() => saveData({ ...data, count: count - 1 })}>\n        -1\n      </button>\n      </div>\n  </div>\n  );\n}",
+      "settingsCode": "function App() {\n    const { getData, saveData } = useDataStorage();\n    const data = getData() || {};\n    const settings = data.settings || {};\n    return <Settings>\n      <SettingInput \n        label=\"Title\"\n        value={settings.title || \"\"}\n        placeholder=\"Enter title\"\n        type=\"text\"\n        onChange={(e) => saveData({ ...data, settings: { ...settings, title: e.target.value } })}\n      />\n      <SettingDescription>Configure your custom component here.</SettingDescription>\n    </Settings>\n}",
+      "cssCode": "/* Add your styles here */\n.sample--RootContainer {\n  padding: 20px;\n  background-color: var(--background-primary-alt);\n  border-radius: var(--radius-m);\n}\n\n.sample--ButtonContainer {\n  display: flex;\n  gap: 10px;\n}\n",
+      "viewCompilation": null,
+      "settingsCompilation": null
+    },
+    {
+      "id": "35cbe8aa-0a2f-4b46-a147-5ee4c80e79c9",
+      "type": "chart",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-08-01T10:53:43.798Z",
+      "updateAt": "2026-08-01T10:53:43.798Z",
+      "chartType": "bar",
+      "filter": {
+        "id": "184d6514-976c-46ce-a375-9987d395160b",
+        "type": "group",
+        "operator": "and",
+        "conditions": []
+      },
+      "labelFormat": "$none",
+      "series": [
+        {
+          "id": "128c94f0-0348-4c82-acdb-34e9edf91739",
+          "name": "$file_count",
+          "precision": 2
+        }
+      ],
+      "sortField": "xAxisValue",
+      "sortOrder": "asc",
+      "maxHeight": 300,
+      "chartColorSet": "default",
+      "chartLabelPosition": "top",
+      "enableMarkLine": false,
+      "markLineValue": 20,
+      "showDataValue": false,
+      "valueScaleStartFromZero": true,
+      "smoothLine": false,
+      "fillArea": false,
+      "options": {}
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
