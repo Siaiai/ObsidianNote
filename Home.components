@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-08-01T13:54:58.676Z",
+      "updateAt": "2026-08-01T13:58:36.970Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -59,24 +59,7 @@
               "x": 0,
               "y": 10,
               "w": 6,
-              "h": 50
-            }
-          }
-        },
-        {
-          "componentId": "e45702c0-07c2-4be4-9a84-de837c7abb69",
-          "layout": {
-            "mobile": {
-              "x": 0,
-              "y": 0,
-              "w": 4,
-              "h": 4
-            },
-            "laptop": {
-              "x": 8,
-              "y": 10,
-              "w": 1,
-              "h": 2
+              "h": 51
             }
           }
         },
@@ -98,7 +81,24 @@
           }
         },
         {
-          "componentId": "34f7ea41-f184-4143-a46b-d1927b141ed1",
+          "componentId": "a189052d-4164-4b6e-8784-f6885fd490e2",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 8,
+              "y": 10,
+              "w": 1,
+              "h": 2
+            }
+          }
+        },
+        {
+          "componentId": "02a226b1-04cd-45d2-9b9c-d51cb997765f",
           "layout": {
             "mobile": {
               "x": 0,
@@ -110,7 +110,7 @@
               "x": 6,
               "y": 30,
               "w": 6,
-              "h": 19
+              "h": 31
             }
           }
         }
@@ -126,7 +126,7 @@
       "titleAlign": "center",
       "tabTitle": "",
       "maxWidthRatio": -1,
-      "showBorder": false,
+      "showBorder": true,
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T09:21:50.954Z",
@@ -193,9 +193,9 @@
       "titleAlign": "center",
       "tabTitle": "",
       "maxWidthRatio": -1,
-      "showBorder": false,
+      "showBorder": true,
       "showTitle": true,
-      "showShadow": false,
+      "showShadow": true,
       "createAt": "2026-01-03T15:36:44.702Z",
       "updateAt": "2026-01-03T15:57:28.493Z",
       "showLunar": true,
@@ -213,7 +213,7 @@
       "titleAlign": "center",
       "tabTitle": "",
       "maxWidthRatio": -1,
-      "showBorder": false,
+      "showBorder": true,
       "showTitle": true,
       "showShadow": true,
       "createAt": "2026-01-03T19:35:17.901Z",
@@ -402,45 +402,16 @@
       }
     },
     {
-      "id": "e45702c0-07c2-4be4-9a84-de837c7abb69",
-      "type": "button",
+      "id": "4b19234d-8a80-4956-850e-ea9ea5713b61",
+      "type": "multi",
       "titleAlign": "center",
       "tabTitle": "",
       "maxWidthRatio": -1,
       "showBorder": true,
       "showTitle": true,
       "showShadow": true,
-      "createAt": "2026-08-01T10:49:56.172Z",
-      "updateAt": "2026-08-01T10:51:07.035Z",
-      "text": "工作来啦~",
-      "buttonType": "common",
-      "clickActions": [
-        {
-          "type": "OpenForm",
-          "id": "c474eb21-3fe3-498f-8d13-7d4dbed361d1",
-          "options": {
-            "filePath": "资源/form-flow插件/form/工作任务.cform",
-            "fileName": "工作任务.cform"
-          }
-        }
-      ],
-      "checkActions": [],
-      "uncheckActions": [],
-      "isChecked": false,
-      "fullWidth": true,
-      "icon": "Accessibility"
-    },
-    {
-      "id": "4b19234d-8a80-4956-850e-ea9ea5713b61",
-      "type": "multi",
-      "titleAlign": "center",
-      "tabTitle": "",
-      "maxWidthRatio": -1,
-      "showBorder": false,
-      "showTitle": true,
-      "showShadow": false,
       "createAt": "2026-08-01T10:51:59.459Z",
-      "updateAt": "2026-08-01T10:51:59.459Z",
+      "updateAt": "2026-08-01T13:57:07.169Z",
       "components": [
         {
           "componentId": "5fc56757-1ff1-4902-b556-7ea292b1a418"
@@ -520,7 +491,56 @@
       }
     },
     {
-      "id": "34f7ea41-f184-4143-a46b-d1927b141ed1",
+      "id": "a189052d-4164-4b6e-8784-f6885fd490e2",
+      "type": "card",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": true,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-08-01T13:56:09.677Z",
+      "updateAt": "2026-08-01T13:56:50.858Z",
+      "title": "工作来啦~",
+      "description": "",
+      "coverFit": "cover",
+      "coverPosition": "left",
+      "clickAction": {
+        "type": "OpenForm",
+        "id": "dbc6f511-30b8-4e5e-8a3c-eeda0f16bacf",
+        "options": {
+          "filePath": "资源/form-flow插件/form/工作任务.cform",
+          "fileName": "工作任务.cform"
+        }
+      },
+      "coverCoordinate": {
+        "x": "50%",
+        "y": "50%"
+      },
+      "icon": "Accessibility"
+    },
+    {
+      "id": "02a226b1-04cd-45d2-9b9c-d51cb997765f",
+      "type": "multi",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": true,
+      "showTitle": true,
+      "showShadow": true,
+      "createAt": "2026-08-01T13:58:03.077Z",
+      "updateAt": "2026-08-01T13:58:43.897Z",
+      "components": [
+        {
+          "componentId": "af750d44-0d16-4fea-9d70-bbe40cb441ee"
+        }
+      ],
+      "layoutType": "tab",
+      "locked": false,
+      "layoutOptions": {}
+    },
+    {
+      "id": "af750d44-0d16-4fea-9d70-bbe40cb441ee",
       "type": "dynamicDataView",
       "titleAlign": "center",
       "tabTitle": "",
@@ -528,8 +548,8 @@
       "showBorder": false,
       "showTitle": true,
       "showShadow": false,
-      "createAt": "2026-08-01T13:54:04.679Z",
-      "updateAt": "2026-08-01T13:55:02.481Z",
+      "createAt": "2026-08-01T13:58:49.069Z",
+      "updateAt": "2026-08-01T13:59:40.458Z",
       "viewType": "gallary",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -556,13 +576,9 @@
         "heightValue": 600
       },
       "groupStates": {
-        "sort": "manual",
-        "format": "none",
+        "sort": "nameAsc",
         "statics": [],
-        "orders": [
-          "[[分拣操作面板]]",
-          "__$uncategorizedGroup"
-        ],
+        "orders": [],
         "hiddens": [],
         "collapseds": []
       },
@@ -572,16 +588,23 @@
         "operator": "and",
         "conditions": [
           {
-            "id": "a52c50a4-3b32-4b8b-8158-14256794d896",
+            "id": "c1178f6d-375a-4855-b859-a7231c0edff2",
             "type": "filter",
             "operator": "contains",
             "property": "领域",
             "value": "输出",
             "conditions": []
+          },
+          {
+            "id": "3f5a8c54-a3b1-49d5-b4d4-c4c3eea12abd",
+            "type": "filter",
+            "operator": "not_contains",
+            "property": "领域",
+            "value": "[[输出]]",
+            "conditions": []
           }
         ]
-      },
-      "groupBy": "项目"
+      }
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
