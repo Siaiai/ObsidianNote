@@ -8,45 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "74f3f2523bc09463",
-            "type": "leaf",
-            "state": {
-              "type": "form-view",
-              "state": {
-                "file": "资源/form-flow插件/form/学习笔记.cform"
-              },
-              "icon": "gantt-chart",
-              "title": "学习笔记"
-            }
-          },
-          {
-            "id": "3f6fdb8a0b9dc73d",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.13.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.13.4"
-            }
-          },
-          {
             "id": "01906766e410e70c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "components-file-view",
               "state": {
-                "file": "工作/S3吊挂控制器/260105工序号识别2代.md",
-                "mode": "source",
-                "source": false
+                "file": "Home.components"
               },
-              "icon": "lucide-file",
-              "title": "260105工序号识别2代"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           },
           {
-            "id": "23148da0c3469390",
+            "id": "072395974cbba4b5",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -58,7 +32,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -232,15 +206,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "23148da0c3469390",
+  "active": "072395974cbba4b5",
   "lastOpenFiles": [
+    "工作/S3全封闭轨道/260714自动出衣增加时长-定制.md",
+    "Home.components",
+    "工作/吊挂操作面板/260715面板柬埔寨进达需求.md",
+    "工作/项目/GUI.md",
     "工作/S3吊挂控制器/260105工序号识别2代.md",
+    "资源/form-flow插件/form/学习笔记.cform",
+    "工作/GUI/260707GUI增加参数组件.md",
     "领域/学习.md",
     "规范.md",
     "日志/2026-01-08.md",
-    "Home.components",
     "资源/form-flow插件/form/学习项目.cform",
-    "资源/form-flow插件/form/学习笔记.cform",
     "资源/form-flow插件/form/个人笔记.cform",
     "资源/form-flow插件/form/个人项目.cform",
     "资源/模板/日志模板-day.md",
@@ -273,13 +251,8 @@
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/分拣操作面板/260401S3分拣面板-SIA-R9000P.md",
     "工作/GUI/260728harfbuzz移植.md",
-    "工作/GUI/260707GUI增加参数组件.md",
-    "工作/S3全封闭轨道/260714自动出衣增加时长-定制.md",
     "工作/S3全封闭轨道/260401全封闭动力出站电机报错.md",
     "工作/S3全封闭轨道/260331全封闭广播.md",
-    "工作/S3全封闭轨道/260319全封闭读卡出站.md",
-    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
-    "工作/S3全封闭轨道/260119出站缓存阀和出站阀联动.md",
     "未命名.canvas",
     "工作/读卡器架构设计.canvas"
   ]
