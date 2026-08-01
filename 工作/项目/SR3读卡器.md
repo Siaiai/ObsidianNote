@@ -8,3 +8,7 @@
 ---
 
 ## 相关
+
+```JavaScript
+moment($item.fileBaseName).isBetween(moment().subtract(7, 'days'), moment().add(7, 'days'))
+```
