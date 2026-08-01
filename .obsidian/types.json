@@ -1,3 +1,8 @@
 {
-  "types": {}
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "领域": "multitext"
+  }
 }
