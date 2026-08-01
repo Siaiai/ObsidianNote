@@ -220,7 +220,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-08-01T12:42:45.109Z",
+      "updateAt": "2026-08-01T13:06:09.091Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [
@@ -314,10 +314,7 @@
         "statics": [],
         "orders": [],
         "hiddens": [],
-        "collapseds": [
-          "完成",
-          "__$uncategorizedGroup"
-        ]
+        "collapseds": []
       },
       "title": "工作任务看板",
       "filter": {
