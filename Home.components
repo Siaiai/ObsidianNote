@@ -220,7 +220,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-08-01T11:39:17.830Z",
+      "updateAt": "2026-08-01T12:42:45.109Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [
@@ -262,11 +262,27 @@
           }
         },
         {
-          "id": "e46ab8e5-ddd8-46b5-9f3a-220f24a54562",
-          "name": "tags",
+          "id": "3ed3c6e2-fe17-4f85-a332-04be5a3385e9",
+          "name": "截止时间",
           "isShow": true,
-          "type": "text",
+          "type": "datetime",
           "options": {}
+        },
+        {
+          "id": "acc23dd0-aa5f-4031-a40f-83dd34769608",
+          "name": "待办事项",
+          "isShow": true,
+          "type": "taskList",
+          "options": {
+            "showTaskList": true,
+            "showAllTasks": false,
+            "hideTaskFields": true,
+            "timeRecordStyle": "none",
+            "insertPosition": {
+              "position": "BottomUnderHeading",
+              "headingLine": "## 待办列表"
+            }
+          }
         }
       ],
       "templates": [],
@@ -298,7 +314,10 @@
         "statics": [],
         "orders": [],
         "hiddens": [],
-        "collapseds": []
+        "collapseds": [
+          "完成",
+          "__$uncategorizedGroup"
+        ]
       },
       "title": "工作任务看板",
       "filter": {
