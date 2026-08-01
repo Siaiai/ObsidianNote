@@ -44,9 +44,21 @@
               "icon": "lucide-file",
               "title": "260105工序号识别2代"
             }
+          },
+          {
+            "id": "23148da0c3469390",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -163,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/S3吊挂控制器/260105工序号识别2代.md",
+                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -220,8 +232,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "01906766e410e70c",
+  "active": "23148da0c3469390",
   "lastOpenFiles": [
+    "工作/S3吊挂控制器/260105工序号识别2代.md",
     "领域/学习.md",
     "规范.md",
     "日志/2026-01-08.md",
@@ -267,7 +280,6 @@
     "工作/S3全封闭轨道/260319全封闭读卡出站.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/S3全封闭轨道/260119出站缓存阀和出站阀联动.md",
-    "工作/吊挂操作面板/260731实例2.md",
     "未命名.canvas",
     "工作/读卡器架构设计.canvas"
   ]

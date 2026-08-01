@@ -189,13 +189,13 @@
       "id": "7b4fa2d2-1ffb-4d4d-8652-ee12279b5428",
       "type": "dynamicDataView",
       "titleAlign": "center",
-      "tabTitle": "",
+      "tabTitle": "工作看板",
       "maxWidthRatio": -1,
       "showBorder": false,
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-07-31T13:40:32.302Z",
+      "updateAt": "2026-08-01T10:07:14.534Z",
       "viewType": "kanban",
       "newPageNameFormat": "{{date:YYMMDD}}:",
       "properties": [
@@ -1259,4 +1259,4 @@
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
   "version": 3.1
-}
+}    
