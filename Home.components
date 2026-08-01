@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-08-01T13:58:36.970Z",
+      "updateAt": "2026-08-01T18:00:59.836Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -34,7 +34,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 24,
+              "y": 16,
               "w": 4,
               "h": 4
             },
@@ -51,7 +51,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 68,
+              "y": 20,
               "w": 4,
               "h": 4
             },
@@ -59,7 +59,7 @@
               "x": 0,
               "y": 10,
               "w": 6,
-              "h": 51
+              "h": 54
             }
           }
         },
@@ -68,7 +68,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 0,
+              "y": 4,
               "w": 4,
               "h": 4
             },
@@ -85,7 +85,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 0,
+              "y": 8,
               "w": 4,
               "h": 4
             },
@@ -102,7 +102,7 @@
           "layout": {
             "mobile": {
               "x": 0,
-              "y": 0,
+              "y": 12,
               "w": 4,
               "h": 4
             },
@@ -110,7 +110,7 @@
               "x": 6,
               "y": 30,
               "w": 6,
-              "h": 31
+              "h": 34
             }
           }
         }
@@ -130,7 +130,7 @@
       "showTitle": true,
       "showShadow": true,
       "createAt": "2025-12-29T09:21:50.954Z",
-      "updateAt": "2026-01-04T11:49:22.495Z",
+      "updateAt": "2026-08-01T17:54:52.837Z",
       "chartType": "heatmap",
       "filter": {
         "id": "da9ff79b-182a-432d-88e4-687e9b715cfc",
@@ -138,13 +138,17 @@
         "operator": "and",
         "conditions": [
           {
-            "id": "ecbe6085-03a6-4ac2-be53-57f057f7c06b",
+            "id": "e66e43fd-0abb-41bb-b284-e5d18f6e5d87",
             "type": "filter",
             "operator": "contains_any",
-            "property": "tags",
+            "property": "类型",
             "value": [
-              "project",
-              "day"
+              "方案",
+              "开发",
+              "领域",
+              "日记",
+              "文章",
+              "项目"
             ],
             "conditions": []
           }
@@ -185,7 +189,7 @@
         }
       },
       "title": "🔆一以恒为志，时光不负心。",
-      "categoryProperty": "doneTime"
+      "categoryProperty": "${file.ctime}"
     },
     {
       "id": "d1d1a0d9-720f-40ca-9350-9416364f7e6b",
@@ -237,7 +241,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-08-01T13:47:37.439Z",
+      "updateAt": "2026-08-01T18:00:52.605Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [

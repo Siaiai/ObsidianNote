@@ -1,8 +1,8 @@
 {
-  "id": "a0000001-0000-0000-0000-000000000001",
+  "id": "学习-项目-{{@项目名称}}.md",
   "fields": [
     {
-      "id": "a0000001-0001-0000-0000-000000000001",
+      "id": "d1",
       "label": "项目名称",
       "type": "text",
       "required": true,
@@ -11,24 +11,24 @@
       "description": "要学什么？一句话说清楚"
     },
     {
-      "id": "a0000001-0002-0000-0000-000000000001",
+      "id": "d2",
       "label": "状态",
       "type": "select",
       "propertyName": "status",
       "defaultValue": "TODO",
       "options": [
         {
-          "id": "a0000001-0002-0001-000000000001",
+          "id": "e1",
           "label": "规划中",
           "value": ""
         },
         {
-          "id": "a0000001-0002-0002-000000000001",
+          "id": "e2",
           "label": "进行中",
           "value": ""
         },
         {
-          "id": "a0000001-0002-0003-000000000001",
+          "id": "e3",
           "label": "已归档",
           "value": ""
         }
@@ -36,7 +36,7 @@
       "required": true
     },
     {
-      "id": "a0000001-0003-0000-0000-000000000001",
+      "id": "d3",
       "label": "相关项目",
       "type": "property_value_suggestion",
       "propertyName": "项目",
@@ -53,8 +53,7 @@
       "fileName": "",
       "id": "a0000001-0004-0000-0000-000000000001",
       "filePath": "学习/项目/{{@项目名称}}.md",
-      "content": "---\n领域: \"[[学习]]\"\n类型:
-  - 项目\n项目: \"{{@项目名称}}\"\n相关项目: \"{{@相关项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n---\n\n## 相关\n\n```dataview\nTABLE 类型, 状态, 创建时间\nFROM \"\"\nWHERE contains(项目, this.file.link)\nSORT 创建时间 DESC\n\n```",
+      "content": "---\n领域:\n  - \"[[学习]]\"\n类型:\n  - 项目\n项目:\n  - {{@项目名称}}\n相关项目:\n  - \"{{@相关项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n---\n\n## 相关\n\n```dataview\nTABLE 类型, 状态, 创建时间\nFROM \"\"\nWHERE contains(项目, this.file.link)\nSORT 创建时间 DESC\n\n```\n",
       "contentTemplateSource": "text"
     }
   ],

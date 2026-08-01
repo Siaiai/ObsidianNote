@@ -6,5 +6,8 @@
   "form-flow",
   "attachment-management",
   "datepicker",
-  "dataview"
+  "dataview",
+  "mermaid-tools",
+  "pkmer",
+  "diagram-zoom-drag"
 ]
