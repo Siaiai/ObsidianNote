@@ -222,7 +222,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -241,9 +242,9 @@
   },
   "active": "c64a75febcb8b857",
   "lastOpenFiles": [
-    "Home.components",
-    "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
+    "工作/SR3读卡器/260802SR3读卡器架构.md",
+    "Home.components",
     "资源/form-flow插件/form/工作任务.cform",
     "工作/SR3读卡器/260802SR3读卡器架构.md.tmp.31424.3312f38fda24",
     "工作/项目/SR3读卡器.md",
