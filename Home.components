@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-08-01T12:50:42.430Z",
+      "updateAt": "2026-08-01T13:54:58.676Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -93,7 +93,24 @@
               "x": 6,
               "y": 19,
               "w": 6,
-              "h": 17
+              "h": 11
+            }
+          }
+        },
+        {
+          "componentId": "34f7ea41-f184-4143-a46b-d1927b141ed1",
+          "layout": {
+            "mobile": {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4
+            },
+            "laptop": {
+              "x": 6,
+              "y": 30,
+              "w": 6,
+              "h": 19
             }
           }
         }
@@ -220,7 +237,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-08-01T13:06:09.091Z",
+      "updateAt": "2026-08-01T13:47:37.439Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [
@@ -231,6 +248,27 @@
           "isShow": true,
           "wrap": false,
           "options": {}
+        },
+        {
+          "id": "1819eee9-401f-42af-8110-822217a80fdf",
+          "name": "进行",
+          "isShow": true,
+          "type": "button",
+          "options": {
+            "action": {
+              "type": "updateProperty",
+              "properties": [
+                {
+                  "id": "c93084b2-ccfb-45ff-bfa8-8ec8c4a58214",
+                  "name": "状态",
+                  "type": "string",
+                  "value": "进行",
+                  "valueSource": "constant",
+                  "modifier": "replaceValue"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "5f6c6613-7237-4128-888f-c88256f4dbf5",
@@ -286,7 +324,16 @@
         }
       ],
       "templates": [],
-      "groups": [],
+      "groups": [
+        {
+          "id": "待办",
+          "name": "待办",
+          "items": [
+            "工作/吊挂操作面板/260206本地记录语言.md",
+            "工作/吊挂操作面板/260106超范围字符显示.md"
+          ]
+        }
+      ],
       "colorfulGroups": true,
       "viewOptions": {
         "openPageIn": "modal",
@@ -413,7 +460,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-08-01T11:06:40.998Z",
-      "updateAt": "2026-08-01T11:38:41.051Z",
+      "updateAt": "2026-08-01T13:46:03.860Z",
       "viewType": "timeline",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -464,13 +511,77 @@
           {
             "id": "1cf9afa7-8e43-4043-8f2a-8d647d539cb0",
             "type": "filter",
-            "operator": "not_equals",
+            "operator": "equals",
             "property": "状态",
-            "value": "完成",
+            "value": "进行",
             "conditions": []
           }
         ]
       }
+    },
+    {
+      "id": "34f7ea41-f184-4143-a46b-d1927b141ed1",
+      "type": "dynamicDataView",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "showBorder": false,
+      "showTitle": true,
+      "showShadow": false,
+      "createAt": "2026-08-01T13:54:04.679Z",
+      "updateAt": "2026-08-01T13:55:02.481Z",
+      "viewType": "gallary",
+      "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
+      "properties": [
+        {
+          "id": "__componentsTitleProperty_0x7c00",
+          "name": "文件名",
+          "type": "text",
+          "isShow": true,
+          "wrap": false,
+          "options": {}
+        }
+      ],
+      "templates": [],
+      "groups": [],
+      "colorfulGroups": false,
+      "viewOptions": {
+        "openPageIn": "tab",
+        "openPageAfterCreate": true,
+        "items": [],
+        "pinFiltersToMenuBar": false,
+        "hideHeaderMenu": false,
+        "showGrid": false,
+        "heightType": "auto",
+        "heightValue": 600
+      },
+      "groupStates": {
+        "sort": "manual",
+        "format": "none",
+        "statics": [],
+        "orders": [
+          "[[分拣操作面板]]",
+          "__$uncategorizedGroup"
+        ],
+        "hiddens": [],
+        "collapseds": []
+      },
+      "filter": {
+        "id": "a5b449c3-0fb6-41b9-840e-ce9d9773babe",
+        "type": "group",
+        "operator": "and",
+        "conditions": [
+          {
+            "id": "a52c50a4-3b32-4b8b-8158-14256794d896",
+            "type": "filter",
+            "operator": "contains",
+            "property": "领域",
+            "value": "输出",
+            "conditions": []
+          }
+        ]
+      },
+      "groupBy": "项目"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",

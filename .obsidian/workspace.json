@@ -32,6 +32,20 @@
               "icon": "gantt-chart",
               "title": "Home"
             }
+          },
+          {
+            "id": "33cfd98c2ad6eb65",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/分拣操作面板/260401S3串口协议.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260401S3串口协议"
+            }
           }
         ],
         "currentTab": 1
@@ -210,14 +224,14 @@
   },
   "active": "e7260b286e0a87e3",
   "lastOpenFiles": [
-    "工作/GUI/260728harfbuzz移植.md",
+    "工作/分拣操作面板/260401S3串口协议.md",
     "Home.components",
+    "工作/GUI/260728harfbuzz移植.md",
     "工作/S3吊挂控制器/260105工序号识别2代.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "规范.md",
     "工作/S3吊挂控制器/260331增加手拍接口-SIA-R9000P.md",
     "资源/form-flow插件/form/输出文章.cform",
-    "工作/分拣操作面板/260401S3串口协议.md",
     "工作/吊挂操作面板/260715面板柬埔寨进达需求.md",
     "未命名.canvas",
     "工作/GUI/260707GUI增加参数组件.md",
