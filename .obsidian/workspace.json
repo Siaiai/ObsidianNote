@@ -27,7 +27,7 @@
               "state": {
                 "file": "工作/SR3读卡器/260802SR3读卡器架构.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "260802SR3读卡器架构"
@@ -228,6 +228,7 @@
   },
   "active": "f6ea02447a6ae154",
   "lastOpenFiles": [
+    "工作/SR3读卡器/260802SR3读卡器架构.md.tmp.31424.3312f38fda24",
     "Home.components",
     "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/项目/SR3读卡器.md",
