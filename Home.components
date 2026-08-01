@@ -220,7 +220,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-08-01T11:16:33.630Z",
+      "updateAt": "2026-08-01T11:39:17.830Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [
@@ -260,6 +260,13 @@
               ]
             }
           }
+        },
+        {
+          "id": "e46ab8e5-ddd8-46b5-9f3a-220f24a54562",
+          "name": "tags",
+          "isShow": true,
+          "type": "text",
+          "options": {}
         }
       ],
       "templates": [],
@@ -390,7 +397,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-08-01T11:06:40.998Z",
-      "updateAt": "2026-08-01T11:09:53.349Z",
+      "updateAt": "2026-08-01T11:38:41.051Z",
       "viewType": "timeline",
       "newPageNameFormat": "{{date:YYYYMMDDHHmmss}} ",
       "properties": [
@@ -415,7 +422,7 @@
         "showGrid": false,
         "heightType": "auto",
         "heightValue": 600,
-        "dateProperty": "${file.ctime}",
+        "dateProperty": "创建时间",
         "endDateProperty": "截止时间"
       },
       "groupStates": {

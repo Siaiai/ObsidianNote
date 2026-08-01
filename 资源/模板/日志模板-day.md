@@ -1,7 +1,7 @@
 ---
 领域: "[[日志]]"
 类型: 日记
-创建时间: {{date:YYYY-MM-DD HH:mm:ss}}
+创建时间: {{date:YYYY-MM-DDTHH:mm}}
 完成时间:
 ---
 ## 执行清单

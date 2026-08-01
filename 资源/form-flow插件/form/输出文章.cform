@@ -39,7 +39,7 @@
       "fileName": "",
       "id": "a0000003-0004-0000-0000-000000000001",
       "filePath": "输出/{{@项目}}/{{@文章名称}}.md",
-      "content": "---\n领域: 输出\n类型: 文章\n项目: \"{{@项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DD HH:mm:ss}}\n完成时间: \n---\n\n",
+      "content": "---\n领域: 输出\n类型: 文章\n项目: \"{{@项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm}}\n完成时间: \n---\n\n",
       "contentTemplateSource": "text"
     }
   ],
