@@ -41,7 +41,7 @@
               "state": {
                 "file": "工作/SR3读卡器/260802SR3读卡器架构.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "260802SR3读卡器架构"
@@ -62,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -255,11 +255,11 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "6e829f5ff7f82e77",
+  "active": "6aa059b071372331",
   "lastOpenFiles": [
-    "工作/SR3读卡器/260802SR3读卡器需求.md",
     "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/SR3读卡器/260802SR2读卡器行为.md",
+    "工作/SR3读卡器/260802SR3读卡器需求.md",
     "Home.components",
     "工作/SR3读卡器/260802SR3读卡器需求.md.tmp.18084.5d0b2e2322d4",
     "资源/form-flow插件/form/工作任务.cform",
