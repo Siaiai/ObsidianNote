@@ -62,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -124,8 +124,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "fbb33236752ab3a8",
@@ -255,11 +254,11 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "6aa059b071372331",
+  "active": "c64a75febcb8b857",
   "lastOpenFiles": [
-    "工作/SR3读卡器/260802SR3读卡器架构.md",
-    "工作/SR3读卡器/260802SR2读卡器行为.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
+    "工作/SR3读卡器/260802SR2读卡器行为.md",
+    "工作/SR3读卡器/260802SR3读卡器架构.md",
     "Home.components",
     "工作/SR3读卡器/260802SR3读卡器需求.md.tmp.18084.5d0b2e2322d4",
     "资源/form-flow插件/form/工作任务.cform",
