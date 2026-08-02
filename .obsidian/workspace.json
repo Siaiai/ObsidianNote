@@ -63,6 +63,26 @@
           }
         ],
         "currentTab": 2
+      },
+      {
+        "id": "f292bab6677e5b90",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de88c44e12efa353",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/SR3读卡器/260802SR3读卡器架构.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260802SR3读卡器架构"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -255,7 +275,7 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "c64a75febcb8b857",
+  "active": "de88c44e12efa353",
   "lastOpenFiles": [
     "工作/SR3读卡器/260802SR3读卡器需求.md",
     "工作/SR3读卡器/260802SR2读卡器行为.md",
