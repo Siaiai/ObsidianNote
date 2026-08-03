@@ -27,7 +27,7 @@
               "state": {
                 "file": "工作/SR3读卡器/260802SR3读卡器需求.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "260802SR3读卡器需求"
@@ -96,7 +96,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fbb33236752ab3a8",
@@ -174,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "工作/SR3读卡器/260802SR3读卡器需求.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -204,12 +205,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
