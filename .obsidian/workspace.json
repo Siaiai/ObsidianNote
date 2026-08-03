@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -245,7 +245,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/SR3读卡器/260804SR2SR3整理.md",
+                "file": "工作/SR3读卡器/260802SR3读卡器需求.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -297,10 +297,10 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "65499e64471e1986",
+  "active": "74230710fbcd3319",
   "lastOpenFiles": [
-    "Home.components",
     "工作/SR3读卡器/260804SR2SR3整理.md",
+    "Home.components",
     "工作/[[SR3读卡器]]/260804SR3新框架整理.md",
     "工作/[[SR3读卡器]]/260804SR2/SR2SR3整理.md",
     "工作/SR3读卡器/260802SR2读卡器行为.md",
