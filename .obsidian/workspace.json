@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "de5719ea0ca8dafb",
-            "type": "leaf",
-            "state": {
-              "type": "components-file-view",
-              "state": {
-                "file": "Home.components"
-              },
-              "icon": "gantt-chart",
-              "title": "Home"
-            }
-          },
-          {
             "id": "e84bc3215044915d",
             "type": "leaf",
             "state": {
@@ -33,15 +21,14 @@
               "title": "260802SR3读卡器架构"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "e4519e3bd83e8c0f",
+        "id": "6135c91999859882",
         "type": "tabs",
         "children": [
           {
-            "id": "645c751a650b2826",
+            "id": "89fb3cebf8986a79",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -128,16 +115,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "122b7a68931c91ff",
-            "type": "leaf",
-            "state": {
-              "type": "mermaid-toolbar-view",
-              "state": {},
-              "icon": "trident-custom",
-              "title": "Mermaid Toolbar"
-            }
-          },
-          {
             "id": "337f2593c295dd8d",
             "type": "leaf",
             "state": {
@@ -223,6 +200,16 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "19689915f9a96eed",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
           }
         ],
         "currentTab": 6
@@ -247,8 +234,9 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "e84bc3215044915d",
+  "active": "89fb3cebf8986a79",
   "lastOpenFiles": [
+    "260707_SiaZhang2003@hotmail.com_components_license.md",
     "Home.components",
     "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
