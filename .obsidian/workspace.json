@@ -11,6 +11,28 @@
             "id": "e84bc3215044915d",
             "type": "leaf",
             "state": {
+              "type": "pkmer-downloader",
+              "state": {},
+              "icon": "bookmark",
+              "title": "Pkmer Market"
+            }
+          },
+          {
+            "id": "1be6e5a9ed8d5057",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
+            }
+          },
+          {
+            "id": "d983d8ed0206f9ea",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
                 "file": "工作/SR3读卡器/260802SR3读卡器架构.md",
@@ -21,14 +43,15 @@
               "title": "260802SR3读卡器架构"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
-        "id": "6135c91999859882",
+        "id": "0b827689c9941ceb",
         "type": "tabs",
         "children": [
           {
-            "id": "89fb3cebf8986a79",
+            "id": "db74ef51772edb87",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -234,11 +257,11 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "89fb3cebf8986a79",
+  "active": "d983d8ed0206f9ea",
   "lastOpenFiles": [
-    "260707_SiaZhang2003@hotmail.com_components_license.md",
     "Home.components",
     "工作/SR3读卡器/260802SR3读卡器架构.md",
+    "260707_SiaZhang2003@hotmail.com_components_license.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
     "工作/SR3读卡器/260802SR2读卡器行为.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md.tmp.18084.5d0b2e2322d4",

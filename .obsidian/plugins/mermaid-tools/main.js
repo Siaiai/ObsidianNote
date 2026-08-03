@@ -2742,5 +2742,3 @@ var MermaidPlugin = class extends import_obsidian7.Plugin {
 function getErrorMessage5(error) {
   return error instanceof Error ? error.message : String(error);
 }
-
-/* nosourcemap */
