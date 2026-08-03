@@ -1,0 +1,14 @@
+{
+  "debugLogging": false,
+  "escapeOrderedListLabels": true,
+  "markerText": "elk",
+  "applyElkToAllDiagrams": false,
+  "overrideExistingLayout": true,
+  "defaultMermaidLook": "",
+  "defaultMermaidTheme": "",
+  "quotedLabelPattern": "\"([^\"\\\\]*(?:\\\\.[^\"\\\\]*)*)\"",
+  "bracketLabelPattern": "\\[([^[]\\]\\n]*(?:<br\\s*\\/?>[^[]\\]\\n]*)*)\\]",
+  "orderedListMarkerPattern": "(^|<br\\s*\\/?>)(\\s*)(\\d+)\\.(?=\\s)",
+  "orderedListReplacement": "$1$2$3\\u200B.",
+  "useBundledMermaid": true
+}
