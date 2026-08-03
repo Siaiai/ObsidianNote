@@ -11,5 +11,6 @@
   "pkmer",
   "diagram-zoom-drag",
   "mermaid-elk-renderer",
-  "drawio-obsidian"
+  "obsidian-excalidraw-plugin",
+  "drawio"
 ]
