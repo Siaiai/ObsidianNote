@@ -20,31 +20,19 @@
             }
           },
           {
-            "id": "599a910de7bfb011",
-            "type": "leaf",
-            "state": {
-              "type": "diagram",
-              "state": {
-                "file": "Untitled Diagram 1.svg"
-              },
-              "icon": "lucide-file",
-              "title": "Untitled Diagram 1"
-            }
-          },
-          {
             "id": "540e1fd0380487d2",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "diagram-edit",
               "state": {
-                "file": "Home.components"
+                "file": "Untitled Diagram.svg"
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "Untitled Diagram.svg"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
