@@ -1,0 +1,11 @@
+{
+  "welcomeComplete": false,
+  "theme": {
+    "dark": false,
+    "layout": "sketch"
+  },
+  "drawing": {
+    "sketch": true
+  },
+  "cssSnippets": []
+}

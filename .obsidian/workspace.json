@@ -18,13 +18,15 @@
             }
           },
           {
-            "id": "dfdb60da2a97bc86",
+            "id": "e0ffb154ea552d21",
             "type": "leaf",
             "state": {
-              "type": "drawio-editor-view",
-              "state": {},
-              "icon": "shapes",
-              "title": "Draw.io Editor"
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
         ],
@@ -218,19 +220,19 @@
       "bases:新建数据库": false,
       "obsidian-git:Open Git source control": false,
       "components:AI 对话（新标签页）": false,
-      "pkmer:Open Pkmer Market": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false
+      "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "dfdb60da2a97bc86",
+  "active": "f884656ae91e0575",
   "lastOpenFiles": [
+    "资源/drawio图",
+    "Untitled Diagram.svg",
+    "Untitled Diagram 1.svg",
     "Home.components",
     "未命名.md",
     "Drawing 2026-08-03 17.12.32.excalidraw.md",
     "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/SR3读卡器/260802SR2读卡器行为.md",
-    "Untitled Diagram.svg",
-    "Untitled Diagram 1.svg",
     "CLAUDE.md",
     "260707_SiaZhang2003@hotmail.com_components_license.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
