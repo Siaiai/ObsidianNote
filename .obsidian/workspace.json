@@ -27,7 +27,7 @@
               "state": {
                 "file": "工作/[[SR3读卡器]]/260804SR3新框架整理.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "260804SR3新框架整理"
@@ -313,13 +313,13 @@
   },
   "active": "2539b433acd0382b",
   "lastOpenFiles": [
-    "工作/SR3读卡器/260804SR2SR3整理.md",
-    "工作/[[SR3读卡器]]/260804SR3新框架整理.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
+    "工作/[[SR3读卡器]]/260804SR3新框架整理.md",
+    "工作/SR3读卡器/260804SR2SR3整理.md",
+    "工作/SR3读卡器/260802SR2读卡器行为.md",
     "工作/SR3读卡器/260802SR3读卡器架构.md",
     "Home.components",
     "工作/[[SR3读卡器]]/260804SR2/SR2SR3整理.md",
-    "工作/SR3读卡器/260802SR2读卡器行为.md",
     "工作/[[SR3读卡器]]/260804SR2",
     "工作/[[SR3读卡器]]",
     "工作/SR3读卡器/260802SR3读卡器需求.md.tmp.6772.1f3d0f7c3bcb",
