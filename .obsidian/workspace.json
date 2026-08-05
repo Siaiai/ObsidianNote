@@ -111,14 +111,34 @@
               "state": {
                 "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "260804SR3框架整理"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
+      },
+      {
+        "id": "decd1455f6845a65",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a95defbe7be51cb6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260804SR3框架整理"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -259,7 +279,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "file": "工作/SR3读卡器/260804SR2SR3整理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -293,7 +313,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -311,14 +332,14 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "f623cc1169028b30",
+  "active": "c9bc524400afa604",
   "lastOpenFiles": [
+    "工作/SR3读卡器/260802SR2读卡器行为.md",
+    "工作/[[SR3读卡器]]/260804SR3框架整理.md",
     "输出/SR3读卡器/EM4095详解.md",
     "Home.components",
-    "工作/[[SR3读卡器]]/260804SR3框架整理.md",
     "工作/SR3读卡器/260804SR2SR3整理.md",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
-    "工作/SR3读卡器/260802SR2读卡器行为.md",
     "资源/form-flow插件/form/工作任务.cform",
     "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/[[SR3读卡器]]/260804SR2/SR2SR3整理.md",
