@@ -10,5 +10,6 @@
   "mermaid-tools",
   "pkmer",
   "diagram-zoom-drag",
-  "drawio"
+  "drawio",
+  "mermaid-elk-renderer"
 ]
