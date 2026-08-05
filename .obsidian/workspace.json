@@ -20,6 +20,20 @@
             }
           },
           {
+            "id": "0e635ab8de2b2e39",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260804SR3框架整理"
+            }
+          },
+          {
             "id": "031d885f8f3fef2a",
             "type": "leaf",
             "state": {
@@ -45,20 +59,6 @@
               },
               "icon": "lucide-file",
               "title": "EM4095详解"
-            }
-          },
-          {
-            "id": "354889a724e0af8c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/SR3读卡器/260802SR3读卡器需求.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260802SR3读卡器需求"
             }
           },
           {
@@ -88,23 +88,9 @@
               "icon": "lucide-file",
               "title": "260804SR2SR3整理"
             }
-          },
-          {
-            "id": "f623cc1169028b30",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260804SR3框架整理"
-            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -297,15 +283,16 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "f623cc1169028b30",
+  "active": "0e635ab8de2b2e39",
   "lastOpenFiles": [
     "Home.components",
-    "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/[[SR3读卡器]]/260804SR3框架整理.md",
-    "输出/SR3读卡器/EM4095详解.md",
     "工作/SR3读卡器/260804SR2SR3整理.md",
-    "工作/SR3读卡器/260802SR3读卡器需求.md",
+    "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/SR3读卡器/260802SR2读卡器行为.md",
+    "资源/drawio/1785915796819.drawio.svg",
+    "工作/SR3读卡器/260802SR3读卡器需求.md",
+    "输出/SR3读卡器/EM4095详解.md",
     "资源/form-flow插件/form/工作任务.cform",
     "工作/[[SR3读卡器]]/260804SR2/SR2SR3整理.md",
     "工作/[[SR3读卡器]]/260804SR2",
