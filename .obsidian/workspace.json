@@ -89,8 +89,7 @@
               "title": "260804SR3新框架整理"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -284,8 +283,9 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "7496d18ba470e47c",
+  "active": "fedfb61ff03ef2ce",
   "lastOpenFiles": [
+    "输出/SR3读卡器/EM4095详解.md",
     "Home.components",
     "工作/[[SR3读卡器]]/260804SR3新框架整理.md",
     "工作/SR3读卡器/260804SR2SR3整理.md",
