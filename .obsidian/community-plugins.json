@@ -9,7 +9,7 @@
   "dataview",
   "mermaid-tools",
   "pkmer",
-  "diagram-zoom-drag",
   "drawio",
-  "mermaid-elk-renderer"
+  "mermaid-elk-renderer",
+  "diagram-zoom-drag"
 ]
