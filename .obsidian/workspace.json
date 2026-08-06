@@ -11,12 +11,14 @@
             "id": "fedfb61ff03ef2ce",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "markdown",
               "state": {
-                "file": "Home.components"
+                "file": "工作/SR3读卡器/260802SR3读卡器架构.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "260802SR3读卡器架构"
             }
           },
           {
@@ -285,10 +287,10 @@
   },
   "active": "0e635ab8de2b2e39",
   "lastOpenFiles": [
+    "工作/SR3读卡器/260802SR3读卡器架构.md",
     "Home.components",
     "工作/[[SR3读卡器]]/260804SR3框架整理.md",
     "工作/SR3读卡器/260804SR2SR3整理.md",
-    "工作/SR3读卡器/260802SR3读卡器架构.md",
     "工作/SR3读卡器/260802SR2读卡器行为.md",
     "资源/drawio/1785915796819.drawio.svg",
     "工作/SR3读卡器/260802SR3读卡器需求.md",
