@@ -16,5 +16,5 @@
   "TransparentDiagramBackgroundInCanavas": false,
   "diagramThemeInCanvas": "auto",
   "scaleCopyDiagramAsImage": "4",
-  "clientAutoUpdate": true
+  "clientAutoUpdate": false
 }

@@ -18,8 +18,65 @@
               "icon": "gantt-chart",
               "title": "Home"
             }
+          },
+          {
+            "id": "f57623ec41e4a06e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260804SR3框架整理"
+            }
+          },
+          {
+            "id": "89ea8992129106cb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260804SR3框架整理"
+            }
+          },
+          {
+            "id": "6a6a821999f0af5d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260804SR3框架整理"
+            }
+          },
+          {
+            "id": "2893bb5a64897f64",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "输出/SR3读卡器/EM4095详解.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EM4095详解"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -97,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.components",
+                "file": "输出/SR3读卡器/EM4095详解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +173,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.components",
+                "file": "输出/SR3读卡器/EM4095详解.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -159,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "输出/SR3读卡器/EM4095详解.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,6 +247,10 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "1b810a1dcfd60411",
-  "lastOpenFiles": []
+  "active": "2893bb5a64897f64",
+  "lastOpenFiles": [
+    "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+    "Home.components",
+    "输出/SR3读卡器/EM4095详解.md"
+  ]
 }
