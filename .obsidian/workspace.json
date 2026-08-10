@@ -33,8 +33,7 @@
               "title": "260804SR3框架整理"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -206,10 +205,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "f57623ec41e4a06e",
+  "active": "1b810a1dcfd60411",
   "lastOpenFiles": [
-    "输出/SR3读卡器/EM4095详解.md",
     "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+    "输出/SR3读卡器/EM4095详解.md",
     "Home.components"
   ]
 }
