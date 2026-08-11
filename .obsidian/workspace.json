@@ -20,13 +20,13 @@
             }
           },
           {
-            "id": "0e863d053ed19b8c",
+            "id": "adbe500bf6758d0b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -96,8 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "4eac89cb2e16be17",
@@ -207,17 +206,20 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "0e863d053ed19b8c",
+  "active": "adbe500bf6758d0b",
   "lastOpenFiles": [
-    "工作/[[SR3读卡器]]/_fix_doc.py",
-    "工作/[[SR3读卡器]]/260804SR3框架整理.md.bak",
-    "工作/[[SR3读卡器]]/attachments/sr3-modes.html",
-    "工作/[[SR3读卡器]]/attachments/sr3-architecture.html",
-    "工作/[[SR3读卡器]]/attachments/em4095-decode.html",
-    "工作/[[SR3读卡器]]/attachments/test.html",
-    "工作/[[SR3读卡器]]/attachments",
+    "工作/[[SR3读卡器]]/attachments/em4095-statemachine.html.tmp.29228.327f82c7790e",
+    "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html",
+    "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html.tmp.29228.5e90c247c20f",
+    "工作/[[SR3读卡器]]/attachments/em4095-statemachine.html",
+    "工作/[[SR3读卡器]]/attachments/em4095-statemachine.html.tmp.29228.b364c08f90f3",
+    "工作/[[SR3读卡器]]/attachments/em4095-classifier.html",
+    "工作/[[SR3读卡器]]/attachments/em4095-classifier.html.tmp.29228.42c885759de8",
+    "工作/[[SR3读卡器]]/attachments/em4095-event-arch.html",
+    "工作/[[SR3读卡器]]/260804SR3框架整理.md.tmp.29228.2347d7e7f98c",
     "Home.components",
     "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+    "工作/[[SR3读卡器]]/_fix_doc.py",
     "2026-08-12 .md",
     "日志/2026-08-11.md",
     "资源/模板/日志模板-day.md",

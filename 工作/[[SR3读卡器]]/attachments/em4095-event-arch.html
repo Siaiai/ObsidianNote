@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>事件表 & 架构</title>
+<style>
+  :root { --bg:#fff; --text:#333; --subtle:#666; --code-bg:#f0f0f0; --border:#ddd; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1e1e1e; --text:#ddd; --subtle:#aaa; --code-bg:#2a2a2a; --border:#444; } }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Segoe UI",system-ui,"Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); padding:18px; line-height:1.6; font-size:14px; max-width:720px; margin:0 auto; }
+  h2 { font-size:1.2em; margin-bottom:12px; }
+  .code { font-family:"Cascadia Code",Consolas,monospace; font-size:.84em; background:var(--code-bg); padding:1px 6px; border-radius:3px; }
+  table { border-collapse:collapse; width:100%; font-size:.9em; margin:10px 0; }
+  th { background:#fff3e0; color:#e65100; padding:8px 12px; text-align:left; border-bottom:2px solid #e65100; }
+  td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+  @media (prefers-color-scheme: dark) { th { background:#3e2410; color:#ff8a50; } }
+  .arch { display:flex; gap:10px; margin:14px 0; font-size:.87em; }
+  .arch-box { flex:1; border-radius:10px; padding:12px 14px; }
+  .arch-isr { background:#fff3e0; border:2px solid #e65100; }
+  .arch-main { background:#e8f5e9; border:2px solid #2e7d32; }
+  @media (prefers-color-scheme: dark) { .arch-isr { background:#3e2410; } .arch-main { background:#1a3a1a; } }
+  .arch-box .h { font-weight:700; font-size:1.05em; margin-bottom:6px; }
+  .arch-isr .h { color:#e65100; }
+  .arch-main .h { color:#2e7d32; }
+  @media (prefers-color-scheme: dark) { .arch-isr .h { color:#ff8a50; } .arch-main .h { color:#66bb6a; } }
+  li { margin-left:18px; padding:1px 0; }
+  .note { font-size:.85em; color:var(--subtle); margin-top:8px; padding:8px 12px; background:var(--code-bg); border-radius:6px; }
+</style>
+</head>
+<body>
+
+<h2>事件表 (3 种)</h2>
+<table>
+<tr><th>事件</th><th>枚举值</th><th>触发条件</th><th>emit 函数</th></tr>
+<tr>
+  <td><strong>CardIn</strong></td>
+  <td><span class="code">eEM4095_Event_CardIn = 1</span></td>
+  <td>校验全过 + 2/3 投票一致 + 卡号变化 (新卡)</td>
+  <td><span class="code">emit_card_in(id)</span><br>在 <span class="code">card_on()</span> 中调用</td>
+</tr>
+<tr>
+  <td><strong>CardInUnconfirmed</strong></td>
+  <td><span class="code">eEM4095_Event_CardInUnconfirmed = 3</span></td>
+  <td>vote_count ≥ 1 帧 + 最后帧入队后 40ms 内未凑够投票</td>
+  <td><span class="code">emit_card_in_unconfirmed()</span><br>在 <span class="code">EM4095_Poll</span> 超时分支调用</td>
+</tr>
+<tr>
+  <td><strong>CardOut</strong></td>
+  <td><span class="code">eEM4095_Event_CardOut = 2</span></td>
+  <td><span class="code">now - last_card_ms ≥ 200ms</span> (连续 200ms 没确认卡)</td>
+  <td><span class="code">emit_card_out()</span><br>在 <span class="code">card_off()</span> 中调用</td>
+</tr>
+</table>
+
+<div class="note">
+  <strong>CardIn vs CardInUnconfirmed:</strong> CardIn 是"确认卡号"事件 (有完整 5 字节 ID); CardInUnconfirmed 是"模糊卡号"事件 (ID 全零), reader_app 会将其映射为固定卡号 <span class="code">00 00 00 00 55</span> 上报。
+</div>
+
+<h2>架构分工</h2>
+<div class="arch">
+  <div class="arch-box arch-isr">
+    <div class="h">ISR 层 — bsp_gtim.c</div>
+    <ul>
+      <li>GTIM CH3 捕获 PC05 (DEMOD_OUT) 边沿</li>
+      <li>记录 <span class="code">level</span> (0=下降沿, 1=上升沿)</li>
+      <li>记录 <span class="code">delta_us</span> (距上次边沿的时间)</li>
+      <li>压入环形 FIFO</li>
+    </ul>
+    <div style="font-size:.82em;opacity:.75;margin-top:4px;">不解码，不判断，不做任何逻辑</div>
+  </div>
+  <div class="arch-box arch-main">
+    <div class="h">主循环 — EM4095_Poll</div>
+    <ul>
+      <li><span class="code">Bsp_GtimRead</span> 取边沿 (while 消费全部)</li>
+      <li><span class="code">classify()</span> 五分区分类</li>
+      <li><span class="code">dispatch_edge()</span> 分发给三态处理</li>
+      <li>超时检查: CardOut + Unconfirmed</li>
+    </ul>
+    <div style="font-size:.82em;opacity:.75;margin-top:4px;">每轮主循环调用一次 EM4095_Poll</div>
+  </div>
+</div>
+
+</body>
+</html>

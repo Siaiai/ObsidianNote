@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>边沿分类器</title>
+<style>
+  :root { --bg:#fff; --text:#333; --subtle:#666; --code-bg:#f0f0f0; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1e1e1e; --text:#ddd; --subtle:#aaa; --code-bg:#2a2a2a; } }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Segoe UI",system-ui,"Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); padding:18px; line-height:1.6; font-size:14px; max-width:720px; margin:0 auto; }
+  h2 { font-size:1.2em; margin-bottom:10px; }
+  .code { font-family:"Cascadia Code",Consolas,monospace; font-size:.84em; background:var(--code-bg); padding:1px 6px; border-radius:3px; }
+  .note { font-size:.85em; color:var(--subtle); margin:8px 0; padding:8px 12px; background:var(--code-bg); border-radius:6px; }
+
+  .bar { display:flex; height:38px; border-radius:8px; overflow:hidden; margin:8px 0; font-size:.7em; font-weight:700; text-align:center; }
+  .bar span { display:flex; align-items:center; justify-content:center; color:#fff; padding:0 4px; }
+  .bar-d { background:#90a4ae; }
+  .bar-s { background:#43a047; }
+  .bar-a { background:#ff8f00; }
+  .bar-l { background:#1565c0; }
+  .bar-t { background:#c62828; flex:1; }
+
+  .labels { display:flex; font-size:.75em; color:var(--subtle); margin-bottom:12px; }
+  .labels span { text-align:center; }
+
+  table { border-collapse:collapse; width:100%; font-size:.87em; margin:10px 0; }
+  th { background:#f5f5f5; padding:6px 10px; text-align:left; border-bottom:2px solid #ccc; }
+  td { padding:6px 10px; border-bottom:1px solid #ddd; }
+  @media (prefers-color-scheme: dark) { th { background:#333; } td { border-color:#444; } }
+</style>
+</head>
+<body>
+
+<h2>边沿分类器 <span class="code">classify(delta_us, base_us)</span></h2>
+
+<div class="note">
+  <strong>计算:</strong> <span class="code">pct = delta_us * 100 / base_us</span> (整数除法)<br>
+  <strong>base_us</strong>: 动态值, default 256us, 在 SeekPreamble 阶段测得, clamp 200~312us<br>
+  <strong>delta_us</strong>: 两次 GTIM 边沿之间的时间间隔 (微秒)<br>
+  <strong>delta_us == 0</strong> 直接判 Debris (安全保护)
+</div>
+
+<div class="bar">
+  <span class="bar-d" style="width:70px;">Debris<br>&lt;70%</span>
+  <span class="bar-s" style="width:70px;">SHORT<br>70~140%</span>
+  <span class="bar-a" style="width:15px;">AMB<br>140~155%</span>
+  <span class="bar-l" style="width:105px;">LONG<br>155~260%</span>
+  <span class="bar-t">TIMEOUT &gt;260%</span>
+</div>
+<div class="labels">
+  <span style="width:70px;min-width:70px;">毛刺/噪声</span>
+  <span style="width:70px;min-width:70px;">正常半位周期</span>
+  <span style="width:15px;min-width:15px;">临界</span>
+  <span style="width:105px;min-width:105px;">正常全位周期</span>
+  <span style="flex:1;">帧间隙 / 无信号</span>
+</div>
+
+<table>
+<tr><th>分类</th><th>枚举值</th><th>区间</th><th>以 256us 为例</th><th>含义</th></tr>
+<tr><td>Debris</td><td>0</td><td>&lt; 70%</td><td>&lt; 179us</td><td>毛刺、噪声、极窄脉冲，直接丢弃</td></tr>
+<tr><td>SHORT</td><td>1</td><td>70 ~ 140%</td><td>179 ~ 358us</td><td>正常半位周期 (~256us)，Manchester 编码的单个半位</td></tr>
+<tr><td>Ambiguous</td><td>2</td><td>140 ~ 155%</td><td>358 ~ 397us</td><td>临界: 在 SHORT/LONG 边界，无法确定，Receive 中计错</td></tr>
+<tr><td>LONG</td><td>3</td><td>155 ~ 260%</td><td>397 ~ 665us</td><td>正常全位周期 (~512us)，连续两个相同 bit 中间无边沿跳变</td></tr>
+<tr><td>TIMEOUT</td><td>4</td><td>&gt; 260%</td><td>&gt; 665us</td><td>帧间隙或芯片离开感应区，Receive 中直接回 Idle</td></tr>
+</table>
+
+<div class="note">
+  <strong>为什么用动态 base_us?</strong> EM4095 实际输出周期会随天线调谐、供电电压、温度漂移。<br>
+  SeekPreamble 阶段收集 16 个交替 SHORT 的 delta 求平均作为 base_us，clamp 200~312us (默认值的 ±22%)。<br>
+  超出这个范围仍用 <span class="code">BASE_DEFAULT_US = 256us</span>，因为大概率是噪声。
+</div>
+
+</body>
+</html>
