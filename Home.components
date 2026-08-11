@@ -623,7 +623,7 @@
       "showTitle": false,
       "showShadow": false,
       "createAt": "2026-08-11T19:59:10.857Z",
-      "updateAt": "2026-08-11T20:02:20.976Z",
+      "updateAt": "2026-08-11T20:11:44.862Z",
       "viewType": "calendar",
       "newPageNameFormat": "{{date:YYYY-MM-DD}} ",
       "properties": [
@@ -646,8 +646,8 @@
             "hideTaskFields": true,
             "timeRecordStyle": "none",
             "insertPosition": {
-              "position": "BottomOfNote",
-              "headingLine": ""
+              "position": "BottomUnderHeading",
+              "headingLine": "## 执行清单"
             }
           }
         }
