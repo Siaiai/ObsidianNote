@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>SR3 通信模式流程</title>
+<style>
+  :root {
+    --bg:#fff; --text:#333; --subtle:#888; --border:#ddd;
+    --app:#e3f2fd; --app-border:#2196f3;
+    --ctrl:#fff3e0; --ctrl-border:#ff9800;
+    --chip:#fce4ec; --chip-border:#e91e63;
+    --arrow-color:#666;
+  }
+  @media (prefers-color-scheme: dark) {
+    --bg:#1e1e1e; --text:#ddd; --subtle:#aaa; --border:#444;
+    --app:#142a3e; --app-border:#5c9ce0;
+    --ctrl:#3e2410; --ctrl-border:#ff8a50;
+    --chip:#3e1a24; --chip-border:#ef5350;
+    --arrow-color:#aaa;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Segoe UI",system-ui,"Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); padding:20px; line-height:1.55; }
+  h2 { font-size:1.25em; margin:24px 0 10px; }
+  .code { font-family:"Cascadia Code","Fira Code",Consolas,monospace; font-size:.8em; background:#f0f0f0; padding:1px 5px; border-radius:3px; }
+  @media (prefers-color-scheme: dark) { .code { background:#333; } }
+
+  /* ===== Sequence Diagram ===== */
+  .seq {
+    display:grid; grid-template-columns:80px 1fr 1fr 1fr 80px;
+    gap:1px 4px; font-size:.82em; line-height:1.5; margin:8px 0;
+    max-width:820px;
+  }
+  .seq .head { font-weight:700; text-align:center; padding:6px 4px; border-radius:8px 8px 0 0; font-size:.8em; }
+  .seq .head-chip { background:var(--chip); color:var(--chip-border); }
+  .seq .head-timer { background:#f5f5f5; color:var(--subtle); }
+  .seq .head-reader { background:var(--app); color:var(--app-border); }
+  .seq .head-ctrl { background:var(--ctrl); color:var(--ctrl-border); }
+
+  .seq .life { grid-column:1/6; border-left:2px dashed var(--border); padding:4px 0; text-align:center; font-size:.75em; color:var(--subtle); }
+
+  .seq .msg {
+    padding:4px 8px; border-radius:6px; font-size:.8em; text-align:center;
+    white-space:nowrap; position:relative;
+  }
+  .msg-from-reader { background:var(--app); color:var(--app-border); border:1px solid var(--app-border); }
+  .msg-from-ctrl   { background:var(--ctrl); color:var(--ctrl-border); border:1px solid var(--ctrl-border); }
+  .msg-from-chip   { background:var(--chip); color:var(--chip-border); border:1px solid var(--chip-border); }
+  .msg-note { background:#f5f5f5; font-size:.75em; color:var(--subtle); padding:2px 6px; font-style:italic; }
+  @media (prefers-color-scheme: dark) { .msg-note { background:#2a2a2a; } }
+
+  .seq .arr {
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.2em; color:var(--arrow-color);
+  }
+  .seq .arr-left::after { content:"←"; }
+  .seq .arr-right::after { content:"→"; }
+
+  /* Mode comparison */
+  .mode-compare {
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin:10px 0;
+  }
+  @media (max-width:700px) { .mode-compare { grid-template-columns:1fr 1fr; } }
+  .mode-card {
+    border:2px solid var(--border); border-radius:12px; padding:14px; font-size:.82em;
+  }
+  .mode-card .mode-num { font-size:2em; font-weight:800; color:var(--app-border); line-height:1; }
+  .mode-card .mode-name { font-weight:700; margin-bottom:6px; }
+  .mode-card .active, .mode-card .passive { font-size:.82em; margin-top:4px; }
+  .mode-card .active::before { content:"▲ 主动: "; font-weight:600; }
+  .mode-card .passive::before { content:"▼ 被动: "; font-weight:600; }
+
+  /* LED table */
+  .led-table { width:100%; max-width:760px; border-collapse:collapse; font-size:.82em; margin:8px 0; }
+  .led-table th { background:var(--app); padding:8px 10px; text-align:left; border-bottom:2px solid var(--app-border); }
+  .led-table td { padding:8px 10px; border-bottom:1px solid var(--border); }
+  .led-table .mode-tag {
+    display:inline-block; padding:2px 8px; border-radius:4px; font-weight:600; font-size:.8em;
+  }
+  .mode-desktop { background:#fff3e0; color:#e65100; }
+  .mode-entry   { background:#e8f5e9; color:#2e7d32; }
+  .mode-store   { background:#e3f2fd; color:#0d47a1; }
+  .mode-cont    { background:#fce4ec; color:#c62828; }
+
+  .led-dot {
+    display:inline-block; width:14px; height:14px; border-radius:50%; margin-right:4px; vertical-align:middle;
+    border:1px solid rgba(0,0,0,.2);
+  }
+  .led-red  { background:#ef5350; }
+  .led-green{ background:#66bb6a; }
+  .led-both { background:linear-gradient(135deg, #ef5350 50%, #66bb6a 50%); }
+
+  /* Upgrade flow */
+  .upgrade-seq {
+    counter-reset:up-step;
+  }
+  .upgrade-seq .us {
+    display:flex; gap:12px; align-items:flex-start; padding:6px 0; font-size:.83em;
+  }
+  .upgrade-seq .us::before {
+    counter-increment:up-step; content:counter(up-step);
+    min-width:26px; height:26px; border-radius:50%; background:var(--ctrl-border); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.75em; flex-shrink:0;
+  }
+  .upgrade-seq .us .actor { font-weight:600; min-width:70px; }
+  .upgrade-seq .us .detail { color:var(--subtle); font-size:.95em; }
+  .upgrade-seq .us .detail .frame { font-family:"Cascadia Code","Fira Code",Consolas,monospace; font-size:.82em; background:#f0f0f0; padding:1px 5px; border-radius:3px; }
+  @media (prefers-color-scheme: dark) { .upgrade-seq .us .detail .frame { background:#333; } }
+
+  /* Command table */
+  .cmd-table { width:100%; max-width:820px; border-collapse:collapse; font-size:.8em; margin:8px 0; }
+  .cmd-table th { background:var(--ctrl); padding:6px 8px; text-align:left; border-bottom:2px solid var(--ctrl-border); white-space:nowrap; }
+  .cmd-table td { padding:6px 8px; border-bottom:1px solid var(--border); }
+  .cmd-table .full { font-family:"Cascadia Code","Fira Code",Consolas,monospace; font-size:.82em; white-space:nowrap; }
+  .cmd-table tr:hover { background:rgba(0,0,0,.03); }
+  @media (prefers-color-scheme: dark) { .cmd-table tr:hover { background:rgba(255,255,255,.04); } }
+
+  details { margin:10px 0; }
+  summary { cursor:pointer; font-weight:600; font-size:.9em; padding:4px 0; }
+</style>
+</head>
+<body>
+
+<!-- ====== Four Modes Comparison ====== -->
+<h2>🎯 四种工作模式</h2>
+
+<div class="mode-compare">
+  <div class="mode-card">
+    <div class="mode-num">00</div>
+    <div class="mode-name">桌面模式 DESKTOP</div>
+    <div class="active">读到新卡 → 上报一次 + 蜂鸣器 50ms</div>
+    <div class="passive">无</div>
+    <div style="font-size:.75em;color:var(--subtle);margin-top:4px;">场景: 桌面读卡器</div>
+  </div>
+  <div class="mode-card">
+    <div class="mode-num">01</div>
+    <div class="mode-name">进站模式 ENTRY</div>
+    <div class="active">读到新卡 → 上报第 1 次 → 等间隔 → 上报第 2 次 (可设置间隔)</div>
+    <div class="passive">收到查询 → 一律 Fail</div>
+    <div style="font-size:.75em;color:var(--subtle);margin-top:4px;">场景: 进站读卡器</div>
+  </div>
+  <div class="mode-card">
+    <div class="mode-num">02</div>
+    <div class="mode-name">下放模式 STORE</div>
+    <div class="active">读到新卡 → 上报一次</div>
+    <div class="passive">收到查询 → 按实况应答 (有卡报卡号, 无卡报 Fail)</div>
+    <div style="font-size:.75em;color:var(--subtle);margin-top:4px;">场景: 下放/出站读卡器</div>
+  </div>
+  <div class="mode-card">
+    <div class="mode-num">03</div>
+    <div class="mode-name">连续模式 CONTINUOUS</div>
+    <div class="active">周期发送: 有卡 → 卡号, 无卡 → Fail (可设置间隔)</div>
+    <div class="passive">无</div>
+    <div style="font-size:.75em;color:var(--subtle);margin-top:4px;">场景: 分拣读卡器</div>
+  </div>
+</div>
+
+<!-- ====== Entry Mode Sequence ====== -->
+<h2>🚪 进站模式 (Entry) — 两次上报</h2>
+<div class="seq">
+  <div class="head head-chip">衣架芯片</div>
+  <div class="head head-reader">读卡器</div>
+  <div class="head head-ctrl">控制器</div>
+
+  <!-- init -->
+  <div class="life">⸻ 解码: 无卡 ⸻</div>
+
+  <!-- polling -->
+  <div class="msg msg-note" style="grid-column:3">轮询</div>
+  <div class="arr arr-left" style="grid-column:1"></div>
+  <div class="msg msg-from-reader" style="grid-column:2">Fail</div>
+
+  <!-- card comes -->
+  <div class="life">⸻ 衣架进入感应区 ⸻</div>
+  <div class="msg-from-chip" style="grid-column:2">新卡!</div>
+  <div style="grid-column:1;text-align:right;font-size:.7em;color:var(--chip-border);">RFID 能量</div>
+
+  <!-- 1st report -->
+  <div class="life" style="grid-column:1/4; background:rgba(255,235,238,.3);">━━━ 触发上报 ━━━</div>
+  <div></div>
+  <div class="msg msg-from-reader" style="grid-column:2/4; font-weight:600;">第 1 次: 10 FF 05 AA BB CC DD EE</div>
+
+  <!-- wait -->
+  <div class="life" style="grid-column:1/4; background:rgba(255,243,224,.3);">━━━ 等待 interval (默认 100ms) ━━━</div>
+  <div></div>
+  <div class="msg msg-from-reader" style="grid-column:2/4; font-weight:600;">第 2 次: 10 FF 05 AA BB CC DD EE</div>
+
+  <!-- same card, no trigger -->
+  <div class="life">⸻ 衣架仍在感应区 (旧卡, 不触发) ⸻</div>
+
+  <!-- more polling -->
+  <div class="msg msg-note" style="grid-column:3">轮询</div>
+  <div class="arr arr-left" style="grid-column:1"></div>
+  <div class="msg msg-from-reader" style="grid-column:2">Fail</div>
+</div>
+
+<!-- ====== Store Mode Sequence ====== -->
+<h2>⬇ 下放模式 (Store) — 查询按实况应答</h2>
+<div class="seq">
+  <div class="head head-chip">衣架芯片</div>
+  <div class="head head-reader">读卡器</div>
+  <div class="head head-ctrl">控制器</div>
+
+  <div class="life">⸻ 解码: 无卡 ⸻</div>
+  <div class="msg msg-note" style="grid-column:3">0x75 查询</div>
+  <div class="arr arr-left" style="grid-column:1"></div>
+  <div class="msg msg-from-reader" style="grid-column:2">Fail</div>
+
+  <div class="life">⸻ 衣架进入感应区 ⸻</div>
+  <div class="msg-from-chip" style="grid-column:2">新卡!</div>
+  <div class="life" style="grid-column:1/4; background:rgba(255,235,238,.3);">━━━ 触发上报 (仅一次) ━━━</div>
+  <div class="msg msg-from-reader" style="grid-column:2/4; font-weight:600;">10 FF 05 AA BB CC DD EE</div>
+
+  <div class="life">⸻ 仍在感应区 (旧卡, 不触发) ⸻</div>
+  <div class="msg msg-note" style="grid-column:3">0x75 查询</div>
+  <div class="arr arr-left" style="grid-column:1"></div>
+  <div class="msg msg-from-reader" style="grid-column:2; font-weight:600;">10 FF 05 AA BB CC DD EE</div>
+  <div style="font-size:.7em;color:var(--subtle);grid-column:1/4;text-align:center;">▲ 与进站的关键区别: 查询时按实况报卡号, 而非 Fail</div>
+</div>
+
+<!-- ====== Continuous Mode Sequence ====== -->
+<h2>⏱ 连续模式 (Continuous) — 周期发送</h2>
+<div class="seq">
+  <div class="head head-timer">定时器</div>
+  <div class="head head-reader">读卡器</div>
+  <div class="head head-ctrl">上位机</div>
+
+  <div class="life">⸻ 100ms 间隔 (可设置) ⸻</div>
+  <div class="arr arr-right" style="grid-column:1"></div>
+  <div class="msg msg-note" style="grid-column:1">100ms 到</div>
+  <div class="msg msg-from-reader" style="grid-column:2/4; font-weight:600;">有卡 → 10 FF 05 AA BB CC DD EE</div>
+
+  <div class="life">⸻ 100ms 间隔 ⸻</div>
+  <div class="arr arr-right" style="grid-column:1"></div>
+  <div class="msg msg-note" style="grid-column:1">100ms 到</div>
+  <div class="msg msg-from-reader" style="grid-column:2/4;">无卡 → 10 FF 04 46 61 69 6C (Fail)</div>
+
+  <div class="life">⸻ 100ms 间隔 ⸻</div>
+  <div class="arr arr-right" style="grid-column:1"></div>
+  <div class="msg msg-note" style="grid-column:1">100ms 到</div>
+  <div class="msg msg-from-reader" style="grid-column:2/4; font-weight:600;">有卡 → 10 FF 06 AA BB CC DD EE BC (带BCC)</div>
+  <div style="font-size:.7em;color:var(--subtle);grid-column:1/4;text-align:center;">▲ 连续模式是唯一由定时器驱动上报的模式, 不受卡事件触发</div>
+</div>
+
+<!-- ====== Desktop Mode Sequence ====== -->
+<h2>🖥 桌面模式 (Desktop) — 蜂鸣器</h2>
+<div class="seq">
+  <div class="head head-chip">衣架芯片</div>
+  <div class="head head-reader">读卡器</div>
+  <div class="head head-ctrl">上位机</div>
+
+  <div class="life">⸻ 解码: 无卡, 不触发上报 ⸻</div>
+
+  <div class="life">⸻ 衣架进入感应区 ⸻</div>
+  <div class="msg-from-chip" style="grid-column:2">新卡!</div>
+  <div class="life" style="grid-column:1/4; background:rgba(255,235,238,.3);">━━━ 触发上报 + 蜂鸣器 50ms ━━━</div>
+  <div></div>
+  <div class="msg msg-from-reader" style="grid-column:2/4; font-weight:600;">10 FF 05 AA BB CC DD EE</div>
+  <div style="font-size:.7em;color:var(--subtle);grid-column:1/4;text-align:center;">▲ 唯一会响蜂鸣器的模式</div>
+</div>
+
+<!-- ====== LED Behavior ====== -->
+<h2>💡 LED 行为表</h2>
+<table class="led-table">
+<tr><th>模式</th><th>无卡 LED</th><th>有卡 LED</th><th>动画说明</th></tr>
+<tr>
+  <td><span class="mode-tag mode-desktop">桌面</span></td>
+  <td><span class="led-dot led-red"></span>红灯常亮</td>
+  <td><span class="led-dot led-green"></span>绿灯常亮</td>
+  <td>红 1000ms 单帧; 绿持续 ≥1s</td>
+</tr>
+<tr>
+  <td><span class="mode-tag mode-entry">进站</span></td>
+  <td><span class="led-dot led-red"></span>红灯 1Hz 慢闪</td>
+  <td><span class="led-dot led-green"></span>绿灯常亮</td>
+  <td>红 500ms + 灭 500ms = 1Hz</td>
+</tr>
+<tr>
+  <td><span class="mode-tag mode-store">下放</span></td>
+  <td><span class="led-dot led-red"></span>红灯 2.5Hz 快闪</td>
+  <td><span class="led-dot led-green"></span>绿灯常亮</td>
+  <td>红 200ms + 灭 200ms = 2.5Hz</td>
+</tr>
+<tr>
+  <td><span class="mode-tag mode-cont">连续</span></td>
+  <td><span class="led-dot led-red"></span>红灯双闪</td>
+  <td><span class="led-dot led-green"></span>绿灯常亮</td>
+  <td>红150ms+灭150ms+红150ms+灭550ms</td>
+</tr>
+</table>
+
+<!-- ====== Upgrade Flow ====== -->
+<h2>🔄 IAP 升级流程</h2>
+<div class="upgrade-seq">
+  <div class="us"><span class="actor">控制器</span> <span class="detail">发 <span class="frame">10 A0 05</span> (进 bootloader)</span></div>
+  <div class="us"><span class="actor">APP</span> <span class="detail">读 FlashData_t → 写 <span class="frame">update_flag = 0x00</span> (保留参数) → NVIC_SystemReset()</span></div>
+  <div class="us"><span class="actor">Bootloader</span> <span class="detail">复位 → 读 0x4600 → update_flag ≠ 0xFF → 不跳 app → 发 <span class="frame">55 04</span> (就绪)</span></div>
+  <div class="us"><span class="actor">控制器</span> <span class="detail">发 <span class="frame">55 81</span> (开始升级, 带总包数)</span></div>
+  <div class="us"><span class="actor">Bootloader</span> <span class="detail">擦 app 区 (0x1C00 起) → 发 <span class="frame">55 01</span> (擦除完成)</span></div>
+  <div class="us"><span class="actor">loop</span> <span class="detail">控制器发 <span class="frame">55 82</span> (256B 固件包) → Bootloader XOR 解密 "603337" → 写 Flash → 回 <span class="frame">55 02</span></span></div>
+  <div class="us"><span class="actor">Bootloader</span> <span class="detail">全部写完 → 写 <span class="frame">update_flag = 0x03</span> (rUpdated) → 跳转 0x1C00</span></div>
+  <div class="us"><span class="actor">APP</span> <span class="detail">启动 → 读 FlashData_t → rUpdated → 发 <span class="frame">55 03</span> (升级成功)</span></div>
+  <div class="us"><span class="actor">控制器</span> <span class="detail">回 <span class="frame">55 83</span> (ACK)</span></div>
+  <div class="us"><span class="actor">APP</span> <span class="detail">改 <span class="frame">update_flag = 0xFF</span> (保留参数) → 正常运行</span></div>
+</div>
+
+<!-- ====== Command Tables ====== -->
+<h2>📋 协议指令总览</h2>
+
+<details open>
+<summary>接收指令 (控制器 → 读卡器)</summary>
+<table class="cmd-table">
+<tr><th>完整字节</th><th>功能</th><th>长度</th><th>Flash</th></tr>
+<tr><td class="full">10 FF 7A</td><td>进站查询 + 失能BCC + 切进站模式</td><td>3</td><td>❌</td></tr>
+<tr><td class="full">10 FF 75</td><td>下放查询 + 失能BCC + 切下放模式</td><td>3</td><td>❌</td></tr>
+<tr><td class="full">10 FF 9A</td><td>进站查询 + 使能BCC + 切进站模式</td><td>3</td><td>❌</td></tr>
+<tr><td class="full">10 FF 95</td><td>下放查询 + 使能BCC + 切下放模式</td><td>3</td><td>❌</td></tr>
+<tr><td class="full">10 A0 01</td><td>查询读卡器版本 + 模式</td><td>3</td><td>—</td></tr>
+<tr><td class="full">10 A0 02 MODE</td><td>设置读卡器模式</td><td>4</td><td>✅</td></tr>
+<tr><td class="full">10 A0 03 BCC_EN</td><td>设置 BCC 使能 (55=关, AA=开)</td><td>4</td><td>✅</td></tr>
+<tr><td class="full">10 A0 04 T_L T_H</td><td>设置进站二次发送间隔 (小端, 默认 100ms)</td><td>5</td><td>✅</td></tr>
+<tr><td class="full">10 A0 05</td><td>进 Bootloader 升级模式</td><td>3</td><td>—</td></tr>
+<tr><td class="full">10 A0 06 T_L T_H</td><td>设置连续模式周期间隔 (小端, 默认 100ms)</td><td>5</td><td>✅</td></tr>
+<tr><td class="full">10 A0 07</td><td>查询模式</td><td>3</td><td>—</td></tr>
+<tr><td class="full">10 A0 08</td><td>查询 BCC 使能</td><td>3</td><td>—</td></tr>
+<tr><td class="full">10 A0 09</td><td>查询进站二次发送间隔</td><td>3</td><td>—</td></tr>
+<tr><td class="full">10 A0 0A</td><td>查询连续模式周期</td><td>3</td><td>—</td></tr>
+</table>
+</details>
+
+<details>
+<summary>发送指令 (读卡器 → 控制器)</summary>
+<table class="cmd-table">
+<tr><th>完整字节</th><th>功能</th><th>长度</th></tr>
+<tr><td class="full">10 FF 05 + 厂商[1] + 衣架ID[4]</td><td>上报卡号</td><td>5</td></tr>
+<tr><td class="full">10 FF 04 46 61 69 6C</td><td>上报没有卡号 (Fail)</td><td>4</td></tr>
+<tr><td class="full">10 FF 06 + 厂商[1] + 衣架ID[4] + BCC[1]</td><td>上报带BCC卡号</td><td>6</td></tr>
+<tr><td class="full">10 A1 01 52 44 33 2e 31 31 MODE</td><td>上报版本号 "RD3.11" + 模式</td><td>7</td></tr>
+<tr><td class="full">10 A1 02 MODE</td><td>上报模式</td><td>4</td></tr>
+<tr><td class="full">10 A1 03 BCC_EN</td><td>上报BCC使能</td><td>4</td></tr>
+<tr><td class="full">10 A1 04 T_L T_H</td><td>上报进站二次发送间隔 (小端)</td><td>5</td></tr>
+<tr><td class="full">10 A1 06 T_L T_H</td><td>上报连续模式周期 (小端)</td><td>5</td></tr>
+</table>
+</details>
+
+</body>
+</html>
