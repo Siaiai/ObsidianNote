@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-08-11T19:53:26.419Z",
+      "updateAt": "2026-08-11T20:02:35.394Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -73,10 +73,10 @@
               "h": 4
             },
             "laptop": {
-              "x": 9,
-              "y": 10,
-              "w": 3,
-              "h": 9
+              "x": 6,
+              "y": 19,
+              "w": 6,
+              "h": 17
             }
           }
         },
@@ -107,27 +107,10 @@
               "h": 4
             },
             "laptop": {
-              "x": 10,
-              "y": 33,
-              "w": 2,
-              "h": 21
-            }
-          }
-        },
-        {
-          "componentId": "fdbba7b4-7b69-4fa9-993f-72bd0cb705f1",
-          "layout": {
-            "mobile": {
-              "x": 0,
-              "y": 0,
-              "w": 4,
-              "h": 4
-            },
-            "laptop": {
               "x": 6,
-              "y": 19,
+              "y": 36,
               "w": 6,
-              "h": 14
+              "h": 28
             }
           }
         }
@@ -436,6 +419,9 @@
       "components": [
         {
           "componentId": "5fc56757-1ff1-4902-b556-7ea292b1a418"
+        },
+        {
+          "componentId": "4eb9073a-fc5a-4952-a760-4f79462453c4"
         }
       ],
       "layoutType": "tab",
@@ -628,7 +614,7 @@
       }
     },
     {
-      "id": "fdbba7b4-7b69-4fa9-993f-72bd0cb705f1",
+      "id": "4eb9073a-fc5a-4952-a760-4f79462453c4",
       "type": "dynamicDataView",
       "titleAlign": "center",
       "tabTitle": "",
@@ -636,8 +622,8 @@
       "showBorder": false,
       "showTitle": false,
       "showShadow": false,
-      "createAt": "2026-08-11T19:44:29.258Z",
-      "updateAt": "2026-08-11T19:53:35.626Z",
+      "createAt": "2026-08-11T19:59:10.857Z",
+      "updateAt": "2026-08-11T20:02:20.976Z",
       "viewType": "calendar",
       "newPageNameFormat": "{{date:YYYY-MM-DD}} ",
       "properties": [
@@ -648,11 +634,27 @@
           "isShow": false,
           "wrap": false,
           "options": {}
+        },
+        {
+          "id": "f77bf1ac-1a77-4dc0-a0ad-2c7edf217849",
+          "name": "待办",
+          "isShow": true,
+          "type": "taskList",
+          "options": {
+            "showTaskList": true,
+            "showAllTasks": false,
+            "hideTaskFields": true,
+            "timeRecordStyle": "none",
+            "insertPosition": {
+              "position": "BottomOfNote",
+              "headingLine": ""
+            }
+          }
         }
       ],
       "templates": [
         {
-          "id": "5bf2fd71-c98c-491f-9d84-d020d9f4e2c4",
+          "id": "e6731944-a6e7-4e5d-afd0-1be146b2176a",
           "path": "资源/模板/日志模板-day.md",
           "name": "日志模板-day.md",
           "type": "normal"
@@ -668,20 +670,19 @@
         "showAllProperties": false,
         "items": [],
         "cover": {
-          "type": "textContent",
-          "source": "specifySectionContent",
+          "type": "none",
+          "source": "default",
           "fit": "contains",
-          "layout": "components--page-card-cover-portrait",
-          "position": "top",
-          "sourceValue": "## 执行清单"
+          "layout": "components--page-card-cover-landscape",
+          "position": "top"
         },
         "pinFiltersToMenuBar": false,
         "hideHeaderMenu": false,
         "showGrid": false,
         "heightType": "auto",
         "heightValue": 600,
-        "dateProperty": "${file.basename}",
-        "calendarViewType": "week"
+        "calendarViewType": "week",
+        "dateProperty": "${file.basename}"
       },
       "groupStates": {
         "sort": "nameAsc",
@@ -691,12 +692,12 @@
         "collapseds": []
       },
       "filter": {
-        "id": "c83825de-ff11-4a03-9afc-9c4fbb11b956",
+        "id": "cd0d0e14-d23e-444b-928b-1363b81a5c2f",
         "type": "group",
         "operator": "and",
         "conditions": [
           {
-            "id": "7683ac8b-e094-445c-9eba-53fc8bffd4f6",
+            "id": "5145351e-661a-44e7-b0e3-d69b3f35ee50",
             "type": "filter",
             "operator": "contains",
             "property": "类型",
@@ -705,10 +706,7 @@
           }
         ]
       },
-      "newPageLocation": {
-        "location": "日志"
-      },
-      "defaultTemplate": "5bf2fd71-c98c-491f-9d84-d020d9f4e2c4"
+      "defaultTemplate": "e6731944-a6e7-4e5d-afd0-1be146b2176a"
     }
   ],
   "rootComponentId": "40c6ac57-5fe8-419d-acee-b2e0f469af2c",
