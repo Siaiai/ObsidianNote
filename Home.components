@@ -10,7 +10,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2025-12-29T08:53:31.929Z",
-      "updateAt": "2026-08-11T20:02:35.394Z",
+      "updateAt": "2026-08-11T20:15:56.112Z",
       "components": [
         {
           "componentId": "cbef14d4-9466-4ec4-a5f3-242bd680db97",
@@ -241,7 +241,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-08-01T18:00:52.605Z",
+      "updateAt": "2026-08-11T20:15:04.897Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [
@@ -252,27 +252,6 @@
           "isShow": true,
           "wrap": false,
           "options": {}
-        },
-        {
-          "id": "1819eee9-401f-42af-8110-822217a80fdf",
-          "name": "进行",
-          "isShow": true,
-          "type": "button",
-          "options": {
-            "action": {
-              "type": "updateProperty",
-              "properties": [
-                {
-                  "id": "c93084b2-ccfb-45ff-bfa8-8ec8c4a58214",
-                  "name": "状态",
-                  "type": "string",
-                  "value": "进行",
-                  "valueSource": "constant",
-                  "modifier": "replaceValue"
-                }
-              ]
-            }
-          }
         },
         {
           "id": "5f6c6613-7237-4128-888f-c88256f4dbf5",
