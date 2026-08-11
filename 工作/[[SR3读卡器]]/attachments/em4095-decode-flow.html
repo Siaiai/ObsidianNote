@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>EM4095 解码方案</title>
+<style>
+  :root {
+    --bg:#0d1117; --fg:#c9d1d9; --dim:#8b949e; --bd:#21262d; --s:#161b22;
+    --b-grad:linear-gradient(135deg,#1a2332 0%,#0d1a2a 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Segoe UI","Noto Sans SC",system-ui,sans-serif;background:var(--bg);color:var(--fg);padding:28px 20px;line-height:1.55;}
+
+  h2{font-size:14px;font-weight:600;color:var(--dim);letter-spacing:.5px;margin:32px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--bd);}
+
+  .wrap{overflow-x:auto;padding:4px 0;}
+
+  /* ====== SVG diagram ====== */
+  svg text.tt{font-family:"Segoe UI","Noto Sans SC",sans-serif;}
+  svg text.mn{font-family:"Cascadia Code","JetBrains Mono",Consolas,monospace;}
+
+  /* ====== Cards ====== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:10px 0;}
+  .card{background:var(--s);border:1px solid var(--bd);border-radius:8px;padding:14px 16px;font-size:12.5px;line-height:1.5;}
+  .card h4{font-size:12.5px;margin-bottom:8px;}
+  .card table{width:100%;border-collapse:collapse;font-size:11.5px;}
+  .card td{padding:2px 6px;border-bottom:1px solid rgba(48,54,61,.5);vertical-align:top;}
+  .card td:first-child{color:var(--dim);white-space:nowrap;padding-right:10px;}
+  .cr{color:#f85149;}.cg{color:#3fb950;}.cb{color:#58a6ff;}.cy{color:#d2991d;}.cp{color:#bc8cff;}.co{color:#f0883e;}
+  .mn{font-family:"Cascadia Code","JetBrains Mono",Consolas,monospace;font-size:10.5px;}
+
+  .cl-bar{display:flex;height:20px;border-radius:4px;overflow:hidden;font-size:9px;font-weight:700;margin:4px 0;}
+  .cl-bar span{display:flex;align-items:center;justify-content:center;color:#fff;}
+  .cl-d{background:#6e7681;}.cl-s{background:#3fb950;}.cl-a{background:#d2991d;}.cl-l{background:#58a6ff;}.cl-t{background:#f85149;flex:1;}
+</style>
+</head>
+<body>
+
+<h2>1. 解码总览</h2>
+<div class="wrap">
+<svg viewBox="0 0 1100 420" width="1100" height="420" style="max-width:100%;">
+
+  <defs>
+    <marker id="ma" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0L7,2.5L0,5Z" fill="#484f58"/></marker>
+    <marker id="mg" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0L7,2.5L0,5Z" fill="#3fb950"/></marker>
+    <marker id="mr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0L7,2.5L0,5Z" fill="#f85149"/></marker>
+    <marker id="mo" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0L7,2.5L0,5Z" fill="#f0883e"/></marker>
+  </defs>
+
+  <!-- ===== ZONES ===== -->
+  <rect x="16" y="8" width="128" height="72" rx="6" fill="#0d1117" stroke="#21262d"/>
+  <text x="28" y="26" font-size="9" class="tt" fill="#8b949e" font-weight="600">BSP / ISR</text>
+
+  <rect x="160" y="8" width="710" height="210" rx="6" fill="#0d1117" stroke="#21262d"/>
+  <text x="172" y="26" font-size="9" class="tt" fill="#58a6ff" font-weight="600">MIDWARE · em4095.c</text>
+
+  <rect x="16" y="330" width="1070" height="72" rx="6" fill="#0d1117" stroke="#21262d"/>
+  <text x="28" y="348" font-size="9" class="tt" fill="#f0883e" font-weight="600">APP · reader_app.c</text>
+
+  <!-- ============ BSP ============ -->
+  <rect x="28" y="36" width="100" height="34" rx="5" fill="#0d1117" stroke="#30363d"/>
+  <text x="78" y="57" text-anchor="middle" font-size="11" class="tt" fill="#c9d1d9">GTIM ISR</text>
+  <line x1="128" y1="53" x2="158" y2="53" stroke="#484f58" stroke-width="1.2" marker-end="url(#ma)"/>
+
+  <rect x="28" y="36" width="100" height="34" rx="5" fill="#0d1117" stroke="#30363d"/>
+  <text x="78" y="38" text-anchor="middle" font-size="11" class="tt" fill="#c9d1d9">GTIM FIFO</text>
+
+  <!-- ============ EM4095 ROW 1: Enter → classify → dispatch ============ -->
+  <rect x="170" y="36" width="124" height="52" rx="7" fill="#0d1525" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="232" y="56" text-anchor="middle" font-size="12" class="tt" fill="#58a6ff" font-weight="700">EM4095_Poll</text>
+  <text x="232" y="72" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">while消费GTIM FIFO</text>
+
+  <line x1="128" y1="53" x2="168" y2="62" stroke="#484f58" stroke-width="1.2" marker-end="url(#ma)"/>
+
+  <rect x="314" y="36" width="104" height="52" rx="7" fill="#0d170d" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="366" y="56" text-anchor="middle" font-size="12" class="tt" fill="#3fb950" font-weight="700">classify()</text>
+  <text x="366" y="72" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">pct=Δ×100/base</text>
+
+  <line x1="294" y1="62" x2="312" y2="62" stroke="#484f58" stroke-width="1.2" marker-end="url(#ma)"/>
+
+  <rect x="438" y="36" width="124" height="52" rx="7" fill="#151005" stroke="#d2991d" stroke-width="1.5"/>
+  <text x="500" y="56" text-anchor="middle" font-size="11" class="tt" fill="#d2991d" font-weight="700">dispatch_edge()</text>
+  <text x="500" y="72" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">按state分发至handler</text>
+
+  <line x1="418" y1="62" x2="436" y2="62" stroke="#484f58" stroke-width="1.2" marker-end="url(#ma)"/>
+
+  <!-- ============ EM4095 ROW 2: Three-State Machine ============ -->
+  <rect x="170" y="100" width="430" height="108" rx="8" fill="none" stroke="#21262d"/>
+  <text x="180" y="118" font-size="9" class="tt" fill="#8b949e" font-weight="600">三态状态机</text>
+
+  <!-- Idle -->
+  <rect x="186" y="126" width="122" height="68" rx="8" fill="#1a100c" stroke="#f0883e" stroke-width="1.8"/>
+  <text x="247" y="148" text-anchor="middle" font-size="13" class="tt" fill="#f0883e" font-weight="700">Idle</text>
+  <text x="247" y="166" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">idle_process()</text>
+  <text x="247" y="182" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">等LONG+↓ 触发</text>
+
+  <!-- Seek -->
+  <rect x="332" y="126" width="138" height="68" rx="8" fill="#0c150c" stroke="#3fb950" stroke-width="1.8"/>
+  <text x="401" y="148" text-anchor="middle" font-size="13" class="tt" fill="#3fb950" font-weight="700">SeekPreamble</text>
+  <text x="401" y="166" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">seek_process() · 交替SHORT计数</text>
+  <text x="401" y="182" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">≥16→测base→转Receive</text>
+
+  <!-- arrows Idle→Seek -->
+  <line x1="308" y1="160" x2="330" y2="160" stroke="#3fb950" stroke-width="1.4" marker-end="url(#mg)"/>
+  <line x1="332" y1="184" x2="310" y2="184" stroke="#f85149" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#mr)"/>
+  <text x="321" y="198" text-anchor="middle" font-size="7" class="tt" fill="#f85149">非SHORT退</text>
+
+  <!-- Receive -->
+  <rect x="494" y="126" width="196" height="96" rx="8" fill="#0c131d" stroke="#58a6ff" stroke-width="1.8"/>
+  <text x="592" y="148" text-anchor="middle" font-size="13" class="tt" fill="#58a6ff" font-weight="700">Receive</text>
+  <text x="592" y="164" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">SHORT skip=0→解码bit | skip=1→边界跳过</text>
+  <text x="592" y="178" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">LONG→解码bit | ↓=1 ↑=0 | edge_ring记录</text>
+  <text x="592" y="192" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">Debris/Ambig→err≥3退 | TIMEOUT→退</text>
+  <text x="592" y="210" text-anchor="middle" font-size="10" class="tt" fill="#58a6ff" font-weight="700">bit_count≥64 → handle_frame</text>
+
+  <!-- Seek→Receive -->
+  <line x1="470" y1="160" x2="492" y2="160" stroke="#3fb950" stroke-width="1.4" marker-end="url(#mg)"/>
+  <text x="481" y="155" text-anchor="middle" font-size="7" class="tt" fill="#3fb950" font-weight="600">≥16SHORT</text>
+
+  <!-- Receive→Idle fallback -->
+  <path d="M592,222 L592,240 L247,240 L247,196" fill="none" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#mr)"/>
+  <text x="420" y="236" text-anchor="middle" font-size="8" class="tt" fill="#f85149">err≥3 / TIMEOUT / 校验失败</text>
+
+  <!-- Dispatch→Idle connector -->
+  <path d="M500,88 L500,96 L247,96 L247,124" fill="none" stroke="#484f58" stroke-width="1" marker-end="url(#ma)"/>
+
+  <!-- ============ handle → verify → vote ============ -->
+  <rect x="720" y="126" width="130" height="34" rx="6" fill="#110d18" stroke="#bc8cff" stroke-width="1.5"/>
+  <text x="785" y="146" text-anchor="middle" font-size="11" class="tt" fill="#bc8cff" font-weight="600">handle_frame()</text>
+
+  <path d="M690,180 L708,180 L708,143 L718,143" fill="none" stroke="#484f58" stroke-width="1.2" marker-end="url(#ma)"/>
+
+  <rect x="720" y="174" width="130" height="34" rx="6" fill="#141005" stroke="#d2991d" stroke-width="1.5"/>
+  <text x="785" y="194" text-anchor="middle" font-size="11" class="tt" fill="#d2991d" font-weight="600">verify_frame()</text>
+
+  <rect x="720" y="220" width="130" height="44" rx="6" fill="#0c150c" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="785" y="240" text-anchor="middle" font-size="11" class="tt" fill="#3fb950" font-weight="600">vote_frame()</text>
+  <text x="785" y="256" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">3帧FIFO·2/3投票·40ms超时</text>
+
+  <line x1="785" y1="208" x2="785" y2="218" stroke="#484f58" stroke-width="1.2" marker-end="url(#ma)"/>
+
+  <!-- Verify fail path -->
+  <path d="M720,190 L700,190 L700,268 L785,268" fill="none" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="668" y="190" text-anchor="middle" font-size="8" class="tt" fill="#f85149">失败: replay_and_reset()→Idle</text>
+
+  <!-- ============ card_on + Unconfirmed + CardOut ============ -->
+  <rect x="170" y="228" width="140" height="48" rx="7" fill="#0c150c" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="240" y="250" text-anchor="middle" font-size="11" class="tt" fill="#3fb950" font-weight="600">card_on(id) · CardIn</text>
+  <text x="240" y="266" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">新卡→清投票+emit+更新跟踪</text>
+
+  <path d="M785,264 L785,280 L310,280 L310,252" fill="none" stroke="#3fb950" stroke-width="1.2" marker-end="url(#mg)"/>
+
+  <rect x="340" y="234" width="140" height="26" rx="5" fill="#141005" stroke="#d2991d" stroke-width="1.3"/>
+  <text x="410" y="250" text-anchor="middle" font-size="10" class="tt" fill="#d2991d" font-weight="600">CardInUnconfirmed</text>
+
+  <rect x="340" y="268" width="140" height="22" rx="5" fill="#120d18" stroke="#bc8cff" stroke-width="1"/>
+  <text x="410" y="282" text-anchor="middle" font-size="10" class="tt" fill="#bc8cff" font-weight="600">CardOut · 200ms</text>
+
+  <path d="M855,140 L855,280 L510,280 L510,247" fill="none" stroke="#484f58" stroke-width="1" marker-end="url(#ma)"/>
+  <path d="M510,280 L510,287" fill="none" stroke="#484f58" stroke-width="1"/>
+
+  <!-- ============ Event FIFO ============ -->
+  <rect x="510" y="296" width="110" height="64" rx="7" fill="#1a0808" stroke="#f85149" stroke-width="1.5"/>
+  <text x="565" y="320" text-anchor="middle" font-size="12" class="tt" fill="#f85149" font-weight="700">Event FIFO</text>
+  <text x="565" y="336" text-anchor="middle" font-size="9" class="tt" fill="#8b949e">SPSC · 8深度</text>
+
+  <line x1="310" y1="252" x2="508" y2="328" stroke="#484f58" stroke-width="1"/>
+  <line x1="480" y1="247" x2="508" y2="322" stroke="#484f58" stroke-width="1"/>
+  <line x1="480" y1="279" x2="508" y2="334" stroke="#484f58" stroke-width="1"/>
+
+  <!-- ============ APP ============ -->
+  <rect x="660" y="356" width="150" height="32" rx="6" fill="#151008" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="735" y="376" text-anchor="middle" font-size="12" class="tt" fill="#f0883e" font-weight="600">poll_em4095_events</text>
+
+  <line x1="620" y1="328" x2="658" y2="372" stroke="#f0883e" stroke-width="1.2" marker-end="url(#mo)"/>
+
+  <rect x="840" y="356" width="120" height="32" rx="6" fill="#151008" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="900" y="376" text-anchor="middle" font-size="12" class="tt" fill="#f0883e" font-weight="600">card_in / card_out</text>
+
+  <line x1="810" y1="372" x2="838" y2="372" stroke="#f0883e" stroke-width="1.2" marker-end="url(#mo)"/>
+
+  <rect x="990" y="352" width="88" height="24" rx="5" fill="rgba(240,136,62,.04)" stroke="#f0883e" stroke-width=".8"/>
+  <text x="1034" y="368" text-anchor="middle" font-size="10" class="tt" fill="#f0883e">send / fail</text>
+
+  <line x1="960" y1="372" x2="988" y2="364" stroke="#f0883e" stroke-width="1" marker-end="url(#mo)"/>
+
+  <!-- Legend -->
+  <rect x="900" y="392" width="8" height="8" rx="2" fill="none" stroke="#3fb950" stroke-width="1.2"/>
+  <text x="914" y="400" font-size="8" class="tt" fill="#8b949e">正常</text>
+  <rect x="952" y="392" width="8" height="8" rx="2" fill="none" stroke="#f85149" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="966" y="400" font-size="8" class="tt" fill="#8b949e">回退</text>
+</svg>
+</div>
+
+<h2>2. 边沿分类 &amp; 关键常量</h2>
+<div class="grid">
+  <div class="card">
+    <h4 class="cb">classify(delta_us, base_us)</h4>
+    <div class="mn" style="color:#d2991d;margin-bottom:4px;">pct = delta_us * 100 / base_us</div>
+    <div style="font-size:11px;color:var(--dim);margin-bottom:6px;">base_us默认256us, SeekPreamble阶段测得平均交替SHORT宽度, clamp(200,312)</div>
+    <div class="cl-bar">
+      <span class="cl-d" style="flex:0 0 70px;">Debris &lt;70%</span>
+      <span class="cl-s" style="flex:0 0 70px;">SHORT 70~140%</span>
+      <span class="cl-a" style="flex:0 0 15px;">A</span>
+      <span class="cl-l" style="flex:0 0 105px;">LONG 155~260%</span>
+      <span class="cl-t">TIMEOUT &gt;260%</span>
+    </div>
+    <div style="display:flex;font-size:10px;color:var(--dim);">
+      <span style="flex:0 0 70px;">毛刺,丢弃</span><span style="flex:0 0 70px;">半位周期</span><span style="flex:0 0 15px;">临界</span><span style="flex:0 0 105px;">全位周期,无中间跳变</span><span style="flex:1;">帧间隙,无信号</span>
+    </div>
+  </div>
+  <div class="card">
+    <h4 class="cg">关键常量</h4>
+    <table>
+      <tr><td>BASE_DEFAULT_US</td><td class="mn">256</td></tr>
+      <tr><td>BASE_MIN / MAX</td><td class="mn">200 / 312</td></tr>
+      <tr><td>SEEK_ALTERNATE_MIN</td><td class="mn">16</td><td>交替SHORT计数阈值</td></tr>
+      <tr><td>RECEIVE_BIT_COUNT</td><td class="mn">64</td><td>EM4102帧总bit</td></tr>
+      <tr><td>RECEIVE_ERROR_MAX</td><td class="mn">3</td><td>Receive容错次数</td></tr>
+      <tr><td>VOTE_FRAME_COUNT</td><td class="mn">3</td><td>投票FIFO深度</td></tr>
+      <tr><td>VOTE_TIMEOUT_MS</td><td class="mn">40</td><td>未确认触发超时ms</td></tr>
+      <tr><td>CARD_OUT_MS</td><td class="mn">200</td><td>离卡判定超时ms</td></tr>
+      <tr><td>EDGE_RING_SIZE</td><td class="mn">16</td><td>边沿回退环形缓冲</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4 class="cp">Manchester &amp; 容错</h4>
+    <table>
+      <tr><td>下降沿 level=0</td><td class="cg">→ bit = 1</td></tr>
+      <tr><td>上升沿 level=1</td><td class="cg">→ bit = 0</td></tr>
+      <tr><td>skip相位跟踪</td><td>0→中点解码; 1→边界跳过; LONG必为中点</td></tr>
+      <tr><td style="color:#f85149;">Seek容错</td><td class="cr">无 — 单次异常即回退Idle</td></tr>
+      <tr><td style="color:#3fb950;">Receive容错</td><td class="cg">err≥3→Idle; 成功解码清零</td></tr>
+      <tr><td style="color:#d2991d;">edge_ring回退</td><td>校验失败→回放16条边沿从Idle重搜</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>3. EM4102 帧 · 校验 · 投票 · 事件</h2>
+<div class="grid">
+  <div class="card">
+    <h4 class="cy">EM4102帧 (64 bits) · bit_buf[8]</h4>
+    <div style="display:flex;align-items:center;gap:0;font-size:10px;font-family:'Cascadia Code',monospace;flex-wrap:wrap;margin-bottom:6px;">
+      <span style="color:#3fb950;">9bit头:</span>
+      <span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span><span style="background:rgba(63,185,80,.12);color:#3fb950;padding:1px 3px;margin:0 1px;border-radius:2px;">1</span>
+      <span style="color:#484f58;">│</span>
+      <span style="color:#8b949e;">10×(4d+1P)×5=50bit</span>
+      <span style="color:#484f58;">│</span>
+      <span style="background:rgba(210,153,29,.12);color:#d2991d;padding:1px 3px;margin:0 1px;border-radius:2px;">P</span><span style="background:rgba(210,153,29,.12);color:#d2991d;padding:1px 3px;margin:0 1px;border-radius:2px;">P</span><span style="background:rgba(210,153,29,.12);color:#d2991d;padding:1px 3px;margin:0 1px;border-radius:2px;">P</span><span style="background:rgba(210,153,29,.12);color:#d2991d;padding:1px 3px;margin:0 1px;border-radius:2px;">P</span>
+      <span style="color:#484f58;">│</span>
+      <span style="background:rgba(248,81,73,.12);color:#f85149;padding:1px 3px;border-radius:2px;font-weight:700;">0</span>
+    </div>
+    <div style="font-size:11px;color:var(--dim);">卡号提取:bit9~57 跳过行偶位(13,18,23,28,33,38,43,48,53,58)→5字节</div>
+  </div>
+  <div class="card">
+    <h4 class="cy">verify_frame() · 4项校验</h4>
+    <table>
+      <tr><td>①停止位</td><td class="mn">bit[63]==0</td></tr>
+      <tr><td>②帧头</td><td class="mn">bit[0..8] 全为1</td></tr>
+      <tr><td>③行偶×10</td><td class="mn">XOR(d0,d1,d2,d3)==bit[base+4]</td></tr>
+      <tr><td>④列偶×4</td><td class="mn">XOR(d_col_j, j=0..9)==bit[9+col+50]</td></tr>
+    </table>
+    <div style="margin-top:4px;font-size:11px;"><span class="cg">✓全过→提取5B→投票</span> <span class="cr">✗失败→回放edge_ring→Idle</span></div>
+  </div>
+  <div class="card">
+    <h4 class="cp">vote_frame() · 滑窗投票</h4>
+    <div class="mn" style="margin-bottom:3px;">buf[0]←[1]←[2]←新帧 · vote_ts_ms记录</div>
+    <table>
+      <tr><td>count=2</td><td>一致→通过; 不一致→等第3帧</td></tr>
+      <tr><td>count≥3</td><td>遍历3帧·best_match≥2→通过</td></tr>
+      <tr><td class="cy">40ms超时</td><td>vote≥1 && !card_present → CardInUnconfirmed</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4 class="cr">3种事件 → reader_app</h4>
+    <table>
+      <tr><td><b class="cg">CardIn</b></td><td>5B完整卡号</td></tr>
+      <tr><td><b class="cy">CardInUnconfirmed</b></td><td>固定ID <span class="mn">00 00 00 00 55</span></td></tr>
+      <tr><td><b class="cp">CardOut</b></td><td>200ms无卡确认</td></tr>
+    </table>
+    <div style="font-size:10px;color:var(--dim);margin-top:3px;">SPSC FIFO(8深度) 传递→ poll_em4095_events → card_in/out</div>
+  </div>
+</div>
+
+</body>
+</html>
