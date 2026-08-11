@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><title>边沿分类 & 三态状态机</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--dim:#666;--line:#d0d0d0;--s:#f5f5f5}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1117;--fg:#c9d1d9;--dim:#8b949e;--line:#30363d;--s:#161b22}}
+body{font:14px/1.5 "Segoe UI","Noto Sans SC",system-ui,sans-serif;background:var(--bg);color:var(--fg);padding:20px;margin:0;max-width:820px}
+h2{font-size:1.1em;font-weight:600;color:var(--dim);margin:0 0 10px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+th{text-align:left;padding:6px 8px;background:var(--s);border-bottom:2px solid var(--line);font-weight:600;font-size:11px;color:var(--dim)}
+td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{white-space:nowrap}
+.mn{font-family:"Cascadia Code","JetBrains Mono",Consolas,monospace;font-size:11px}
+.cr{color:#f85149}.cg{color:#3fb950}.cb{color:#58a6ff}.cy{color:#d2991d}.cp{color:#bc8cff}.co{color:#f0883e}
+.cl-bar{display:flex;height:22px;border-radius:5px;overflow:hidden;font-size:9px;font-weight:700;margin:6px 0;text-align:center}
+.cl-bar span{display:flex;align-items:center;justify-content:center;color:#fff}
+.cl-d{background:#6e7681;flex:0 0 70px}.cl-s{background:#3fb950;flex:0 0 70px}.cl-a{background:#d2991d;flex:0 0 15px}.cl-l{background:#58a6ff;flex:0 0 105px}.cl-t{background:#f85149;flex:1}
+</style>
+<body>
+
+<h2>边沿分类器 classify(delta_us, base_us)</h2>
+<div style="font-size:12px;color:var(--dim);margin-bottom:6px">
+  <span class="mn">pct = delta_us * 100 / base_us</span>
+  · base_us 默认 256us · SeekPreamble 动态测得 · clamp(200, 312)
+</div>
+<div class="cl-bar">
+  <span class="cl-d">Debris &lt;70%</span>
+  <span class="cl-s">SHORT 70~140%</span>
+  <span class="cl-a">AMB 140~155%</span>
+  <span class="cl-l">LONG 155~260%</span>
+  <span class="cl-t">TIMEOUT &gt;260%</span>
+</div>
+<div style="display:flex;font-size:10px;color:var(--dim);margin-bottom:10px">
+  <span style="flex:0 0 70px">毛刺,丢弃</span>
+  <span style="flex:0 0 70px">半位周期 ~256us</span>
+  <span style="flex:0 0 15px">临界</span>
+  <span style="flex:0 0 105px">全位周期,无中间跳变</span>
+  <span style="flex:1">帧间隙,无信号</span>
+</div>
+
+<table>
+<tr><th>分类</th><th>枚举值</th><th>区间</th><th>以256us为例</th><th>含义</th></tr>
+<tr><td>Debris</td><td>0</td><td>&lt;70%</td><td>&lt;179us</td><td>毛刺/噪声,直接丢弃。delta_us==0 也判 Debris</td></tr>
+<tr><td class="cg">SHORT</td><td>1</td><td>70~140%</td><td>179~358us</td><td>正常半位周期,Manchester 单个半位。边沿分类核心</td></tr>
+<tr><td>Ambiguous</td><td>2</td><td>140~155%</td><td>358~397us</td><td>SHORT/LONG 边界临界,Receive 中计错</td></tr>
+<tr><td class="cb">LONG</td><td>3</td><td>155~260%</td><td>397~665us</td><td>全位周期,两个相同 bit 中间无边沿跳变,始终判为中点</td></tr>
+<tr><td class="cr">TIMEOUT</td><td>4</td><td>&gt;260%</td><td>&gt;665us</td><td>帧间隙 或 芯片离场,Receive 中直接回 Idle</td></tr>
+</table>
+
+<h2>三态状态机 — 核心算法</h2>
+<div class="wrap">
+<svg viewBox="0 0 820 200" width="820" height="200" style="max-width:100%">
+  <defs>
+    <marker id="ag" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0L7,3L0,6Z" fill="#3fb950"/></marker>
+    <marker id="ar" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0L7,3L0,6Z" fill="#f85149"/></marker>
+    <marker id="am" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0L7,3L0,6Z" fill="#8b949e"/></marker>
+    <filter id="sh"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1"/></filter>
+  </defs>
+
+  <!-- Idle -->
+  <rect x="10" y="50" width="170" height="62" rx="9" fill="#1a100c" stroke="#f0883e" stroke-width="2" filter="url(#sh)"/>
+  <text x="95" y="78" text-anchor="middle" font-size="15" font-weight="700" fill="#f0883e">Idle</text>
+  <text x="95" y="96" text-anchor="middle" font-size="9" fill="#8b949e">idle_process(cls, level)</text>
+  <line x1="95" y1="101" x2="95" y2="108" stroke="#30363d" stroke-width=".5"/>
+  <text x="95" y="118" text-anchor="middle" font-size="9" fill="#8b949e">cls==LONG && level==0 → Seek</text>
+
+  <!-- Seek -->
+  <rect x="300" y="50" width="190" height="62" rx="9" fill="#0c150c" stroke="#3fb950" stroke-width="2" filter="url(#sh)"/>
+  <text x="395" y="78" text-anchor="middle" font-size="15" font-weight="700" fill="#3fb950">SeekPreamble</text>
+  <text x="395" y="96" text-anchor="middle" font-size="9" fill="#8b949e">seek_process(cls, level, delta_us)</text>
+  <line x1="395" y1="101" x2="395" y2="108" stroke="#30363d" stroke-width=".5"/>
+  <text x="395" y="118" text-anchor="middle" font-size="9" fill="#8b949e">交替SHORT≥16 → 测base → Receive</text>
+
+  <!-- Receive -->
+  <rect x="590" y="50" width="210" height="62" rx="9" fill="#0c131d" stroke="#58a6ff" stroke-width="2" filter="url(#sh)"/>
+  <text x="695" y="78" text-anchor="middle" font-size="15" font-weight="700" fill="#58a6ff">Receive</text>
+  <text x="695" y="96" text-anchor="middle" font-size="9" fill="#8b949e">receive_process(cls, level)</text>
+  <line x1="695" y1="101" x2="695" y2="108" stroke="#30363d" stroke-width=".5"/>
+  <text x="695" y="118" text-anchor="middle" font-size="9" fill="#8b949e">Manchester解码 · 收满64bit → handle_frame</text>
+
+  <!-- Forward arrows -->
+  <line x1="180" y1="80" x2="298" y2="80" stroke="#3fb950" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="239" y="74" text-anchor="middle" font-size="8" font-weight="600" fill="#3fb950">LONG + level=0</text>
+  <line x1="490" y1="80" x2="588" y2="80" stroke="#3fb950" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="539" y="74" text-anchor="middle" font-size="8" font-weight="600" fill="#3fb950">≥16 交替 SHORT</text>
+
+  <!-- Backward arrows (failure) -->
+  <path d="M395,112 L395,136 L95,136 L95,114" fill="none" stroke="#f85149" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="245" y="132" text-anchor="middle" font-size="8" fill="#f85149">非SHORT 或 方向不交替(last_dir重复)</text>
+
+  <path d="M695,112 L695,160 L95,160 L95,114" fill="none" stroke="#f85149" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="395" y="156" text-anchor="middle" font-size="8" fill="#f85149">Debris/Ambig err≥3 · TIMEOUT · 校验失败→回放edge_ring</text>
+
+  <!-- Detail notes box -->
+  <rect x="10" y="146" width="790" height="48" rx="6" fill="var(--s)" stroke="var(--line)"/>
+  <text x="24" y="166" font-size="10" font-weight="600" fill="#8b949e">Manchester: </text>
+  <text x="118" y="166" font-size="10" fill="var(--fg)">下降沿(level=0)→bit=1 &nbsp;|&nbsp; 上升沿(level=1)→bit=0</text>
+  <text x="24" y="184" font-size="10" font-weight="600" fill="#8b949e">skip 相位跟踪: </text>
+  <text x="134" y="184" font-size="10" fill="var(--fg)">skip=0→当前边沿是中点,解码bit后skip=1 &nbsp;|&nbsp; skip=1→当前边沿是边界,跳过并skip=0 &nbsp;|&nbsp; LONG必为中点→解码后skip=1</text>
+</svg>
+</div>
+
+<h2>关键常量 & 容错策略</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px">
+  <div style="background:var(--s);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:12px">
+    <div style="font-weight:600;color:var(--dim);margin-bottom:6px">常量表</div>
+    <table>
+      <tr><td>BASE_DEFAULT_US</td><td class="mn">256</td></tr>
+      <tr><td>BASE_MIN / MAX</td><td class="mn">200 / 312</td></tr>
+      <tr><td>SEEK_ALTERNATE_MIN</td><td class="mn">16</td></tr>
+      <tr><td>RECEIVE_BIT_COUNT</td><td class="mn">64</td></tr>
+      <tr><td>RECEIVE_ERROR_MAX</td><td class="mn">3</td></tr>
+      <tr><td>VOTE_FRAME_COUNT</td><td class="mn">3</td></tr>
+      <tr><td>VOTE_TIMEOUT_MS</td><td class="mn">40</td></tr>
+      <tr><td>CARD_OUT_MS</td><td class="mn">200</td></tr>
+      <tr><td>EDGE_RING_SIZE</td><td class="mn">16</td></tr>
+    </table>
+  </div>
+  <div style="background:var(--s);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:12px">
+    <div style="font-weight:600;color:var(--dim);margin-bottom:6px">容错策略</div>
+    <table>
+      <tr><td class="cr">Seek 容错</td><td>无 — 单次非SHORT或方向重复即 reset_decoder 回 Idle</td></tr>
+      <tr><td class="cg">Receive 容错</td><td>Debris/Ambig → err++, 累积 ≥3 才回 Idle; 任何成功解码清零 err</td></tr>
+      <tr><td class="cy">edge_ring 回退</td><td>校验失败→replay_and_reset() 回放 edge_ring 中已缓冲边沿,从 Idle 重搜</td></tr>
+      <tr><td style="color:#8b949e">reset_decoder</td><td>只清解码层(state/bit/edge等),不动 vote_buf/current_id/card_present 等卡跟踪字段</td></tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
