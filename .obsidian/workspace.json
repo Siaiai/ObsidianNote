@@ -20,6 +20,20 @@
             }
           },
           {
+            "id": "6ab701a8990866ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/SR3读卡器/260802旧SR3读卡器行为.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260802旧SR3读卡器行为"
+            }
+          },
+          {
             "id": "4b811874ade87837",
             "type": "leaf",
             "state": {
@@ -47,7 +61,8 @@
               "title": "260804SR3框架整理"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -188,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "工作/SR3读卡器/260802旧SR3读卡器行为.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -220,10 +235,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "0b1af131e24550cf",
+  "active": "6ab701a8990866ef",
   "lastOpenFiles": [
-    "工作/[[SR3读卡器]]/260804SR3框架整理.md",
     "Home.components",
+    "工作/SR3读卡器/260802旧SR3读卡器行为.md",
+    "工作/[[SR3读卡器]]/260804SR3框架整理.md",
     "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html",
     "工作/[[SR3读卡器]]/attachments/em4095-classify-state.html",
     "工作/[[SR3读卡器]]/attachments/em4095-overview.html",
@@ -241,7 +257,6 @@
     "日志/2026-01-14.md",
     "日志/2026-01-11.md",
     "工作/SR3读卡器/260804旧SR2SR3整理.md",
-    "工作/SR3读卡器/260802旧SR3读卡器行为.md",
     "日志/2026-01-07.md",
     "领域/日志.md",
     "工作/SR3读卡器/260802旧SR2读卡器行为.md",
