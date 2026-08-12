@@ -112,10 +112,11 @@ td:first-child{white-space:nowrap;color:var(--dim);padding-right:10px}
     <span style="background:var(--s);border:1px solid var(--line);border-radius:5px;padding:4px 12px;">buf[2] 最旧</span>
     <span style="margin-left:4px;color:var(--dim);">← 新帧</span>
   </div>
-  <div class="mn" style="margin-bottom:6px">vote_ts_ms = get_time_ms() // 每帧入队时记录</div>
+  <div class="mn" style="margin-bottom:6px">vote_ts_ms = get_time_ms() // 仅在投票失败或首帧时启动超时, 通过则不刷新</div>
   <table>
-    <tr><td>count=2</td><td>两帧一致 → 通过 · 不一致 → 返回 false, 等第3帧</td></tr>
-    <tr><td>count≥3</td><td>遍历3帧互相比较, best_match ≥ 2 → 通过 · 否则 false</td></tr>
+    <tr><td>count=2</td><td>两帧一致 → 通过 · 不一致 → 设 vote_ts_ms, 返回 false</td></tr>
+    <tr><td>count≥3</td><td>遍历3帧互相比较, best_match ≥ 2 → 通过 · 否则设 vote_ts_ms, 返回 false</td></tr>
+    <tr><td>count=1</td><td>首帧入队, 设 vote_ts_ms 启动超时, 返回 false</td></tr>
     <tr><td class="cy">40ms 超时</td><td>EM4095_Poll 末尾: vote_count≥1 && vote_ts_ms≠0 && now-vote_ts_ms≥40ms && !card_present → emit CardInUnconfirmed · vote_ts_ms=0</td></tr>
   </table>
 </div>
