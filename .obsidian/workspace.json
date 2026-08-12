@@ -33,8 +33,7 @@
               "title": "260804SR3框架整理"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +95,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "4eac89cb2e16be17",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -206,8 +206,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "adbe500bf6758d0b",
+  "active": "0b1af131e24550cf",
   "lastOpenFiles": [
+    "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+    "Home.components",
     "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html",
     "工作/[[SR3读卡器]]/attachments/em4095-classify-state.html",
     "工作/[[SR3读卡器]]/attachments/em4095-overview.html",
@@ -217,9 +219,6 @@
     "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html.tmp.29228.5e90c247c20f",
     "工作/[[SR3读卡器]]/attachments/em4095-statemachine.html",
     "工作/[[SR3读卡器]]/attachments/em4095-statemachine.html.tmp.29228.b364c08f90f3",
-    "工作/[[SR3读卡器]]/attachments/em4095-classifier.html",
-    "工作/[[SR3读卡器]]/attachments/em4095-classifier.html.tmp.29228.42c885759de8",
-    "工作/[[SR3读卡器]]/260804SR3框架整理.md",
     "2026-08-12 .md",
     "日志/2026-08-11.md",
     "资源/模板/日志模板-day.md",
