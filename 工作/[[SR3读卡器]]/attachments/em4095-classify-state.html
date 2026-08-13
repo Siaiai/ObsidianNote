@@ -16,7 +16,7 @@ td:first-child{white-space:nowrap}
 .cr{color:#f85149}.cg{color:#3fb950}.cb{color:#58a6ff}.cy{color:#d2991d}.cp{color:#bc8cff}.co{color:#f0883e}
 .cl-bar{display:flex;height:22px;border-radius:5px;overflow:hidden;font-size:9px;font-weight:700;margin:6px 0;text-align:center}
 .cl-bar span{display:flex;align-items:center;justify-content:center;color:#fff}
-.cl-d{background:#6e7681;flex:0 0 70px}.cl-s{background:#3fb950;flex:0 0 70px}.cl-a{background:#d2991d;flex:0 0 15px}.cl-l{background:#58a6ff;flex:0 0 105px}.cl-t{background:#f85149;flex:1}
+.cl-d{background:#6e7681;flex:0 0 80px}.cl-s{background:#3fb950;flex:0 0 40px}.cl-a{background:#d2991d;flex:0 0 60px}.cl-l{background:#58a6ff;flex:0 0 40px}.cl-t{background:#f85149;flex:1}
 </style>
 <body>
 
@@ -26,27 +26,27 @@ td:first-child{white-space:nowrap}
   · base_us 默认 256us · SeekPreamble 动态测得 · clamp(200, 312)
 </div>
 <div class="cl-bar">
-  <span class="cl-d">Debris &lt;70%</span>
-  <span class="cl-s">SHORT 70~140%</span>
-  <span class="cl-a">AMB 140~155%</span>
-  <span class="cl-l">LONG 155~260%</span>
-  <span class="cl-t">TIMEOUT &gt;260%</span>
+  <span class="cl-d">Debris &lt;80%</span>
+  <span class="cl-s">SHORT 80~120%</span>
+  <span class="cl-a">AMB 120~180%</span>
+  <span class="cl-l">LONG 180~220%</span>
+  <span class="cl-t">TIMEOUT &gt;220%</span>
 </div>
 <div style="display:flex;font-size:10px;color:var(--dim);margin-bottom:10px">
-  <span style="flex:0 0 70px">毛刺,丢弃</span>
-  <span style="flex:0 0 70px">半位周期 ~256us</span>
-  <span style="flex:0 0 15px">临界</span>
-  <span style="flex:0 0 105px">全位周期,无中间跳变</span>
+  <span style="flex:0 0 80px">毛刺,丢弃</span>
+  <span style="flex:0 0 40px">半位周期 ~256us</span>
+  <span style="flex:0 0 60px">临界</span>
+  <span style="flex:0 0 40px">全位周期,无中间跳变</span>
   <span style="flex:1">帧间隙,无信号</span>
 </div>
 
 <table>
 <tr><th>分类</th><th>枚举值</th><th>区间</th><th>以256us为例</th><th>含义</th></tr>
-<tr><td>Debris</td><td>0</td><td>&lt;70%</td><td>&lt;179us</td><td>毛刺/噪声,直接丢弃。delta_us==0 也判 Debris</td></tr>
-<tr><td class="cg">SHORT</td><td>1</td><td>70~140%</td><td>179~358us</td><td>正常半位周期,Manchester 单个半位。边沿分类核心</td></tr>
-<tr><td>Ambiguous</td><td>2</td><td>140~155%</td><td>358~397us</td><td>SHORT/LONG 边界临界,Receive 中计错</td></tr>
-<tr><td class="cb">LONG</td><td>3</td><td>155~260%</td><td>397~665us</td><td>全位周期,两个相同 bit 中间无边沿跳变,始终判为中点</td></tr>
-<tr><td class="cr">TIMEOUT</td><td>4</td><td>&gt;260%</td><td>&gt;665us</td><td>帧间隙 或 芯片离场,Receive 中直接回 Idle</td></tr>
+<tr><td>Debris</td><td>0</td><td>&lt;80%</td><td>&lt;205us</td><td>毛刺/噪声,直接丢弃。delta_us==0 也判 Debris</td></tr>
+<tr><td class="cg">SHORT</td><td>1</td><td>80~120%</td><td>205~307us</td><td>正常半位周期,Manchester 单个半位。边沿分类核心</td></tr>
+<tr><td>Ambiguous</td><td>2</td><td>120~180%</td><td>307~461us</td><td>SHORT/LONG 边界临界,Receive 中计错</td></tr>
+<tr><td class="cb">LONG</td><td>3</td><td>180~220%</td><td>461~563us</td><td>全位周期,两个相同 bit 中间无边沿跳变,始终判为中点</td></tr>
+<tr><td class="cr">TIMEOUT</td><td>4</td><td>&gt;220%</td><td>&gt;563us</td><td>帧间隙 或 芯片离场,Receive 中直接回 Idle</td></tr>
 </table>
 
 <h2>三态状态机 — 核心算法</h2>
