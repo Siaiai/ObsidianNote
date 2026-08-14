@@ -20,6 +20,20 @@
             }
           },
           {
+            "id": "3982028784b1ad0f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/SR3读卡器/260814读卡器测试.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260814读卡器测试"
+            }
+          },
+          {
             "id": "2019731448e0bac6",
             "type": "leaf",
             "state": {
@@ -101,7 +115,8 @@
               "title": "260804SR3框架整理"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -242,7 +257,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "工作/SR3读卡器/260814读卡器测试.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -274,10 +289,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "0b1af131e24550cf",
+  "active": "3982028784b1ad0f",
   "lastOpenFiles": [
-    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "Home.components",
+    "工作/SR3读卡器/260814读卡器测试.md",
+    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/[[SR3读卡器]]/260804SR3框架整理.md",
     "工作/SR3读卡器/260802旧SR3读卡器行为.md",
     "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html",
