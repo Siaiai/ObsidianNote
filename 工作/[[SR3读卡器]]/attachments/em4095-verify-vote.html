@@ -93,11 +93,11 @@ td:first-child{white-space:nowrap;color:var(--dim);padding-right:10px}
   <!-- Fail branches -->
   <line x1="235" y1="76" x2="235" y2="100" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="235" y1="100" x2="70" y2="100" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ar)"/>
-  <text x="152" y="96" text-anchor="middle" font-size="8" fill="#f85149">verify失败→回放edge_ring→Idle</text>
+  <text x="152" y="96" text-anchor="middle" font-size="8" fill="#f85149">verify失败→回Idle</text>
 
   <line x1="405" y1="76" x2="405" y2="120" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="405" y1="120" x2="70" y2="120" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ar)"/>
-  <text x="237" y="116" text-anchor="middle" font-size="8" fill="#f85149">vote失败→写vote_ts_ms·40ms超时→CardInUnconfirmed</text>
+  <text x="237" y="116" text-anchor="middle" font-size="8" fill="#f85149">vote失败→写vote_ts_ms·300ms超时→CardInUnconfirmed</text>
 </svg>
 </div>
 
@@ -118,11 +118,11 @@ td:first-child{white-space:nowrap;color:var(--dim);padding-right:10px}
     <tr><td>count=2</td><td>两帧一致 → 通过 · 不一致 → 设 vote_ts_ms, 返回 false</td></tr>
     <tr><td>count≥3</td><td>遍历3帧互相比较, best_match ≥ 2 → 通过 · 否则设 vote_ts_ms, 返回 false</td></tr>
     <tr><td>count=1</td><td>首帧入队, 设 vote_ts_ms 启动超时, 返回 false</td></tr>
-    <tr><td class="cy">40ms 超时</td><td>EM4095_Poll 末尾: vote_enable==0xAA && vote_count≥1 && vote_ts_ms≠0 && now-vote_ts_ms≥40ms && !card_present → emit CardInUnconfirmed · vote_ts_ms=0</td></tr>
+    <tr><td class="cy">300ms 超时</td><td>EM4095_Poll 末尾: vote_enable==0xAA && vote_count≥1 && vote_ts_ms≠0 && now-vote_ts_ms≥300ms && !card_present → emit CardInUnconfirmed · vote_ts_ms=0</td></tr>
   </table>
 </div>
 
-<h2>三种事件 / 卡跟踪 / edge_ring 回退</h2>
+<h2>三种事件 / 卡跟踪</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px">
   <div class="card">
     <div style="font-weight:600;margin-bottom:4px" class="cg">card_on(id)</div>
@@ -136,7 +136,7 @@ td:first-child{white-space:nowrap;color:var(--dim);padding-right:10px}
   <div class="card">
     <div style="font-weight:600;margin-bottom:4px" class="cr">card_off()</div>
     <table>
-      <tr><td>Poll 检查</td><td class="mn">card_present && now-last_card_ms ≥ 200ms</td></tr>
+      <tr><td>Poll 检查</td><td class="mn">card_present && now-last_card_ms ≥ card_out_ms(默认200/桌面800)</td></tr>
       <tr><td>1.</td><td>emit_card_out()</td></tr>
       <tr><td>2.</td><td class="mn">card_present = false</td></tr>
       <tr><td>3.</td><td>card_id_clear(current_id) + vote_fifo_clear()</td></tr>
@@ -147,18 +147,9 @@ td:first-child{white-space:nowrap;color:var(--dim);padding-right:10px}
     <table>
       <tr><td class="cg">CardIn</td><td>5B完整卡号</td><td>→ card_in(id) 按模式上报</td></tr>
       <tr><td class="cy">CardInUnconfirmed</td><td>ID全零</td><td>→ 固定ID <span class="mn">00 00 00 00 55</span></td></tr>
-      <tr><td class="cp">CardOut</td><td>200ms无卡</td><td>→ card_out() 清进站pending</td></tr>
+      <tr><td class="cp">CardOut</td><td>card_out_ms无卡</td><td>→ card_out() 清进站pending</td></tr>
     </table>
     <div style="margin-top:4px;font-size:11px;color:var(--dim)">SPSC Event FIFO(8深度) → EM4095_PopEvent → poll_em4095_events</div>
-  </div>
-  <div class="card">
-    <div style="font-weight:600;margin-bottom:4px" class="cp">edge_ring[16] 回退</div>
-    <table>
-      <tr><td>记录</td><td class="mn">edge_ring[idx] = (delta_us&lt;&lt;1) | level</td></tr>
-      <tr><td>触发</td><td>handle_frame 中 verify 或 vote 任一失败</td></tr>
-      <tr><td>回放</td><td>replay_and_reset() 遍历已存边沿, 从 Idle 重走状态机</td></tr>
-      <tr><td>目的</td><td>帧间隙中的有效数据不浪费, 重新搜帧头</td></tr>
-    </table>
   </div>
 </div>
 

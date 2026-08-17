@@ -16,7 +16,7 @@ td:first-child{white-space:nowrap}
 .cr{color:#f85149}.cg{color:#3fb950}.cb{color:#58a6ff}.cy{color:#d2991d}.cp{color:#bc8cff}.co{color:#f0883e}
 .cl-bar{display:flex;height:22px;border-radius:5px;overflow:hidden;font-size:9px;font-weight:700;margin:6px 0;text-align:center}
 .cl-bar span{display:flex;align-items:center;justify-content:center;color:#fff}
-.cl-d{background:#6e7681;flex:0 0 80px}.cl-s{background:#3fb950;flex:0 0 40px}.cl-a{background:#d2991d;flex:0 0 60px}.cl-l{background:#58a6ff;flex:0 0 40px}.cl-t{background:#f85149;flex:1}
+.cl-d{background:#6e7681;flex:0 0 55px}.cl-s{background:#3fb950;flex:0 0 93px}.cl-a{background:#d2991d;flex:0 0 16px}.cl-l{background:#58a6ff;flex:0 0 109px}.cl-t{background:#f85149;flex:1}
 </style>
 <body>
 
@@ -26,27 +26,27 @@ td:first-child{white-space:nowrap}
   · base_us 默认 256us · SeekPreamble 动态测得 · clamp(200, 312)
 </div>
 <div class="cl-bar">
-  <span class="cl-d">Debris &lt;80%</span>
-  <span class="cl-s">SHORT 80~120%</span>
-  <span class="cl-a">AMB 120~180%</span>
-  <span class="cl-l">LONG 180~220%</span>
-  <span class="cl-t">TIMEOUT &gt;220%</span>
+  <span class="cl-d">Debris &lt;55%</span>
+  <span class="cl-s">SHORT 55~148%</span>
+  <span class="cl-a">AMB 148~164%</span>
+  <span class="cl-l">LONG 164~273%</span>
+  <span class="cl-t">TIMEOUT &gt;273%</span>
 </div>
 <div style="display:flex;font-size:10px;color:var(--dim);margin-bottom:10px">
-  <span style="flex:0 0 80px">毛刺,丢弃</span>
-  <span style="flex:0 0 40px">半位周期 ~256us</span>
-  <span style="flex:0 0 60px">临界</span>
-  <span style="flex:0 0 40px">全位周期,无中间跳变</span>
+  <span style="flex:0 0 55px">毛刺,丢弃</span>
+  <span style="flex:0 0 93px">半位周期 ~256us</span>
+  <span style="flex:0 0 16px">临界</span>
+  <span style="flex:0 0 109px">全位周期,无中间跳变</span>
   <span style="flex:1">帧间隙,无信号</span>
 </div>
 
 <table>
 <tr><th>分类</th><th>枚举值</th><th>区间</th><th>以256us为例</th><th>含义</th></tr>
-<tr><td>Debris</td><td>0</td><td>&lt;80%</td><td>&lt;205us</td><td>毛刺/噪声,直接丢弃。delta_us==0 也判 Debris</td></tr>
-<tr><td class="cg">SHORT</td><td>1</td><td>80~120%</td><td>205~307us</td><td>正常半位周期,Manchester 单个半位。边沿分类核心</td></tr>
-<tr><td>Ambiguous</td><td>2</td><td>120~180%</td><td>307~461us</td><td>SHORT/LONG 边界临界,Receive 中计错</td></tr>
-<tr><td class="cb">LONG</td><td>3</td><td>180~220%</td><td>461~563us</td><td>全位周期,两个相同 bit 中间无边沿跳变,始终判为中点</td></tr>
-<tr><td class="cr">TIMEOUT</td><td>4</td><td>&gt;220%</td><td>&gt;563us</td><td>帧间隙 或 芯片离场,Receive 中直接回 Idle</td></tr>
+<tr><td>Debris</td><td>0</td><td>&lt;55%</td><td>&lt;141us</td><td>毛刺/噪声,直接丢弃。delta_us==0 也判 Debris</td></tr>
+<tr><td class="cg">SHORT</td><td>1</td><td>55~148%</td><td>141~379us</td><td>正常半位周期,Manchester 单个半位。边沿分类核心</td></tr>
+<tr><td>Ambiguous</td><td>2</td><td>148~164%</td><td>379~420us</td><td>SHORT/LONG 边界临界,Receive 中计错</td></tr>
+<tr><td class="cb">LONG</td><td>3</td><td>164~273%</td><td>420~699us</td><td>全位周期,两个相同 bit 中间无边沿跳变,始终判为中点</td></tr>
+<tr><td class="cr">TIMEOUT</td><td>4</td><td>&gt;273%</td><td>&gt;699us</td><td>帧间隙 或 芯片离场,Receive 中直接回 Idle</td></tr>
 </table>
 
 <h2>三态状态机 — 核心算法</h2>
@@ -91,7 +91,7 @@ td:first-child{white-space:nowrap}
   <text x="245" y="132" text-anchor="middle" font-size="8" fill="#f85149">非SHORT 或 方向不交替(last_dir重复)</text>
 
   <path d="M695,112 L695,160 L95,160 L95,114" fill="none" stroke="#f85149" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#ar)"/>
-  <text x="395" y="156" text-anchor="middle" font-size="8" fill="#f85149">Debris/Ambig err≥3 · TIMEOUT · 校验失败→回放edge_ring</text>
+  <text x="395" y="156" text-anchor="middle" font-size="8" fill="#f85149">Debris/Ambig err≥1 · TIMEOUT · 校验失败→回Idle</text>
 
   <!-- Detail notes box -->
   <rect x="10" y="146" width="790" height="48" rx="6" fill="var(--s)" stroke="var(--line)"/>
@@ -111,20 +111,18 @@ td:first-child{white-space:nowrap}
       <tr><td>BASE_MIN / MAX</td><td class="mn">200 / 312</td></tr>
       <tr><td>SEEK_ALTERNATE_MIN</td><td class="mn">16</td></tr>
       <tr><td>RECEIVE_BIT_COUNT</td><td class="mn">64</td></tr>
-      <tr><td>RECEIVE_ERROR_MAX</td><td class="mn">3</td></tr>
+      <tr><td>RECEIVE_ERROR_MAX</td><td class="mn">1</td></tr>
       <tr><td>VOTE_FRAME_COUNT</td><td class="mn">3</td></tr>
-      <tr><td>VOTE_TIMEOUT_MS</td><td class="mn">40</td></tr>
+      <tr><td>VOTE_TIMEOUT_MS</td><td class="mn">300</td></tr>
       <tr><td>CARD_OUT_MS</td><td class="mn">200</td></tr>
-      <tr><td>EDGE_RING_SIZE</td><td class="mn">16</td></tr>
-    </table>
+          </table>
   </div>
   <div style="background:var(--s);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:12px">
     <div style="font-weight:600;color:var(--dim);margin-bottom:6px">容错策略</div>
     <table>
       <tr><td class="cr">Seek 容错</td><td>无 — 单次非SHORT或方向重复即 reset_decoder 回 Idle</td></tr>
-      <tr><td class="cg">Receive 容错</td><td>Debris/Ambig → err++, 累积 ≥3 才回 Idle; 任何成功解码清零 err</td></tr>
-      <tr><td class="cy">edge_ring 回退</td><td>校验失败→replay_and_reset() 回放 edge_ring 中已缓冲边沿,从 Idle 重搜</td></tr>
-      <tr><td style="color:#8b949e">reset_decoder</td><td>只清解码层(state/bit/edge等),不动 vote_buf/current_id/card_present 等卡跟踪字段</td></tr>
+      <tr><td class="cg">Receive 容错</td><td>Debris/Ambig → err++, 累积 ≥1 即回 Idle; 任何成功解码清零 err</td></tr>
+            <tr><td style="color:#8b949e">reset_decoder</td><td>只清解码层(state/bit等),不动 vote_buf/current_id/card_present 等卡跟踪字段</td></tr>
     </table>
   </div>
 </div>

@@ -63,8 +63,8 @@ h2{font-size:1.1em;font-weight:600;color:var(--dim);margin:0 0 10px}
   <rect x="370" y="98" width="220" height="84" rx="8" fill="#0c131d" stroke="#58a6ff" stroke-width="1.8"/>
   <text x="480" y="120" text-anchor="middle" font-size="14" font-weight="700" fill="#58a6ff">Receive</text>
   <text x="480" y="136" text-anchor="middle" font-size="9" fill="#8b949e">SHORT skip=0→解码bit | skip=1→边界跳过</text>
-  <text x="480" y="150" text-anchor="middle" font-size="9" fill="#8b949e">LONG→解码bit | ↓=1 ↑=0 | edge_ring记录</text>
-  <text x="480" y="164" text-anchor="middle" font-size="9" fill="#8b949e">Debris/Ambig err≥3→Idle | TIMEOUT→Idle</text>
+  <text x="480" y="150" text-anchor="middle" font-size="9" fill="#8b949e">LONG→解码bit | ↓=1 ↑=0</text>
+  <text x="480" y="164" text-anchor="middle" font-size="9" fill="#8b949e">Debris/Ambig err≥1→Idle | TIMEOUT→Idle</text>
   <text x="480" y="176" text-anchor="middle" font-size="9" font-weight="700" fill="#58a6ff">bit_count≥64 → handle_frame</text>
 
   <!-- Arrows Idle←→Seek→Receive -->
@@ -79,7 +79,7 @@ h2{font-size:1.1em;font-weight:600;color:var(--dim);margin:0 0 10px}
   <!-- Receive → Idle fallback -->
   <line x1="480" y1="182" x2="480" y2="198" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="480" y1="198" x2="96" y2="198" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/>
-  <text x="288" y="194" text-anchor="middle" font-size="7" fill="#f85149">err≥3 / TIMEOUT / 校验失败→replay</text>
+  <text x="288" y="194" text-anchor="middle" font-size="7" fill="#f85149">err≥1 / TIMEOUT / 校验失败→Idle</text>
 
   <!-- ====== VERIFY → VOTE ====== -->
   <rect x="620" y="106" width="130" height="32" rx="6" fill="#110d18" stroke="#bc8cff" stroke-width="1.5"/>
@@ -96,7 +96,7 @@ h2{font-size:1.1em;font-weight:600;color:var(--dim);margin:0 0 10px}
 
   <!-- Verify/vote fail path -->
   <path d="M620,162 L610,162 L610,202 L618,202" fill="none" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/>
-  <text x="596" y="180" text-anchor="middle" font-size="7" fill="#f85149">失败: replay→Idle</text>
+  <text x="596" y="180" text-anchor="middle" font-size="7" fill="#f85149">失败: 回Idle</text>
 
   <!-- card_on -->
   <rect x="386" y="230" width="130" height="36" rx="7" fill="#0c150c" stroke="#3fb950" stroke-width="1.5"/>
@@ -110,7 +110,7 @@ h2{font-size:1.1em;font-weight:600;color:var(--dim);margin:0 0 10px}
 
   <!-- CardOut -->
   <rect x="540" y="266" width="136" height="20" rx="5" fill="#120d18" stroke="#bc8cff" stroke-width="1"/>
-  <text x="608" y="280" text-anchor="middle" font-size="10" font-weight="600" fill="#bc8cff">CardOut · 200ms</text>
+  <text x="608" y="280" text-anchor="middle" font-size="10" font-weight="600" fill="#bc8cff">CardOut · card_out_ms</text>
 
   <!-- ====== Event FIFO ====== -->
   <rect x="696" y="234" width="108" height="60" rx="7" fill="#1a0808" stroke="#f85149" stroke-width="1.5"/>
