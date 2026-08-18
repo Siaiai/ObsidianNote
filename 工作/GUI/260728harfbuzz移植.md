@@ -154,7 +154,8 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 - **载体**（MCU，未定）：flash const 数组（默认）/ QSPI mmap / LittleFS·FatFS。库不选载体，靠 port 切换。
 - **多语言**：多个 fontlet + 生成的注册表 `fontlets_registry.h`，固件按 lang 查；库不掺和多语言逻辑。
 - **内存**：库不直接 `malloc`，走 alloc 接口或调用方传 buffer（原则先立，具体后定）。
-- **第三方**：浅克隆 HEAD、`src/third_party/` gitignore（本地副本不跟踪）；后续可钉 release tag 或转 submodule 做可复现。
+- **第三方**：浅克隆 HEAD、`src/third_party/` gitignore（本地副本不跟踪）；后续可钉 release tag 或转 submodule 做可复现。harfbuzz / freetype / **Dear ImGui**（GLFW 用 msys64 pacman 安装，非内嵌）。
+- **GUI**：Dear ImGui + GLFW + OpenGL3（raylib 已移除）。GUI/demo 共用 `imgui_app` 骨架（中文字体加载 + 深色主题 + 原生文件对话框句柄）。
 - **不发预编译**：源码级集成（`add_subdirectory`），用固件自己的工具链现编现用。
 
 ## 当前进度
@@ -163,5 +164,6 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 - [x] 第三方已克隆：harfbuzz(133M) / raylib(147M) / freetype(16M)，浅克隆，走代理 7897
 - [x] `fontlet_format.h`（fontlet 字节布局契约·最小版）已落地：header(32B)+shape+atlas+bitmap 四段
 - [x] 生成工具（块1）可用：`hbe_pack` CLI + `hbe_gui` GUI（导入字体→整字体转换→网格预览），核心 `packer.{hpp,cpp}` headless 可复用
-- [x] 运行时库（块2）最小闭环已通：`hbe_core`（`hbe_fontlet_open`→`hbe_fontlet_shape`→查 atlas→blit），`examples/hbe_demo` 用 mmap 载体验证 `Hello` 渲染成 PPM 像素正确
+- [x] 运行时库（块2）最小闭环已通：`hbe_core`（`hbe_fontlet_open`→`hbe_fontlet_shape`→查 atlas→blit），`examples/hbe_demo` 用 mmap 载体验证 `Hello` 渲染成像素正确
+- [x] GUI 换 Dear ImGui（+独立 GLFW），raylib 已移除；GUI/demo 共用 `imgui_app` 骨架 + `mmap_io` 载体
 - [ ] 下一步：行排版（断行/对齐/基线，用 hb_font 度量）+ 多字体/回退链（等真需要时）
