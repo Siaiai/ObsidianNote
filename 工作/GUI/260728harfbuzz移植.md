@@ -57,6 +57,65 @@ flowchart TD
     class Merge,Blit,Screen rnd
 ```
 
+## 字体渲染基础
+
+### 核心模型：笔在基线上走，字形是贴在笔上的贴纸
+
+画一行文字 = 一支笔沿基线从左到右移动，每画一个字向右移一段。**笔尖的位置叫 pen**。每个字形的像素贴图相对笔尖怎么摆，就是 bearing。
+
+```
+baseline(基线) ────────────────────────────────────────────────
+                      ↑ pen 在这里
+                      │
+                      │ bearing_y (笔到贴纸顶部，屏幕坐标向下所以带负号)
+                      │
+                ┌─────┴─────┐
+                │  字形bitmap │   ← 实际像素 (w×h)
+                │   (w×h)    │
+                └───────────┘
+                      ↑
+           bearing_x (笔到贴纸左缘，可负)
+```
+
+### 从文本到像素，每一步一个量
+
+**① 字符 → 码点 (codepoint)**：`"你好"` 是 UTF-8 字节，先解码成 Unicode 编号（`你`=U+4F60）。与字体无关。
+
+**② 码点 → gid，不能直接查表**：gid = 字体里"实际存在的形状"的编号。不能码点→gid 直接映射，因为 `fi` 合成连字 `ﬁ`（2 字符→1 gid）、阿拉伯字母词首/中/尾不同形、`é`=`e`+组合尖音符。所以需要**整形 (shaping)**：输入一串码点，输出一串 gid + 位置。这是 HarfBuzz 干的活。
+
+**③ 整形输出三样，只有两样用于画**：对每个 gid，整形给出 advance（笔沿基线移多远）、offset（字形相对笔的微调位移）、cluster（这个 gid 来自源文本哪几个字符，画字不用）。**advance 决定"下一个字在哪"，offset 决定"这个字形往哪偏"**——所以 advance 来自整形、不入 fontlet（排版量不是贴图量）。`é` 例：`e` 的 gid advance=e 宽、offset=(0,0)；尖音符 gid advance=0、offset=左上（笔不动，音符叠在 e 上）。
+
+**④ 垂直度量 (ascent/descent/line_gap)**：决定行高和换行后基线位置。最小版不存，运行时问 `hb_font` 拿。
+
+**⑤ 光栅化 → bitmap**：字形是矢量轮廓（贝塞尔曲线），屏幕要像素。把曲线在某字号下填充成像素叫光栅化，结果是一个 `w×h` 像素数组。harfembed 里这步**离线**做（PC 上 FreeType），MCU 只拿填好的像素。1-bit = 每像素 1 bit。
+
+**⑥ bearing：bitmap 怎么摆到 pen 上**：bitmap 左上角 ≠ pen，因为字形可向左/上凸出。斜体 `f` 弯钩向左 → bearing_x 为负；大写字母在基线上方 → bearing_y 为正。落点 `bitmap_left = pen_x + bearing_x`，`bitmap_top = pen_y - bearing_y`（屏幕坐标向下）。所以 atlas 里 bx/by 是 i16 可负，x/y/w/h 是 u16 非负。
+
+### atlas + blit
+
+单独存每个字形 bitmap 会碎片化，所以离线把所有字形 bitmap 塞进**一张大图（atlas）**，每个字形记 (x,y,w,h)。**blit**（位块传送）= 从图集搬一块像素到屏幕的纯内存拷贝：
+
+```
+1. hb_shape 得到 gid 序列 + advance + offset
+2. 对每个 gid: 查 atlas entry 拿 x,y,w,h,bx,by
+3. blit: 图集 (x,y) 处 w×h 像素 → 屏幕 (pen_x+bx, pen_y-by)
+4. pen_x += advance，回到 2
+```
+
+### 汇总表
+
+| 量 | 是什么 | 谁产出 | 存哪 |
+|---|---|---|---|
+| codepoint | 字符编号 | UTF-8 解码 | — |
+| gid | 字形编号 | shaping | — |
+| advance | 笔前进量 | shaping | **不入 fontlet** |
+| offset | 字形微调 | shaping | **不入 fontlet** |
+| x,y,w,h | 像素在图集位置 | 离线光栅化 | atlas entry |
+| bx,by | 贴纸相对笔偏移 | 离线光栅化 | atlas entry |
+| bitmap | 字形像素 | 离线光栅化 | bitmap pool |
+
+运行时闭环四步：`open → hb_shape → 按 gid 查 atlas → blit`。
+
 ## 项目结构
 
 harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
@@ -90,7 +149,7 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 ## 关键决策
 
 - **命名**：项目 `harfembed`；前缀 `hbe_`（`hbe_fontlet_open` / `hbe_fontlet_t`）；命名空间 `harfembed::`；fontlet 文件按脚本标签命名（`latn`/`hani`/`hans`/`arab`/`common`）。
-- **fontlet**：一个 fontlet = 一个字体 + 一个烘焙字号。blob = header + shape字体 + manifest + atlas meta + bitmap pool。magic `'FNTL'`（0x4C544E46），小端，结构体自然对齐无 padding。atlas entry 稠密索引（gid = first_gid + 下标，12B/条），advance 来自 `hb_shape` 不入 atlas；缺字回退 index 0（.notdef）。
+- **fontlet**：一个 fontlet = 一个字体 + 一个烘焙字号。blob（最小版）= header(32B) + shape字体 + atlas entry[] + bitmap pool，四段连续。magic `'FNTL'`（0x4C544E46），小端，结构体自然对齐无 padding。位深 **1-bit**，行 stride `ceil(w/8)`、MSB-first、无 padding。atlas entry 稠密索引（gid = 下标，hb-subset remap 到 0），12B/条（x,y,w,h 为 u16，bx/by 为 i16 可负）；advance/offset 来自 `hb_shape` 不入 atlas；缺字回退 gid 0（.notdef）。manifest（行度量）最小版暂缺，运行时问 `hb_font` 拿。字节契约见 `src/harfembed/inc/fontlet_format.h`。
 - **io 接口**：harfembed 只暴露 `hbe_io_t`（`map` 零拷贝 / `read` 兜底），**不带任何载体实现**，载体归仿真/固件自带。`map` 只用于不透明字节流（font blob、位图），结构体一律 `read` 进对齐局部（M0 对齐安全）。
 - **载体**（MCU，未定）：flash const 数组（默认）/ QSPI mmap / LittleFS·FatFS。库不选载体，靠 port 切换。
 - **多语言**：多个 fontlet + 生成的注册表 `fontlets_registry.h`，固件按 lang 查；库不掺和多语言逻辑。
@@ -102,5 +161,6 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 
 - [x] 骨架已建：目录结构 + 各级 CMakeLists 占位（无 target）+ `.gitignore` + `LICENSE`（占位）+ `README.md`
 - [x] 第三方已克隆：harfbuzz(133M) / raylib(147M) / freetype(16M)，浅克隆，走代理 7897
-- [ ] 暂无代码
-- [ ] 下一步：`fontlet_format.h`（fontlet 字节布局契约）落地
+- [x] `fontlet_format.h`（fontlet 字节布局契约·最小版）已落地：header(32B)+shape+atlas+bitmap 四段
+- [ ] 暂无其它代码
+- [ ] 下一步：packer（块1）拼出最小 .fontlet → dump 验证对齐/字节序/stride
