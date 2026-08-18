@@ -119,7 +119,6 @@ baseline(基线) ─────────────────────
 ## 项目结构
 
 harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
-├── docs/
 ├── res/
 │   ├── fonts/                          # 源字体，CLI 输入（提交）
 │   │   ├── xxx.ttf
@@ -273,7 +272,7 @@ cmake --build build --target hbe_runtime_size
 
 
 - [x] 骨架已建：目录结构 + 各级 CMakeLists 占位（无 target）+ `.gitignore` + `LICENSE`（占位）+ `README.md`
-- [x] 第三方已克隆：harfbuzz(133M) / raylib(147M) / freetype(16M)，浅克隆，走代理 7897
+- [x] 第三方已接入：HarfBuzz / FreeType / Dear ImGui（本地第三方源码；GUI 使用独立 GLFW）
 - [x] `fontlet_format.h`（fontlet 字节布局契约·最小版）已落地：header(32B)+shape+atlas+bitmap 四段
 - [x] 生成工具（块1）可用：`hbe_pack` CLI + `hbe_gui` GUI（导入字体→整字体转换→网格预览），核心 `packer.{hpp,cpp}` headless 可复用
 - [x] 运行时库（块2）最小闭环已通：`hbe_core`（`hbe_fontlet_open`→`hbe_fontlet_shape`→查 atlas→blit），`examples/hbe_demo` 用 mmap 载体验证 `Hello` 渲染成像素正确
