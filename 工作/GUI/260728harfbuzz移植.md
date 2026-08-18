@@ -281,8 +281,7 @@ cmake --build build --target hbe_runtime_size
 - [x] GUI 换 Dear ImGui（+独立 GLFW），raylib 已移除；GUI/demo 共用 `imgui_app` 骨架 + `mmap_io` 载体
 - [x] Host HarfBuzz 与 MCU runtime 构建边界已拆开：`HBE_BUILD_HOST` / `HBE_BUILD_RUNTIME`；runtime-only 配置不带 subset、FreeType、GUI
 - [x] MCU runtime 初版使用 `HB_TINY`，保留 OpenType、Arabic、USE、UCD、GSUB/GPOS/GDEF 与完整 glyph positions
-- [x] `hbe_fontlet_shape()` 已输出 `gid/cluster/x/y_advance/x/y_offset`；demo fontlet 栏走该公共接口
-- [x] `hbe_full_shape` 独立进程作为完整 HarfBuzz 原始字体基准，避免两套 `hb_*` 符号冲突
+- [x] `hbe_fontlet_shape()` 已输出 `gid/cluster/x/y_advance/x/y_offset`；demo 只走该公共接口
 - [x] `hbe_runtime_size` 生成 ROM/RAM、archive、probe、map 测量报告
 - [ ] 正式 MCU allocator/fixed arena：去除或约束 runtime 动态分配，记录峰值 RAM
 - [ ] 行排版（断行/对齐/基线，用 glyph positions 与 hb_font 度量）+ 多字体/回退链（等真需要时）
