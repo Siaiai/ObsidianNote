@@ -162,5 +162,5 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 - [x] 骨架已建：目录结构 + 各级 CMakeLists 占位（无 target）+ `.gitignore` + `LICENSE`（占位）+ `README.md`
 - [x] 第三方已克隆：harfbuzz(133M) / raylib(147M) / freetype(16M)，浅克隆，走代理 7897
 - [x] `fontlet_format.h`（fontlet 字节布局契约·最小版）已落地：header(32B)+shape+atlas+bitmap 四段
-- [ ] 暂无其它代码
-- [ ] 下一步：packer（块1）拼出最小 .fontlet → dump 验证对齐/字节序/stride
+- [x] 生成工具（块1）可用：`hbe_pack` CLI + `hbe_gui` GUI（导入字体→整字体转换→网格预览），核心 `packer.{hpp,cpp}` headless 可复用
+- [ ] 下一步：块2 运行时库（`hb_face` 吃 shape 段 → `hb_shape` → 按 gid 查 atlas → blit）
