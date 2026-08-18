@@ -245,13 +245,15 @@ hbe_fontlet_close(f);
 
 ### Demo 必须验证的内容
 
-`hbe_demo` 必须同时展示：
+`hbe_demo` 必须只验证 MCU 真实调用链：
 
-1. 完整 HarfBuzz worker：原始字体作为基准；
-2. `hbe_fontlet_shape()`：实际走 MCU runtime 和 fontlet shape 段；
-3. 未整形：逐字符 `cmap + h_advance`。
+```text
+.fontlet -> hbe_fontlet_open -> hbe_fontlet_shape -> hbe_glyph_t
+         -> hbe_fontlet_glyph_entry / hbe_fontlet_glyph_bitmap
+         -> pen + offset + bearing -> 1-bit LCD/OLED blit
+```
 
-完整基准使用独立 `hbe_full_shape` 进程，避免完整 HarfBuzz 与 HB_TINY 的同名 `hb_*` 符号冲突。三者都比较并显示 `gid/cluster/advance/offset`，并用 fontlet atlas 绘制，这样能分别发现字体转换丢表、runtime 裁剪错误和未整形差异。至少回归 Arabic `لا`、Arabic mark/ZWJ/ZWNJ/RTL、Sinhala `ස්ව`、依附元音和 GPOS mark attachment。
+完整 HarfBuzz 的结果由外部网站查看，demo 不再加载原始字体、不链接 host HarfBuzz、不启动 worker，也不提供未整形对照。这样 demo 的整形、位置输出和 fontlet 访问都与单片机一致，编译产物也只依赖 `hbe_core`、裁剪 runtime 和 host 图形显示壳。
 
 ## ROM / RAM 测量
 
