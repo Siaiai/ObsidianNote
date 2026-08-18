@@ -156,7 +156,7 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 - **多语言**：多个 fontlet + 生成的注册表 `fontlets_registry.h`，固件按 lang 查；库不掺和多语言逻辑。
 - **内存**：当前验证版 `hbe_fontlet_open` 和 HarfBuzz buffer/shape plan 仍会动态分配；`hbe_fontlet_shape` 的 glyph 输出数组由调用方提供。面向正式 MCU 时需接入 HarfBuzz allocator 或固定 arena，并测量峰值 RAM；不能把当前实现称为完全无 malloc。
 - **第三方**：Host 使用完整 HarfBuzz + harfbuzz-subset + FreeType；MCU runtime 使用独立 `hbe_harfbuzz_runtime`（`HB_TINY`，不编 subset/FreeType）；GUI/demo 使用 Dear ImGui + 独立 GLFW/OpenGL3。
-- **GUI**：Demo 中完整 HarfBuzz 基准通过独立 `hbe_full_shape` worker 进程读取原始字体；fontlet 栏通过 hbe 公共 API 使用裁剪 runtime；第三栏为未整形 cmap 对照。分进程是为了避免两套同名 `hb_*` 符号冲突。
+- **GUI**：Demo 只走 `hbe_fontlet_open → hbe_fontlet_shape → atlas → blit` 的 MCU 路径；原始字体不再作为 demo 输入。完整 HarfBuzz 的结果使用外部网站查看，demo 专注验证 MCU runtime 的真实调用链。
 - **不发预编译**：源码级集成（`add_subdirectory`），Host 与 MCU runtime 可分别配置；`-DHBE_BUILD_HOST=OFF -DHBE_BUILD_RUNTIME=ON` 只构建 MCU 库。
 
 ## HarfBuzz 移植与裁剪
