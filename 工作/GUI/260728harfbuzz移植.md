@@ -163,4 +163,5 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 - [x] 第三方已克隆：harfbuzz(133M) / raylib(147M) / freetype(16M)，浅克隆，走代理 7897
 - [x] `fontlet_format.h`（fontlet 字节布局契约·最小版）已落地：header(32B)+shape+atlas+bitmap 四段
 - [x] 生成工具（块1）可用：`hbe_pack` CLI + `hbe_gui` GUI（导入字体→整字体转换→网格预览），核心 `packer.{hpp,cpp}` headless 可复用
-- [ ] 下一步：块2 运行时库（`hb_face` 吃 shape 段 → `hb_shape` → 按 gid 查 atlas → blit）
+- [x] 运行时库（块2）最小闭环已通：`hbe_core`（`hbe_fontlet_open`→`hbe_fontlet_shape`→查 atlas→blit），`examples/hbe_demo` 用 mmap 载体验证 `Hello` 渲染成 PPM 像素正确
+- [ ] 下一步：行排版（断行/对齐/基线，用 hb_font 度量）+ 多字体/回退链（等真需要时）
