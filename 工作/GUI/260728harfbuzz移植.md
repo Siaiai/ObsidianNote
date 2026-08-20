@@ -135,11 +135,10 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 │   │   └── CMakeLists.txt
 │   └── harfembed/                      # 块2：MCU 库（只暴露接口，零载体）
 │       ├── CMakeLists.txt
-│       └── inc/                        # 公共 API 头（含 fontlet_format.h）
-├── examples/                           # host 仿真、完整 HarfBuzz 基准 worker
+│       ├── inc/                        # 公共 API 头（fontlet_format.h / hbe_fontlet.h / hbe_io.h / hbe_harfbuzz_config.h）
+│       └── src/                        # hbe_fontlet.c（唯一实现）
+├── examples/                           # hbe_demo（MCU 路径演示）+ mmap_io 载体
 │   └── CMakeLists.txt
-├── cmake/                              # ROM/RAM footprint 报告脚本
-│   └── report_size.cmake
 ├── tests/
 │   └── CMakeLists.txt
 ├── .gitignore
@@ -155,9 +154,9 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 - **载体**（MCU，未定）：Flash const 数组（默认）/ QSPI mmap / LittleFS·FatFS。库不选载体，靠 port 切换；hbe 不依赖文件系统、GUI 或 mmap。
 - **多语言**：多个 fontlet + 生成的注册表 `fontlets_registry.h`，固件按 lang 查；库不掺和多语言逻辑。
 - **内存**：当前验证版 `hbe_fontlet_open` 和 HarfBuzz buffer/shape plan 仍会动态分配；`hbe_fontlet_shape` 的 glyph 输出数组由调用方提供。面向正式 MCU 时需接入 HarfBuzz allocator 或固定 arena，并测量峰值 RAM；不能把当前实现称为完全无 malloc。
-- **第三方**：Host 使用完整 HarfBuzz + harfbuzz-subset + FreeType；MCU runtime 使用独立 `hbe_harfbuzz_runtime`（`HB_TINY`，不编 subset/FreeType）；GUI/demo 使用 Dear ImGui + 独立 GLFW/OpenGL3。
+- **第三方**：Host 使用完整 HarfBuzz + harfbuzz-subset + FreeType；MCU runtime 使用独立 `hbe_harfbuzz_runtime`（直接编译 `harfbuzz.cc`，裁剪方案集中在 `src/harfembed/inc/hbe_harfbuzz_config.h`，不编 subset/FreeType）；GUI/demo 使用 Dear ImGui + 独立 GLFW/OpenGL3。
 - **GUI**：Demo 只走 `hbe_fontlet_open → hbe_fontlet_shape → atlas → blit` 的 MCU 路径；原始字体不再作为 demo 输入。完整 HarfBuzz 的结果使用外部网站查看，demo 专注验证 MCU runtime 的真实调用链。
-- **不发预编译**：源码级集成（`add_subdirectory`），Host 与 MCU runtime 可分别配置；`-DHBE_BUILD_HOST=OFF -DHBE_BUILD_RUNTIME=ON` 只构建 MCU 库。
+- **不发预编译**：源码级集成（`add_subdirectory`），一次配置产出全部目标（完整 HarfBuzz、裁剪 runtime、生成器、demo），不区分 host/MCU 构建开关。
 
 ## HarfBuzz 移植与裁剪
 
@@ -175,28 +174,25 @@ Host 工具链
 MCU 固件
   应用
     └─ hbe_core
-         └─ hbe_harfbuzz_runtime (HB_TINY)
+         └─ hbe_harfbuzz_runtime (hbe_harfbuzz_config.h 裁剪)
               └─ fontlet: Flash/QSPI/read/map
                     └─ gid + position -> 1-bit blit
 ```
 
-CMake 构建选择：
+CMake 一次配置产出全部目标，顶层 CMakeLists 分五栏：全局设置 / hbe 裁剪 runtime / 完整 HarfBuzz / FreeType / Dear ImGui，最后挂三个子目录（`src/harfembed`、`src/fontlet_generator_cli`、`examples`）：
 
 ```bash
-# PC：完整 Host + MCU runtime + demo
-cmake -S . -B build -DHBE_BUILD_HOST=ON -DHBE_BUILD_RUNTIME=ON
-
-# MCU 工程首先验证这个边界：只编译 runtime
-cmake -S . -B build-runtime -DHBE_BUILD_HOST=OFF -DHBE_BUILD_RUNTIME=ON
+cmake -S . -B build
+cmake --build build -j
 ```
 
-正式 MCU 工程将把 `src/harfembed/inc`、`src/harfembed/src`、`hbe_harfbuzz_runtime` 和自己的 `hbe_io_t` 载体实现加入 ARM 工具链；当前 CMake 的 runtime-only 配置是 host 侧依赖隔离验证，不是具体厂商的 linker script。
+正式 MCU 工程将把 `src/harfembed/inc`、`src/harfembed/src`、`hbe_harfbuzz_runtime`（即 `harfbuzz.cc` + `hbe_harfbuzz_config.h`）和自己的 `hbe_io_t` 载体实现加入 ARM 工具链。
 
 ### 当前裁剪配置
 
-`hbe_harfbuzz_runtime` 从 HarfBuzz `harfbuzz.cc` 构建，并定义 `HB_TINY`。这里的目标是 **全 OpenType 脚本整形**，不是只支持 Arabic/Sinhala。`HB_TINY` 只关闭与 MCU 字体整形无关的外围能力；所有 OpenType shaper（default、Arabic、Hebrew、Indic、USE、Khmer、Myanmar、Thai、Hangul 等）仍然编译进 runtime，Unicode 数据和 OpenType layout 通用路径也保留。今后新增 HarfBuzz shaper 时，只要属于 OpenType shaping，就不能因为当前测试语言较少而删除。
+裁剪方案**全部写在 `src/harfembed/inc/hbe_harfbuzz_config.h`** 里。CMake 只定义一个全局宏 `HB_CONFIG_OVERRIDE_H="hbe_harfbuzz_config.h"`，`hbe_harfbuzz_runtime` 直接编译 HarfBuzz 的 `harfbuzz.cc`，编译前 HarfBuzz 会先包含这个头，宏即裁剪。这里的目标是 **全 OpenType 脚本整形**，不是只支持 Arabic/Sinhala；所有 OpenType shaper（default、Arabic、Hebrew、Indic、USE、Khmer、Myanmar、Thai、Hangul 等）仍然编译进 runtime，Unicode 数据和 OpenType layout 通用路径也保留。今后新增 HarfBuzz shaper 时，只要属于 OpenType shaping，就不能因为当前测试语言较少而删除。
 
-该配置组合了 `HB_LEAN` 与 `HB_MINI`，当前关闭或不编译：
+配置头的内容等价于 `HB_TINY`（= `HB_LEAN` + `HB_MINI` 的展开列表），但**故意不定义 `HB_NO_METRICS`**——`hbe_fontlet_metrics()` 需要 ascent/descent/line_gap。之所以不直接写 `#define HB_TINY`，是因为 HarfBuzz 的 `hb-config.hh` 在第 44 行就展开 `HB_TINY`，而 override 头在第 108 行才被包含，写进去不生效；所以把 `HB_TINY` 的展开结果逐条写明，反而成了裁剪清单本身。当前关闭或不编译：
 
 - AAT、legacy font/shaper、fallback shaper 的非必要部分；
 - 线程安全、`atexit`、mmap/open 文件辅助；
@@ -212,7 +208,7 @@ cmake -S . -B build-runtime -DHBE_BUILD_HOST=OFF -DHBE_BUILD_RUNTIME=ON
 - Arabic joining data、Indic/USE/Khmer/Myanmar/Thai 等脚本的分类和状态机；
 - 完整 glyph position：`gid`、`cluster`、`x/y_advance`、`x/y_offset`。
 
-Arabic、Sinhala 只是当前回归样例，不是裁剪边界。小语种和其他复杂脚本必须通过同一套 OpenType runtime；字体中的 script/langsys/feature 记录决定具体 lookup。对于需要精确控制的文本，固件可在 `hbe_shape_options_t` 中指定 ISO 15924 四字节脚本标签、方向和 BCP-47 语言；未指定时仍调用 `hb_buffer_guess_segment_properties()` 自动判断。
+Arabic、Sinhala 只是当前回归样例，不是裁剪边界。小语种和其他复杂脚本必须通过同一套 OpenType runtime；字体中的 script/langsys/feature 记录决定具体 lookup。需要精确控制时，固件在 `hbe_fontlet_shape()` 的 `script` 参数传入 ISO 15924 四字节标签（如 `Arab`/`Deva`/`Sinh`/`Khmr`）；传 `NULL`、空串或 `NONE` 时由 `hb_buffer_guess_segment_properties()` 自动判断。
 
 字体资源侧已经移除 `glyf/loca/CFF/CFF2/cvt/fpgm/prep` 等轮廓与 hinting 表，MCU 不做矢量光栅化。shape 段仍必须保留上述整形和度量表；当前先保守保留 `OS/2`，等行度量改为明确的资源字段后再评估。
 
@@ -232,9 +228,9 @@ typedef struct hbe_io_t {
 
 ```c
 hbe_fontlet_t* f = hbe_fontlet_open(&io);
-uint32_t count = hbe_fontlet_shape(f, utf8, utf8_len, NULL, 0);
+uint32_t count = hbe_fontlet_shape(f, utf8, utf8_len, NULL, NULL, 0);  /* script=NULL 自动判断 */
 hbe_glyph_t glyphs[MAX_GLYPHS];
-count = hbe_fontlet_shape(f, utf8, utf8_len, glyphs, MAX_GLYPHS);
+count = hbe_fontlet_shape(f, utf8, utf8_len, "Arab", glyphs, MAX_GLYPHS);
 for (uint32_t i = 0; i < count; ++i) {
     const hbe_atlas_entry_t* e = hbe_fontlet_glyph_entry(f, glyphs[i].gid);
     const uint8_t* bitmap = hbe_fontlet_glyph_bitmap(f, glyphs[i].gid);
@@ -245,7 +241,9 @@ for (uint32_t i = 0; i < count; ++i) {
 hbe_fontlet_close(f);
 ```
 
-`hbe_glyph_t` 是 MCU 与上层排版/绘制之间的稳定边界：`cluster` 给断行/回溯使用，`advance` 移动 pen，`offset` 处理所有脚本的 mark/cursive/reordering，atlas 的 `bx/by` 再把 bitmap 放到 pen 上。正式固件应由上层先做脚本、方向、语言和 BiDi run 分段；HarfBuzz 不是完整 BiDi 或行排版引擎。`hbe_fontlet_shape_ex()` 会先调用 `hb_buffer_guess_segment_properties()`，再用调用方提供的 script/direction/language 覆盖对应字段；`hbe_fontlet_shape()` 是 options=NULL 的简化入口。
+`hbe_glyph_t` 是 MCU 与上层排版/绘制之间的稳定边界：`cluster` 给断行/回溯使用，`advance` 移动 pen，`offset` 处理所有脚本的 mark/cursive/reordering，atlas 的 `bx/by` 再把 bitmap 放到 pen 上。正式固件应由上层先做脚本、方向、语言和 BiDi run 分段；HarfBuzz 不是完整 BiDi 或行排版引擎。
+
+整形入口只有一个：`hbe_fontlet_shape(fontlet, utf8, len, script, glyphs, max)`。`script` 传 `NULL`、空串或 `NONE`（不区分大小写）时先 `hb_buffer_guess_segment_properties()` 自动判断；传 ISO 15924 标签（恰好 4 个 ASCII 字母，如 `Arab`/`Deva`/`Sinh`/`Khmr`）则强制指定；非法格式或未知标签返回 0，不悄悄回退。`glyphs` 为 NULL 时只返回数量，方便先查再取。
 
 ### Demo 必须验证的内容
 
@@ -261,18 +259,11 @@ hbe_fontlet_close(f);
 
 ## ROM / RAM 测量
 
-构建 `hbe_runtime_size` 会生成 footprint probe、linker map 和 `hbe_runtime_footprint.txt`：
-
-```bash
-cmake --build build --target hbe_runtime_size
-```
-
-报告定义：
+`hbe_runtime_size` 探针目标已按需求删除；测量方法保留如下（正式 MCU 工程用 `arm-none-eabi-size`/厂商 `size` + 真实 linker script，对链接了 `hbe_core` + `hbe_harfbuzz_runtime` 的固件镜像测量）：
 
 - **ROM** = `text + data`；代码和只读数据在 Flash，初始化数据的镜像也要放在 Flash；
-- **RAM** = `data + bss`；这是静态 RAM，不包含 HarfBuzz 运行时动态分配的峰值；
-- 同时记录 runtime archive 字节数、probe 文件字节数和 linker map 文件字节数；debug section 不计入 ROM/RAM；
-- 当前 MinGW 基线（Debug 可执行文件，仅作相对基线）为：`text=357480`、`data=2448`、`bss=2880`，即 `ROM=359928 B`、`static RAM=5328 B`。正式 MCU 测量必须使用 `arm-none-eabi-size`/厂商 `size` 和真实 linker script；应额外记录 HarfBuzz allocator/arena 的运行峰值。
+- **RAM** = `data + bss`；这是静态 RAM，不包含 HarfBuzz 运行时动态分配的峰值；debug section 不计入；
+- 历史 MinGW 基线（仅作相对参考，裁剪配置已改为 config 头等价 HB_TINY-minus-metrics，数值会有出入）：`ROM=359928 B`、`static RAM=5328 B`。
 
 当前 runtime 仍会由 `hbe_fontlet_open`、HarfBuzz buffer、shape plan/cache 使用动态分配，因此 **5,328 B 不是完整运行时 RAM 上限**。下一步要增加 caller-owned allocator/fixed arena，并在 probe 中记录 peak allocation；在此之前不能宣称 heap-free。
 
@@ -283,10 +274,10 @@ cmake --build build --target hbe_runtime_size
 - [x] 生成工具（块1）可用：`hbe_pack` CLI + `hbe_gui` GUI（导入字体→整字体转换→网格预览），核心 `packer.{hpp,cpp}` headless 可复用
 - [x] 运行时库（块2）最小闭环已通：`hbe_core`（`hbe_fontlet_open`→`hbe_fontlet_shape`→查 atlas→blit），`examples/hbe_demo` 用 mmap 载体验证 `Hello` 渲染成像素正确
 - [x] GUI 换 Dear ImGui（+独立 GLFW），raylib 已移除；GUI/demo 共用 `imgui_app` 骨架 + `mmap_io` 载体
-- [x] Host HarfBuzz 与 MCU runtime 构建边界已拆开：`HBE_BUILD_HOST` / `HBE_BUILD_RUNTIME`；runtime-only 配置不带 subset、FreeType、GUI
-- [x] MCU runtime 初版使用 `HB_TINY`，保留全部 OpenType shaper、UCD、GSUB/GPOS/GDEF 与完整 glyph positions
-- [x] `hbe_fontlet_shape_ex()` 支持脚本/方向/语言覆盖；默认仍使用 `hb_buffer_guess_segment_properties()`
+- [x] CMake 收敛：去掉 `HBE_BUILD_HOST`/`HBE_BUILD_RUNTIME` 开关，一次配置产出全部目标；顶层 CMakeLists 分栏（全局设置 / hbe 裁剪 runtime / 完整 HarfBuzz / FreeType / Dear ImGui / 子目录）
+- [x] 裁剪宏收进代码：`hbe_harfbuzz_runtime` 直接编译 `harfbuzz.cc`，CMake 只定义一个全局宏 `HB_CONFIG_OVERRIDE_H`；裁剪清单= `src/harfembed/inc/hbe_harfbuzz_config.h`（HB_TINY 等价展开，去掉 HB_NO_METRICS）；wrapper 文件已删
+- [x] 整形接口收敛为一个：`hbe_fontlet_shape(fontlet, utf8, len, script, glyphs, max)`；script=NULL/空/NONE 自动判断，ISO 15924 标签强制指定，非法返回 0；`hbe_fontlet_shape_ex()`/options 结构已删
 - [x] `hbe_fontlet_shape()` 已输出 `gid/cluster/x/y_advance/x/y_offset`；demo 只走该公共接口
-- [x] `hbe_runtime_size` 生成 ROM/RAM、archive、probe、map 测量报告
+- [x] demo 添加脚本输入框（NONE=自动），冒烟测试通过（metrics/shaping/非法脚本拒绝）
 - [ ] 正式 MCU allocator/fixed arena：去除或约束 runtime 动态分配，记录峰值 RAM
 - [ ] 行排版（断行/对齐/基线，用 glyph positions 与 hb_font 度量）+ 多字体/回退链（等真需要时）

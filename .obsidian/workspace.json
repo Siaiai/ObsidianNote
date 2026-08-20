@@ -47,8 +47,7 @@
               "title": "260728harfbuzz移植"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +109,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "4eac89cb2e16be17",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -220,10 +220,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "ad0e49c87df84c0a",
+  "active": "0b1af131e24550cf",
   "lastOpenFiles": [
-    "Home.components",
     "工作/[[SR3读卡器]]/260804SR3框架整理.md",
+    "Home.components",
     "工作/GUI/260728harfbuzz移植.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/SR3读卡器/260814读卡器测试.md",
