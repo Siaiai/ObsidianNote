@@ -257,7 +257,101 @@ hbe_fontlet_close(f);
 
 完整 HarfBuzz 的结果由外部网站查看，demo 不再加载原始字体、不链接 host HarfBuzz、不启动 worker，也不提供未整形对照。这样 demo 的整形、位置输出和 fontlet 访问都与单片机一致，编译产物也只依赖 `hbe_core`、裁剪 runtime 和 host 图形显示壳。
 
-## ROM / RAM 测量
+## 如何使用 hbe
+
+### 1. 生成 fontlet
+
+在 PC 主机上使用 `hbe_pack` 把源字体和目标字号转换成 `.fontlet`：
+
+```bash
+cmake -S . -B build
+cmake --build build --target hbe_pack
+build/src/fontlet_generator_cli/hbe_pack.exe input.ttf 16 output.fontlet
+```
+
+实际 CLI 参数以 `hbe_pack --help` 为准。生成物包含 shape 字体、gid 对应的 atlas entry 和 1-bit bitmap；MCU 不需要原始 TTF/OTF，也不需要 FreeType。
+
+### 2. 提供资源载体
+
+hbe 不知道资源在 Flash、QSPI、文件系统还是 C 数组中。固件实现 `hbe_io_t`，至少提供一个回调；`map` 成功时 hbe 零拷贝借用指针，失败后才尝试 `read`：
+
+```c
+static const void *fontlet_map(const hbe_io_t *io,
+                               uint32_t offset, uint32_t size) {
+    const uint8_t *base = (const uint8_t *)io->user_data;
+    /* 资源总长度由应用保存；这里省略边界变量 fontlet_size。 */
+    if ((uint64_t)offset + size > fontlet_size) return NULL;
+    return base + offset;
+}
+
+static int fontlet_read(const hbe_io_t *io, uint32_t offset,
+                        void *dst, uint32_t size) {
+    const uint8_t *src = (const uint8_t *)fontlet_map(io, offset, size);
+    if (!src) return 0;
+    memcpy(dst, src, size);
+    return 1;
+}
+
+hbe_io_t io = {
+    .user_data = (void *)fontlet_bytes,
+    .map = fontlet_map,
+    .read = fontlet_read,
+};
+```
+
+对于 Flash const 数组，`map` 直接返回数组地址；对于不支持内存映射的存储，只实现 `read`，hbe 会为 shape/atlas/bitmap 段分配回退缓冲。资源和回调上下文必须一直有效到 `hbe_fontlet_close()`。
+
+### 3. 打开、整形和绘制
+
+```c
+hbe_fontlet_t *fontlet = hbe_fontlet_open(&io);
+if (!fontlet) {
+    /* magic/version/段边界/io/内存失败 */
+    return ERROR;
+}
+
+/* 第一次只取数量；第二次把结果写入调用方自己的数组。 */
+uint32_t count = hbe_fontlet_shape(fontlet, utf8, utf8_len,
+                                    NULL, NULL, 0);
+hbe_glyph_t glyphs[MAX_GLYPHS];
+if (count > MAX_GLYPHS) count = MAX_GLYPHS;
+count = hbe_fontlet_shape(fontlet, utf8, utf8_len,
+                          NULL, glyphs, count);
+
+int32_t ascent, descent, line_gap;
+hbe_fontlet_metrics(fontlet, &ascent, &descent, &line_gap);
+int32_t pen_x = 0;
+int32_t baseline_y = ascent;
+for (uint32_t i = 0; i < count; ++i) {
+    const hbe_atlas_entry_t *entry =
+        hbe_fontlet_glyph_entry(fontlet, glyphs[i].gid);
+    const uint8_t *bitmap =
+        hbe_fontlet_glyph_bitmap(fontlet, glyphs[i].gid);
+    if (!entry || !bitmap) {
+        pen_x += glyphs[i].x_advance;
+        continue;
+    }
+
+    /* 屏幕 y 向下；atlas bx/by 是离线光栅化 bearing。 */
+    int32_t left = pen_x + glyphs[i].x_offset + entry->bx;
+    int32_t top = baseline_y - glyphs[i].y_offset - entry->by;
+    uint32_t stride = HBE_BIT_ROW_STRIDE(entry->w);
+    for (uint16_t row = 0; row < entry->h; ++row) {
+        for (uint16_t col = 0; col < entry->w; ++col) {
+            uint8_t bit = (uint8_t)((bitmap[row * stride + (col >> 3)]
+                                   >> (7 - (col & 7))) & 1U);
+            if (bit) framebuffer_set_pixel(left + col, top + row, 1);
+        }
+    }
+    pen_x += glyphs[i].x_advance;
+    /* 竖排或其他方向按对应 advance 处理；hbe 不负责 BiDi/断行。 */
+}
+
+hbe_fontlet_close(fontlet);
+```
+
+`script` 传 `NULL`、空串或 `NONE` 时自动猜测；传 `"Arab"`、`"Sinh"`、`"Deva"` 等四字母 ISO 15924 标签时显式指定。`cluster` 是输入 UTF-8 的字节偏移，不是 Unicode code point。当前实现仍使用 heap（fontlet 句柄、HarfBuzz buffer/cache，read 回退时还有段缓冲）；禁止 heap 的正式固件需要另行接入受控 allocator/fixed arena。
+
 
 `hbe_runtime_size` 探针目标已按需求删除；测量方法保留如下（正式 MCU 工程用 `arm-none-eabi-size`/厂商 `size` + 真实 linker script，对链接了 `hbe_core` + `hbe_harfbuzz_runtime` 的固件镜像测量）：
 
