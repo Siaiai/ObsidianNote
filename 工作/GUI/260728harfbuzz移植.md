@@ -432,7 +432,33 @@ uint32_t hbe_bidi_paragraph(const char *utf8, int32_t utf8_len,
 PC 单元表驱动：`"العربية 2024"`、`"قيمة 50%"`、`"abc العربية 123 xyz"`、混合括号、纯 RTL、纯 LTR；对照 run 边界/级数与 fribidi 或 HarfBuzz guess 结果。MCU 后接：hbe_layout 输出喂 1-bit blit，替换现在的逐 run 表格 demo。
 
 
-`hbe_runtime_size` 探针目标已按需求删除；测量方法保留如下（正式 MCU 工程用 `arm-none-eabi-size`/厂商 `size` + 真实 linker script，对链接了 `hbe_core` + `hbe_harfbuzz_runtime` 的固件镜像测量）：
+## F4A0 移植与实测基线（2026-08）
+
+### 仓库挂接（非子模块）
+
+- **harfembed 是权威 git 仓库**（`D:/Projects/harfembed`，master）。运行时/生成器/评估 demo + 完整 third-party（harfbuzz/freetype/imgui）均已提交。harfbuzz 只跟踪 `src/` + 顶层构建文件（白名单，避免 90M test/perf），freetype/imgui 全量。
+- **F4A0 内 `02_Middleware/harfembed/` = 普通 `git clone`**（带 `.git`，VS Code 当嵌套仓库自动处理，不是 submodule）。**host 构建也直接在这个文件夹进行**（已验证：`cmake configure` + `hbe_pack` 链接成功）。更新：在源仓库提交后，F4A0 里 `git pull`。
+- F4A0 自有 glue 在 `02_Middleware/hbe/`：`src/hbe_harfbuzz_runtime.cc`（代码内定义 `HB_CONFIG_OVERRIDE_H` + `HB_CUSTOM_MALLOC`，相对 `#include "../../harfembed/src/third_party/harfbuzz/src/harfbuzz.cc"`）+ `src/hbe_mem_probe.c` + `inc/hbe_mem_probe.h`。库头与 `hbe_fontlet.c` 走克隆路径。
+- EIDE 只编译三件：克隆里 `harfembed/src/harfembed/src/hbe_fontlet.c` + `hbe_harfbuzz_runtime.cc` + `hbe_mem_probe.c`；**不要把 harfbuzz/src 下的 .cc 逐个加入工程**。
+- `.sh` 文件整体不入库（本机 DLP 代理会破坏 .sh，已排除；Windows host 也用不到）。
+
+### MCU 评估 demo（`04_Application/app/app_hbe_demo.c`）
+
+- fontlet 以 `static const uint8_t[]` 编译进 app，不接 flash/XIP：`fontlet_data.h`（Sinhala，34KB / 595 字形）、`fontlet_arabic_data.h`（Arabic，101KB / 1711 字形）。
+- 输出走 **USART1 阻塞发送**（等 TX FIFO 空 + DMA + 最后一个字节发出；RingFifo 最大 free 是 `fifo_size-1`）。短文本逐 glyph 表格（gid/cluster/advance/offset）；长文本只报 count + 计时。
+- 时间 = **DWT CYCCNT**（每轮清零 + DSB/ISB + 关中断），输出 first / hot avg / min / max（us 3 位小数）。
+- 内存实测：**静态 RAM** = `Image$$RW_IRAM1$$ZI$$Limit − Image$$RW_IRAM1$$Base`；**ROM** = `Image$$ER_IROM1$$Limit`（LR==ER 时 armlink 不生成 `Load$$` 符号，须用 ER）；**堆峰值** = `HB_CUSTOM_MALLOC` 挂钩（`hb_malloc_impl/calloc/realloc/free` 头记账统计当前/峰值）。
+
+### 实测基线（AC6 armclang，Cortex-M4F @ 240MHz，-O1，microlib）
+
+- **构建体积**：Code=225,724　RO=217,436　RW=6,276　ZI=26,276 → **ROM≈443.5KB / static RAM≈31.8KB**（含 Sinhala+Arabic 两个 fontlet 数据 ~136KB ÷ BSP/driver ÷ HarfBuzz 裁剪 runtime 三大块）。
+- **整形耗时（首次）**：`සිංහල`(5 字形) ≈35,454 cyc ≈ **147.7µs**；`office`(6 字形) ≈23,998 cyc ≈ **100µs**。hot avg 与更长文本待上板打印。
+- **microlib A/B**：默认 newlib ROM=451.4KB → microlib=443.5KB（**−7.9KB，保留**）。HarfBuzz 裁剪版是无 RTTI/异常/STL 的 C++ 子集，与 microlib 兼容；唯一风险是应用层 `vsnprintf` 的格式位要在上板时确认真没被裁。
+- 动态堆峰值：`hbe_mem_probe` 已在 demo 输出 heap-now/peak，数值待上板。
+
+## ROM / RAM 测量
+
+`hbe_runtime_size` 探针目标已按需求删除；测量方法保留如下（F4A0 实测基线见上节，为本项目正式数值；MinGW 历史值仅作相对参考）：
 
 - **ROM** = `text + data`；代码和只读数据在 Flash，初始化数据的镜像也要放在 Flash；
 - **RAM** = `data + bss`；这是静态 RAM，不包含 HarfBuzz 运行时动态分配的峰值；debug section 不计入；
@@ -448,7 +474,7 @@ PC 单元表驱动：`"العربية 2024"`、`"قيمة 50%"`、`"abc العر
 - [x] 运行时库（块2）最小闭环已通：`hbe_core`（`hbe_fontlet_open`→`hbe_fontlet_shape`→查 atlas→blit），`examples/hbe_demo` 用 mmap 载体验证 `Hello` 渲染成像素正确
 - [x] GUI 换 Dear ImGui（+独立 GLFW），raylib 已移除；GUI/demo 共用 `imgui_app` 骨架 + `mmap_io` 载体
 - [x] CMake 收敛：去掉 `HBE_BUILD_HOST`/`HBE_BUILD_RUNTIME` 开关，一次配置产出全部目标；顶层 CMakeLists 分栏（全局设置 / hbe 裁剪 runtime / 完整 HarfBuzz / FreeType / Dear ImGui / 子目录）
-- [x] 裁剪宏收进代码：`hbe_harfbuzz_runtime` 直接编译 `harfbuzz.cc`，CMake 只定义一个全局宏 `HB_CONFIG_OVERRIDE_H`；裁剪清单= `src/harfembed/inc/hbe_harfbuzz_config.h`（HB_TINY 等价展开，去掉 HB_NO_METRICS）；wrapper 文件已删
+- [x] 裁剪宏收进代码：主仓库 `hbe_harfbuzz_runtime` 直接编译 `harfbuzz.cc`，CMake 只定义一个全局宏 `HB_CONFIG_OVERRIDE_H`；裁剪清单= `src/harfembed/inc/hbe_harfbuzz_config.h`（HB_TINY 等价展开，去掉 HB_NO_METRICS）；主仓库 wrapper 已删，F4A0 因 EIDE 无编译宏透传另用自有 wrapper（见「F4A0 移植与实测基线」）
 - [x] 整形接口收敛为一个：`hbe_fontlet_shape(fontlet, utf8, len, script, glyphs, max)`；script=NULL/空/NONE 自动判断，ISO 15924 标签强制指定，非法返回 0；`hbe_fontlet_shape_ex()`/options 结构已删
 - [x] `hbe_fontlet_shape()` 已输出 `gid/cluster/x/y_advance/x/y_offset`；demo 只走该公共接口
 - [x] demo 添加脚本输入框（NONE=自动），冒烟测试通过（metrics/shaping/非法脚本拒绝）
@@ -459,3 +485,6 @@ PC 单元表驱动：`"العربية 2024"`、`"قيمة 50%"`、`"abc العر
 - [ ] F4A0 接线：hbe_layout 输出喂 1-bit blit，替换现在的逐 run 表格 demo
 - [ ] 多行排版里的多字体/回退链（等真需要时）；bidi 3 层与完整 UBA 暂不做
 - [x] F4A0 换 microlib（AC6 use-microLIB=true）实测 ROM −7.9 KB（451→443 KB），保留
+- [x] F4A0 评估 demo 打通：USART1 阻塞输出 glyph 表格 + DWT 测时（first/hot avg/min/max）+ 静态 RAM(RW+ZI)/ROM(ER_IROM1) + 堆峰值(HB_CUSTOM_MALLOC) 实测 + 长短文本样例（见「F4A0 移植与实测基线」）
+- [x] harfembed 转为权威 git 仓库（运行时/生成器/demo + third-party 全量提交）；F4A0 以非子模块 clone 到 02_Middleware/harfembed；host 构建可直接在该文件夹执行（configure + hbe_pack 已验证）
+- [ ] 上板跑 F4A0 打印：hot avg 时间与更长文本耗时、heap-now/peak 数值、microlib 下 vsnprintf 输出正确性
