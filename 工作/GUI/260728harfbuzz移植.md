@@ -352,6 +352,85 @@ hbe_fontlet_close(fontlet);
 
 `script` 传 `NULL`、空串或 `NONE` 时自动猜测；传 `"Arab"`、`"Sinh"`、`"Deva"` 等四字母 ISO 15924 标签时显式指定。`cluster` 是输入 UTF-8 的字节偏移，不是 Unicode code point。当前实现仍使用 heap（fontlet 句柄、HarfBuzz buffer/cache，read 回退时还有段缓冲）；禁止 heap 的正式固件需要另行接入受控 allocator/fixed arena。
 
+## 排版与最小 bidi v1（规格）
+
+### 已定目标（评审结论）
+
+- **布局档位**：多行自动换行（cluster 安全）+ 左/中/右对齐 + 超长省略。
+- **bidi 档位**：基础双向——阿拉伯/希伯来文本里夹的**连续数字/Latin 段**按 LTR 隔离到独立 run，仍用同一字体；不做 3 层以上嵌套。
+- **模块归属**：hbe_layout 作为库内 C 模块（PC/MCU 同一份代码，纯计算、零载体）。
+- **script 保留可选**：自动/显式二者差约 200~300B ROM、RAM +0，保留作为小语种/回退的手动出口。
+- **shape 不入 direction/language**：bidi 只管 run 切分与顺序，每个 run 交给 hbe_fontlet_shape 时全自动（HarfBuzz 对单 run 能自行判断方向并正确给出左右序字形）。
+
+### hbe_bidi v1 行为（UAX9 最小子集）
+
+做：
+
+- 段落基向判定（首强字符，等价 UAX9 P2/P3 简化）；
+- 逐字符双向类别：R/AL/L/EN/AN/ES/CS/ET/ON/WS/NSM……（数据来自 UCD，经 `hbe_char_bidi_class()` 暴露，不泄露符号表）；
+- 弱型 / 中性 / NSM 简化为深度 ≤2（只出现 level 0/1/2，即“RTL 段落里嵌一段 LTR 数字”，不做 LTR 里嵌 RTL 再嵌 LTR 的三层）；
+- 配对括号/镜像标点小表（RTL run 内 `(`↔`)` 等）；
+- **输出按绘制视觉序**的 run 列表，方向随 run——消费端(layout)只需从左到右摆放即可，不用自己做 L2 重排。
+
+不做（记 not-supported，暂不实现）：3 层嵌套、isolates/embeddings 完整规则、首强之外的混合复杂段落、精确 LRU 排版重排序。
+
+### run 输出契约
+
+```text
+输出: hbe_run_t[] ，已按“绘制时从左到右”排序（视觉序）。
+每个 run: {byte_start, byte_len, bidi_level}
+        level 偶数 = LTR，奇数 = RTL。
+绘制: 按 run 顺序从左到右摆放；每个 run 用 hbe_fontlet_shape(NULL script)，
+      其返回的 glyph 序列就是该 run 的描画序——
+        LTR run: pen += x_advance，逐字形像平时一样；
+        RTL run: pen −= x_advance（位置的绝对值方向由 level 决定）。
+```
+
+### API 草案（hbe_layout.h，纯 C）
+
+```c
+typedef enum hbe_direction_t {
+    HBE_DIR_AUTO = 0,   /* 由首强字符判定 */
+    HBE_DIR_LTR,
+    HBE_DIR_RTL
+} hbe_direction_t;
+
+typedef struct hbe_run_t {
+    uint32_t   byte_start;   /* UTF-8 字节偏移 */
+    uint32_t   byte_len;     /* UTF-8 字节长 */
+    uint8_t    bidi_level;   /* v1: 0/1/2；偶数 LTR，奇数 RTL */
+    hbe_direction_t direction;
+} hbe_run_t;
+
+/* 无堆：调用方提供逐码点工作区。classes/levels 长须 >= text 的 codepoint 数。 */
+typedef struct hbe_bidi_scratch_t {
+    uint8_t  *classes;    /* 每 cp 1 字节 bidi class */
+    uint8_t  *levels;     /* 每 cp 1 字节 level */
+    uint32_t  cp_capacity;
+} hbe_bidi_scratch_t;
+
+/* 返回 run 数（视觉序）。输入非法或 scratch 不足返回 0。 */
+uint32_t hbe_bidi_paragraph(const char *utf8, int32_t utf8_len,
+                            hbe_direction_t base,
+                            const hbe_bidi_scratch_t *scratch,
+                            hbe_run_t *runs, uint32_t max_runs);
+```
+
+内存预算：bidi 无堆、无额外字体。scratch ≈ cp_count×(1 class + 1 level) 字节；128 码点 ≈ 256B 静态/栈。数字/Latin 段不换字体（阿拉伯 fontlet 已有数字字形），RAM 不翻倍。
+
+### hbe_layout（后继模块轮廓）
+
+1. 用 `hbe_char_script()` 把 bidi 给的 run 再按脚本细切（同一 run 内换脚本要拆）；
+2. 选 fontlet：script/lang → 资源由**固件回调**提供（hbe 不内置字体表）；
+3. 按行 shape（HB buffer 复用，见“RAM 收敛”）；
+4. 换行：只在 cluster 边界断（不拆组合字形、不跨连字），断后重 shape 该行；
+5. 对齐 + 超长省略号；
+6. 输出 `{gid, x, y, fontlet}` 坐标表 → 直接喂 1-bit blit。
+
+### 验证（host 原型先行）
+
+PC 单元表驱动：`"العربية 2024"`、`"قيمة 50%"`、`"abc العربية 123 xyz"`、混合括号、纯 RTL、纯 LTR；对照 run 边界/级数与 fribidi 或 HarfBuzz guess 结果。MCU 后接：hbe_layout 输出喂 1-bit blit，替换现在的逐 run 表格 demo。
+
 
 `hbe_runtime_size` 探针目标已按需求删除；测量方法保留如下（正式 MCU 工程用 `arm-none-eabi-size`/厂商 `size` + 真实 linker script，对链接了 `hbe_core` + `hbe_harfbuzz_runtime` 的固件镜像测量）：
 
@@ -374,4 +453,9 @@ hbe_fontlet_close(fontlet);
 - [x] `hbe_fontlet_shape()` 已输出 `gid/cluster/x/y_advance/x/y_offset`；demo 只走该公共接口
 - [x] demo 添加脚本输入框（NONE=自动），冒烟测试通过（metrics/shaping/非法脚本拒绝）
 - [ ] 正式 MCU allocator/fixed arena：去除或约束 runtime 动态分配，记录峰值 RAM
-- [ ] 行排版（断行/对齐/基线，用 glyph positions 与 hb_font 度量）+ 多字体/回退链（等真需要时）
+- [x] 排版目标/API 边界定稿：多行换行 + 基础 bidi(v1) + 库内 C 模块；shape 保持 script 可选、不引 direction/language（见「排版与最小 bidi v1」）
+- [ ] hbe_layout host 原型：bidi v1（视觉序 run 输出）+ hbe_char_script 细切 + cluster 安全换行/对齐/省略
+- [ ] 落定 hbe_char_script / hbe_char_bidi_class 探测接口（UCD 已编译，只公开查询）
+- [ ] F4A0 接线：hbe_layout 输出喂 1-bit blit，替换现在的逐 run 表格 demo
+- [ ] 多行排版里的多字体/回退链（等真需要时）；bidi 3 层与完整 UBA 暂不做
+- [x] F4A0 换 microlib（AC6 use-microLIB=true）实测 ROM −7.9 KB（451→443 KB），保留
