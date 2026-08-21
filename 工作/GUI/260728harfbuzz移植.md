@@ -146,10 +146,99 @@ harfembed/  （磁盘文件夹仍叫 harfbuzz_lite）
 ├── LICENSE                             # 占位，许可证未定
 └── README.md
 
+## fontlet 文件布局
+
+一个 `.fontlet` = 一个字体 + 一个烘焙字号，是**四段连续的小端 blob**，固定顺序、无 padding（字节契约与编译期断言见 `src/harfembed/inc/fontlet_format.h`）：
+
+```mermaid
+block-beta
+    columns 1
+    h0["header<br/>32B · magic / version / ppem / 段偏移"]
+    s0["shape 字体段<br/>shape_size B · 喂 hb_face · 不透明字节流"]
+    a0["atlas entry[]<br/>8B × glyph_count · gid = 下标（稠密索引）"]
+    b0["bitmap pool<br/>bitmap_size B · 1-bit 字形像素 · gid 升序连续"]
+```
+
+### header（32B）
+
+```mermaid
+block-beta
+    columns 3
+    h1["magic<br/>u32"]
+    h2["version<br/>u16"]
+    h3["ppem<br/>u16"]
+    h4["glyph_count<br/>u32"]
+    h5["shape_offset<br/>u32"]
+    h6["shape_size<br/>u32"]
+    h7["atlas_offset<br/>u32"]
+    h8["bitmap_offset<br/>u32"]
+    h9["bitmap_size<br/>u32"]
+```
+
+| 偏移 | 类型 | 字段 | 含义 |
+|---|---|---|---|
+| 0x00 | u32 | magic | `'FNTL'`，LE 读作 `0x4C544E46` |
+| 0x04 | u16 | version | = 1 |
+| 0x06 | u16 | ppem | 烘焙字号 (px)：reader 必须按此字号整形，advance 才与位图宽一致 |
+| 0x08 | u32 | glyph_count | 字形数 = atlas entry 数 |
+| 0x0C | u32 | shape_offset | shape 字体段起始 |
+| 0x10 | u32 | shape_size | shape 字体段字节数 |
+| 0x14 | u32 | atlas_offset | atlas entry[] 起始 |
+| 0x18 | u32 | bitmap_offset | bitmap pool 起始（= atlas 末尾） |
+| 0x1C | u32 | bitmap_size | bitmap pool 字节数 |
+
+### atlas entry（8B/条，稠密索引）
+
+```mermaid
+block-beta
+    columns 4
+    e1["w<br/>u16"]
+    e2["h<br/>u16"]
+    e3["bx<br/>i16"]
+    e4["by<br/>i16"]
+```
+
+| 偏移 | 类型 | 字段 | 含义 |
+|---|---|---|---|
+| 0x00 | u16 | w | 位图宽 (px) |
+| 0x02 | u16 | h | 位图高 (px) |
+| 0x04 | i16 | bx | 相对 pen 的 x 偏移，可负 |
+| 0x06 | i16 | by | 相对 pen 的 y 偏移，可负 |
+
+`entry[i]` 对应 `gid == i`（hb-subset 默认 remap 到 0，`.notdef` 保留为 gid 0）。**advance / offset 来自 `hb_shape`，不入 atlas**；缺字回退 gid 0（.notdef）。
+
+### bitmap pool（1-bit）
+
+```text
+gid 0            gid 1            gid 2            gid 3   …
+┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐
+│ stride×h B   ││ stride×h B   ││ stride×h B   ││ stride×h B   │
+└──────────────┘└──────────────┘└──────────────┘└──────────────┘
+
+每个字形 = ceil(w/8) × h 字节；行内 MSB-first、无 padding；字形间不跨字节打包。
+
+一行位图，例 w = 9 px（stride = ceil(9/8) = 2 B）：
+  byte0 = 像素 0–7                  byte1 = 像素 8 + 7 bit 填 0
+  ┌────────────────────────────┐  ┌────────────────────────────┐
+  │ b7 b6 b5 b4 b3 b2 b1 b0    │  │ b7 b6 b5 b4 b3 b2 b1 b0    │
+  │ p0 p1 p2 p3 p4 p5 p6 p7    │  │ p8  0  0  0  0  0  0  0    │
+  └────────────────────────────┘  └────────────────────────────┘
+
+定位 gid 的位图：
+  offset(gid) = bitmap_offset + Σ_{i<gid} ceil(atlas[i].w / 8) × atlas[i].h
+```
+
+### 四条约定（约束设计与 reader）
+
+- **小端**：x86 / ARM Cortex-M 都是小端，直接按原始字节读，不做字节交换。
+- **无 padding**：字段排序保证自然对齐，`sizeof(header)==32`、`sizeof(entry)==8` 有编译期断言兜底。
+- **不存 advance/offset**：排版量是动态整形的产物、不是贴图量；存了反而每字形多 16B。
+- **稠密索引**：entry O(1) 定位；位图按 gid 累加定位，1-bit 位图很小，线性累加即可。
+
 ## 关键决策
 
 - **命名**：项目 `harfembed`；前缀 `hbe_`（`hbe_fontlet_open` / `hbe_fontlet_t`）；命名空间 `harfembed::`；fontlet 文件按脚本标签命名（`latn`/`hani`/`hans`/`arab`/`common`）。
-- **fontlet**：一个 fontlet = 一个字体 + 一个烘焙字号。blob（最小版）= header(32B) + shape字体 + atlas entry[] + bitmap pool，四段连续。magic `'FNTL'`（0x4C544E46），小端，结构体自然对齐无 padding。位深 **1-bit**，行 stride `ceil(w/8)`、MSB-first、无 padding。atlas entry 稠密索引（gid = 下标，保留原始 GID），当前为 **8B/条**（w/h 为 u16，bx/by 为 i16 可负），位图按 gid 顺序连续存储；advance/offset 来自 `hb_shape` 不入 atlas；缺字回退 gid 0（.notdef）。manifest（行度量）最小版暂缺，运行时问 `hb_font` 拿。字节契约见 `src/harfembed/inc/fontlet_format.h`。
+- **fontlet**：一个 fontlet = 一个字体 + 一个烘焙字号。blob（最小版）= header(32B) + shape字体 + atlas entry[] + bitmap pool，四段连续。magic `'FNTL'`（0x4C544E46），小端，结构体自然对齐无 padding。位深 **1-bit**，行 stride `ceil(w/8)`、MSB-first、无 padding。atlas entry 稠密索引（gid = 下标，保留原始 GID），当前为 **8B/条**（w/h 为 u16，bx/by 为 i16 可负），位图按 gid 顺序连续存储；advance/offset 来自 `hb_shape` 不入 atlas；缺字回退 gid 0（.notdef）。manifest（行度量）最小版暂缺，运行时问 `hb_font` 拿。字节契约见 `src/harfembed/inc/fontlet_format.h`，可视化布局见「fontlet 文件布局」。
 - **io 接口**：harfembed 只暴露 `hbe_io_t`（`map` 零拷贝 / `read` 兜底），**不带任何载体实现**，载体归仿真/固件自带。`map` 只用于不透明字节流（font blob、位图）；需要 MCU 严格对齐时，header/atlas 结构应通过 `read`/`memcpy` 读入对齐局部。
 - **载体**（MCU，未定）：Flash const 数组（默认）/ QSPI mmap / LittleFS·FatFS。库不选载体，靠 port 切换；hbe 不依赖文件系统、GUI 或 mmap。
 - **多语言**：多个 fontlet + 生成的注册表 `fontlets_registry.h`，固件按 lang 查；库不掺和多语言逻辑。
