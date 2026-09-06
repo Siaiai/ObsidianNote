@@ -7,7 +7,9 @@
       "WebFetch(domain:blog.csdn.net)",
       "WebSearch",
       "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://blog.csdn.net/u014354882/article/details/159733867\")",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(cd /tmp)",
+      "Bash(python3)"
     ]
   }
 }
