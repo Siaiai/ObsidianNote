@@ -241,7 +241,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-09-06T06:43:37.127Z",
+      "updateAt": "2026-09-06T16:17:19.550Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [
@@ -266,7 +266,7 @@
                   "id": "798eac02-f844-4687-9a2e-dc5573f447bb",
                   "name": "完成时间",
                   "type": "string",
-                  "value": "{{date:YYYY-MM-DD HH:mm:ss}}",
+                  "value": "{{date:YYYY-MM-DDTHH:mm:ss}}",
                   "valueSource": "constant",
                   "modifier": "replaceValue"
                 },
@@ -320,6 +320,7 @@
           "id": "进行",
           "name": "进行",
           "items": [
+            "工作/SR3读卡器/260804旧SR2SR3整理.md",
             "工作/GUI/260728harfbuzz移植.md",
             "工作/分拣操作面板/260401S3分拣面板.md"
           ]
