@@ -13,10 +13,10 @@
             "state": {
               "type": "form-view",
               "state": {
-                "file": "资源/form-flow插件/form/工作任务.cform"
+                "file": "资源/form-flow插件/form/个人笔记.cform"
               },
               "icon": "gantt-chart",
-              "title": "工作任务"
+              "title": "个人笔记"
             }
           }
         ]
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "资源/form-flow插件/form/工作任务.cform",
+                "file": "资源/form-flow插件/form/个人笔记.cform",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -193,12 +193,25 @@
   },
   "active": "8db39d97234651d2",
   "lastOpenFiles": [
-    "skills/kb-workflow/SKILL.md",
-    "资源/form-flow插件/form/工作任务.cform",
-    "工作/SR3读卡器/260804旧SR2SR3整理.md",
-    "工作/S3吊挂控制器/260109衣架吊篮模式设置修改为176.md",
     "资源/form-flow插件/form/个人任务.cform",
+    "资源/form-flow插件/form/工作任务.cform",
+    "资源/form-flow插件/form/个人笔记.cform",
     "资源/form-flow插件/form/个人项目.cform",
+    "资源/form-flow插件/form/学习笔记.cform",
+    "工作/S3吊挂控制器/260331增加手拍接口.md",
+    "工作/S3全封闭轨道/260119出站缓存阀和出站阀联动.md",
+    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
+    "工作/S3全封闭轨道/260319全封闭读卡出站.md",
+    "工作/S3全封闭轨道/260331全封闭广播.md",
+    "工作/S3全封闭轨道/260714自动出衣增加时长-定制.md",
+    "工作/SR3读卡器/260802旧SR2读卡器行为.md",
+    "工作/SR3读卡器/260802旧SR3读卡器行为.md",
+    "工作/SR3读卡器/260804旧SR2SR3整理.md",
+    "工作/SR3读卡器/260814读卡器测试.md",
+    "260804SR3框架整理.md",
+    "工作/S3吊挂控制器/260107二代工序查询BUG追踪.md",
+    "skills/kb-workflow/SKILL.md",
+    "工作/S3吊挂控制器/260109衣架吊篮模式设置修改为176.md",
     "工作/吊挂操作面板/260106超范围字符显示.md",
     "个人/Tooless/260906Tooless规划.md",
     "CLAUDE.md",
@@ -208,25 +221,13 @@
     "个人/Tooless",
     "资源/form-flow插件/form/工作项目.cform",
     "个人/项目/Tooless.md",
-    "资源/form-flow插件/form/个人笔记.cform",
     "Home.components",
     "工作/吊挂操作面板/260206本地记录语言.md",
     "工作/SR3读卡器/260906读卡器同步给软件.md",
-    "工作/SR3读卡器/260814读卡器测试.md",
     "工作/项目/SR3读卡器.md",
-    "工作/S3全封闭轨道/260319全封闭读卡出站.md",
-    "工作/S3全封闭轨道/260119出站缓存阀和出站阀联动.md",
-    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/S3吊挂控制器/260105工序号识别2代.md",
     "工作/S3吊挂控制器/260331增加手拍接口-SIA-R9000P.md",
-    "工作/S3吊挂控制器/260331增加手拍接口.md",
-    "工作/S3吊挂控制器/260107二代工序查询BUG追踪.md",
-    "工作/SR3读卡器/260802旧SR3读卡器行为.md",
     "工作/项目/S3全封闭轨道.md",
-    "工作/S3全封闭轨道/260714自动出衣增加时长-定制.md",
-    "工作/SR3读卡器/260802旧SR2读卡器行为.md",
-    "工作/分拣操作面板/260401S3串口协议.md",
-    "日志/2026-08-12 .md",
     "工作/[[吊挂操作面板]],[[S3全封闭轨道]]"
   ]
 }
