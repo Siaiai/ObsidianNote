@@ -11,14 +11,12 @@
             "id": "8db39d97234651d2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "form-view",
               "state": {
-                "file": "个人/Tooless/260906Tooless规划.md",
-                "mode": "source",
-                "source": false
+                "file": "资源/form-flow插件/form/个人任务.cform"
               },
-              "icon": "lucide-file",
-              "title": "260906Tooless规划"
+              "icon": "gantt-chart",
+              "title": "个人任务"
             }
           }
         ]
@@ -161,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "个人/Tooless/260906Tooless规划.md",
+                "file": "资源/form-flow插件/form/个人任务.cform",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -193,17 +191,23 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "b829724642963ce8",
+  "active": "8db39d97234651d2",
   "lastOpenFiles": [
-    "资源/form-flow插件/form/个人任务.cform",
-    "个人/Tooless/260906Tooless规划.md",
-    "个人/Tooless",
     "资源/form-flow插件/form/工作任务.cform",
+    "资源/form-flow插件/form/个人项目.cform",
+    "资源/form-flow插件/form/个人任务.cform",
+    "工作/吊挂操作面板/260106超范围字符显示.md",
+    "个人/Tooless/260906Tooless规划.md",
+    "CLAUDE.md",
+    "skills/kb-workflow/SKILL.md",
+    "skills/kb-workflow",
+    "skills",
+    "规范.md",
+    "个人/Tooless",
     "资源/form-flow插件/form/工作项目.cform",
     "个人/项目/Tooless.md",
     "资源/form-flow插件/form/个人笔记.cform",
     "Home.components",
-    "资源/form-flow插件/form/个人项目.cform",
     "工作/吊挂操作面板/260206本地记录语言.md",
     "工作/S3吊挂控制器/260109衣架吊篮模式设置修改为176.md",
     "工作/SR3读卡器/260906读卡器同步给软件.md",
@@ -223,12 +227,6 @@
     "工作/SR3读卡器/260802旧SR2读卡器行为.md",
     "工作/分拣操作面板/260401S3串口协议.md",
     "日志/2026-08-12 .md",
-    "日志/2026-08-11.md",
-    "工作/[[吊挂操作面板]]/260906增加电机节点配置.md",
-    "工作/项目/吊挂操作面板.md",
-    "工作/[[吊挂操作面板]],[[S3全封闭轨道]]/260906支轨阀设置增加到全封闭中.md",
-    "工作/[[吊挂操作面板]],[[S3全封闭轨道]]",
-    "工作/[[吊挂操作面板]]",
-    "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html"
+    "工作/[[吊挂操作面板]],[[S3全封闭轨道]]"
   ]
 }

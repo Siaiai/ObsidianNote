@@ -70,7 +70,10 @@
       "label": "项目",
       "type": "property_value_suggestion",
       "propertyName": "项目",
-      "required": true
+      "required": true,
+      "defaultValue": [
+        "Tooless"
+      ]
     },
     {
       "id": "1360b351-64e9-424a-89d2-536e7f005826",
