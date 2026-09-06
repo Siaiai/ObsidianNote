@@ -193,6 +193,8 @@
   },
   "active": "8db39d97234651d2",
   "lastOpenFiles": [
+    "skills/kb-workflow/references/init-guide.md",
+    "skills/kb-workflow/references",
     "资源/form-flow插件/form/个人任务.cform",
     "资源/form-flow插件/form/工作任务.cform",
     "资源/form-flow插件/form/个人笔记.cform",
@@ -221,13 +223,11 @@
     "个人/Tooless",
     "资源/form-flow插件/form/工作项目.cform",
     "个人/项目/Tooless.md",
-    "Home.components",
     "工作/吊挂操作面板/260206本地记录语言.md",
     "工作/SR3读卡器/260906读卡器同步给软件.md",
     "工作/项目/SR3读卡器.md",
     "工作/S3吊挂控制器/260105工序号识别2代.md",
     "工作/S3吊挂控制器/260331增加手拍接口-SIA-R9000P.md",
-    "工作/项目/S3全封闭轨道.md",
-    "工作/[[吊挂操作面板]],[[S3全封闭轨道]]"
+    "工作/项目/S3全封闭轨道.md"
   ]
 }
