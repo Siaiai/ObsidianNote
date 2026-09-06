@@ -4,7 +4,10 @@
       "Bash(grep -l \"mainproject\" /c/Users/SiaZha/OneDrive/01_Note/02_ObsidianNoteWithComponents/工作/项目/代码/*.md 2>/dev/null || true)",
       "Bash(python3 -c \"import yaml; print\\('yaml ok'\\)\")",
       "Bash(python -c \"import yaml; print\\('yaml ok'\\)\")",
-      "WebFetch(domain:blog.csdn.net)"
+      "WebFetch(domain:blog.csdn.net)",
+      "WebSearch",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://blog.csdn.net/u014354882/article/details/159733867\")",
+      "Read(//tmp/**)"
     ]
   }
 }
