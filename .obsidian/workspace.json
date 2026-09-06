@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9845d21abbc8910e",
+        "id": "d3bfcd10a37bc002",
         "type": "tabs",
         "children": [
           {
-            "id": "08c7bfe93b67235b",
+            "id": "8db39d97234651d2",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "markdown",
               "state": {
-                "file": "Home.components"
+                "file": "个人/Tooless/260906Tooless规划.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "260906Tooless规划"
             }
           }
         ]
@@ -159,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "个人/Tooless/260906Tooless规划.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -191,10 +193,18 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "08c7bfe93b67235b",
+  "active": "b829724642963ce8",
   "lastOpenFiles": [
-    "工作/吊挂操作面板/260206本地记录语言.md",
+    "资源/form-flow插件/form/个人任务.cform",
+    "个人/Tooless/260906Tooless规划.md",
+    "个人/Tooless",
+    "资源/form-flow插件/form/工作任务.cform",
+    "资源/form-flow插件/form/工作项目.cform",
+    "个人/项目/Tooless.md",
+    "资源/form-flow插件/form/个人笔记.cform",
     "Home.components",
+    "资源/form-flow插件/form/个人项目.cform",
+    "工作/吊挂操作面板/260206本地记录语言.md",
     "工作/S3吊挂控制器/260109衣架吊篮模式设置修改为176.md",
     "工作/SR3读卡器/260906读卡器同步给软件.md",
     "工作/SR3读卡器/260814读卡器测试.md",
@@ -212,22 +222,13 @@
     "工作/S3全封闭轨道/260714自动出衣增加时长-定制.md",
     "工作/SR3读卡器/260802旧SR2读卡器行为.md",
     "工作/分拣操作面板/260401S3串口协议.md",
-    "资源/form-flow插件/form/工作任务.cform",
     "日志/2026-08-12 .md",
     "日志/2026-08-11.md",
     "工作/[[吊挂操作面板]]/260906增加电机节点配置.md",
     "工作/项目/吊挂操作面板.md",
     "工作/[[吊挂操作面板]],[[S3全封闭轨道]]/260906支轨阀设置增加到全封闭中.md",
-    "工作/[[吊挂操作面板]]/260906面板取消缓存1满端口.md",
     "工作/[[吊挂操作面板]],[[S3全封闭轨道]]",
-    "工作/[[吊挂操作面板]]/260906提示消息增加电机节点不在线.md",
-    "工作/[[吊挂操作面板]]/260906面板广播增加参数类型.md",
     "工作/[[吊挂操作面板]]",
-    "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html",
-    "工作/[[SR3读卡器]]/attachments/em4095-classify-state.html",
-    "工作/[[SR3读卡器]]/attachments/em4095-overview.html",
-    "工作/[[SR3读卡器]]/attachments/em4095-decode-flow.html",
-    "工作/[[SR3读卡器]]/attachments/em4095-decode-flow.html.tmp.29228.79740abd4be9",
-    "工作/[[SR3读卡器]]/attachments/em4095-statemachine.html.tmp.29228.327f82c7790e"
+    "工作/[[SR3读卡器]]/attachments/em4095-verify-vote.html"
   ]
 }
