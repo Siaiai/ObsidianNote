@@ -13,10 +13,10 @@
             "state": {
               "type": "form-view",
               "state": {
-                "file": "资源/form-flow插件/form/个人任务.cform"
+                "file": "资源/form-flow插件/form/工作任务.cform"
               },
               "icon": "gantt-chart",
-              "title": "个人任务"
+              "title": "工作任务"
             }
           }
         ]
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "资源/form-flow插件/form/个人任务.cform",
+                "file": "资源/form-flow插件/form/工作任务.cform",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -193,13 +193,15 @@
   },
   "active": "8db39d97234651d2",
   "lastOpenFiles": [
+    "skills/kb-workflow/SKILL.md",
     "资源/form-flow插件/form/工作任务.cform",
-    "资源/form-flow插件/form/个人项目.cform",
+    "工作/SR3读卡器/260804旧SR2SR3整理.md",
+    "工作/S3吊挂控制器/260109衣架吊篮模式设置修改为176.md",
     "资源/form-flow插件/form/个人任务.cform",
+    "资源/form-flow插件/form/个人项目.cform",
     "工作/吊挂操作面板/260106超范围字符显示.md",
     "个人/Tooless/260906Tooless规划.md",
     "CLAUDE.md",
-    "skills/kb-workflow/SKILL.md",
     "skills/kb-workflow",
     "skills",
     "规范.md",
@@ -209,10 +211,8 @@
     "资源/form-flow插件/form/个人笔记.cform",
     "Home.components",
     "工作/吊挂操作面板/260206本地记录语言.md",
-    "工作/S3吊挂控制器/260109衣架吊篮模式设置修改为176.md",
     "工作/SR3读卡器/260906读卡器同步给软件.md",
     "工作/SR3读卡器/260814读卡器测试.md",
-    "工作/SR3读卡器/260804旧SR2SR3整理.md",
     "工作/项目/SR3读卡器.md",
     "工作/S3全封闭轨道/260319全封闭读卡出站.md",
     "工作/S3全封闭轨道/260119出站缓存阀和出站阀联动.md",
