@@ -12,52 +12,15 @@ init 模式按当前 AI 工具自动生成对应的固定段。各工具的**固
 
 `<vault 路径>` 替换为用户提供的 vault 根目录绝对路径（如 `C:\Users\SiaZh\OneDrive\SIA的obsidian系统`）。
 
-## 各工具落点
+## 各工具落点（AI 现场自导）
 
-| 工具 | 全局位置 | 工程位置 | 格式要点 |
-|---|---|---|---|
-| Claude Code | `~/.claude/CLAUDE.md` | 工程根 `CLAUDE.md` 或 `AGENTS.md` | 无 frontmatter，直接追加段落 |
-| opencode / Codex | `~/.config/opencode/AGENTS.md` | 工程根 `AGENTS.md` | 无 frontmatter |
-| Cursor | `~/.cursor/rules/*.mdc` | `.cursor/rules/knowledge.mdc` | 需要 frontmatter：`---\ndescription: 知识库维护\n---` |
-| GitHub Copilot | — | 工程根 `AGENTS.md` | 同 opencode |
+不预先写死对照表。init 时 AI 按自己所在环境探测即可：每个 AI 工具都知道自己认什么配置文件（Claude Code 认 `CLAUDE.md`、opencode/Codex/Copilot 认 `AGENTS.md`、Cursor 认 `.cursor/rules/*.mdc`）、需要什么 frontmatter 格式、以及读写 vault 是否需要额外授权放行。现场探测比写死的对照表更准确，且不会因工具版本更新而过时。
 
-## 授权放行（opencode）
+**不变的三条**：
 
-opencode 访问 vault 需要在 `~/.config/opencode/opencode.json`（或工程 config）中放行外部目录：
-
-```jsonc
-{
-  "permission": {
-    "external_directory": {
-      "<vault 路径，反斜杠改斜杠>/**": "allow"
-    }
-  },
-  "references": {
-    "obsidian": {
-      "path": "<vault 路径>",
-      "description": "个人知识库：项目文档、任务笔记、设计文档、ADR"
-    }
-  }
-}
-```
-
-例如 vault 为 `C:\Users\SiaZh\OneDrive\SIA的obsidian系统` 时：
-
-```jsonc
-{
-  "permission": {
-    "external_directory": {
-      "C:/Users/SiaZh/OneDrive/SIA的obsidian系统/**": "allow"
-    }
-  },
-  "references": {
-    "obsidian": {
-      "path": "C:/Users/SiaZh/OneDrive/SIA的obsidian系统",
-      "description": "个人知识库：项目文档、任务笔记、设计文档、ADR"
-    }
-  }
-}
-```
+- 固定段**正文统一**（见上），只做指针，不复制规范
+- 写入前先检查是否已存在（**幂等**）
+- 需要授权才能读写 vault 时，主动告知用户放行 vault 目录
 
 ## 工程级 AGENTS.md 的追加内容
 
