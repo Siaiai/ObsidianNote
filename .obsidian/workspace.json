@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "SKILL"
             }
+          },
+          {
+            "id": "d7e4ca0a913bb8d5",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -161,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "skills/kb-workflow/SKILL.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -193,10 +206,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "9abc5ec57af58dd8",
+  "active": "d7e4ca0a913bb8d5",
   "lastOpenFiles": [
-    "skills/kb-workflow/references/init-guide.md",
     "skills/kb-workflow/SKILL.md",
+    "skills/kb-workflow/references/init-guide.md",
     "个人/Tooless/260907Tooless规划.md",
     "工作/S3全封闭轨道/260331全封闭广播.md",
     "工作/SR3读卡器/260804旧SR2SR3整理.md",
