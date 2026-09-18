@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3c9f30ba61f3257a",
+        "id": "9c456bf233942c11",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "工作/SR3读卡器/260918读卡器固定衣架号沟通.md",
+            "file": "工作/吊挂操作面板/260918V061面板增加功能.md",
             "mode": "source",
             "source": false
           },
           "icon": "lucide-file",
-          "title": "260918读卡器固定衣架号沟通"
+          "title": "260918V061面板增加功能"
         }
       },
       {
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/SR3读卡器/260918读卡器固定衣架号沟通.md",
+                "file": "工作/吊挂操作面板/260918V061面板增加功能.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -217,11 +217,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "3c9f30ba61f3257a",
+  "active": "9c456bf233942c11",
   "lastOpenFiles": [
     "Home.components",
-    "工作/吊挂操作面板/260918V061面板增加功能.md",
     "工作/SR3读卡器/260918读卡器固定衣架号沟通.md",
+    "工作/吊挂操作面板/260918V061面板增加功能.md",
     "工作/S3吊挂控制器/260918立冠架构整理.md",
     "工作/S3吊挂控制器/260105工序号识别2代.md",
     "工作/S3吊挂控制器/附件/desktop.ini",
