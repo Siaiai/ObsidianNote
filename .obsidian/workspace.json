@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "dd6cd85768db4a8c",
+        "id": "abfdd69b28153c1c",
         "type": "tabs",
         "children": [
           {
-            "id": "4150b834d69ca954",
+            "id": "5c594673da648e8a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "components-file-view",
               "state": {
-                "file": "工作/S3吊挂控制器/260918立冠架构整理.md",
-                "mode": "source",
-                "source": false
+                "file": "Home.components"
               },
-              "icon": "lucide-file",
-              "title": "260918立冠架构整理"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
         ]
@@ -162,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/S3吊挂控制器/260918立冠架构整理.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -205,10 +203,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "4150b834d69ca954",
+  "active": "5c594673da648e8a",
   "lastOpenFiles": [
-    "工作/S3吊挂控制器/260105工序号识别2代.md",
+    "工作/SR3读卡器/260918读卡器固定衣架号沟通.md",
     "工作/S3吊挂控制器/260918立冠架构整理.md",
+    "工作/S3吊挂控制器/260105工序号识别2代.md",
     "工作/S3吊挂控制器/附件/desktop.ini",
     "工作/S3吊挂控制器/附件/工作/S3吊挂控制器/附件",
     "工作/S3吊挂控制器/附件/工作/S3吊挂控制器",
