@@ -2,7 +2,7 @@
   "attachPath": {
     "attachmentRoot": "附件",
     "saveAttE": "obsFolder",
-    "attachmentPath": "${notepath}/附件/",
+    "attachmentPath": "附件/",
     "attachFormat": "${md5}",
     "type": "GLOBAL"
   },

@@ -9,6 +9,7 @@
   "useMarkdownLinks": true,
   "readableLineLength": false,
   "strictLineBreaks": true,
-  "attachmentFolderPath": "资源/附件",
-  "alwaysUpdateLinks": true
+  "attachmentFolderPath": "./",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "root"
 }
