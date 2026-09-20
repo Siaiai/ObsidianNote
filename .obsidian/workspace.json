@@ -75,8 +75,7 @@
               "title": "260918读卡器固定衣架号沟通"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -259,10 +258,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "34043de0bc10ef81",
+  "active": "233ebfe5ce9ee379",
   "lastOpenFiles": [
-    "Home.components",
     "工作/SR3读卡器/260804SR3框架整理.md",
+    "Home.components",
     "工作/SR3读卡器/260918读卡器固定衣架号沟通.md",
     "资源/form-flow插件/form/个人任务.cform",
     "工作/SR3读卡器/260804旧SR2SR3整理.md",
