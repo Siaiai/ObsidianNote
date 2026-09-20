@@ -33,8 +33,7 @@
               "title": "260918读卡器固定衣架号沟通"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -218,10 +217,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "8a3fa666c9e23eb0",
+  "active": "5c594673da648e8a",
   "lastOpenFiles": [
-    "Home.components",
     "工作/SR3读卡器/260918读卡器固定衣架号沟通.md",
+    "Home.components",
     "工作/吊挂操作面板/260918V061面板增加功能.md",
     "工作/GUI/260728harfbuzz移植.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
