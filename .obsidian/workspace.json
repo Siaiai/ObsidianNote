@@ -4,20 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "31e7b8d9dc031e75",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "工作/吊挂操作面板/260918V061面板增加功能.md",
-            "mode": "source",
-            "source": false
-          },
-          "icon": "lucide-file",
-          "title": "260918V061面板增加功能"
-        }
-      },
-      {
         "id": "3689da352b491b6a",
         "type": "tabs",
         "children": [
@@ -216,13 +202,13 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "31e7b8d9dc031e75",
+  "active": "319f003f8dc7a400",
   "lastOpenFiles": [
+    "工作/吊挂操作面板/260918V061面板增加功能.md",
     "Home.components",
     "日志/2026-09-28 .md",
     "资源/form-flow插件/form/工作任务.cform",
     "资源/form-flow插件/form/个人任务.cform",
-    "工作/吊挂操作面板/260918V061面板增加功能.md",
     "资源/form-flow插件/form/个人笔记.cform",
     "个人/出行/2026/9/28.md",
     "个人/出行/2026/9",
