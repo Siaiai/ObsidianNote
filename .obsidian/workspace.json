@@ -33,8 +33,7 @@
               "title": "2026-09-28"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -217,10 +216,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "dfdc5dc4647c318d",
+  "active": "319f003f8dc7a400",
   "lastOpenFiles": [
-    "Home.components",
     "日志/2026-09-28 .md",
+    "Home.components",
     "资源/form-flow插件/form/个人笔记.cform",
     "个人/出行/2026/9/28.md",
     "个人/出行/2026/9",
