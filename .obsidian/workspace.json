@@ -59,8 +59,7 @@
               "title": "260918V061面板增加功能"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -243,8 +242,9 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "6909b25d44320626",
+  "active": "319f003f8dc7a400",
   "lastOpenFiles": [
+    "工作/吊挂操作面板/260106超范围字符显示.md",
     "Home.components",
     "工作/吊挂操作面板/260918V061面板增加功能.md",
     "日志/2026-09-28 .md",
