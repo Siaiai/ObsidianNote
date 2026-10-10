@@ -4,6 +4,20 @@
     "type": "split",
     "children": [
       {
+        "id": "53e00989392b2c40",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "工作/SR3读卡器/260804SR3框架整理.md",
+            "mode": "source",
+            "source": false
+          },
+          "icon": "lucide-file",
+          "title": "260804SR3框架整理"
+        }
+      },
+      {
         "id": "3689da352b491b6a",
         "type": "tabs",
         "children": [
@@ -87,8 +101,7 @@
               "title": "260918V061面板增加功能"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -271,7 +284,7 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "9ac6d4369f78dc0b",
+  "active": "53e00989392b2c40",
   "lastOpenFiles": [
     "Home.components",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
