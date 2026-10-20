@@ -4,146 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "3689da352b491b6a",
+        "id": "33f594c45fa07ecc",
         "type": "tabs",
         "children": [
           {
-            "id": "319f003f8dc7a400",
-            "type": "leaf",
-            "state": {
-              "type": "components-file-view",
-              "state": {
-                "file": "Home.components"
-              },
-              "icon": "gantt-chart",
-              "title": "Home"
-            }
-          },
-          {
-            "id": "4458c263baccd104",
+            "id": "1da4bd12c45fb569",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/GUI/面板本地多语言整形方案.md",
+                "file": "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "面板本地多语言整形方案"
+              "title": "261020立冠RGV料箱站位硬件参考"
             }
           },
           {
-            "id": "fdcb12400602fdeb",
+            "id": "4a758a95d5164c70",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260128全封闭轨道新加机制与待测试项"
-            }
-          },
-          {
-            "id": "adb1e0eb6689a75f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/GUI/面板本地多语言整形方案.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "面板本地多语言整形方案"
-            }
-          },
-          {
-            "id": "351ba023aa03272f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/SR3读卡器/260804SR3框架整理.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260804SR3框架整理"
-            }
-          },
-          {
-            "id": "9ac6d4369f78dc0b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260128全封闭轨道新加机制与待测试项"
-            }
-          },
-          {
-            "id": "cf7c1de85b8f0a83",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/GUI/面板本地多语言整形方案.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "面板本地多语言整形方案"
-            }
-          },
-          {
-            "id": "6909b25d44320626",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/吊挂操作面板/260918V061面板增加功能.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260918V061面板增加功能"
-            }
-          },
-          {
-            "id": "2b5f85cc2518398a",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.14.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.14.4"
-            }
-          },
-          {
-            "id": "6ba4496814992552",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/吊挂操作面板/260918V061面板增加功能.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260918V061面板增加功能"
+              "type": "drawio-editor-view",
+              "state": {},
+              "icon": "shapes",
+              "title": "Draw.io Editor"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -326,14 +215,19 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "319f003f8dc7a400",
+  "active": "4a758a95d5164c70",
   "lastOpenFiles": [
-    "工作/GUI/面板本地多语言整形方案.md",
     "Home.components",
+    "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
+    "工作/S3吊挂控制器/260918立冠架构整理.md",
+    "资源/drawio/1785915796819.drawio.svg",
+    "工作/S3吊挂控制器/附件/34BC1FD78ADB2319378D0971F284C126.svg",
+    "工作/吊挂操作面板/260918V061面板增加功能.md",
+    "工作/S3吊挂控制器/附件/81ACDB524EAC9518BAB7136CA7916E91.png",
+    "工作/GUI/面板本地多语言整形方案.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/SR3读卡器/260804SR3框架整理.md",
     "工作/吊挂操作面板/260106超范围字符显示.md",
-    "工作/吊挂操作面板/260918V061面板增加功能.md",
     "日志/2026-09-28 .md",
     "资源/form-flow插件/form/工作任务.cform",
     "资源/form-flow插件/form/个人任务.cform",
@@ -360,11 +254,7 @@
     "skills/kb-workflow/references/init-guide.md",
     "skills/kb-workflow/SKILL.md",
     "260707_SiaZhang2003@hotmail.com_components_license.md",
-    "日志/2026-07-14.md",
-    "日志/2026-04-21.md",
     "工作/S3吊挂控制器/附件/desktop.ini",
-    "工作/S3吊挂控制器/附件/138E9D5BD025EDF3B95B6FF90495EB5C.png",
-    "工作/S3吊挂控制器/附件/34BC1FD78ADB2319378D0971F284C126.svg",
-    "资源/drawio/1785915796819.drawio.svg"
+    "工作/S3吊挂控制器/附件/138E9D5BD025EDF3B95B6FF90495EB5C.png"
   ]
 }
