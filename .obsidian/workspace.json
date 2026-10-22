@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "33f594c45fa07ecc",
+        "id": "42d72570dd1f9541",
         "type": "tabs",
         "children": [
           {
-            "id": "1da4bd12c45fb569",
+            "id": "707b955c7a567fe1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "components-file-view",
               "state": {
-                "file": "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
-                "mode": "source",
-                "source": false
+                "file": "Home.components"
               },
-              "icon": "lucide-file",
-              "title": "261020立冠RGV料箱站位硬件参考"
-            }
-          },
-          {
-            "id": "4a758a95d5164c70",
-            "type": "leaf",
-            "state": {
-              "type": "drawio-editor-view",
-              "state": {},
-              "icon": "shapes",
-              "title": "Draw.io Editor"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -215,10 +202,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "4a758a95d5164c70",
+  "active": "707b955c7a567fe1",
   "lastOpenFiles": [
-    "Home.components",
     "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
+    "工作/S3吊挂控制器/附件/C68F8EA9A874D145CDFD3622DE83A8C8.svg",
+    "Home.components",
     "工作/S3吊挂控制器/260918立冠架构整理.md",
     "资源/drawio/1785915796819.drawio.svg",
     "工作/S3吊挂控制器/附件/34BC1FD78ADB2319378D0971F284C126.svg",
