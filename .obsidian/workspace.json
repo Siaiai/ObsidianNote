@@ -18,8 +18,23 @@
               "icon": "gantt-chart",
               "title": "Home"
             }
+          },
+          {
+            "id": "0a8a553fc9c772db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260128全封闭轨道新加机制与待测试项"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -202,18 +217,18 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "707b955c7a567fe1",
+  "active": "0a8a553fc9c772db",
   "lastOpenFiles": [
+    "Home.components",
+    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
     "工作/S3吊挂控制器/附件/C68F8EA9A874D145CDFD3622DE83A8C8.svg",
-    "Home.components",
     "工作/S3吊挂控制器/260918立冠架构整理.md",
     "资源/drawio/1785915796819.drawio.svg",
     "工作/S3吊挂控制器/附件/34BC1FD78ADB2319378D0971F284C126.svg",
     "工作/吊挂操作面板/260918V061面板增加功能.md",
     "工作/S3吊挂控制器/附件/81ACDB524EAC9518BAB7136CA7916E91.png",
     "工作/GUI/面板本地多语言整形方案.md",
-    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/SR3读卡器/260804SR3框架整理.md",
     "工作/吊挂操作面板/260106超范围字符显示.md",
     "日志/2026-09-28 .md",
