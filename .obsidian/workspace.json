@@ -4,6 +4,20 @@
     "type": "split",
     "children": [
       {
+        "id": "b03e428127946596",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "工作/分拣操作面板/260401S3分拣面板.md",
+            "mode": "source",
+            "source": false
+          },
+          "icon": "lucide-file",
+          "title": "260401S3分拣面板"
+        }
+      },
+      {
         "id": "42d72570dd1f9541",
         "type": "tabs",
         "children": [
@@ -33,8 +47,7 @@
               "title": "260128全封闭轨道新加机制与待测试项"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -217,7 +230,7 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "0a8a553fc9c772db",
+  "active": "b03e428127946596",
   "lastOpenFiles": [
     "Home.components",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
@@ -252,12 +265,4 @@
     "资源/模板/日志模板-day.md",
     "工作/吊挂操作面板/260117面板按键消抖优化.md",
     "领域/工作.md",
-    "资源/form-flow插件/form/个人项目.cform",
-    "资源/form-flow插件/form/工作项目.cform",
-    "skills/kb-workflow/references/init-guide.md",
-    "skills/kb-workflow/SKILL.md",
-    "260707_SiaZhang2003@hotmail.com_components_license.md",
-    "工作/S3吊挂控制器/附件/desktop.ini",
-    "工作/S3吊挂控制器/附件/138E9D5BD025EDF3B95B6FF90495EB5C.png"
-  ]
-}
+    "资源/
