@@ -20,6 +20,20 @@
             }
           },
           {
+            "id": "4c7b649f314cffc9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/GUI/260707GUI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260707GUI"
+            }
+          },
+          {
             "id": "f477f9052b1740fb",
             "type": "leaf",
             "state": {
@@ -313,9 +327,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "f477f9052b1740fb",
+  "active": "4c7b649f314cffc9",
   "lastOpenFiles": [
     "Home.components",
+    "工作/GUI/260707GUI.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
     "工作/S3吊挂控制器/附件/C748B960D61AD2DDB3DDEC085675CE38.jpg",
@@ -358,7 +373,6 @@
     "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/工作项目.cform",
     "skills/kb-workflow/references/init-guide.md",
-    "skills/kb-workflow/SKILL.md",
     "工作/S3吊挂控制器/附件/desktop.ini"
   ]
 }
