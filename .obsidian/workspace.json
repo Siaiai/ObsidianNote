@@ -20,6 +20,20 @@
             }
           },
           {
+            "id": "c06a43adfc1a2a0e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/分拣操作面板/260401S3分拣面板.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260401S3分拣面板"
+            }
+          },
+          {
             "id": "4c7b649f314cffc9",
             "type": "leaf",
             "state": {
@@ -327,11 +341,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "4c7b649f314cffc9",
+  "active": "c06a43adfc1a2a0e",
   "lastOpenFiles": [
     "Home.components",
-    "工作/GUI/260707GUI.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
+    "工作/GUI/260707GUI.md",
     "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
     "工作/S3吊挂控制器/附件/C748B960D61AD2DDB3DDEC085675CE38.jpg",
     "工作/S3吊挂控制器/附件/5F6369333ECCB978D3EA479008A05C50.jpg",
