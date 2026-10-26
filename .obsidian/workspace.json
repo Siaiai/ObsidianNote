@@ -20,6 +20,20 @@
             }
           },
           {
+            "id": "f477f9052b1740fb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/分拣操作面板/260401S3分拣面板.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260401S3分拣面板"
+            }
+          },
+          {
             "id": "ea340fbca38e483a",
             "type": "leaf",
             "state": {
@@ -299,8 +313,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "ea340fbca38e483a",
+  "active": "f477f9052b1740fb",
   "lastOpenFiles": [
+    "Home.components",
+    "工作/分拣操作面板/260401S3分拣面板.md",
+    "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
     "工作/S3吊挂控制器/附件/C748B960D61AD2DDB3DDEC085675CE38.jpg",
     "工作/S3吊挂控制器/附件/5F6369333ECCB978D3EA479008A05C50.jpg",
     "工作/S3吊挂控制器/附件/D80057B3B9EC0505D882F1B6733EC0C1.jpg",
@@ -311,10 +328,6 @@
     "工作/S3吊挂控制器/附件/F6E9057E0B2FD289DA96914A2F17F82F.jpg",
     "工作/S3吊挂控制器/附件/030B4377AB491EC676083F3CA7BB1A26.jpg",
     "工作/S3吊挂控制器/附件/8FF4C2954B0177C28C401860045B3064.jpg",
-    "工作/S3吊挂控制器/附件/E08B7B0B3409C6628FE016C4BCC48B83.jpg",
-    "Home.components",
-    "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
-    "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/吊挂操作面板/260918V061面板增加功能.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/S3吊挂控制器/260918立冠架构整理.md",
