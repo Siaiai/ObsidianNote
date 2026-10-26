@@ -26,8 +26,8 @@
               "type": "markdown",
               "state": {
                 "file": "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
-                "mode": "source",
-                "source": false
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
               "title": "261020立冠RGV料箱站位硬件参考"
@@ -301,6 +301,12 @@
   },
   "active": "ea340fbca38e483a",
   "lastOpenFiles": [
+    "工作/S3吊挂控制器/附件/C748B960D61AD2DDB3DDEC085675CE38.jpg",
+    "工作/S3吊挂控制器/附件/5F6369333ECCB978D3EA479008A05C50.jpg",
+    "工作/S3吊挂控制器/附件/D80057B3B9EC0505D882F1B6733EC0C1.jpg",
+    "工作/S3吊挂控制器/附件/A6081B4B84667762B2DED60E3CC07513.jpg",
+    "工作/S3吊挂控制器/附件/E6CCE35524C0F625A382FE1360835C0F.jpg",
+    "工作/S3吊挂控制器/附件/0F83FF90846F29DC2D1F156D2574676F.jpg",
     "工作/S3吊挂控制器/附件/342205BF49B2161F759FFB327AE05962.jpg",
     "工作/S3吊挂控制器/附件/F6E9057E0B2FD289DA96914A2F17F82F.jpg",
     "工作/S3吊挂控制器/附件/030B4377AB491EC676083F3CA7BB1A26.jpg",
@@ -311,11 +317,7 @@
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/吊挂操作面板/260918V061面板增加功能.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
-    "工作/S3吊挂控制器/附件/C68F8EA9A874D145CDFD3622DE83A8C8.svg",
     "工作/S3吊挂控制器/260918立冠架构整理.md",
-    "资源/drawio/1785915796819.drawio.svg",
-    "工作/S3吊挂控制器/附件/34BC1FD78ADB2319378D0971F284C126.svg",
-    "工作/S3吊挂控制器/附件/81ACDB524EAC9518BAB7136CA7916E91.png",
     "工作/GUI/面板本地多语言整形方案.md",
     "工作/SR3读卡器/260804SR3框架整理.md",
     "工作/吊挂操作面板/260106超范围字符显示.md",
@@ -344,7 +346,6 @@
     "资源/form-flow插件/form/工作项目.cform",
     "skills/kb-workflow/references/init-guide.md",
     "skills/kb-workflow/SKILL.md",
-    "工作/S3吊挂控制器/附件/desktop.ini",
-    "工作/S3吊挂控制器/附件/138E9D5BD025EDF3B95B6FF90495EB5C.png"
+    "工作/S3吊挂控制器/附件/desktop.ini"
   ]
 }
