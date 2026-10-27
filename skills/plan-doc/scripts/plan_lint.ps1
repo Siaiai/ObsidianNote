@@ -45,7 +45,7 @@ function Get-TargetFiles {
             Get-ChildItem -LiteralPath $item.FullName -Filter *.md -File -Recurse -Force |
                 Where-Object {
                     $_.FullName -notmatch '[\\/]\.(obsidian|git|trash)[\\/]' -and
-                    $_.FullName -notmatch '[\\/](资源|skills)[\\/]'
+                    $_.FullName -notmatch '[\\/](node_modules|build|dist|out|target|vendor|skills)[\\/]'
                 } |
                 Where-Object {
                     if (-not $PlanOnly) { return $true }
@@ -133,25 +133,38 @@ function Test-PlanFile {
         $inFence[$i] = $fence
     }
 
+    $inComment = New-Object 'bool[]' $lines.Count
+    $comment = $false
+    for ($i = 0; $i -lt $lines.Count; $i++) {
+        if ($lines[$i] -match '<!--') { $comment = $true }
+        $inComment[$i] = $comment
+        if ($lines[$i] -match '-->') { $comment = $false }
+    }
+
     $fm = Parse-FrontMatter -Lines $lines
     $bodyStart = 0
     if ($null -ne $fm) { $bodyStart = [int]$fm['__end'] + 1 }
 
-    $timeRe = '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$'
-    if ($null -eq $fm) {
-        Add-Issue 'ERROR' 'FM-001' $File 1 'missing or unclosed frontmatter'
+    $timeReStrict = '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$'
+    $timeReLoose = '^\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2}(:\d{2})?)?$'
+    $obsidianMode = $false
+    if ($null -ne $fm) {
+        foreach ($k in @('领域', '项目', '任务', '状态', '创建时间', '截止时间', '完成时间', '相关任务')) {
+            if ($fm.ContainsKey($k)) { $obsidianMode = $true; break }
+        }
     }
-    else {
+
+    if ($null -ne $fm -and $obsidianMode) {
         $created = Get-FmText $fm '创建时间'
         if (-not $created) {
             Add-Issue 'ERROR' 'FM-002' $File 2 'missing 创建时间'
         }
-        elseif ($created -notmatch $timeRe) {
+        elseif ($created -notmatch $timeReStrict) {
             Add-Issue 'ERROR' 'FM-002' $File 2 "创建时间 must be YYYY-MM-DDTHH:mm:ss, got '$created'"
         }
         foreach ($k in @('截止时间', '完成时间')) {
             $v = Get-FmText $fm $k
-            if ($v -and $v -notmatch $timeRe) {
+            if ($v -and $v -notmatch $timeReStrict) {
                 Add-Issue 'ERROR' 'FM-002' $File 2 "$k must be YYYY-MM-DDTHH:mm:ss, got '$v'"
             }
         }
@@ -183,6 +196,29 @@ function Test-PlanFile {
             Add-Issue 'WARN' 'FM-007' $File 2 '相关任务 should be an empty line, not "" item'
         }
     }
+    elseif ($null -ne $fm) {
+        $status = Get-FmText $fm 'status'
+        $done = Get-FmText $fm 'completed'
+        foreach ($k in @('created', 'updated', 'completed')) {
+            $v = Get-FmText $fm $k
+            if ($v -and $v -notmatch $timeReLoose) {
+                Add-Issue 'WARN' 'FM-002' $File 2 "$k should be YYYY-MM-DD or ISO datetime, got '$v'"
+            }
+        }
+        if ($status) {
+            $knownStatus = @('active', 'done', 'paused', 'cancelled', 'canceled', 'todo', 'doing', 'blocked',
+                '待办', '进行', '完成')
+            if ($knownStatus -notcontains $status.ToLower()) {
+                Add-Issue 'WARN' 'FM-003' $File 2 "unknown status '$status'"
+            }
+            if (($status.ToLower() -in @('done', 'cancelled', 'canceled')) -and -not $done) {
+                Add-Issue 'WARN' 'FM-004' $File 2 "status=$status but completed is empty"
+            }
+            if (($status.ToLower() -in @('active', 'doing', 'todo', '进行', '待办')) -and $done) {
+                Add-Issue 'ERROR' 'FM-005' $File 2 "status=$status but completed is set ($done)"
+            }
+        }
+    }
 
     $head = ''
     if ($bodyStart -lt $lines.Count) {
@@ -193,7 +229,7 @@ function Test-PlanFile {
 
     $secs = @()
     for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
-        if ($inFence[$i]) { continue }
+        if ($inFence[$i] -or $inComment[$i]) { continue }
         if ($lines[$i] -match '^##\s+(\d+)\.') {
             $secs += [pscustomobject]@{ Index = $i; Num = [int]$Matches[1] }
         }
@@ -203,7 +239,7 @@ function Test-PlanFile {
     if ($bodyStart -lt $lines.Count) {
         $headLimit = [Math]::Min($lines.Count - 1, $bodyStart + 40)
         for ($i = $bodyStart; $i -le $headLimit; $i++) {
-            if (-not $inFence[$i] -and $lines[$i] -match '最后更新[:：]\s*(\d{4}-\d{2}-\d{2})') {
+            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '最后更新[:：]\s*(\d{4}-\d{2}-\d{2})') {
                 $lastUpdate = $Matches[1]
                 break
             }
@@ -224,9 +260,19 @@ function Test-PlanFile {
         }
     }
 
-    $status2 = if ($null -ne $fm) { Get-FmText $fm '状态' } else { '' }
+    if (-not $lastUpdate -and $null -ne $fm) {
+        $u = Get-FmText $fm 'updated'
+        if ($u -match '^(\d{4}-\d{2}-\d{2})') { $lastUpdate = $Matches[1] }
+    }
+
+    $status2 = ''
+    if ($null -ne $fm) {
+        $status2 = Get-FmText $fm '状态'
+        if (-not $status2) { $status2 = Get-FmText $fm 'status' }
+    }
     $stamp = $lastUpdate
-    if ($stamp -and ($status2 -eq '进行' -or $status2 -eq '进行中')) {
+    if ($stamp -and ($status2 -eq '进行' -or $status2 -eq '进行中' -or
+            $status2.ToLower() -eq 'active' -or $status2.ToLower() -eq 'doing')) {
         try {
             $d = [datetime]::ParseExact($stamp, 'yyyy-MM-dd', [Globalization.CultureInfo]::InvariantCulture)
             if (((Get-Date).Date - $d.Date).TotalDays -gt 7) {
@@ -241,7 +287,7 @@ function Test-PlanFile {
     $r1 = Get-SectionRange $secs 1 $lines.Count
     if ($r1[0] -ge 0) {
         for ($i = $r1[0]; $i -le $r1[1]; $i++) {
-            if (-not $inFence[$i] -and $lines[$i] -match '^\s*-\s*\[[xX]\]') {
+            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^\s*-\s*\[[xX]\]') {
                 Add-Issue $taskLevel 'TASK-001' $File ($i + 1) 'checked item in 待办 section; move it to 归档'
             }
         }
@@ -250,7 +296,7 @@ function Test-PlanFile {
     $r5 = Get-SectionRange $secs 5 $lines.Count
     if ($r5[0] -ge 0) {
         for ($i = $r5[0]; $i -le $r5[1]; $i++) {
-            if ($inFence[$i]) { continue }
+            if ($inFence[$i] -or $inComment[$i]) { continue }
             $l = $lines[$i]
             if ($l -match '^\s*-\s*\[[xX]\]' -and $l -match '\b(T\d+-\d+|V-\d+)\b') {
                 if ($l -notmatch '验证') {
@@ -263,15 +309,18 @@ function Test-PlanFile {
         }
     }
 
-    $joined = $lines -join "`n"
-    if ($joined -match 'YYMMDD任务名|\[\[项目名\]\]|\{\{date:') {
-        Add-Issue 'WARN' 'DOC-005' $File 1 'template placeholders not replaced (项目名 / YYMMDD任务名 / {{date:...}})'
+    $bodyLines = for ($i = 0; $i -lt $lines.Count; $i++) {
+        if (-not $inFence[$i] -and -not $inComment[$i]) { $lines[$i] }
+    }
+    $joined = $bodyLines -join "`n"
+    if ($joined -match 'YYMMDD任务名|\[\[项目名\]\]|\{\{date:|\{项目名\}|\{YYMMDD\}|\{YYYY-MM-DD|\{标题\}') {
+        Add-Issue 'WARN' 'DOC-005' $File 1 'template placeholders not replaced (项目名 / YYMMDD / YYYY-MM-DD / {{date:...}})'
     }
     $r1b = Get-SectionRange $secs 1 $lines.Count
     $r6 = Get-SectionRange $secs 6 $lines.Count
     if ($r1b[0] -ge 0) {
         for ($i = $r1b[0]; $i -le $r1b[1]; $i++) {
-            if (-not $inFence[$i] -and $lines[$i] -match '\*\*T1-1 (动作|名称)\*\*') {
+            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '\*\*T1-1 (动作|名称)\*\*') {
                 Add-Issue 'WARN' 'DOC-005' $File ($i + 1) 'placeholder task T1-1 not replaced'
                 break
             }
@@ -279,7 +328,7 @@ function Test-PlanFile {
     }
     $taskDefs = @{}
     for ($i = 0; $i -lt $lines.Count; $i++) {
-        if ($inFence[$i]) { continue }
+        if ($inFence[$i] -or $inComment[$i]) { continue }
         $l = $lines[$i]
         $id = $null
         if ($r1b[0] -ge 0 -and $i -ge $r1b[0] -and $i -le $r1b[1] -and
@@ -305,7 +354,7 @@ function Test-PlanFile {
     $cDefs = @{}
     if ($r4[0] -ge 0) {
         for ($i = $r4[0]; $i -le $r4[1]; $i++) {
-            if ($inFence[$i]) { continue }
+            if ($inFence[$i] -or $inComment[$i]) { continue }
             $l = $lines[$i]
             if ($l -match '^\|\s*(C\d+)\s*\|') {
                 $cid = $Matches[1]
@@ -329,7 +378,7 @@ function Test-PlanFile {
     if ($cDefs.Count -gt 0) {
         $reportedRefs = @{}
         for ($i = 0; $i -lt $lines.Count; $i++) {
-            if ($inFence[$i]) { continue }
+            if ($inFence[$i] -or $inComment[$i]) { continue }
             $l = $lines[$i]
             if ($l -match '^\|\s*C\d+\s*\|') { continue }
             foreach ($m in [regex]::Matches($l, '\bC\d+\b')) {
@@ -344,10 +393,10 @@ function Test-PlanFile {
 
     $i = 0
     while ($i -lt $lines.Count) {
-        if ($inFence[$i] -or $lines[$i] -notmatch '^\s*\|') { $i++; continue }
+        if ($inFence[$i] -or $inComment[$i] -or $lines[$i] -notmatch '^\s*\|') { $i++; continue }
         $expected = -1
         $warned = $false
-        while ($i -lt $lines.Count -and -not $inFence[$i] -and $lines[$i] -match '^\s*\|') {
+        while ($i -lt $lines.Count -and -not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^\s*\|') {
             $clean = $lines[$i] -replace '`[^`]*`', ''
             $clean = $clean -replace '\\\|', ''
             $cnt = ([regex]::Matches($clean, '\|')).Count
@@ -363,7 +412,7 @@ function Test-PlanFile {
     $vague = '基本完成|基本一致|基本可用|大致完成|大概完成|应该没问题|应该可以|确保正确|确保完成|差不多|可能已经'
     $vw = 0
     for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
-        if ($inFence[$i]) { continue }
+        if ($inFence[$i] -or $inComment[$i]) { continue }
         if ($vw -ge 5) { break }
         if ($lines[$i] -match $vague) {
             Add-Issue 'WARN' 'TXT-001' $File ($i + 1) 'vague wording; use concrete numbers/commands'

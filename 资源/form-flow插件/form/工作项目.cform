@@ -1,49 +1,27 @@
 {
-  "id": "b0120671-ce2e-4b46-bffc-ee3b2abf50d4",
+  "id": "ab378533-c130-40e1-a824-d60d8a2db21b",
   "fields": [
     {
-      "id": "a5b0bbb0-e26e-4b9c-81fb-7be3ce182dfd",
+      "id": "work-project-name",
       "label": "项目名称",
       "type": "text",
       "required": true,
       "defaultValue": [],
       "enableDescription": true,
-      "description": "要做什么？一句话说清楚"
+      "description": "项目名（会作为文件名）"
     },
     {
-      "id": "4493a638-d8c4-489d-ba98-750879b4a3d5",
+      "id": "work-project-status",
       "label": "状态",
       "type": "select",
-      "propertyName": "status",
-      "defaultValue": "TODO",
+      "propertyName": "状态",
+      "defaultValue": "规划中",
+      "required": true,
       "options": [
-        {
-          "id": "aed4029f-63bd-4249-92bf-296b456f29d4",
-          "label": "规划中",
-          "value": ""
-        },
-        {
-          "id": "404c270c-6d9b-41dd-86e7-d5ad274171b9",
-          "label": "进行中",
-          "value": ""
-        },
-        {
-          "id": "a12464bc-8bae-4d6b-ac87-149ce8040d20",
-          "label": "已归档",
-          "value": ""
-        }
-      ],
-      "required": true
-    },
-    {
-      "id": "0b8e6168-dfbf-480a-b6e9-b0d62fd78882",
-      "label": "相关项目",
-      "type": "property_value_suggestion",
-      "propertyName": "项目",
-      "multiple": true,
-      "defaultValue": [],
-      "internalLink": true,
-      "enableCustomValue": false
+        { "id": "work-project-status-planning", "label": "规划中", "value": "规划中" },
+        { "id": "work-project-status-doing", "label": "进行中", "value": "进行中" },
+        { "id": "work-project-status-archived", "label": "已归档", "value": "已归档" }
+      ]
     }
   ],
   "actions": [
@@ -51,10 +29,11 @@
       "type": "createFile",
       "targetFolder": "",
       "fileName": "",
-      "id": "44313f26-24e2-4a8a-aa80-9f433ebfc3e8",
+      "id": "db2659b9-c271-45ad-9f9b-9c2d5546191b",
       "filePath": "工作/项目/{{@项目名称}}.md",
-      "content": "---\n领域:\n  - \"[[工作]]\"\n类型:\n  - 项目\n项目:\n  - {{@项目名称}}\n相关项目:\n  - \"{{@相关项目}}\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n---\n\n## 相关\n\n```dataview\nTABLE 类型, 状态, 创建时间\nFROM \"\"\nWHERE contains(项目, this.file.link)\nSORT 创建时间 DESC\n\n```\n",
-      "contentTemplateSource": "text"
+      "conflictResolution": "skip",
+      "contentTemplateSource": "text",
+      "content": "---\n领域:\n  - \"[[工作]]\"\n类型:\n  - 项目\n项目:\n  - {{@项目名称}}\n相关项目:\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n---\n\n## 相关\n\n```dataview\nTABLE 类型, 状态, 创建时间\nFROM \"\"\nWHERE contains(项目, this.file.link)\nSORT 创建时间 DESC\n```\n"
     }
   ],
   "autoSubmit": false

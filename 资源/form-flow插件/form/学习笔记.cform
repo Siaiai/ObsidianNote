@@ -1,78 +1,49 @@
 {
-  "id": "a0000004-0000-0000-0000-000000000001",
+  "id": "3fae4e6b-c775-4339-9581-9ffd9724b154",
   "fields": [
     {
-      "id": "a0000004-0001-0000-0000-000000000001",
+      "id": "study-note-name",
       "label": "笔记名称",
       "type": "text",
       "required": true,
       "defaultValue": [],
       "enableDescription": true,
-      "description": "学什么？"
+      "description": "学什么？（会作为文件名）"
     },
     {
-      "id": "a0000004-0002-0000-0000-000000000001",
+      "id": "study-note-project",
       "label": "项目",
-      "type": "text",
-      "required": true,
-      "defaultValue": [],
-      "enableDescription": true,
-      "description": "所属项目名称"
+      "type": "property_value_suggestion",
+      "propertyName": "项目",
+      "required": true
     },
     {
-      "id": "a0000004-0003-0000-0000-000000000001",
+      "id": "study-note-type",
       "label": "类型",
       "type": "select",
-      "defaultValue": "none",
-      "options": [
-        {
-          "id": "a0000004-0003-0001-000000000001",
-          "label": "笔记",
-          "value": ""
-        },
-        {
-          "id": "a0000004-0003-0002-000000000001",
-          "label": "练习",
-          "value": ""
-        },
-        {
-          "id": "a0000004-0003-0003-000000000001",
-          "label": "阅读",
-          "value": ""
-        },
-        {
-          "id": "a0000004-0003-0004-000000000001",
-          "label": "课程",
-          "value": ""
-        }
-      ],
+      "propertyName": "类型",
+      "defaultValue": ["笔记"],
+      "multiple": true,
       "required": true,
-      "multiple": true
+      "options": [
+        { "id": "study-note-type-note", "label": "笔记", "value": "笔记" },
+        { "id": "study-note-type-practice", "label": "练习", "value": "练习" },
+        { "id": "study-note-type-reading", "label": "阅读", "value": "阅读" },
+        { "id": "study-note-type-course", "label": "课程", "value": "课程" }
+      ]
     },
     {
-      "id": "a0000004-0004-0000-0000-000000000001",
+      "id": "study-note-status",
       "label": "状态",
       "type": "select",
-      "propertyName": "status",
-      "defaultValue": "TODO",
+      "propertyName": "状态",
+      "defaultValue": "待学",
+      "required": true,
       "options": [
-        {
-          "id": "a0000004-0004-0001-000000000001",
-          "label": "待学",
-          "value": ""
-        },
-        {
-          "id": "a0000004-0004-0002-000000000001",
-          "label": "进行",
-          "value": ""
-        },
-        {
-          "id": "a0000004-0004-0003-000000000001",
-          "label": "已掌握",
-          "value": ""
-        }
-      ],
-      "required": true
+        { "id": "study-note-status-todo", "label": "待学", "value": "待学" },
+        { "id": "study-note-status-doing", "label": "进行", "value": "进行" },
+        { "id": "study-note-status-mastered", "label": "已掌握", "value": "已掌握" }
+      ]
     }
   ],
   "actions": [
@@ -80,10 +51,11 @@
       "type": "createFile",
       "targetFolder": "",
       "fileName": "",
-      "id": "a0000004-0005-0000-0000-000000000001",
+      "id": "7f776940-c0c7-4883-b4ad-8850876e4a36",
       "filePath": "学习/{{@项目}}/{{@笔记名称}}.md",
-      "content": "---\n领域: 学习\n类型:\n  - {{@类型}}\n项目:\n  - \"[[{{@项目}}]]\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n完成时间: \n---\n\n# {{@笔记名称}}\n\n",
-      "contentTemplateSource": "text"
+      "conflictResolution": "skip",
+      "contentTemplateSource": "text",
+      "content": "---\n领域: 学习\n类型: [{{@类型}}]\n项目:\n  - \"[[{{@项目}}]]\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n完成时间:\n---\n\n# {{@笔记名称}}\n\n"
     }
   ],
   "autoSubmit": false

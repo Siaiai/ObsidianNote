@@ -1,43 +1,33 @@
 {
-  "id": "a0000003-0000-0000-0000-000000000001",
+  "id": "c92c65fc-e1ea-4789-8cf9-b28400090133",
   "fields": [
     {
-      "id": "a0000003-0001-0000-0000-000000000001",
+      "id": "output-article-name",
       "label": "文章名称",
       "type": "text",
       "required": true,
       "defaultValue": [],
       "enableDescription": true,
-      "description": "文章标题"
+      "description": "文章标题（会作为文件名）"
     },
     {
-      "id": "a0000003-0002-0000-0000-000000000001",
-      "label": "状态",
-      "type": "select",
-      "propertyName": "status",
-      "defaultValue": "TODO",
-      "options": [
-        {
-          "id": "a0000003-0002-0001-000000000001",
-          "label": "草稿",
-          "value": ""
-        },
-        {
-          "id": "a0000003-0002-0002-000000000001",
-          "label": "已发布",
-          "value": ""
-        }
-      ],
+      "id": "output-article-project",
+      "label": "项目",
+      "type": "property_value_suggestion",
+      "propertyName": "项目",
       "required": true
     },
     {
-      "id": "a0000003-0003-0000-0000-000000000001",
-      "label": "项目",
-      "type": "text",
+      "id": "output-article-status",
+      "label": "状态",
+      "type": "select",
+      "propertyName": "状态",
+      "defaultValue": "草稿",
       "required": true,
-      "defaultValue": [],
-      "enableDescription": true,
-      "description": "所属项目名称"
+      "options": [
+        { "id": "output-article-status-draft", "label": "草稿", "value": "草稿" },
+        { "id": "output-article-status-published", "label": "已发布", "value": "已发布" }
+      ]
     }
   ],
   "actions": [
@@ -45,10 +35,11 @@
       "type": "createFile",
       "targetFolder": "",
       "fileName": "",
-      "id": "a0000003-0004-0000-0000-000000000001",
+      "id": "d786827c-cfc5-4ce2-a83d-e0abbcc2948d",
       "filePath": "输出/{{@项目}}/{{@文章名称}}.md",
-      "content": "---\n领域: 输出\n类型:\n  - 文章\n项目:\n  - \"[[{{@项目}}]]\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n完成时间: \n---\n\n# {{@文章名称}}\n\n",
-      "contentTemplateSource": "text"
+      "conflictResolution": "skip",
+      "contentTemplateSource": "text",
+      "content": "---\n领域: 输出\n类型:\n  - 文章\n项目:\n  - \"[[{{@项目}}]]\"\n状态: {{@状态}}\n创建时间: {{date:YYYY-MM-DDTHH:mm:ss}}\n完成时间:\n---\n\n# {{@文章名称}}\n\n"
     }
   ],
   "autoSubmit": false
