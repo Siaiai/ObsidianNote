@@ -27,7 +27,7 @@ description: >
 
 - 默认：项目根 `PLAN.md`；也可用 `docs/plan.md` 或用户指定路径
 - 命令优先用显式路径；未指定时按 `PLAN.md` → `docs/plan.md` → 最近修改的 `*.plan.md` 查找
-- 如果目标文件位于 Obsidian vault 内，再额外读取该 vault 的 `规范.md` 对齐 frontmatter；否则使用本 skill 的通用格式
+- 如果目标文件位于 Obsidian vault 内：位置按该 vault 规范（如 `{领域}/{项目}/YYMMDD{任务}.md`），并读取 `规范.md` 对齐 frontmatter；否则使用本 skill 的通用格式
 - 本 skill 不要求任何特定属性名；通用格式只有 `title / status / created / updated`
 
 ## 单一事实源（冲突优先级）

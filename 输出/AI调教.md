@@ -11,11 +11,9 @@
 1.给工程添加规划，用一个聪明AI去规划一步一步任务，然哈每一步得输出，交付物，结果
 2.让独立AI去完成小任务
 
-## 落地方式（本仓库）
+## 落地方式
 
-- 规范：`规范.md` →「规划文档规范」
-- 模板：`资源/模板/规划文档.md`
-- 表单：`资源/form-flow插件/form/工作规划.cform`
-- AI skill：`skills/plan-doc`
+- Skill：`skills/plan-doc`（`assets/plan-template.md` + `scripts/plan_lint.ps1`）
 - 命令：`/plan-new`、`/plan-next`、`/plan-done`、`/plan-change`、`/plan-check`
-- 校验：`skills/plan-doc/scripts/plan_lint.ps1`
+- 不绑定 Obsidian；放在任何仓库都能用
+- 在 vault 内使用时，再按 `规范.md` 补笔记属性
