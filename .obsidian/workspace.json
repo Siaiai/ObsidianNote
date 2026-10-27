@@ -11,12 +11,14 @@
             "id": "aef7961b0aed9b71",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "markdown",
               "state": {
-                "file": "Home.components"
+                "file": "输出/代码/编码风格.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "编码风格"
             }
           },
           {
@@ -47,8 +49,7 @@
               "title": "260401S3分拣面板"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -231,8 +232,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "96fd41c407fee68b",
+  "active": "aef7961b0aed9b71",
   "lastOpenFiles": [
+    "资源/form-flow插件/form/输出文章.cform",
+    "输出/代码/编码风格.md",
+    "输出/代码",
     "Home.components",
     "工作/GUI/260707GUI.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
@@ -275,8 +279,6 @@
     "工作/吊挂操作面板/260117面板按键消抖优化.md",
     "领域/工作.md",
     "资源/form-flow插件/form/个人项目.cform",
-    "资源/form-flow插件/form/工作项目.cform",
-    "skills/kb-workflow/references/init-guide.md",
-    "工作/S3吊挂控制器/附件/desktop.ini"
+    "资源/form-flow插件/form/工作项目.cform"
   ]
 }
