@@ -13,7 +13,8 @@ Exit codes:
 param(
     [Parameter(Mandatory = $true, Position = 0)]
     [string[]]$Path,
-    [switch]$Strict
+    [switch]$Strict,
+    [switch]$PlanOnly
 )
 
 $ErrorActionPreference = 'Stop'
@@ -45,6 +46,11 @@ function Get-TargetFiles {
                 Where-Object {
                     $_.FullName -notmatch '[\\/]\.(obsidian|git|trash)[\\/]' -and
                     $_.FullName -notmatch '[\\/](资源|skills)[\\/]'
+                } |
+                Where-Object {
+                    if (-not $PlanOnly) { return $true }
+                    $head = Get-Content -LiteralPath $_.FullName -TotalCount 60 -Encoding UTF8
+                    return (($head -join "`n") -match 'plan-doc:v1')
                 } |
                 ForEach-Object { $list.Add($_.FullName) }
         }
@@ -168,7 +174,8 @@ function Test-PlanFile {
         if (-not (Get-FmText $fm '项目')) {
             Add-Issue 'WARN' 'FM-006' $File 2 'missing 项目'
         }
-        if (-not (Get-FmText $fm '任务')) {
+        $types = Get-FmText $fm '类型'
+        if (-not (Get-FmText $fm '任务') -and $types -match '开发|会议|方案|调研|文档') {
             Add-Issue 'WARN' 'FM-006' $File 2 'missing 任务 (required for task notes)'
         }
         $rel = $fm['相关任务']
@@ -256,8 +263,20 @@ function Test-PlanFile {
         }
     }
 
+    $joined = $lines -join "`n"
+    if ($joined -match 'YYMMDD任务名|\[\[项目名\]\]|\{\{date:') {
+        Add-Issue 'WARN' 'DOC-005' $File 1 'template placeholders not replaced (项目名 / YYMMDD任务名 / {{date:...}})'
+    }
     $r1b = Get-SectionRange $secs 1 $lines.Count
     $r6 = Get-SectionRange $secs 6 $lines.Count
+    if ($r1b[0] -ge 0) {
+        for ($i = $r1b[0]; $i -le $r1b[1]; $i++) {
+            if (-not $inFence[$i] -and $lines[$i] -match '\*\*T1-1 (动作|名称)\*\*') {
+                Add-Issue 'WARN' 'DOC-005' $File ($i + 1) 'placeholder task T1-1 not replaced'
+                break
+            }
+        }
+    }
     $taskDefs = @{}
     for ($i = 0; $i -lt $lines.Count; $i++) {
         if ($inFence[$i]) { continue }
@@ -330,6 +349,7 @@ function Test-PlanFile {
         $warned = $false
         while ($i -lt $lines.Count -and -not $inFence[$i] -and $lines[$i] -match '^\s*\|') {
             $clean = $lines[$i] -replace '`[^`]*`', ''
+            $clean = $clean -replace '\\\|', ''
             $cnt = ([regex]::Matches($clean, '\|')).Count
             if ($expected -lt 0) { $expected = $cnt }
             elseif ($cnt -ne $expected -and -not $warned) {
@@ -340,7 +360,7 @@ function Test-PlanFile {
         }
     }
 
-    $vague = '基本|大致|应该|确保|尽量|差不多|可能已经'
+    $vague = '基本完成|基本一致|基本可用|大致完成|大概完成|应该没问题|应该可以|确保正确|确保完成|差不多|可能已经'
     $vw = 0
     for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
         if ($inFence[$i]) { continue }

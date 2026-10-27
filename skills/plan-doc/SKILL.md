@@ -72,9 +72,16 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "<skill目录>\scripts\plan_
 - WARN：可以接受，但回复里要逐条说明原因
 - `/plan-done`、`/plan-change`、`/plan-check` 收尾必须跑一次
 - 文档含 `<!-- plan-doc:v1 -->` 标记才启用严格检查；旧文档自动降级为兼容模式（只报 WARN）
+- 目录扫描加 `-PlanOnly` 只检查含该标记的规划文档；显式传文件总是检查
 
 ## 参考文件
 
 - `references/format.md`：完整骨架、各节写什么、变更 / 归档 / 血缘
 - `references/tasks.md`：任务粒度、ID、验收、拆分、变更操作流
 - `references/pitfalls.md`：20 条常见坑
+
+## 安装与加载
+
+- 本 skill 放在 vault 的 `skills/plan-doc/`，通过 opencode 全局配置 `skills.paths` 注册
+- 新增或修改 skill / command 后需要重启 opencode 才生效
+- 换机器时：确认 `~/.config/opencode/opencode.json` 的 `skills.paths` 指向 vault 的 `skills` 目录
