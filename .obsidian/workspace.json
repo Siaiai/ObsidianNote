@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -233,14 +233,14 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "96fd41c407fee68b",
+  "active": "d9cfd6682e7e30c1",
   "lastOpenFiles": [
+    "工作/GUI/260707GUI.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "输出/代码/编码风格.md",
     "资源/form-flow插件/form/输出文章.cform",
     "输出/代码",
     "Home.components",
-    "工作/GUI/260707GUI.md",
     "工作/GUI/面板本地多语言整形方案.md",
     "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
     "工作/S3吊挂控制器/附件/C748B960D61AD2DDB3DDEC085675CE38.jpg",
