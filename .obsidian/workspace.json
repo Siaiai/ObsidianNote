@@ -20,35 +20,21 @@
             }
           },
           {
+            "id": "96fd41c407fee68b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工作/GUI/260707GUI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260707GUI"
+            }
+          },
+          {
             "id": "d9cfd6682e7e30c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/分拣操作面板/260401S3分拣面板.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260401S3分拣面板"
-            }
-          },
-          {
-            "id": "441657f052a9a4aa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/分拣操作面板/260401S3分拣面板.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "260401S3分拣面板"
-            }
-          },
-          {
-            "id": "6be6e993f741b311",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -245,12 +231,12 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "d9cfd6682e7e30c1",
+  "active": "96fd41c407fee68b",
   "lastOpenFiles": [
     "Home.components",
+    "工作/GUI/260707GUI.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/GUI/面板本地多语言整形方案.md",
-    "工作/GUI/260707GUI.md",
     "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
     "工作/S3吊挂控制器/附件/C748B960D61AD2DDB3DDEC085675CE38.jpg",
     "工作/S3吊挂控制器/附件/5F6369333ECCB978D3EA479008A05C50.jpg",
