@@ -13,7 +13,7 @@ description: >
 
 用于「一个项目跨多天、多任务、需求会变」的规划文档。纯 Markdown，不依赖 Obsidian 或任何笔记软件；放在哪个仓库、哪个目录都可以。
 
-> 首次使用、想知道怎么组织规划AI / 执行AI 的完整流程，先读 `references/sop.md`（含可复制提示词）。
+> **怎么用**：读 `references/sop.md`（使用手册）。里面是"什么时候发什么提示词"的时刻表，全部可复制。
 
 ## 何时用
 
@@ -81,9 +81,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "<skill目录>\scripts\plan_
 
 ## 参考文件
 
-- `references/sop.md`：完整执行教程 + 提示词（规划AI / 执行AI，从建规划到收尾）
-- `assets/plan-template.md`：`/plan-new` 使用的创建模板（通用 Markdown，含规范注释）
-- `references/format.md`：完整骨架、各节写什么、变更 / 归档 / 血缘
+- `references/sop.md`：**使用手册**——什么时候发什么提示词（人读这个）
+- `assets/plan-template.md`：创建模板（/plan-new 使用）
+- `references/format.md`：文档骨架、任务行、机制登记、变更规则
 - `references/tasks.md`：任务粒度、ID、验收、拆分、变更操作流
 - `references/pitfalls.md`：常见坑
 - `references/obsidian.md`：可选的 Obsidian 笔记属性映射（不绑定）

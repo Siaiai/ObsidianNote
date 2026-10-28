@@ -228,7 +228,7 @@ function Test-PlanFile {
     $strictDoc = $head -match 'plan-doc:v1'
     $hasAiEntry = $false
     for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
-        if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^##\s*AI\s*入口') {
+        if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^##\s*(0\.\s*)?(看板|AI\s*入口)') {
             $hasAiEntry = $true
             break
         }
@@ -244,7 +244,7 @@ function Test-PlanFile {
 
     $lastUpdate = ''
     for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
-        if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '最后更新[:：]\s*(\d{4}-\d{2}-\d{2})') {
+        if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '最后更新\**[:：]?\s*(\d{4}-\d{2}-\d{2})') {
             $lastUpdate = $Matches[1]
             break
         }
@@ -252,7 +252,7 @@ function Test-PlanFile {
 
     if ($strictDoc) {
         if (-not $hasAiEntry) {
-            Add-Issue 'WARN' 'DOC-001' $File ($bodyStart + 1) 'missing "## AI 入口" block'
+            Add-Issue 'WARN' 'DOC-001' $File ($bodyStart + 1) 'missing "## 0. 看板" (AI entry)'
         }
         if (-not $lastUpdate) {
             Add-Issue 'WARN' 'DOC-002' $File ($bodyStart + 1) 'missing "最后更新"'
@@ -264,7 +264,7 @@ function Test-PlanFile {
         }
         $hasMechanismReg = $false
         for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
-            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^###\s*0\.4') {
+            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^###\s*(0\.4\s*)?机制登记') {
                 $hasMechanismReg = $true
                 break
             }
