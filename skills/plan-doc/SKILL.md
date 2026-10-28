@@ -13,6 +13,8 @@ description: >
 
 用于「一个项目跨多天、多任务、需求会变」的规划文档。纯 Markdown，不依赖 Obsidian 或任何笔记软件；放在哪个仓库、哪个目录都可以。
 
+> 首次使用、想知道怎么组织规划AI / 执行AI 的完整流程，先读 `references/sop.md`（含可复制提示词）。
+
 ## 何时用
 
 - 新建或维护项目规划：`PLAN.md`、`docs/plan.md`、`*.plan.md`，或用户指定的任意路径
@@ -78,6 +80,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "<skill目录>\scripts\plan_
 
 ## 参考文件
 
+- `references/sop.md`：完整执行教程 + 提示词（规划AI / 执行AI，从建规划到收尾）
 - `assets/plan-template.md`：`/plan-new` 使用的创建模板（通用 Markdown，含规范注释）
 - `references/format.md`：完整骨架、各节写什么、变更 / 归档 / 血缘
 - `references/tasks.md`：任务粒度、ID、验收、拆分、变更操作流
