@@ -27,7 +27,7 @@ description: >
 
 - 默认：项目根 `PLAN.md`；也可用 `docs/plan.md` 或用户指定路径
 - 命令优先用显式路径；未指定时按 `PLAN.md` → `docs/plan.md` → 最近修改的 `*.plan.md` 查找
-- 如果目标文件位于 Obsidian vault 内：位置按该 vault 规范（如 `{领域}/{项目}/YYMMDD{任务}.md`），并读取 `规范.md` 对齐 frontmatter；否则使用本 skill 的通用格式
+- 如果目标文件位于 Obsidian vault 内：位置按该 vault 规范（如 `{领域}/{项目}/YYMMDD{任务}.md`），笔记属性参考 vault 的 `规范.md` / 模板（映射见 `references/obsidian.md`）；否则使用本 skill 的通用格式
 - 本 skill 不要求任何特定属性名；通用格式只有 `title / status / created / updated`
 
 ## 单一事实源（冲突优先级）
@@ -82,6 +82,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "<skill目录>\scripts\plan_
 - `references/format.md`：完整骨架、各节写什么、变更 / 归档 / 血缘
 - `references/tasks.md`：任务粒度、ID、验收、拆分、变更操作流
 - `references/pitfalls.md`：常见坑
+- `references/obsidian.md`：可选的 Obsidian 笔记属性映射（不绑定）
 
 ## 安装与加载
 

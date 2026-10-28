@@ -222,10 +222,17 @@ function Test-PlanFile {
 
     $head = ''
     if ($bodyStart -lt $lines.Count) {
-        $headEnd = [Math]::Min($lines.Count - 1, $bodyStart + 40)
+        $headEnd = [Math]::Min($lines.Count - 1, $bodyStart + 80)
         $head = ($lines[$bodyStart..$headEnd] -join "`n")
     }
     $strictDoc = $head -match 'plan-doc:v1'
+    $hasAiEntry = $false
+    for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
+        if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^##\s*AI\s*入口') {
+            $hasAiEntry = $true
+            break
+        }
+    }
 
     $secs = @()
     for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
@@ -236,18 +243,15 @@ function Test-PlanFile {
     }
 
     $lastUpdate = ''
-    if ($bodyStart -lt $lines.Count) {
-        $headLimit = [Math]::Min($lines.Count - 1, $bodyStart + 40)
-        for ($i = $bodyStart; $i -le $headLimit; $i++) {
-            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '最后更新[:：]\s*(\d{4}-\d{2}-\d{2})') {
-                $lastUpdate = $Matches[1]
-                break
-            }
+    for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
+        if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '最后更新[:：]\s*(\d{4}-\d{2}-\d{2})') {
+            $lastUpdate = $Matches[1]
+            break
         }
     }
 
     if ($strictDoc) {
-        if ($head -notmatch '##\s*AI\s*入口') {
+        if (-not $hasAiEntry) {
             Add-Issue 'WARN' 'DOC-001' $File ($bodyStart + 1) 'missing "## AI 入口" block'
         }
         if (-not $lastUpdate) {

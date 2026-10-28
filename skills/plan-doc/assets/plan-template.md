@@ -15,7 +15,24 @@ updated: {YYYY-MM-DD}
 2. 替换所有 {占位符}，保留结构
 3. 只保留一条 T1-1 占位任务，不编造任务
 4. 创建后跑 plan_lint.ps1（占位任务会报 DOC-005 WARN，属预期）
-5. 如果文件在 Obsidian vault 内，再按该 vault 的 规范.md 补属性
+5. 如果文件在 Obsidian vault 内，笔记属性参考该 vault 的 规范.md / 模板（见 references/obsidian.md）
+
+在 Obsidian 内可把上面的 frontmatter 换成（属性名以 vault 规范为准）：
+---
+领域:
+  - 工作
+类型:
+  - 开发
+项目:
+  - "[[{项目名}]]"
+任务:
+  - "[[{YYMMDD}{名称}]]"
+相关任务:
+状态: 待办
+创建时间: {YYYY-MM-DDTHH:mm:ss}
+截止时间: {YYYY-MM-DDTHH:mm:ss}
+完成时间:
+---
 -->
 
 # {标题}
