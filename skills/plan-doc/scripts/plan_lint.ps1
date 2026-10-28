@@ -270,7 +270,17 @@ function Test-PlanFile {
             }
         }
         if (-not $hasMechanismReg) {
-            Add-Issue 'WARN' 'DOC-006' $File ($bodyStart + 1) 'missing "### 0.4 机制登记" (一功能一机制)'
+            Add-Issue 'WARN' 'DOC-006' $File ($bodyStart + 1) 'missing "### 机制登记" (一功能一机制)'
+        }
+        $hasReqReg = $false
+        for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
+            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^###\s*需求登记') {
+                $hasReqReg = $true
+                break
+            }
+        }
+        if (-not $hasReqReg) {
+            Add-Issue 'WARN' 'DOC-007' $File ($bodyStart + 1) 'missing "### 需求登记" (任务要挂 R#)'
         }
     }
 
@@ -332,6 +342,18 @@ function Test-PlanFile {
     }
     $r1b = Get-SectionRange $secs 1 $lines.Count
     $r6 = Get-SectionRange $secs 6 $lines.Count
+    if ($r1b[0] -ge 0) {
+        for ($i = $r1b[0]; $i -le $r1b[1]; $i++) {
+            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^\s*-\s*\[[ xX]\]\s*\*\*([A-Z]\d+-\d+)\b') {
+                if ($lines[$i] -notmatch '需求：') {
+                    Add-Issue $taskLevel 'TASK-004' $File ($i + 1) 'task has no 需求：R# (why does this task exist)'
+                }
+                if ($lines[$i] -notmatch '机制：') {
+                    Add-Issue $taskLevel 'TASK-004' $File ($i + 1) 'task has no 机制：复用 X / 新建 D#'
+                }
+            }
+        }
+    }
     if ($r1b[0] -ge 0) {
         for ($i = $r1b[0]; $i -le $r1b[1]; $i++) {
             if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '\*\*T1-1 (动作|名称)\*\*') {
