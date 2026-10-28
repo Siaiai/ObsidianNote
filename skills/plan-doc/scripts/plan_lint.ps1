@@ -329,6 +329,9 @@ function Test-PlanFile {
                 if ($l -notmatch '结果') {
                     Add-Issue $taskLevel 'TASK-002' $File ($i + 1) 'record has no 结果: ...'
                 }
+                if ($l -notmatch '行为') {
+                    Add-Issue $taskLevel 'TASK-002' $File ($i + 1) 'record has no 行为: ... (what changed for the user)'
+                }
             }
         }
     }
