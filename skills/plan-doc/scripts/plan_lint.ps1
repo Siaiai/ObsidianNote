@@ -262,6 +262,16 @@ function Test-PlanFile {
                 Add-Issue 'ERROR' 'DOC-003' $File ($bodyStart + 1) "missing section $n"
             }
         }
+        $hasMechanismReg = $false
+        for ($i = $bodyStart; $i -lt $lines.Count; $i++) {
+            if (-not $inFence[$i] -and -not $inComment[$i] -and $lines[$i] -match '^###\s*0\.4') {
+                $hasMechanismReg = $true
+                break
+            }
+        }
+        if (-not $hasMechanismReg) {
+            Add-Issue 'WARN' 'DOC-006' $File ($bodyStart + 1) 'missing "### 0.4 机制登记" (一功能一机制)'
+        }
     }
 
     if (-not $lastUpdate -and $null -ne $fm) {
