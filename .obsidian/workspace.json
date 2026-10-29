@@ -48,7 +48,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -231,10 +231,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "6c8f698ac6960dc5",
+  "active": "2139142b94f6c8ba",
   "lastOpenFiles": [
-    "Home.components",
     "工作/GUI/260707GUI.md",
+    "Home.components",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "skills/plan-doc/references/recon.md",
     "工作/SR3读卡器/260804SR3框架整理.md",
