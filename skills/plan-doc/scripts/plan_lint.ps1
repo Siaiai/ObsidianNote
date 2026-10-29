@@ -388,6 +388,23 @@ function Test-PlanFile {
         }
     }
 
+    if ($strictDoc -and $r5[0] -ge 0 -and $r6[0] -ge 0) {
+        $recordIds = @{}
+        for ($i = $r5[0]; $i -le $r5[1]; $i++) {
+            if ($inFence[$i] -or $inComment[$i]) { continue }
+            if ($lines[$i] -match '^\s*-\s*\[[xX]\]\s*\*\*([A-Z]\d+-\d+)\b') { $recordIds[$Matches[1]] = $true }
+        }
+        for ($i = $r6[0]; $i -le $r6[1]; $i++) {
+            if ($inFence[$i] -or $inComment[$i]) { continue }
+            if ($lines[$i] -match '^\|\s*([A-Z]\d+-\d+)\s*\|\s*(完成|取代)\s*\|') {
+                $aid = $Matches[1]
+                if (-not $recordIds.ContainsKey($aid)) {
+                    Add-Issue 'ERROR' 'DOC-008' $File ($i + 1) "$aid archived but no §5 record (doc not updated)"
+                }
+            }
+        }
+    }
+
     $r4 = Get-SectionRange $secs 4 $lines.Count
     $changeTypes = @('新增', '修改', '删除', '延期', '否决', '待定')
     $cDefs = @{}
