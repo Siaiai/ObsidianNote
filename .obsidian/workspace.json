@@ -37,18 +37,13 @@
             "id": "2139142b94f6c8ba",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/分拣操作面板/260401S3分拣面板.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "260401S3分拣面板"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -231,11 +226,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "2139142b94f6c8ba",
+  "active": "5f19b54e2f9e9469",
   "lastOpenFiles": [
+    "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/GUI/260707GUI.md",
     "Home.components",
-    "工作/分拣操作面板/260401S3分拣面板.md",
     "skills/plan-doc/references/recon.md",
     "工作/SR3读卡器/260804SR3框架整理.md",
     "skills/plan-doc/assets/plan-template.md",
