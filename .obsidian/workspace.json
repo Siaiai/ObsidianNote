@@ -75,7 +75,8 @@
               "title": "260401S3分拣面板"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -215,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "个人/AI工具集/261029AI工具集规划.md",
+                "file": "工作/分拣操作面板/260401S3分拣面板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -257,10 +258,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "5f19b54e2f9e9469",
+  "active": "2dc265d3940804c7",
   "lastOpenFiles": [
-    "工作/S3吊挂控制器/261029S3维护.md",
     "个人/AI工具集/261029AI工具集规划.md",
+    "工作/S3吊挂控制器/261029S3维护.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/GUI/260707GUI.md",
     "Home.components",
