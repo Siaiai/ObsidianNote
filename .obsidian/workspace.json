@@ -74,16 +74,6 @@
               "icon": "lucide-file",
               "title": "260401S3分拣面板"
             }
-          },
-          {
-            "id": "2139142b94f6c8ba",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
-            }
           }
         ],
         "currentTab": 4
@@ -270,10 +260,10 @@
   },
   "active": "2dc265d3940804c7",
   "lastOpenFiles": [
+    "工作/分拣操作面板/260401S3分拣面板.md",
     "个人/AI工具集/261029AI工具集规划.md",
     "工作/GUI/260707GUI.md",
     "Home.components",
-    "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/S3吊挂控制器/261029S3维护.md",
     "个人/项目/AI工具集.md",
     "个人/项目/Tooless.md",
