@@ -241,7 +241,7 @@
       "showTitle": true,
       "showShadow": false,
       "createAt": "2026-01-03T19:35:48.904Z",
-      "updateAt": "2026-10-27T01:17:31.729Z",
+      "updateAt": "2026-10-29T02:52:06.311Z",
       "viewType": "kanban",
       "newPageNameFormat": "",
       "properties": [
@@ -323,7 +323,6 @@
             "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
             "工作/吊挂操作面板/260918V061面板增加功能.md",
             "工作/SR3读卡器/260918读卡器固定衣架号沟通.md",
-            "工作/GUI/面板本地多语言整形方案.md",
             "工作/分拣操作面板/260401S3分拣面板.md",
             "工作/GUI/260707GUI.md"
           ]
