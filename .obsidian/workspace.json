@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/GUI/260707GUI.md",
+                "file": "skills/plan-doc/references/sop.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "260707GUI"
+              "title": "sop"
             }
           },
           {
@@ -247,23 +247,23 @@
   },
   "active": "25418b02c36f7407",
   "lastOpenFiles": [
-    "工作/分拣操作面板/260401S3分拣面板.md",
-    "工作/GUI/260707GUI.md",
-    "Home.components",
-    "工作/SR3读卡器/260804SR3框架整理.md",
-    "skills/plan-doc/assets/plan-template.md",
+    "skills/plan-doc/SKILL.md",
+    "skills/plan-doc/references/tasks.md",
     "skills/plan-doc/references/sop.md",
-    "skills/plan-doc/references/obsidian.md",
     "skills/plan-doc/references/pitfalls.md",
     "skills/plan-doc/references/format.md",
-    "skills/plan-doc/references/tasks.md",
+    "skills/plan-doc/references/obsidian.md",
+    "skills/plan-doc/assets/plan-template.md",
+    "skills/kb-workflow/SKILL.md",
+    "工作/GUI/260707GUI.md",
+    "工作/分拣操作面板/260401S3分拣面板.md",
+    "Home.components",
+    "工作/SR3读卡器/260804SR3框架整理.md",
     "资源/模板/规划文档.md",
     "资源/模板/规划文档-表单.md",
     "资源/模板/日志模板-day.md",
     "资源/模板/README.md",
     "skills/plan-doc/assets",
-    "skills/plan-doc/SKILL.md",
-    "skills/kb-workflow/SKILL.md",
     "skills/kb-workflow/references/init-guide.md",
     "规范.md",
     "资源/form-flow插件/form/工作规划.cform",
