@@ -25,6 +25,8 @@ description: >
 
 不适用：一次性小改动、纯问答、写文章。
 
+需求随时可加：用 `/plan-req`。不要求一次想清楚——不明确就先记 `状态=待澄清`，生成一条带时盒、"产出=结论"的探索任务，后面再转实现。入口只有需求登记表 / 假设。
+
 ## 文件位置
 
 - 默认：项目根 `PLAN.md`；也可用 `docs/plan.md` 或用户指定路径
@@ -61,7 +63,8 @@ description: >
 
 | 命令 | 作用 |
 |---|---|
-| `/plan-new <路径> <标题>` | 新建规划文档骨架 |
+| `/plan-new <路径> <标题>` | **初始化**：读代码 + 建基线 / 机制 / 索引，不规划需求 |
+| `/plan-req <文档> <需求>` | **随时新增需求**（唯一需求入口） |
 | `/plan-next <文档或任务ID>` | 只读，输出下一条任务的执行提示词 |
 | `/plan-done <文档> <任务ID>` | 跑验证，通过才勾选并更新三处 |
 | `/plan-change <文档> <描述>` | 记录 C 变更并更新受影响任务 |
@@ -85,6 +88,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "<skill目录>\scripts\plan_
 
 - `references/sop.md`：**使用手册**——什么时候发什么提示词（人读这个）
 - `assets/plan-template.md`：创建模板（/plan-new 使用）
+- `references/recon.md`：初始化侦察清单（读代码 → 基线 / 机制 / 索引）
 - `references/format.md`：文档骨架、任务行、机制登记、变更规则
 - `references/tasks.md`：任务粒度、ID、验收、拆分、变更操作流
 - `references/pitfalls.md`：常见坑
