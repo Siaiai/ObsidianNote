@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5f19b54e2f9e9469",
+            "id": "5108259741076129",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,20 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "261029AI工具集规划"
-            }
-          },
-          {
-            "id": "5108259741076129",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作/S3吊挂控制器/261029S3维护.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "261029S3维护"
             }
           },
           {
@@ -260,12 +246,14 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "5f19b54e2f9e9469",
+  "active": "5108259741076129",
   "lastOpenFiles": [
     "工作/分拣操作面板/260401S3分拣面板.md",
-    "Home.components",
-    "个人/AI工具集/261029AI工具集规划.md",
+    "工作/分拣操作面板/260401S3串口协议.md",
     "工作/S3吊挂控制器/261029S3维护.md",
+    "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
+    "个人/AI工具集/261029AI工具集规划.md",
+    "Home.components",
     "工作/GUI/260707GUI.md",
     "个人/项目/AI工具集.md",
     "个人/项目/Tooless.md",
@@ -296,7 +284,6 @@
     "skills/plan-doc/scripts",
     "skills/plan-doc/references",
     "skills/plan-doc",
-    "输出/编码风格.md",
     "工作/S3吊挂控制器/附件/C748B960D61AD2DDB3DDEC085675CE38.jpg",
     "工作/S3吊挂控制器/附件/5F6369333ECCB978D3EA479008A05C50.jpg",
     "工作/S3吊挂控制器/附件/D80057B3B9EC0505D882F1B6733EC0C1.jpg",
