@@ -55,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "个人/AI工具集/261029AI工具集规划.md",
+                "file": "工作/S3吊挂控制器/261029S3维护.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "261029AI工具集规划"
+              "title": "261029S3维护"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -204,7 +204,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "个人/AI工具集/261029AI工具集规划.md",
+                "file": "工作/分拣操作面板/260401S3分拣面板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -246,13 +246,13 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "df115455fa1dbfd7",
+  "active": "2dc265d3940804c7",
   "lastOpenFiles": [
+    "个人/AI工具集/261029AI工具集规划.md",
+    "工作/S3吊挂控制器/261029S3维护.md",
+    "工作/分拣操作面板/260401S3串口协议.md",
     "Home.components",
     "工作/分拣操作面板/260401S3分拣面板.md",
-    "个人/AI工具集/261029AI工具集规划.md",
-    "工作/分拣操作面板/260401S3串口协议.md",
-    "工作/S3吊挂控制器/261029S3维护.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "工作/GUI/260707GUI.md",
     "个人/项目/AI工具集.md",
