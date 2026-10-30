@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -244,7 +244,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/分拣操作面板/260401S3分拣面板.md",
+                "file": "工作/吊挂操作面板/261030吊挂操作面板维护.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -286,10 +286,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "0c4974f0391a084b",
+  "active": "b8b9ed46b879a357",
   "lastOpenFiles": [
-    "Home.components",
     "工作/分拣操作面板/260401S3分拣面板.md",
+    "Home.components",
     "个人/AI工具集/261029AI工具集规划.md",
     "工作/吊挂操作面板/261030面板换绑功能优化.md",
     "工作/吊挂操作面板/261030吊挂操作面板维护.md",
