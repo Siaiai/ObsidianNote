@@ -14,8 +14,8 @@
               "type": "markdown",
               "state": {
                 "file": "个人/AI工具集/261029AI工具集规划.md",
-                "mode": "source",
-                "source": true
+                "mode": "preview",
+                "source": false
               },
               "icon": "lucide-file",
               "title": "261029AI工具集规划"
@@ -227,8 +227,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
