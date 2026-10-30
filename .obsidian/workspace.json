@@ -39,12 +39,14 @@
             "id": "6c8f698ac6960dc5",
             "type": "leaf",
             "state": {
-              "type": "components-file-view",
+              "type": "markdown",
               "state": {
-                "file": "Home.components"
+                "file": "工作/分拣操作面板/260401S3分拣面板.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "gantt-chart",
-              "title": "Home"
+              "icon": "lucide-file",
+              "title": "260401S3分拣面板"
             }
           },
           {
@@ -75,8 +77,7 @@
               "title": "260401S3分拣面板"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -216,7 +217,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.components",
+                "file": "个人/AI工具集/261029AI工具集规划.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -240,7 +241,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -258,13 +260,13 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "6c8f698ac6960dc5",
+  "active": "5f19b54e2f9e9469",
   "lastOpenFiles": [
     "工作/分拣操作面板/260401S3分拣面板.md",
+    "Home.components",
     "个人/AI工具集/261029AI工具集规划.md",
     "工作/S3吊挂控制器/261029S3维护.md",
     "工作/GUI/260707GUI.md",
-    "Home.components",
     "个人/项目/AI工具集.md",
     "个人/项目/Tooless.md",
     "输出/AI调教.md",
