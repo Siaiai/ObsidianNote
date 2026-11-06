@@ -73,8 +73,7 @@
               "title": "261030吊挂操作面板维护"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -214,7 +213,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/吊挂操作面板/261030吊挂操作面板维护.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -256,11 +255,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "8c9006ee15fd3f92",
+  "active": "2dc265d3940804c7",
   "lastOpenFiles": [
+    "工作/吊挂操作面板/261030吊挂操作面板维护.md",
     "Home.components",
     "工作/分拣操作面板/260401S3分拣面板.md",
-    "工作/吊挂操作面板/261030吊挂操作面板维护.md",
     "工作/S3吊挂控制器/261029S3维护.md",
     "工作/吊挂操作面板/261030面板换绑功能优化.md",
     "题库汇总.md",
