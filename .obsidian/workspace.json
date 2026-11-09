@@ -90,7 +90,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -230,7 +230,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/吊挂操作面板/261030吊挂操作面板维护.md",
+                "file": "工作/分拣操作面板/260401S3分拣面板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -272,11 +272,11 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "1f45aa9c85e3df98",
+  "active": "fe29c8f25b8774f1",
   "lastOpenFiles": [
+    "工作/吊挂操作面板/261030吊挂操作面板维护.md",
     "工作/S3吊挂控制器/261029S3维护.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
-    "工作/吊挂操作面板/261030吊挂操作面板维护.md",
     "Home.components",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/吊挂操作面板/261030面板换绑功能优化.md",
