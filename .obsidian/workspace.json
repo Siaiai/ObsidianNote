@@ -20,8 +20,33 @@
               "icon": "lucide-file",
               "title": "261030吊挂操作面板维护"
             }
+          },
+          {
+            "id": "1d753b6635878d03",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.15.1"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.15.1"
+            }
+          },
+          {
+            "id": "4a3e6ee2496cd51f",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -161,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/吊挂操作面板/261030吊挂操作面板维护.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -203,7 +228,7 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "971a479c7a18391e",
+  "active": "4a3e6ee2496cd51f",
   "lastOpenFiles": [
     "Home.components",
     "工作/吊挂操作面板/261030吊挂操作面板维护.md",
