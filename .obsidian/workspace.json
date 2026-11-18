@@ -75,8 +75,7 @@
               "title": "261029S3维护"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -216,7 +215,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/S3全封闭轨道/261118全封闭避让上报.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -258,12 +257,13 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "9452f5ad89c79bbd",
+  "active": "4eeea7325b2cfd9b",
   "lastOpenFiles": [
-    "Home.components",
-    "工作/S3全封闭轨道/261118全封闭避让上报.md",
+    "工作/S3全封闭轨道/261118全封闭轨道维护.md",
     "工作/吊挂操作面板/261030吊挂操作面板维护.md",
+    "Home.components",
     "工作/S3吊挂控制器/261029S3维护.md",
+    "工作/S3全封闭轨道/261118全封闭避让上报.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "个人/AI工具集/261029AI工具集规划.20261118.md",
     "个人/AI工具集/261029AI工具集规划-阶段1完整归档.md",
