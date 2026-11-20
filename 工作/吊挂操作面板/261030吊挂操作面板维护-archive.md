@@ -122,3 +122,20 @@ flowchart LR
 
 - 控制器 `main.h` 中 `sNUM = 2`，对应 A / B 两个站各一块面板；面板 UI 文案由 `LangMenu.c` 的 16 组语言表驱动，菜单入口见 `MenuUI.h` 的 `M_*`。
 - 控制器侧流程与通讯细节见 [[261029S3维护]]。
+
+## 附录 B：关键文件索引
+
+| 文件 | 作用 |
+|---|---|
+| `Operation_Panel/source/MAIN.C` | 主循环、初始化、命令分发（换绑 `0x112` 清等待） |
+| `Operation_Panel/midware/MenuUI.c/.h`、`key.c`、`LangMenu.c` | 菜单状态机 / 按键 / 16 语言文案（报废、翻页、换绑 UI；版本号 `CPVER`） |
+| `Operation_Panel/midware/MenuParam.c/.h`、`SC_MenuParam.c`、`TC_MenuParam.c`、`interface.c/.h` | `PCustomOCTb` / `PCustomTb` / `PCustomOCShow[4]`、参数菜单、`S_CodeAutoOut` |
+| `Operation_Panel/midware/CmdProtocol.c/.h`、`rfidio.c`、`RemoteUpdate.c`、`Dispaly.c`、`lcd/`、`fonts.c` | 命令协议与重发、读卡、远程升级、显示与字库 |
+| `Operation_Panel/midware/ziflash.c`、`interflash.c`、`flash.c`、`w25qxx/`、`USB/`、`fatfs/` | 参数 / 升级存储、USB Host MSC + FatFs |
+| `S3_Controller/APP/main.c`、`Panel.c/.h`、`RFIDReader.c/.h`、`UDP_Comu.c`、`UDP_CMD.c`、`BSP/CanOpen/` | 控制器入口、面板命令与透传、读卡器、UDP、CANopen |
+
+### 相关依赖
+
+- 面板：FatFs `Operation_Panel/midware/fatfs`；HC32F460 DDL `Operation_Panel/src`、`inc`、`common`；构建工具 Keil MDK。
+- 配套控制器：lwIP `S3_Controller/LIB/lwip`；CANopenNode `S3_Controller/LIB/CANopenNode`；GD32F4xx 标准外设库 `S3_Controller/LIB`；构建工具 Keil MDK。
+
