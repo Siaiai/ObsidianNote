@@ -22,12 +22,22 @@
       "label": "类型",
       "type": "select",
       "propertyName": "类型",
-      "defaultValue": ["开发"],
+      "defaultValue": [
+        "开发"
+      ],
       "multiple": true,
       "required": true,
       "options": [
-        { "id": "personal-task-type-dev", "label": "开发", "value": "开发" },
-        { "id": "personal-task-type-meeting", "label": "会议", "value": "会议" }
+        {
+          "id": "personal-task-type-dev",
+          "label": "开发",
+          "value": "开发"
+        },
+        {
+          "id": "personal-task-type-meeting",
+          "label": "会议",
+          "value": "会议"
+        }
       ]
     },
     {
@@ -38,9 +48,21 @@
       "defaultValue": "待办",
       "required": true,
       "options": [
-        { "id": "personal-task-status-todo", "label": "待办", "value": "待办" },
-        { "id": "personal-task-status-doing", "label": "进行", "value": "进行" },
-        { "id": "personal-task-status-done", "label": "完成", "value": "完成" }
+        {
+          "id": "personal-task-status-todo",
+          "label": "待办",
+          "value": "待办"
+        },
+        {
+          "id": "personal-task-status-doing",
+          "label": "进行",
+          "value": "进行"
+        },
+        {
+          "id": "personal-task-status-done",
+          "label": "完成",
+          "value": "完成"
+        }
       ]
     },
     {

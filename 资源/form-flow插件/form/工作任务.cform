@@ -22,15 +22,37 @@
       "label": "类型",
       "type": "select",
       "propertyName": "类型",
-      "defaultValue": ["开发"],
+      "defaultValue": [
+        "开发"
+      ],
       "multiple": true,
       "required": true,
       "options": [
-        { "id": "work-task-type-dev", "label": "开发", "value": "开发" },
-        { "id": "work-task-type-meeting", "label": "会议", "value": "会议" },
-        { "id": "work-task-type-plan", "label": "方案", "value": "方案" },
-        { "id": "work-task-type-research", "label": "调研", "value": "调研" },
-        { "id": "work-task-type-doc", "label": "文档", "value": "文档" }
+        {
+          "id": "work-task-type-dev",
+          "label": "开发",
+          "value": "开发"
+        },
+        {
+          "id": "work-task-type-meeting",
+          "label": "会议",
+          "value": "会议"
+        },
+        {
+          "id": "work-task-type-plan",
+          "label": "方案",
+          "value": "方案"
+        },
+        {
+          "id": "work-task-type-research",
+          "label": "调研",
+          "value": "调研"
+        },
+        {
+          "id": "work-task-type-doc",
+          "label": "文档",
+          "value": "文档"
+        }
       ]
     },
     {
@@ -41,9 +63,21 @@
       "defaultValue": "待办",
       "required": true,
       "options": [
-        { "id": "work-task-status-todo", "label": "待办", "value": "待办" },
-        { "id": "work-task-status-doing", "label": "进行", "value": "进行" },
-        { "id": "work-task-status-done", "label": "完成", "value": "完成" }
+        {
+          "id": "work-task-status-todo",
+          "label": "待办",
+          "value": "待办"
+        },
+        {
+          "id": "work-task-status-doing",
+          "label": "进行",
+          "value": "进行"
+        },
+        {
+          "id": "work-task-status-done",
+          "label": "完成",
+          "value": "完成"
+        }
       ]
     },
     {

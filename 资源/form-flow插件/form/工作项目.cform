@@ -18,9 +18,21 @@
       "defaultValue": "规划中",
       "required": true,
       "options": [
-        { "id": "work-project-status-planning", "label": "规划中", "value": "规划中" },
-        { "id": "work-project-status-doing", "label": "进行中", "value": "进行中" },
-        { "id": "work-project-status-archived", "label": "已归档", "value": "已归档" }
+        {
+          "id": "work-project-status-planning",
+          "label": "规划中",
+          "value": "规划中"
+        },
+        {
+          "id": "work-project-status-doing",
+          "label": "进行中",
+          "value": "进行中"
+        },
+        {
+          "id": "work-project-status-archived",
+          "label": "已归档",
+          "value": "已归档"
+        }
       ]
     }
   ],
