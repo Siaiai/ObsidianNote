@@ -4,6 +4,20 @@
     "type": "split",
     "children": [
       {
+        "id": "1116c054fe6c84b7",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "工作/SR3读卡器/261102SR3读卡器维护.md",
+            "mode": "source",
+            "source": false
+          },
+          "icon": "lucide-file",
+          "title": "261102SR3读卡器维护"
+        }
+      },
+      {
         "id": "5da7e7273f0002a9",
         "type": "tabs",
         "children": [
@@ -48,9 +62,21 @@
               "icon": "lucide-file",
               "title": "260401S3分拣面板"
             }
+          },
+          {
+            "id": "0009c407c629d080",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -190,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/分拣操作面板/260401S3分拣面板.md",
+                "file": "工作/SR3读卡器/261102SR3读卡器维护.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -232,12 +258,12 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "12e22ddf613d704e",
+  "active": "1116c054fe6c84b7",
   "lastOpenFiles": [
-    "工作/S3吊挂控制器/261029S3维护.md",
-    "工作/吊挂操作面板/261030吊挂操作面板维护-archive.md",
     "Home.components",
     "工作/分拣操作面板/260401S3分拣面板.md",
+    "工作/S3吊挂控制器/261029S3维护.md",
+    "工作/吊挂操作面板/261030吊挂操作面板维护-archive.md",
     "工作/S3全封闭轨道/261118全封闭轨道维护.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "资源/form-flow插件/form/个人笔记.cform",
