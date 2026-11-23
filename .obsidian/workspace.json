@@ -76,7 +76,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -216,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/SR3读卡器/260804SR3框架整理.md",
+                "file": "Home.components",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -236,7 +236,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -258,10 +258,10 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "a84b549f43fa4213",
+  "active": "e9b5bb104a3d1734",
   "lastOpenFiles": [
-    "Home.components",
     "工作/SR3读卡器/260804SR3框架整理.md",
+    "Home.components",
     "工作/SR3读卡器/261102SR3读卡器维护.md",
     "工作/分拣操作面板/260401S3分拣面板.md",
     "工作/S3吊挂控制器/261029S3维护.md",
