@@ -48,6 +48,18 @@
             }
           },
           {
+            "id": "8bf3b19f5b4fea07",
+            "type": "leaf",
+            "state": {
+              "type": "components-file-view",
+              "state": {
+                "file": "Home.components"
+              },
+              "icon": "gantt-chart",
+              "title": "Home"
+            }
+          },
+          {
             "id": "afde1b4557897ccf",
             "type": "leaf",
             "state": {
@@ -89,7 +101,8 @@
               "title": "260804SR3框架整理"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -271,16 +284,21 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "c2a78dff78005c3d",
+  "active": "0009c407c629d080",
   "lastOpenFiles": [
-    "工作/分拣操作面板/260401S3分拣面板.md",
-    "工作/S3全封闭轨道/261118全封闭轨道维护.md",
-    "Home.components",
-    "工作/S3吊挂控制器/261029S3维护.md",
-    "工作/吊挂操作面板/261030吊挂操作面板维护-archive.md",
-    "工作/GUI/面板本地多语言整形方案.md",
-    "工作/SR3读卡器/260804SR3框架整理.md",
     "工作/SR3读卡器/261102SR3读卡器维护.md",
+    "Home.components",
+    "规范.md",
+    "260707_SiaZhang2003@hotmail.com_components_license.md",
+    "题库汇总.md",
+    "CLAUDE.md",
+    "工作/吊挂操作面板/261030吊挂操作面板维护.md",
+    "工作/分拣操作面板/260401S3分拣面板.md",
+    "工作/GUI/面板本地多语言整形方案.md",
+    "工作/S3吊挂控制器/261029S3维护.md",
+    "工作/S3全封闭轨道/261118全封闭轨道维护.md",
+    "工作/吊挂操作面板/261030吊挂操作面板维护-archive.md",
+    "工作/SR3读卡器/260804SR3框架整理.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
     "资源/form-flow插件/form/个人笔记.cform",
     "资源/form-flow插件/form/个人项目.cform",
@@ -290,21 +308,16 @@
     "工作/GUI/260707GUI.md",
     "工作/S3全封闭轨道/260401全封闭动力出站电机报错.md",
     "工作/吊挂操作面板/260105整合参数含义到终端用户指南.md",
-    "工作/吊挂操作面板/261030吊挂操作面板维护.md",
     "工作/S3全封闭轨道/261118全封闭避让上报.md",
     "个人/AI工具集/261029AI工具集规划.20261118.md",
     "个人/AI工具集/261029AI工具集规划-阶段1完整归档.md",
     "工作/吊挂操作面板/261117规划与代码一致性讨论.md",
     "工作/吊挂操作面板/261030面板换绑功能优化.md",
-    "题库汇总.md",
     "工作/S3吊挂控制器/261020立冠RGV料箱站位硬件参考.md",
     "个人/AI工具集/261029AI工具集规划.md",
     "工作/分拣操作面板/260401S3串口协议.md",
     "个人/项目/AI工具集.md",
-    "个人/项目/Tooless.md",
-    "输出/AI调教.md",
     "个人/AI工具集",
-    "skills/plan-doc/references/recon.md",
     "skills/plan-doc/assets",
     "资源/form-flow插件/form/工作规划.cform",
     "skills/plan-doc/scripts/plan_lint.ps1",
