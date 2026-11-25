@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "63621b756e90ba3b",
+        "id": "dd453c80bb2d966c",
         "type": "tabs",
         "children": [
           {
-            "id": "81c012073f52d5ce",
+            "id": "ccf4ace0a886af08",
             "type": "leaf",
             "state": {
               "type": "components-file-view",
@@ -201,11 +201,14 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "81c012073f52d5ce",
+  "active": "ccf4ace0a886af08",
   "lastOpenFiles": [
-    "资源/模板/日志模板-day.md",
-    "Home.components",
     "日志/2026-11-25.md",
+    "Home.components",
+    "资源/模板/日志模板-day.md",
+    "日志/2026-02-10.md",
+    "规范.md",
+    "日志/2026-04-21.md",
     "日志/2026-09-28.md",
     "日志/2026-08-12.md",
     "资源/form-flow插件/form/个人项目.cform",
@@ -233,9 +236,6 @@
     "日志/2026-01-07.md",
     "日志/2026-01-04.md",
     "工作/S3全封闭轨道/260128全封闭轨道新加机制与待测试项.md",
-    "日志/2026-01-30.md",
-    "工作/S3全封闭轨道/261118全封闭轨道维护.md",
-    "RD0313_指令指南.md",
     "工作/S3全封闭轨道/261118全封闭轨道维护.md~RF6efcdb6.TMP",
     "资源/form-flow插件/form/工作任务.cform",
     "资源/form-flow插件/form/个人任务.cform",

@@ -2,7 +2,6 @@
   "types": {
     "aliases": "aliases",
     "cssclasses": "multitext",
-    "tags": "tags",
-    "创建时间": "datetime"
+    "tags": "tags"
   }
 }
