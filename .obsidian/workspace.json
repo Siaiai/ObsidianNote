@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "a697ee852fc20971",
+        "id": "63621b756e90ba3b",
         "type": "tabs",
         "children": [
           {
-            "id": "11abfc24923f3491",
+            "id": "81c012073f52d5ce",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "components-file-view",
               "state": {
-                "file": "资源/模板/日志模板-day.md",
-                "mode": "source",
-                "source": false
+                "file": "Home.components"
               },
-              "icon": "lucide-file",
-              "title": "日志模板-day"
+              "icon": "gantt-chart",
+              "title": "Home"
             }
           }
         ]
@@ -99,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "资源/模板/日志模板-day.md",
+                "file": "Home.components",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "资源/模板/日志模板-day.md",
+                "file": "Home.components",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -203,17 +201,17 @@
       "drawio:Launch draw.io editor": false
     }
   },
-  "active": "11abfc24923f3491",
+  "active": "81c012073f52d5ce",
   "lastOpenFiles": [
+    "资源/模板/日志模板-day.md",
+    "Home.components",
     "日志/2026-11-25.md",
     "日志/2026-09-28.md",
     "日志/2026-08-12.md",
     "资源/form-flow插件/form/个人项目.cform",
     "资源/form-flow插件/form/个人笔记.cform",
-    "资源/模板/日志模板-day.md",
     "工作/项目/S3吊挂控制器.md",
     "工作/S3吊挂控制器/260105工序号识别2代.md",
-    "Home.components",
     "工作/吊挂操作面板/260106超范围字符显示.md",
     "领域/日志.md",
     "领域/输出.md",
@@ -238,7 +236,6 @@
     "日志/2026-01-30.md",
     "工作/S3全封闭轨道/261118全封闭轨道维护.md",
     "RD0313_指令指南.md",
-    "工作/S3全封闭轨道/261124V3重构方案.md",
     "工作/S3全封闭轨道/261118全封闭轨道维护.md~RF6efcdb6.TMP",
     "资源/form-flow插件/form/工作任务.cform",
     "资源/form-flow插件/form/个人任务.cform",
