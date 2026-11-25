@@ -3,7 +3,8 @@
   - "[[日志]]"
 类型:
   - 日记
-创建时间: {date:YYYY-MM-DDTHH:mm:ss}
+创建时间:
+  date:YYYY-MM-DDTHH:mm:ss
 完成时间:
 ---
 ## 执行清单
